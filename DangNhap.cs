@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyHocSinh_Nhom15
 {
-    public partial class Form1 : MetroFramework.Forms.MetroForm
+    public partial class DangNhap : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public DangNhap()
         {
             InitializeComponent();
         }
