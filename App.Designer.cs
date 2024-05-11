@@ -35,9 +35,9 @@ namespace QuanLyHocSinh_Nhom15
             this.AppNameLabel = new System.Windows.Forms.Label();
             this.AppTabControl = new MetroFramework.Controls.MetroTabControl();
             this.TabTraCuu = new MetroFramework.Controls.MetroTabPage();
-            this.TabTiepNhan = new MetroFramework.Controls.MetroTabPage();
             this.TabBaoCao = new MetroFramework.Controls.MetroTabPage();
             this.TabTongKet = new MetroFramework.Controls.MetroTabPage();
+            this.TabTiepNhan = new MetroFramework.Controls.MetroTabPage();
             this.TabDanhSachLop = new MetroFramework.Controls.MetroTabPage();
             this.TabUser = new MetroFramework.Controls.MetroTabPage();
             this.panel1.SuspendLayout();
@@ -82,9 +82,9 @@ namespace QuanLyHocSinh_Nhom15
             // AppTabControl
             // 
             this.AppTabControl.Controls.Add(this.TabTraCuu);
-            this.AppTabControl.Controls.Add(this.TabTiepNhan);
             this.AppTabControl.Controls.Add(this.TabBaoCao);
             this.AppTabControl.Controls.Add(this.TabTongKet);
+            this.AppTabControl.Controls.Add(this.TabTiepNhan);
             this.AppTabControl.Controls.Add(this.TabDanhSachLop);
             this.AppTabControl.Controls.Add(this.TabUser);
             this.AppTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -93,7 +93,7 @@ namespace QuanLyHocSinh_Nhom15
             this.AppTabControl.Location = new System.Drawing.Point(0, 48);
             this.AppTabControl.Multiline = true;
             this.AppTabControl.Name = "AppTabControl";
-            this.AppTabControl.SelectedIndex = 4;
+            this.AppTabControl.SelectedIndex = 0;
             this.AppTabControl.Size = new System.Drawing.Size(1081, 607);
             this.AppTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AppTabControl.Style = MetroFramework.MetroColorStyle.Teal;
@@ -120,24 +120,6 @@ namespace QuanLyHocSinh_Nhom15
             this.TabTraCuu.VerticalScrollbarBarColor = true;
             this.TabTraCuu.VerticalScrollbarHighlightOnWheel = false;
             this.TabTraCuu.VerticalScrollbarSize = 10;
-            // 
-            // TabTiepNhan
-            // 
-            this.TabTiepNhan.BackColor = System.Drawing.Color.Teal;
-            this.TabTiepNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabTiepNhan.HorizontalScrollbarBarColor = true;
-            this.TabTiepNhan.HorizontalScrollbarHighlightOnWheel = false;
-            this.TabTiepNhan.HorizontalScrollbarSize = 10;
-            this.TabTiepNhan.Location = new System.Drawing.Point(4, 38);
-            this.TabTiepNhan.Name = "TabTiepNhan";
-            this.TabTiepNhan.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TabTiepNhan.Size = new System.Drawing.Size(1073, 565);
-            this.TabTiepNhan.TabIndex = 1;
-            this.TabTiepNhan.Text = "Tiếp nhận";
-            this.TabTiepNhan.UseVisualStyleBackColor = true;
-            this.TabTiepNhan.VerticalScrollbarBarColor = true;
-            this.TabTiepNhan.VerticalScrollbarHighlightOnWheel = false;
-            this.TabTiepNhan.VerticalScrollbarSize = 10;
             // 
             // TabBaoCao
             // 
@@ -174,6 +156,24 @@ namespace QuanLyHocSinh_Nhom15
             this.TabTongKet.VerticalScrollbarBarColor = true;
             this.TabTongKet.VerticalScrollbarHighlightOnWheel = false;
             this.TabTongKet.VerticalScrollbarSize = 10;
+            // 
+            // TabTiepNhan
+            // 
+            this.TabTiepNhan.BackColor = System.Drawing.Color.Teal;
+            this.TabTiepNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabTiepNhan.HorizontalScrollbarBarColor = true;
+            this.TabTiepNhan.HorizontalScrollbarHighlightOnWheel = false;
+            this.TabTiepNhan.HorizontalScrollbarSize = 10;
+            this.TabTiepNhan.Location = new System.Drawing.Point(4, 38);
+            this.TabTiepNhan.Name = "TabTiepNhan";
+            this.TabTiepNhan.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TabTiepNhan.Size = new System.Drawing.Size(1073, 565);
+            this.TabTiepNhan.TabIndex = 1;
+            this.TabTiepNhan.Text = "Tiếp nhận";
+            this.TabTiepNhan.UseVisualStyleBackColor = true;
+            this.TabTiepNhan.VerticalScrollbarBarColor = true;
+            this.TabTiepNhan.VerticalScrollbarHighlightOnWheel = false;
+            this.TabTiepNhan.VerticalScrollbarSize = 10;
             // 
             // TabDanhSachLop
             // 
