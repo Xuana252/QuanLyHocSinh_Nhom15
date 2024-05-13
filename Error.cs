@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyHocSinh_Nhom15
 {
-    public partial class App : MetroFramework.Forms.MetroForm
+    public partial class Error : MetroFramework.Forms.MetroForm
     {
-        public App()
+        public Error()
         {
             InitializeComponent();
         }
-
     }
 }
