@@ -61,6 +61,12 @@
     <Compile Include="App.Designer.cs">
       <DependentUpon>App.cs</DependentUpon>
     </Compile>
+    <Compile Include="DangKi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKi.Designer.cs">
+      <DependentUpon>DangKi.cs</DependentUpon>
+    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,16 +79,61 @@
     <Compile Include="Error.Designer.cs">
       <DependentUpon>Error.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiaoVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoVienForm.Designer.cs">
+      <DependentUpon>GiaoVienForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GradesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GradesForm.Designer.cs">
+      <DependentUpon>GradesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LopForm.Designer.cs">
+      <DependentUpon>LopForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonHocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonHocForm.Designer.cs">
+      <DependentUpon>MonHocForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentForm.Designer.cs">
+      <DependentUpon>StudentForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="App.resx">
       <DependentUpon>App.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangKi.resx">
+      <DependentUpon>DangKi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Error.resx">
       <DependentUpon>Error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoVienForm.resx">
+      <DependentUpon>GiaoVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GradesForm.resx">
+      <DependentUpon>GradesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LopForm.resx">
+      <DependentUpon>LopForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonHocForm.resx">
+      <DependentUpon>MonHocForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -93,6 +144,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StudentForm.resx">
+      <DependentUpon>StudentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
