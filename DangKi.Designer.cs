@@ -60,7 +60,7 @@
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(82, 32);
             this.LoginButton.TabIndex = 3;
-            this.LoginButton.Text = "Sign up";
+            this.LoginButton.Text = "Đăng kí";
             this.LoginButton.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -308,7 +308,7 @@
             // 
             // 
             this.metroTextBox5.CustomButton.Image = null;
-            this.metroTextBox5.CustomButton.Location = new System.Drawing.Point(158, 1);
+            this.metroTextBox5.CustomButton.Location = new System.Drawing.Point(222, 1);
             this.metroTextBox5.CustomButton.Name = "";
             this.metroTextBox5.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox5.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;

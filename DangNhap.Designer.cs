@@ -131,11 +131,11 @@
             this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.LoginButton.Location = new System.Drawing.Point(211, 176);
+            this.LoginButton.Location = new System.Drawing.Point(179, 176);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(82, 32);
+            this.LoginButton.Size = new System.Drawing.Size(114, 32);
             this.LoginButton.TabIndex = 2;
-            this.LoginButton.Text = "Login";
+            this.LoginButton.Text = "Đăng nhập";
             this.LoginButton.UseVisualStyleBackColor = false;
             // 
             // LoginNoteLabel

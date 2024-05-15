@@ -71,6 +71,10 @@ namespace QuanLyHocSinh_Nhom15
             this.label2 = new System.Windows.Forms.Label();
             this.BaoCaoMonHocComboBox = new MetroFramework.Controls.MetroComboBox();
             this.TabTongKet = new MetroFramework.Controls.MetroTabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.TongKetDiemDatNumericBox = new System.Windows.Forms.NumericUpDown();
+            this.TongKetNamComboBox = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.TongKetMonComboBox = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.TongKetXemButton = new MetroFramework.Controls.MetroButton();
@@ -87,6 +91,11 @@ namespace QuanLyHocSinh_Nhom15
             this.label3 = new System.Windows.Forms.Label();
             this.TongKetMonHocCaHocKiComboBox = new MetroFramework.Controls.MetroComboBox();
             this.TabTiepNhan = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
+            this.TiepNhanMaxAgeNumericBox = new System.Windows.Forms.NumericUpDown();
+            this.TiepCanMinAgeNumericBox = new System.Windows.Forms.NumericUpDown();
+            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.TiepNhanListView = new MetroFramework.Controls.MetroListView();
             this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -101,6 +110,8 @@ namespace QuanLyHocSinh_Nhom15
             this.TiepNhanXoaHocSinhButton = new MetroFramework.Controls.MetroButton();
             this.TiepNhanThemHocSinhButton = new MetroFramework.Controls.MetroButton();
             this.TabDanhSachLop = new MetroFramework.Controls.MetroTabPage();
+            this.DanhSachLopSiSoLabel = new System.Windows.Forms.Label();
+            this.DanhSachLopTenLopComboBox = new MetroFramework.Controls.MetroComboBox();
             this.DanhSachLopSuaThongTinButton = new MetroFramework.Controls.MetroButton();
             this.label14 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -111,15 +122,14 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.DanhSachLopThemHocSinhButton = new MetroFramework.Controls.MetroButton();
+            this.DanhSachLopXoaHocSinhButton = new MetroFramework.Controls.MetroButton();
             this.DanhSachLopListView2 = new MetroFramework.Controls.MetroListView();
             this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.DanhSachLopXoaHocSinhButton = new MetroFramework.Controls.MetroButton();
-            this.DanhSachLopThemHocSinhButton = new MetroFramework.Controls.MetroButton();
             this.DanhSachLopSearchTextBox = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -129,6 +139,7 @@ namespace QuanLyHocSinh_Nhom15
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.DanhSachLopXemLopButton = new MetroFramework.Controls.MetroButton();
             this.TabUser = new MetroFramework.Controls.MetroTabPage();
+            this.QuanLiTaiKhoanButton = new MetroFramework.Controls.MetroButton();
             this.UserRoleLabel = new System.Windows.Forms.Label();
             this.UserSubjectLabel = new System.Windows.Forms.Label();
             this.UserDateofBirthLabel = new System.Windows.Forms.Label();
@@ -150,18 +161,6 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
-            this.TongKetNamComboBox = new MetroFramework.Controls.MetroComboBox();
-            this.QuanLiTaiKhoanButton = new MetroFramework.Controls.MetroButton();
-            this.TiepCanMinAgeNumericBox = new System.Windows.Forms.NumericUpDown();
-            this.TiepNhanMaxAgeNumericBox = new System.Windows.Forms.NumericUpDown();
-            this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
-            this.DanhSachLopTenLopComboBox = new MetroFramework.Controls.MetroComboBox();
-            this.DanhSachLopSiSoLabel = new System.Windows.Forms.Label();
-            this.TongKetDiemDatNumericBox = new System.Windows.Forms.NumericUpDown();
-            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.AppTabControl.SuspendLayout();
             this.TabTraCuu.SuspendLayout();
@@ -170,17 +169,17 @@ namespace QuanLyHocSinh_Nhom15
             ((System.ComponentModel.ISupportInitialize)(this.BaoCaoNamHocNumericUpDown)).BeginInit();
             this.panel3.SuspendLayout();
             this.TabTongKet.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TongKetDiemDatNumericBox)).BeginInit();
             this.panel4.SuspendLayout();
             this.TabTiepNhan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TiepNhanMaxAgeNumericBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TiepCanMinAgeNumericBox)).BeginInit();
             this.panel2.SuspendLayout();
             this.TabDanhSachLop.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.TabUser.SuspendLayout();
             this.metroPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TiepCanMinAgeNumericBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TiepNhanMaxAgeNumericBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TongKetDiemDatNumericBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -232,7 +231,7 @@ namespace QuanLyHocSinh_Nhom15
             this.AppTabControl.Location = new System.Drawing.Point(0, 48);
             this.AppTabControl.Multiline = true;
             this.AppTabControl.Name = "AppTabControl";
-            this.AppTabControl.SelectedIndex = 4;
+            this.AppTabControl.SelectedIndex = 5;
             this.AppTabControl.Size = new System.Drawing.Size(1081, 607);
             this.AppTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AppTabControl.Style = MetroFramework.MetroColorStyle.Teal;
@@ -665,6 +664,54 @@ namespace QuanLyHocSinh_Nhom15
             this.TabTongKet.VerticalScrollbarHighlightOnWheel = false;
             this.TabTongKet.VerticalScrollbarSize = 10;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Teal;
+            this.label15.Location = new System.Drawing.Point(910, 524);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(105, 15);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "Điểm đạt môn/đạt";
+            // 
+            // TongKetDiemDatNumericBox
+            // 
+            this.TongKetDiemDatNumericBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TongKetDiemDatNumericBox.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.TongKetDiemDatNumericBox.Location = new System.Drawing.Point(931, 542);
+            this.TongKetDiemDatNumericBox.Name = "TongKetDiemDatNumericBox";
+            this.TongKetDiemDatNumericBox.Size = new System.Drawing.Size(59, 20);
+            this.TongKetDiemDatNumericBox.TabIndex = 19;
+            this.TongKetDiemDatNumericBox.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // TongKetNamComboBox
+            // 
+            this.TongKetNamComboBox.FormattingEnabled = true;
+            this.TongKetNamComboBox.ItemHeight = 23;
+            this.TongKetNamComboBox.Items.AddRange(new object[] {
+            "I",
+            "II"});
+            this.TongKetNamComboBox.Location = new System.Drawing.Point(858, 331);
+            this.TongKetNamComboBox.Name = "TongKetNamComboBox";
+            this.TongKetNamComboBox.Size = new System.Drawing.Size(200, 29);
+            this.TongKetNamComboBox.TabIndex = 18;
+            this.TongKetNamComboBox.UseSelectable = true;
+            // 
+            // metroLabel14
+            // 
+            this.metroLabel14.AutoSize = true;
+            this.metroLabel14.Location = new System.Drawing.Point(858, 309);
+            this.metroLabel14.Name = "metroLabel14";
+            this.metroLabel14.Size = new System.Drawing.Size(38, 19);
+            this.metroLabel14.TabIndex = 17;
+            this.metroLabel14.Text = "Năm";
+            // 
             // TongKetMonComboBox
             // 
             this.TongKetMonComboBox.FormattingEnabled = true;
@@ -835,6 +882,63 @@ namespace QuanLyHocSinh_Nhom15
             this.TabTiepNhan.VerticalScrollbarHighlightOnWheel = false;
             this.TabTiepNhan.VerticalScrollbarSize = 10;
             // 
+            // metroLabel16
+            // 
+            this.metroLabel16.AutoSize = true;
+            this.metroLabel16.Location = new System.Drawing.Point(966, 73);
+            this.metroLabel16.Name = "metroLabel16";
+            this.metroLabel16.Size = new System.Drawing.Size(43, 19);
+            this.metroLabel16.TabIndex = 15;
+            this.metroLabel16.Text = "tối đa";
+            // 
+            // metroLabel15
+            // 
+            this.metroLabel15.AutoSize = true;
+            this.metroLabel15.Location = new System.Drawing.Point(807, 72);
+            this.metroLabel15.Name = "metroLabel15";
+            this.metroLabel15.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel15.TabIndex = 14;
+            this.metroLabel15.Text = "Tuổi tối thiểu";
+            // 
+            // TiepNhanMaxAgeNumericBox
+            // 
+            this.TiepNhanMaxAgeNumericBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TiepNhanMaxAgeNumericBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TiepNhanMaxAgeNumericBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.TiepNhanMaxAgeNumericBox.Location = new System.Drawing.Point(1015, 72);
+            this.TiepNhanMaxAgeNumericBox.Name = "TiepNhanMaxAgeNumericBox";
+            this.TiepNhanMaxAgeNumericBox.Size = new System.Drawing.Size(55, 20);
+            this.TiepNhanMaxAgeNumericBox.TabIndex = 13;
+            this.TiepNhanMaxAgeNumericBox.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // TiepCanMinAgeNumericBox
+            // 
+            this.TiepCanMinAgeNumericBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TiepCanMinAgeNumericBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TiepCanMinAgeNumericBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.TiepCanMinAgeNumericBox.Location = new System.Drawing.Point(896, 72);
+            this.TiepCanMinAgeNumericBox.Name = "TiepCanMinAgeNumericBox";
+            this.TiepCanMinAgeNumericBox.Size = new System.Drawing.Size(55, 20);
+            this.TiepCanMinAgeNumericBox.TabIndex = 12;
+            this.TiepCanMinAgeNumericBox.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            // 
+            // metroLabel13
+            // 
+            this.metroLabel13.AutoSize = true;
+            this.metroLabel13.Location = new System.Drawing.Point(213, 68);
+            this.metroLabel13.Name = "metroLabel13";
+            this.metroLabel13.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel13.TabIndex = 11;
+            this.metroLabel13.Text = "Họ tên";
+            // 
             // TiepNhanListView
             // 
             this.TiepNhanListView.BackColor = System.Drawing.Color.MintCream;
@@ -980,8 +1084,6 @@ namespace QuanLyHocSinh_Nhom15
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopListView1);
             this.TabDanhSachLop.Controls.Add(this.metroPanel1);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopListView2);
-            this.TabDanhSachLop.Controls.Add(this.DanhSachLopXoaHocSinhButton);
-            this.TabDanhSachLop.Controls.Add(this.DanhSachLopThemHocSinhButton);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopSearchTextBox);
             this.TabDanhSachLop.Controls.Add(this.metroLabel11);
             this.TabDanhSachLop.Controls.Add(this.panel6);
@@ -1002,6 +1104,27 @@ namespace QuanLyHocSinh_Nhom15
             this.TabDanhSachLop.VerticalScrollbarBarColor = true;
             this.TabDanhSachLop.VerticalScrollbarHighlightOnWheel = false;
             this.TabDanhSachLop.VerticalScrollbarSize = 10;
+            // 
+            // DanhSachLopSiSoLabel
+            // 
+            this.DanhSachLopSiSoLabel.AutoSize = true;
+            this.DanhSachLopSiSoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.DanhSachLopSiSoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhSachLopSiSoLabel.Location = new System.Drawing.Point(66, 126);
+            this.DanhSachLopSiSoLabel.Name = "DanhSachLopSiSoLabel";
+            this.DanhSachLopSiSoLabel.Size = new System.Drawing.Size(0, 16);
+            this.DanhSachLopSiSoLabel.TabIndex = 27;
+            // 
+            // DanhSachLopTenLopComboBox
+            // 
+            this.DanhSachLopTenLopComboBox.FormattingEnabled = true;
+            this.DanhSachLopTenLopComboBox.ItemHeight = 23;
+            this.DanhSachLopTenLopComboBox.Location = new System.Drawing.Point(66, 79);
+            this.DanhSachLopTenLopComboBox.Name = "DanhSachLopTenLopComboBox";
+            this.DanhSachLopTenLopComboBox.PromptText = "Tên Lớp";
+            this.DanhSachLopTenLopComboBox.Size = new System.Drawing.Size(158, 29);
+            this.DanhSachLopTenLopComboBox.TabIndex = 26;
+            this.DanhSachLopTenLopComboBox.UseSelectable = true;
             // 
             // DanhSachLopSuaThongTinButton
             // 
@@ -1088,7 +1211,8 @@ namespace QuanLyHocSinh_Nhom15
             // metroPanel1
             // 
             this.metroPanel1.BackColor = System.Drawing.Color.DarkCyan;
-            this.metroPanel1.Controls.Add(this.label8);
+            this.metroPanel1.Controls.Add(this.DanhSachLopThemHocSinhButton);
+            this.metroPanel1.Controls.Add(this.DanhSachLopXoaHocSinhButton);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
@@ -1102,18 +1226,29 @@ namespace QuanLyHocSinh_Nhom15
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // label8
+            // DanhSachLopThemHocSinhButton
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(2, 170);
-            this.label8.Margin = new System.Windows.Forms.Padding(0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 20);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "<<<";
+            this.DanhSachLopThemHocSinhButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DanhSachLopThemHocSinhButton.Location = new System.Drawing.Point(-2, 98);
+            this.DanhSachLopThemHocSinhButton.Name = "DanhSachLopThemHocSinhButton";
+            this.DanhSachLopThemHocSinhButton.Size = new System.Drawing.Size(45, 67);
+            this.DanhSachLopThemHocSinhButton.TabIndex = 13;
+            this.DanhSachLopThemHocSinhButton.Text = "<<<";
+            this.DanhSachLopThemHocSinhButton.UseCustomBackColor = true;
+            this.DanhSachLopThemHocSinhButton.UseCustomForeColor = true;
+            this.DanhSachLopThemHocSinhButton.UseSelectable = true;
+            // 
+            // DanhSachLopXoaHocSinhButton
+            // 
+            this.DanhSachLopXoaHocSinhButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DanhSachLopXoaHocSinhButton.Location = new System.Drawing.Point(-2, 182);
+            this.DanhSachLopXoaHocSinhButton.Name = "DanhSachLopXoaHocSinhButton";
+            this.DanhSachLopXoaHocSinhButton.Size = new System.Drawing.Size(45, 67);
+            this.DanhSachLopXoaHocSinhButton.TabIndex = 14;
+            this.DanhSachLopXoaHocSinhButton.Text = ">>>";
+            this.DanhSachLopXoaHocSinhButton.UseCustomBackColor = true;
+            this.DanhSachLopXoaHocSinhButton.UseCustomForeColor = true;
+            this.DanhSachLopXoaHocSinhButton.UseSelectable = true;
             // 
             // DanhSachLopListView2
             // 
@@ -1163,24 +1298,6 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.columnHeader35.Text = "Địa chỉ";
             this.columnHeader35.Width = 159;
-            // 
-            // DanhSachLopXoaHocSinhButton
-            // 
-            this.DanhSachLopXoaHocSinhButton.Location = new System.Drawing.Point(741, 126);
-            this.DanhSachLopXoaHocSinhButton.Name = "DanhSachLopXoaHocSinhButton";
-            this.DanhSachLopXoaHocSinhButton.Size = new System.Drawing.Size(88, 23);
-            this.DanhSachLopXoaHocSinhButton.TabIndex = 14;
-            this.DanhSachLopXoaHocSinhButton.Text = "Xóa học sinh";
-            this.DanhSachLopXoaHocSinhButton.UseSelectable = true;
-            // 
-            // DanhSachLopThemHocSinhButton
-            // 
-            this.DanhSachLopThemHocSinhButton.Location = new System.Drawing.Point(557, 126);
-            this.DanhSachLopThemHocSinhButton.Name = "DanhSachLopThemHocSinhButton";
-            this.DanhSachLopThemHocSinhButton.Size = new System.Drawing.Size(88, 23);
-            this.DanhSachLopThemHocSinhButton.TabIndex = 13;
-            this.DanhSachLopThemHocSinhButton.Text = "Thêm học sinh";
-            this.DanhSachLopThemHocSinhButton.UseSelectable = true;
             // 
             // DanhSachLopSearchTextBox
             // 
@@ -1305,6 +1422,15 @@ namespace QuanLyHocSinh_Nhom15
             this.TabUser.VerticalScrollbarBarColor = true;
             this.TabUser.VerticalScrollbarHighlightOnWheel = false;
             this.TabUser.VerticalScrollbarSize = 10;
+            // 
+            // QuanLiTaiKhoanButton
+            // 
+            this.QuanLiTaiKhoanButton.Location = new System.Drawing.Point(886, 523);
+            this.QuanLiTaiKhoanButton.Name = "QuanLiTaiKhoanButton";
+            this.QuanLiTaiKhoanButton.Size = new System.Drawing.Size(167, 25);
+            this.QuanLiTaiKhoanButton.TabIndex = 27;
+            this.QuanLiTaiKhoanButton.Text = "Quản lí danh sách tài khoản";
+            this.QuanLiTaiKhoanButton.UseSelectable = true;
             // 
             // UserRoleLabel
             // 
@@ -1481,7 +1607,7 @@ namespace QuanLyHocSinh_Nhom15
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(390, 37);
             this.SignUpButton.TabIndex = 4;
-            this.SignUpButton.Text = "Sign Up";
+            this.SignUpButton.Text = "Đăng kí";
             this.SignUpButton.UseVisualStyleBackColor = false;
             // 
             // metroPanel3
@@ -1515,7 +1641,7 @@ namespace QuanLyHocSinh_Nhom15
             this.LogOutButton.Name = "LogOutButton";
             this.LogOutButton.Size = new System.Drawing.Size(390, 37);
             this.LogOutButton.TabIndex = 2;
-            this.LogOutButton.Text = "Log out";
+            this.LogOutButton.Text = "Đăng xuất";
             this.LogOutButton.UseVisualStyleBackColor = false;
             // 
             // columnHeader1
@@ -1558,141 +1684,6 @@ namespace QuanLyHocSinh_Nhom15
             this.label1.Size = new System.Drawing.Size(191, 24);
             this.label1.TabIndex = 0;
             // 
-            // metroLabel13
-            // 
-            this.metroLabel13.AutoSize = true;
-            this.metroLabel13.Location = new System.Drawing.Point(213, 68);
-            this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(48, 19);
-            this.metroLabel13.TabIndex = 11;
-            this.metroLabel13.Text = "Họ tên";
-            // 
-            // metroLabel14
-            // 
-            this.metroLabel14.AutoSize = true;
-            this.metroLabel14.Location = new System.Drawing.Point(858, 309);
-            this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(38, 19);
-            this.metroLabel14.TabIndex = 17;
-            this.metroLabel14.Text = "Năm";
-            // 
-            // TongKetNamComboBox
-            // 
-            this.TongKetNamComboBox.FormattingEnabled = true;
-            this.TongKetNamComboBox.ItemHeight = 23;
-            this.TongKetNamComboBox.Items.AddRange(new object[] {
-            "I",
-            "II"});
-            this.TongKetNamComboBox.Location = new System.Drawing.Point(858, 331);
-            this.TongKetNamComboBox.Name = "TongKetNamComboBox";
-            this.TongKetNamComboBox.Size = new System.Drawing.Size(200, 29);
-            this.TongKetNamComboBox.TabIndex = 18;
-            this.TongKetNamComboBox.UseSelectable = true;
-            // 
-            // QuanLiTaiKhoanButton
-            // 
-            this.QuanLiTaiKhoanButton.Location = new System.Drawing.Point(886, 523);
-            this.QuanLiTaiKhoanButton.Name = "QuanLiTaiKhoanButton";
-            this.QuanLiTaiKhoanButton.Size = new System.Drawing.Size(167, 25);
-            this.QuanLiTaiKhoanButton.TabIndex = 27;
-            this.QuanLiTaiKhoanButton.Text = "Quản lí danh sách tài khoản";
-            this.QuanLiTaiKhoanButton.UseSelectable = true;
-            // 
-            // TiepCanMinAgeNumericBox
-            // 
-            this.TiepCanMinAgeNumericBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TiepCanMinAgeNumericBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TiepCanMinAgeNumericBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.TiepCanMinAgeNumericBox.Location = new System.Drawing.Point(896, 72);
-            this.TiepCanMinAgeNumericBox.Name = "TiepCanMinAgeNumericBox";
-            this.TiepCanMinAgeNumericBox.Size = new System.Drawing.Size(55, 20);
-            this.TiepCanMinAgeNumericBox.TabIndex = 12;
-            this.TiepCanMinAgeNumericBox.Value = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            // 
-            // TiepNhanMaxAgeNumericBox
-            // 
-            this.TiepNhanMaxAgeNumericBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TiepNhanMaxAgeNumericBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TiepNhanMaxAgeNumericBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.TiepNhanMaxAgeNumericBox.Location = new System.Drawing.Point(1015, 72);
-            this.TiepNhanMaxAgeNumericBox.Name = "TiepNhanMaxAgeNumericBox";
-            this.TiepNhanMaxAgeNumericBox.Size = new System.Drawing.Size(55, 20);
-            this.TiepNhanMaxAgeNumericBox.TabIndex = 13;
-            this.TiepNhanMaxAgeNumericBox.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            // 
-            // metroLabel15
-            // 
-            this.metroLabel15.AutoSize = true;
-            this.metroLabel15.Location = new System.Drawing.Point(807, 72);
-            this.metroLabel15.Name = "metroLabel15";
-            this.metroLabel15.Size = new System.Drawing.Size(83, 19);
-            this.metroLabel15.TabIndex = 14;
-            this.metroLabel15.Text = "Tuổi tối thiểu";
-            // 
-            // metroLabel16
-            // 
-            this.metroLabel16.AutoSize = true;
-            this.metroLabel16.Location = new System.Drawing.Point(966, 73);
-            this.metroLabel16.Name = "metroLabel16";
-            this.metroLabel16.Size = new System.Drawing.Size(43, 19);
-            this.metroLabel16.TabIndex = 15;
-            this.metroLabel16.Text = "tối đa";
-            // 
-            // DanhSachLopTenLopComboBox
-            // 
-            this.DanhSachLopTenLopComboBox.FormattingEnabled = true;
-            this.DanhSachLopTenLopComboBox.ItemHeight = 23;
-            this.DanhSachLopTenLopComboBox.Location = new System.Drawing.Point(66, 79);
-            this.DanhSachLopTenLopComboBox.Name = "DanhSachLopTenLopComboBox";
-            this.DanhSachLopTenLopComboBox.PromptText = "Tên Lớp";
-            this.DanhSachLopTenLopComboBox.Size = new System.Drawing.Size(158, 29);
-            this.DanhSachLopTenLopComboBox.TabIndex = 26;
-            this.DanhSachLopTenLopComboBox.UseSelectable = true;
-            // 
-            // DanhSachLopSiSoLabel
-            // 
-            this.DanhSachLopSiSoLabel.AutoSize = true;
-            this.DanhSachLopSiSoLabel.BackColor = System.Drawing.Color.Transparent;
-            this.DanhSachLopSiSoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DanhSachLopSiSoLabel.Location = new System.Drawing.Point(66, 126);
-            this.DanhSachLopSiSoLabel.Name = "DanhSachLopSiSoLabel";
-            this.DanhSachLopSiSoLabel.Size = new System.Drawing.Size(0, 16);
-            this.DanhSachLopSiSoLabel.TabIndex = 27;
-            // 
-            // TongKetDiemDatNumericBox
-            // 
-            this.TongKetDiemDatNumericBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TongKetDiemDatNumericBox.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.TongKetDiemDatNumericBox.Location = new System.Drawing.Point(931, 542);
-            this.TongKetDiemDatNumericBox.Name = "TongKetDiemDatNumericBox";
-            this.TongKetDiemDatNumericBox.Size = new System.Drawing.Size(59, 20);
-            this.TongKetDiemDatNumericBox.TabIndex = 19;
-            this.TongKetDiemDatNumericBox.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Teal;
-            this.label15.Location = new System.Drawing.Point(910, 524);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(105, 15);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "Điểm đạt môn/đạt";
-            // 
             // App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1723,24 +1714,23 @@ namespace QuanLyHocSinh_Nhom15
             this.panel3.PerformLayout();
             this.TabTongKet.ResumeLayout(false);
             this.TabTongKet.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TongKetDiemDatNumericBox)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.TabTiepNhan.ResumeLayout(false);
             this.TabTiepNhan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TiepNhanMaxAgeNumericBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TiepCanMinAgeNumericBox)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.TabDanhSachLop.ResumeLayout(false);
             this.TabDanhSachLop.PerformLayout();
             this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.TabUser.ResumeLayout(false);
             this.TabUser.PerformLayout();
             this.metroPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TiepCanMinAgeNumericBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TiepNhanMaxAgeNumericBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TongKetDiemDatNumericBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1798,7 +1788,6 @@ namespace QuanLyHocSinh_Nhom15
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label5;
         private MetroFramework.Controls.MetroButton DanhSachLopXoaHocSinhButton;
-        private MetroFramework.Controls.MetroButton DanhSachLopThemHocSinhButton;
         private MetroFramework.Controls.MetroTextBox DanhSachLopSearchTextBox;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroButton BaoCaoSuaBangDiemButton;
@@ -1832,7 +1821,6 @@ namespace QuanLyHocSinh_Nhom15
         private System.Windows.Forms.ColumnHeader columnHeader16;
         private System.Windows.Forms.ColumnHeader columnHeader17;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private MetroFramework.Controls.MetroListView TiepNhanListView;
         private System.Windows.Forms.ColumnHeader columnHeader26;
         private System.Windows.Forms.ColumnHeader columnHeader27;
@@ -1879,6 +1867,7 @@ namespace QuanLyHocSinh_Nhom15
         private System.Windows.Forms.Label DanhSachLopSiSoLabel;
         private System.Windows.Forms.NumericUpDown TongKetDiemDatNumericBox;
         private System.Windows.Forms.Label label15;
+        private MetroFramework.Controls.MetroButton DanhSachLopThemHocSinhButton;
     }
 }
 
