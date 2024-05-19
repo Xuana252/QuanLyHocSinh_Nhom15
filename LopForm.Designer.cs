@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.ExitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,7 +112,7 @@
             // 
             // 
             this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(60, 1);
             this.metroTextBox1.CustomButton.Name = "";
             this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -214,11 +215,29 @@
             this.metroComboBox1.TabIndex = 27;
             this.metroComboBox1.UseSelectable = true;
             // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.Teal;
+            this.ExitButton.FlatAppearance.BorderSize = 0;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ExitButton.Location = new System.Drawing.Point(553, -2);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(30, 29);
+            this.ExitButton.TabIndex = 28;
+            this.ExitButton.Text = "X";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
             // LopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(582, 535);
+            this.ControlBox = false;
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -261,5 +280,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private System.Windows.Forms.Button ExitButton;
     }
 }

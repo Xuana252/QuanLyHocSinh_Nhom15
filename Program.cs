@@ -16,7 +16,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DiemForm());
+            Application.Run(new DangNhap());
         }
     }
 }

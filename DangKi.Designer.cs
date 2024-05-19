@@ -47,6 +47,7 @@
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LoginButton
@@ -363,11 +364,28 @@
             this.metroComboBox2.TabIndex = 21;
             this.metroComboBox2.UseSelectable = true;
             // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.Teal;
+            this.ExitButton.FlatAppearance.BorderSize = 0;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ExitButton.Location = new System.Drawing.Point(744, -1);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(30, 29);
+            this.ExitButton.TabIndex = 22;
+            this.ExitButton.Text = "X";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
             // DangKi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(774, 383);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.metroComboBox2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.metroDateTime1);
@@ -393,6 +411,7 @@
             this.Name = "DangKi";
             this.Padding = new System.Windows.Forms.Padding(20, 30, 20, 20);
             this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
@@ -423,5 +442,6 @@
         private MetroFramework.Controls.MetroDateTime metroDateTime1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private System.Windows.Forms.Button ExitButton;
     }
 }

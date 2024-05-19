@@ -39,6 +39,7 @@
             this.IDMonHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NgaySinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DiaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -125,11 +126,29 @@
             this.DiaChi.Text = "Địa chỉ";
             this.DiaChi.Width = 268;
             // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.Teal;
+            this.ExitButton.FlatAppearance.BorderSize = 0;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ExitButton.Location = new System.Drawing.Point(972, -2);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(30, 29);
+            this.ExitButton.TabIndex = 11;
+            this.ExitButton.Text = "X";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
             // GiaoVienForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1002, 527);
+            this.ControlBox = false;
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.metroListView1);
             this.Controls.Add(this.label1);
             this.DisplayHeader = false;
@@ -161,5 +180,6 @@
         private System.Windows.Forms.ColumnHeader IDMonHoc;
         private System.Windows.Forms.ColumnHeader NgaySinh;
         private System.Windows.Forms.ColumnHeader DiaChi;
+        private System.Windows.Forms.Button ExitButton;
     }
 }

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace QuanLyHocSinh_Nhom15
 {
-    public partial class StudentForm : MetroFramework.Forms.MetroForm
+    public partial class HocSinhForm : MetroFramework.Forms.MetroForm
     {
-        public StudentForm()
+        public HocSinhForm()
         {
             InitializeComponent();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Hide();
         }
     }
 }

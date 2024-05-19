@@ -101,13 +101,12 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TiepNhanSuaThongTinButton = new MetroFramework.Controls.MetroButton();
             this.TiepNhanSearchTextBox = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.TiepNhanXoaHocSinhButton = new MetroFramework.Controls.MetroButton();
-            this.TiepNhanThemHocSinhButton = new MetroFramework.Controls.MetroButton();
+            this.TiepNhanThemSuaHocSinhButton = new MetroFramework.Controls.MetroButton();
             this.TabDanhSachLop = new MetroFramework.Controls.MetroTabPage();
             this.DanhSachLopSiSoLabel = new System.Windows.Forms.Label();
             this.DanhSachLopTenLopComboBox = new MetroFramework.Controls.MetroComboBox();
@@ -186,10 +185,11 @@ namespace QuanLyHocSinh_Nhom15
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.Controls.Add(this.ExitButton);
             this.panel1.Controls.Add(this.AppNameLabel);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1080, 48);
+            this.panel1.Size = new System.Drawing.Size(1081, 49);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // ExitButton
             // 
@@ -498,6 +498,7 @@ namespace QuanLyHocSinh_Nhom15
             this.BaoCaoThemSuaDiemButton.TabIndex = 20;
             this.BaoCaoThemSuaDiemButton.Text = "Thêm/Sửa điểm";
             this.BaoCaoThemSuaDiemButton.UseSelectable = true;
+            this.BaoCaoThemSuaDiemButton.Click += new System.EventHandler(this.BaoCaoThemSuaDiemButton_Click);
             // 
             // BaoCaoLopComboBox
             // 
@@ -600,6 +601,7 @@ namespace QuanLyHocSinh_Nhom15
             this.QuanLyMonHocButton.TabIndex = 1;
             this.QuanLyMonHocButton.Text = "Quản lí môn học";
             this.QuanLyMonHocButton.UseSelectable = true;
+            this.QuanLyMonHocButton.Click += new System.EventHandler(this.QuanLyMonHocButton_Click);
             // 
             // label2
             // 
@@ -850,12 +852,11 @@ namespace QuanLyHocSinh_Nhom15
             this.TabTiepNhan.Controls.Add(this.TiepCanMinAgeNumericBox);
             this.TabTiepNhan.Controls.Add(this.metroLabel13);
             this.TabTiepNhan.Controls.Add(this.TiepNhanListView);
-            this.TabTiepNhan.Controls.Add(this.TiepNhanSuaThongTinButton);
             this.TabTiepNhan.Controls.Add(this.TiepNhanSearchTextBox);
             this.TabTiepNhan.Controls.Add(this.metroLabel1);
             this.TabTiepNhan.Controls.Add(this.panel2);
             this.TabTiepNhan.Controls.Add(this.TiepNhanXoaHocSinhButton);
-            this.TabTiepNhan.Controls.Add(this.TiepNhanThemHocSinhButton);
+            this.TabTiepNhan.Controls.Add(this.TiepNhanThemSuaHocSinhButton);
             this.TabTiepNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabTiepNhan.HorizontalScrollbarBarColor = true;
             this.TabTiepNhan.HorizontalScrollbarHighlightOnWheel = false;
@@ -941,7 +942,6 @@ namespace QuanLyHocSinh_Nhom15
             this.TiepNhanListView.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.TiepNhanListView.FullRowSelect = true;
             this.TiepNhanListView.GridLines = true;
-            this.TiepNhanListView.HoverSelection = true;
             this.TiepNhanListView.Location = new System.Drawing.Point(4, 107);
             this.TiepNhanListView.Name = "TiepNhanListView";
             this.TiepNhanListView.OwnerDraw = true;
@@ -976,15 +976,6 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.columnHeader30.Text = "Email";
             this.columnHeader30.Width = 284;
-            // 
-            // TiepNhanSuaThongTinButton
-            // 
-            this.TiepNhanSuaThongTinButton.Location = new System.Drawing.Point(660, 64);
-            this.TiepNhanSuaThongTinButton.Name = "TiepNhanSuaThongTinButton";
-            this.TiepNhanSuaThongTinButton.Size = new System.Drawing.Size(94, 37);
-            this.TiepNhanSuaThongTinButton.TabIndex = 9;
-            this.TiepNhanSuaThongTinButton.Text = "Sửa thông tin";
-            this.TiepNhanSuaThongTinButton.UseSelectable = true;
             // 
             // TiepNhanSearchTextBox
             // 
@@ -1053,14 +1044,15 @@ namespace QuanLyHocSinh_Nhom15
             this.TiepNhanXoaHocSinhButton.Text = "Xóa học sinh";
             this.TiepNhanXoaHocSinhButton.UseSelectable = true;
             // 
-            // TiepNhanThemHocSinhButton
+            // TiepNhanThemSuaHocSinhButton
             // 
-            this.TiepNhanThemHocSinhButton.Location = new System.Drawing.Point(30, 64);
-            this.TiepNhanThemHocSinhButton.Name = "TiepNhanThemHocSinhButton";
-            this.TiepNhanThemHocSinhButton.Size = new System.Drawing.Size(94, 37);
-            this.TiepNhanThemHocSinhButton.TabIndex = 4;
-            this.TiepNhanThemHocSinhButton.Text = "Thêm học sinh";
-            this.TiepNhanThemHocSinhButton.UseSelectable = true;
+            this.TiepNhanThemSuaHocSinhButton.Location = new System.Drawing.Point(30, 64);
+            this.TiepNhanThemSuaHocSinhButton.Name = "TiepNhanThemSuaHocSinhButton";
+            this.TiepNhanThemSuaHocSinhButton.Size = new System.Drawing.Size(125, 37);
+            this.TiepNhanThemSuaHocSinhButton.TabIndex = 4;
+            this.TiepNhanThemSuaHocSinhButton.Text = "Thêm/Sửa học sinh";
+            this.TiepNhanThemSuaHocSinhButton.UseSelectable = true;
+            this.TiepNhanThemSuaHocSinhButton.Click += new System.EventHandler(this.TiepNhanThemHocSinhButton_Click);
             // 
             // TabDanhSachLop
             // 
@@ -1335,6 +1327,7 @@ namespace QuanLyHocSinh_Nhom15
             this.DanhSachLopQuanLiButton.TabIndex = 26;
             this.DanhSachLopQuanLiButton.Text = "Quản lí danh sách lớp";
             this.DanhSachLopQuanLiButton.UseSelectable = true;
+            this.DanhSachLopQuanLiButton.Click += new System.EventHandler(this.DanhSachLopQuanLiButton_Click);
             // 
             // label5
             // 
@@ -1410,6 +1403,7 @@ namespace QuanLyHocSinh_Nhom15
             this.QuanLiTaiKhoanButton.TabIndex = 27;
             this.QuanLiTaiKhoanButton.Text = "Quản lí danh sách tài khoản";
             this.QuanLiTaiKhoanButton.UseSelectable = true;
+            this.QuanLiTaiKhoanButton.Click += new System.EventHandler(this.QuanLiTaiKhoanButton_Click);
             // 
             // UserRoleLabel
             // 
@@ -1575,7 +1569,7 @@ namespace QuanLyHocSinh_Nhom15
             // SignUpButton
             // 
             this.SignUpButton.BackColor = System.Drawing.Color.Transparent;
-            this.SignUpButton.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.SignUpButton.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
             this.SignUpButton.FlatAppearance.BorderSize = 0;
             this.SignUpButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.SignUpButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -1584,10 +1578,11 @@ namespace QuanLyHocSinh_Nhom15
             this.SignUpButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.SignUpButton.Location = new System.Drawing.Point(0, 435);
             this.SignUpButton.Name = "SignUpButton";
-            this.SignUpButton.Size = new System.Drawing.Size(390, 37);
+            this.SignUpButton.Size = new System.Drawing.Size(396, 37);
             this.SignUpButton.TabIndex = 4;
             this.SignUpButton.Text = "Đăng kí";
             this.SignUpButton.UseVisualStyleBackColor = false;
+            this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
             // 
             // metroPanel3
             // 
@@ -1618,10 +1613,11 @@ namespace QuanLyHocSinh_Nhom15
             this.LogOutButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.LogOutButton.Location = new System.Drawing.Point(0, 478);
             this.LogOutButton.Name = "LogOutButton";
-            this.LogOutButton.Size = new System.Drawing.Size(390, 37);
+            this.LogOutButton.Size = new System.Drawing.Size(396, 37);
             this.LogOutButton.TabIndex = 2;
             this.LogOutButton.Text = "Đăng xuất";
             this.LogOutButton.UseVisualStyleBackColor = false;
+            this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
             // 
             // columnHeader1
             // 
@@ -1679,6 +1675,7 @@ namespace QuanLyHocSinh_Nhom15
             this.Padding = new System.Windows.Forms.Padding(0, 48, 0, 0);
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Teal;
+            this.Load += new System.EventHandler(this.App_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.AppTabControl.ResumeLayout(false);
@@ -1769,12 +1766,11 @@ namespace QuanLyHocSinh_Nhom15
         private MetroFramework.Controls.MetroTextBox DanhSachLopSearchTextBox;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroTabPage TabTiepNhan;
-        private MetroFramework.Controls.MetroButton TiepNhanSuaThongTinButton;
         private MetroFramework.Controls.MetroTextBox TiepNhanSearchTextBox;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroButton TiepNhanXoaHocSinhButton;
-        private MetroFramework.Controls.MetroButton TiepNhanThemHocSinhButton;
+        private MetroFramework.Controls.MetroButton TiepNhanThemSuaHocSinhButton;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;

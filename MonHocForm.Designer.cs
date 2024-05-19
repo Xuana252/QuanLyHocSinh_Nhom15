@@ -37,6 +37,7 @@
             this.IDMonTextBox = new MetroFramework.Controls.MetroTextBox();
             this.TenMonTextBox = new MetroFramework.Controls.MetroTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // metroListView1
@@ -84,11 +85,11 @@
             this.ThemMonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ThemMonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThemMonButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.ThemMonButton.Location = new System.Drawing.Point(276, 224);
+            this.ThemMonButton.Location = new System.Drawing.Point(264, 224);
             this.ThemMonButton.Name = "ThemMonButton";
-            this.ThemMonButton.Size = new System.Drawing.Size(82, 32);
+            this.ThemMonButton.Size = new System.Drawing.Size(94, 32);
             this.ThemMonButton.TabIndex = 3;
-            this.ThemMonButton.Text = "Thêm";
+            this.ThemMonButton.Text = "Thêm/Sửa";
             this.ThemMonButton.UseVisualStyleBackColor = false;
             // 
             // XoaMonButton
@@ -98,9 +99,9 @@
             this.XoaMonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.XoaMonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XoaMonButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.XoaMonButton.Location = new System.Drawing.Point(276, 282);
+            this.XoaMonButton.Location = new System.Drawing.Point(264, 282);
             this.XoaMonButton.Name = "XoaMonButton";
-            this.XoaMonButton.Size = new System.Drawing.Size(82, 32);
+            this.XoaMonButton.Size = new System.Drawing.Size(94, 32);
             this.XoaMonButton.TabIndex = 4;
             this.XoaMonButton.Text = "Xóa";
             this.XoaMonButton.UseVisualStyleBackColor = false;
@@ -111,7 +112,7 @@
             // 
             // 
             this.IDMonTextBox.CustomButton.Image = null;
-            this.IDMonTextBox.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.IDMonTextBox.CustomButton.Location = new System.Drawing.Point(72, 1);
             this.IDMonTextBox.CustomButton.Name = "";
             this.IDMonTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.IDMonTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -143,7 +144,7 @@
             // 
             // 
             this.TenMonTextBox.CustomButton.Image = null;
-            this.TenMonTextBox.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.TenMonTextBox.CustomButton.Location = new System.Drawing.Point(72, 1);
             this.TenMonTextBox.CustomButton.Name = "";
             this.TenMonTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TenMonTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -180,11 +181,29 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Subjects list";
             // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.Teal;
+            this.ExitButton.FlatAppearance.BorderSize = 0;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ExitButton.Location = new System.Drawing.Point(361, -2);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(30, 29);
+            this.ExitButton.TabIndex = 8;
+            this.ExitButton.Text = "X";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
             // MonHocForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(391, 450);
+            this.ControlBox = false;
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TenMonTextBox);
             this.Controls.Add(this.IDMonTextBox);
@@ -218,5 +237,6 @@
         private MetroFramework.Controls.MetroTextBox IDMonTextBox;
         private MetroFramework.Controls.MetroTextBox TenMonTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ExitButton;
     }
 }

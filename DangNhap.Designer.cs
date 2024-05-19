@@ -35,6 +35,7 @@
             this.SignInLabel = new System.Windows.Forms.Label();
             this.LoginButton = new System.Windows.Forms.Button();
             this.LoginNoteLabel = new System.Windows.Forms.Label();
+            this.ExitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,6 +138,7 @@
             this.LoginButton.TabIndex = 2;
             this.LoginButton.Text = "Đăng nhập";
             this.LoginButton.UseVisualStyleBackColor = false;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // LoginNoteLabel
             // 
@@ -149,12 +151,28 @@
             this.LoginNoteLabel.Text = "if you don\'t have an account please contact your school board members";
             this.LoginNoteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.Teal;
+            this.ExitButton.FlatAppearance.BorderSize = 0;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ExitButton.Location = new System.Drawing.Point(289, -1);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(30, 29);
+            this.ExitButton.TabIndex = 9;
+            this.ExitButton.Text = "X";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
             // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(319, 261);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.LoginNoteLabel);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.SignInLabel);
@@ -185,5 +203,6 @@
         private System.Windows.Forms.Label SignInLabel;
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Label LoginNoteLabel;
+        private System.Windows.Forms.Button ExitButton;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace QuanLyHocSinh_Nhom15
 {
-    partial class StudentForm
+    partial class HocSinhForm
     {
         /// <summary>
         /// Required designer variable.
@@ -39,6 +39,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // metroTextBox1
@@ -47,7 +48,7 @@
             // 
             // 
             this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(214, 2);
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(282, 2);
             this.metroTextBox1.CustomButton.Name = "";
             this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -79,7 +80,7 @@
             // 
             // 
             this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(214, 2);
+            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(282, 2);
             this.metroTextBox2.CustomButton.Name = "";
             this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -207,11 +208,29 @@
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // StudentForm
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.Teal;
+            this.ExitButton.FlatAppearance.BorderSize = 0;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ExitButton.Location = new System.Drawing.Point(438, 0);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(30, 29);
+            this.ExitButton.TabIndex = 14;
+            this.ExitButton.Text = "X";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // HocSinhForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(467, 482);
+            this.ControlBox = false;
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.richTextBox1);
@@ -226,7 +245,7 @@
             this.DisplayHeader = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "StudentForm";
+            this.Name = "HocSinhForm";
             this.Padding = new System.Windows.Forms.Padding(20, 30, 20, 20);
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
@@ -252,5 +271,6 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ExitButton;
     }
 }

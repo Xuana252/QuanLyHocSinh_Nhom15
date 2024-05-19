@@ -16,5 +16,16 @@ namespace QuanLyHocSinh_Nhom15
         {
             InitializeComponent();
         }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            new App().Show();
+            this.Hide();
+        }
     }
 }
