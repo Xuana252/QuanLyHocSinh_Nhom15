@@ -1,6 +1,6 @@
 ﻿namespace QuanLyHocSinh_Nhom15
 {
-    partial class GradesForm
+    partial class DiemForm
     {
         /// <summary>
         /// Required designer variable.

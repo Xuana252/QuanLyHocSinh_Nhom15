@@ -85,11 +85,11 @@
     <Compile Include="GiaoVienForm.Designer.cs">
       <DependentUpon>GiaoVienForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GradesForm.cs">
+    <Compile Include="DiemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GradesForm.Designer.cs">
-      <DependentUpon>GradesForm.cs</DependentUpon>
+    <Compile Include="DiemForm.Designer.cs">
+      <DependentUpon>DiemForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LopForm.cs">
       <SubType>Form</SubType>
@@ -105,11 +105,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StudentForm.cs">
+    <Compile Include="HocSinhForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentForm.Designer.cs">
-      <DependentUpon>StudentForm.cs</DependentUpon>
+      <DependentUpon>HocSinhForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="App.resx">
       <DependentUpon>App.cs</DependentUpon>
@@ -126,8 +126,8 @@
     <EmbeddedResource Include="GiaoVienForm.resx">
       <DependentUpon>GiaoVienForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GradesForm.resx">
-      <DependentUpon>GradesForm.cs</DependentUpon>
+    <EmbeddedResource Include="DiemForm.resx">
+      <DependentUpon>DiemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LopForm.resx">
       <DependentUpon>LopForm.cs</DependentUpon>
@@ -145,7 +145,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="StudentForm.resx">
-      <DependentUpon>StudentForm.cs</DependentUpon>
+      <DependentUpon>HocSinhForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

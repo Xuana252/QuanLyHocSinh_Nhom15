@@ -17,5 +17,9 @@ namespace QuanLyHocSinh_Nhom15
             InitializeComponent();
         }
 
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
