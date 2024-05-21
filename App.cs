@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace QuanLyHocSinh_Nhom15
 {
     public partial class App : MetroFramework.Forms.MetroForm
     {
+
         static MonHocForm       monHocForm = new MonHocForm();
         static DangKi           dangKiForm = new DangKi();
         static DiemForm         diemForm = new DiemForm();
@@ -90,6 +92,14 @@ namespace QuanLyHocSinh_Nhom15
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void TongKetMonHocCaHocKiComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(this.TongKetMonHocCaHocKiComboBox.Text != "Môn học")
+                this.TongKetMonComboBox.Enabled = false;
+            else
+                this.TongKetMonComboBox.Enabled = true;
         }
     }
 }

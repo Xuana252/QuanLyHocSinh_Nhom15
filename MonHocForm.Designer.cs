@@ -64,6 +64,8 @@
             this.metroListView1.UseSelectable = true;
             this.metroListView1.UseStyleColors = true;
             this.metroListView1.View = System.Windows.Forms.View.Details;
+            this.metroListView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.metroListView1_ColumnWidthChanging);
+            this.metroListView1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.metroListView1_DrawItem);
             // 
             // STTMon
             // 
@@ -190,7 +192,7 @@
             this.ExitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ExitButton.Location = new System.Drawing.Point(361, -2);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(30, 29);
+            this.ExitButton.Size = new System.Drawing.Size(30, 30);
             this.ExitButton.TabIndex = 8;
             this.ExitButton.Text = "X";
             this.ExitButton.UseVisualStyleBackColor = false;
@@ -221,6 +223,7 @@
             this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "MonHocForm";
+            this.VisibleChanged += new System.EventHandler(this.MonHocForm_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

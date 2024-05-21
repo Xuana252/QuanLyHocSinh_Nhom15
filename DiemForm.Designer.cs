@@ -143,7 +143,7 @@
             this.ExitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ExitButton.Location = new System.Drawing.Point(323, -1);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(30, 29);
+            this.ExitButton.Size = new System.Drawing.Size(30, 30);
             this.ExitButton.TabIndex = 9;
             this.ExitButton.Text = "X";
             this.ExitButton.UseVisualStyleBackColor = false;

@@ -230,7 +230,7 @@ namespace QuanLyHocSinh_Nhom15
             this.AppTabControl.Location = new System.Drawing.Point(0, 48);
             this.AppTabControl.Multiline = true;
             this.AppTabControl.Name = "AppTabControl";
-            this.AppTabControl.SelectedIndex = 5;
+            this.AppTabControl.SelectedIndex = 4;
             this.AppTabControl.Size = new System.Drawing.Size(1081, 607);
             this.AppTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AppTabControl.Style = MetroFramework.MetroColorStyle.Teal;
@@ -550,6 +550,9 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.BaoCaoHocKiComboBox.FormattingEnabled = true;
             this.BaoCaoHocKiComboBox.ItemHeight = 23;
+            this.BaoCaoHocKiComboBox.Items.AddRange(new object[] {
+            "I",
+            "II"});
             this.BaoCaoHocKiComboBox.Location = new System.Drawing.Point(905, 351);
             this.BaoCaoHocKiComboBox.Name = "BaoCaoHocKiComboBox";
             this.BaoCaoHocKiComboBox.Size = new System.Drawing.Size(121, 29);
@@ -672,6 +675,11 @@ namespace QuanLyHocSinh_Nhom15
             this.TongKetDiemDatNumericBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TongKetDiemDatNumericBox.ForeColor = System.Drawing.SystemColors.MenuText;
             this.TongKetDiemDatNumericBox.Location = new System.Drawing.Point(931, 542);
+            this.TongKetDiemDatNumericBox.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.TongKetDiemDatNumericBox.Name = "TongKetDiemDatNumericBox";
             this.TongKetDiemDatNumericBox.Size = new System.Drawing.Size(59, 20);
             this.TongKetDiemDatNumericBox.TabIndex = 19;
@@ -685,9 +693,6 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.TongKetNamComboBox.FormattingEnabled = true;
             this.TongKetNamComboBox.ItemHeight = 23;
-            this.TongKetNamComboBox.Items.AddRange(new object[] {
-            "I",
-            "II"});
             this.TongKetNamComboBox.Location = new System.Drawing.Point(858, 331);
             this.TongKetNamComboBox.Name = "TongKetNamComboBox";
             this.TongKetNamComboBox.Size = new System.Drawing.Size(200, 29);
@@ -705,6 +710,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // TongKetMonComboBox
             // 
+            this.TongKetMonComboBox.Enabled = false;
             this.TongKetMonComboBox.FormattingEnabled = true;
             this.TongKetMonComboBox.ItemHeight = 23;
             this.TongKetMonComboBox.Location = new System.Drawing.Point(858, 223);
@@ -808,7 +814,7 @@ namespace QuanLyHocSinh_Nhom15
             // columnHeader25
             // 
             this.columnHeader25.Text = "Tỉ lệ";
-            this.columnHeader25.Width = 456;
+            this.columnHeader25.Width = 220;
             // 
             // panel4
             // 
@@ -842,6 +848,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TongKetMonHocCaHocKiComboBox.Size = new System.Drawing.Size(200, 29);
             this.TongKetMonHocCaHocKiComboBox.TabIndex = 5;
             this.TongKetMonHocCaHocKiComboBox.UseSelectable = true;
+            this.TongKetMonHocCaHocKiComboBox.SelectedIndexChanged += new System.EventHandler(this.TongKetMonHocCaHocKiComboBox_SelectedIndexChanged);
             // 
             // TabTiepNhan
             // 

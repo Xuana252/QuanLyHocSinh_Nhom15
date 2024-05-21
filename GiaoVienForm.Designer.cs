@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.metroListView1 = new MetroFramework.Controls.MetroListView();
             this.STT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IDGiaoVien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -39,7 +40,6 @@
             this.IDMonHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NgaySinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DiaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -52,6 +52,21 @@
             this.label1.Size = new System.Drawing.Size(135, 25);
             this.label1.TabIndex = 8;
             this.label1.Text = "Teachers list";
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.Teal;
+            this.ExitButton.FlatAppearance.BorderSize = 0;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ExitButton.Location = new System.Drawing.Point(972, -2);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(30, 30);
+            this.ExitButton.TabIndex = 11;
+            this.ExitButton.Text = "X";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // metroListView1
             // 
@@ -69,77 +84,62 @@
             this.metroListView1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.metroListView1.FullRowSelect = true;
             this.metroListView1.GridLines = true;
-            this.metroListView1.Location = new System.Drawing.Point(11, 65);
+            this.metroListView1.Location = new System.Drawing.Point(11, 68);
             this.metroListView1.Name = "metroListView1";
             this.metroListView1.OwnerDraw = true;
             this.metroListView1.Size = new System.Drawing.Size(980, 451);
             this.metroListView1.Style = MetroFramework.MetroColorStyle.Teal;
-            this.metroListView1.TabIndex = 10;
+            this.metroListView1.TabIndex = 12;
             this.metroListView1.UseCompatibleStateImageBehavior = false;
-            this.metroListView1.UseCustomBackColor = true;
-            this.metroListView1.UseCustomForeColor = true;
             this.metroListView1.UseSelectable = true;
-            this.metroListView1.UseStyleColors = true;
             this.metroListView1.View = System.Windows.Forms.View.Details;
+            this.metroListView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.metroListView1_ColumnWidthChanging);
+            this.metroListView1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.metroListView1_DrawItem);
             // 
             // STT
             // 
             this.STT.Text = "STT";
-            this.STT.Width = 42;
+            this.STT.Width = 50;
             // 
             // IDGiaoVien
             // 
             this.IDGiaoVien.Text = "ID Giáo viên";
-            this.IDGiaoVien.Width = 108;
+            this.IDGiaoVien.Width = 100;
             // 
             // UserName
             // 
-            this.UserName.Text = "User name";
-            this.UserName.Width = 107;
+            this.UserName.Text = "Tên tài khoản";
+            this.UserName.Width = 150;
             // 
             // Password
             // 
-            this.Password.Text = "Password";
-            this.Password.Width = 86;
+            this.Password.Text = "Mật khẩu";
+            this.Password.Width = 200;
             // 
             // VaiTro
             // 
             this.VaiTro.Text = "Vai trò";
+            this.VaiTro.Width = 200;
             // 
             // HoTen
             // 
             this.HoTen.Text = "Họ và tên";
-            this.HoTen.Width = 110;
+            this.HoTen.Width = 200;
             // 
             // IDMonHoc
             // 
             this.IDMonHoc.Text = "Môn học";
-            this.IDMonHoc.Width = 94;
+            this.IDMonHoc.Width = 200;
             // 
             // NgaySinh
             // 
             this.NgaySinh.Text = "Ngày sinh";
-            this.NgaySinh.Width = 103;
+            this.NgaySinh.Width = 200;
             // 
             // DiaChi
             // 
             this.DiaChi.Text = "Địa chỉ";
-            this.DiaChi.Width = 268;
-            // 
-            // ExitButton
-            // 
-            this.ExitButton.BackColor = System.Drawing.Color.Teal;
-            this.ExitButton.FlatAppearance.BorderSize = 0;
-            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ExitButton.Location = new System.Drawing.Point(972, -2);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(30, 29);
-            this.ExitButton.TabIndex = 11;
-            this.ExitButton.Text = "X";
-            this.ExitButton.UseVisualStyleBackColor = false;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            this.DiaChi.Width = 200;
             // 
             // GiaoVienForm
             // 
@@ -148,8 +148,8 @@
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1002, 527);
             this.ControlBox = false;
-            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.metroListView1);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label1);
             this.DisplayHeader = false;
             this.MaximizeBox = false;
@@ -162,6 +162,7 @@
             this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "GiaoVienForm";
+            this.VisibleChanged += new System.EventHandler(this.GiaoVienForm_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,6 +171,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ExitButton;
         private MetroFramework.Controls.MetroListView metroListView1;
         private System.Windows.Forms.ColumnHeader STT;
         private System.Windows.Forms.ColumnHeader IDGiaoVien;
@@ -180,6 +182,5 @@
         private System.Windows.Forms.ColumnHeader IDMonHoc;
         private System.Windows.Forms.ColumnHeader NgaySinh;
         private System.Windows.Forms.ColumnHeader DiaChi;
-        private System.Windows.Forms.Button ExitButton;
     }
 }

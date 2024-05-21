@@ -111,6 +111,7 @@
     <Compile Include="HocSinhForm.Designer.cs">
       <DependentUpon>HocSinhForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SQLConnect.cs" />
     <EmbeddedResource Include="App.resx">
       <DependentUpon>App.cs</DependentUpon>
     </EmbeddedResource>
