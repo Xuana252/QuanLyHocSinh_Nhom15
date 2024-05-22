@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.UserNameTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.PasswordTextBox = new MetroFramework.Controls.MetroTextBox();
             this.SignInLabel = new System.Windows.Forms.Label();
             this.LoginButton = new System.Windows.Forms.Button();
             this.LoginNoteLabel = new System.Windows.Forms.Label();
@@ -78,40 +78,40 @@
             this.UserNameTextBox.WaterMarkColor = System.Drawing.Color.Silver;
             this.UserNameTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // metroTextBox1
+            // PasswordTextBox
             // 
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(238, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(33, 126);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '●';
-            this.metroTextBox1.PromptText = "Password";
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(260, 23);
-            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Teal;
-            this.metroTextBox1.TabIndex = 1;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.UseSystemPasswordChar = true;
-            this.metroTextBox1.WaterMark = "Password";
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.Silver;
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordTextBox.CustomButton.Image = null;
+            this.PasswordTextBox.CustomButton.Location = new System.Drawing.Point(238, 1);
+            this.PasswordTextBox.CustomButton.Name = "";
+            this.PasswordTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.PasswordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.PasswordTextBox.CustomButton.TabIndex = 1;
+            this.PasswordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.PasswordTextBox.CustomButton.UseSelectable = true;
+            this.PasswordTextBox.CustomButton.Visible = false;
+            this.PasswordTextBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.PasswordTextBox.Lines = new string[0];
+            this.PasswordTextBox.Location = new System.Drawing.Point(33, 126);
+            this.PasswordTextBox.MaxLength = 32767;
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.PasswordChar = '●';
+            this.PasswordTextBox.PromptText = "Password";
+            this.PasswordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.PasswordTextBox.SelectedText = "";
+            this.PasswordTextBox.SelectionLength = 0;
+            this.PasswordTextBox.SelectionStart = 0;
+            this.PasswordTextBox.ShortcutsEnabled = true;
+            this.PasswordTextBox.Size = new System.Drawing.Size(260, 23);
+            this.PasswordTextBox.Style = MetroFramework.MetroColorStyle.Teal;
+            this.PasswordTextBox.TabIndex = 1;
+            this.PasswordTextBox.UseSelectable = true;
+            this.PasswordTextBox.UseSystemPasswordChar = true;
+            this.PasswordTextBox.WaterMark = "Password";
+            this.PasswordTextBox.WaterMarkColor = System.Drawing.Color.Silver;
+            this.PasswordTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // SignInLabel
             // 
@@ -121,9 +121,9 @@
             this.SignInLabel.Location = new System.Drawing.Point(28, 25);
             this.SignInLabel.Name = "SignInLabel";
             this.SignInLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SignInLabel.Size = new System.Drawing.Size(223, 29);
+            this.SignInLabel.Size = new System.Drawing.Size(182, 29);
             this.SignInLabel.TabIndex = 3;
-            this.SignInLabel.Text = "Welcome Teachers";
+            this.SignInLabel.Text = "Chào mừng bạn";
             // 
             // LoginButton
             // 
@@ -148,7 +148,7 @@
             this.LoginNoteLabel.Name = "LoginNoteLabel";
             this.LoginNoteLabel.Size = new System.Drawing.Size(263, 26);
             this.LoginNoteLabel.TabIndex = 4;
-            this.LoginNoteLabel.Text = "if you don\'t have an account please contact your school board members";
+            this.LoginNoteLabel.Text = "nếu bạn không có tài khoản vui lòng liên hệ thành viên ban quản lý nhà trường";
             this.LoginNoteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ExitButton
@@ -176,7 +176,7 @@
             this.Controls.Add(this.LoginNoteLabel);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.SignInLabel);
-            this.Controls.Add(this.metroTextBox1);
+            this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.UserNameTextBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -198,7 +198,7 @@
 
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private MetroFramework.Controls.MetroTextBox UserNameTextBox;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox PasswordTextBox;
         private System.Windows.Forms.Label SignInLabel;
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Label LoginNoteLabel;

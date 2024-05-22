@@ -49,9 +49,9 @@
             this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(23, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 25);
+            this.label1.Size = new System.Drawing.Size(302, 25);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Teachers list";
+            this.label1.Text = "Danh sách tài khoản giáo viên";
             // 
             // ExitButton
             // 
@@ -162,7 +162,7 @@
             this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "GiaoVienForm";
-            this.VisibleChanged += new System.EventHandler(this.GiaoVienForm_VisibleChanged);
+            this.Shown += new System.EventHandler(this.GiaoVienForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

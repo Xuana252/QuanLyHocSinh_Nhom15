@@ -21,5 +21,44 @@ namespace QuanLyHocSinh_Nhom15
         {
             Hide();
         }
+
+        private void LopForm_Shown(object sender, EventArgs e)
+        {
+            SQLConnect db = SQLConnect.GetInstance();
+            db.Open();
+            db.sqlCmd.CommandType = CommandType.Text;
+            db.sqlCmd.CommandText = "SELECT * FROM LOPHOC";
+
+            db.sqlCmd.Connection = db.sqlCon;
+
+            db.reader = db.sqlCmd.ExecuteReader();
+
+            metroListView1.Items.Clear();
+
+            while (db.reader.Read())
+            {
+                string idLop =db.reader.GetString(0);
+                string tenLop  =db.reader.GetString(1);
+                string siSo =db.reader.GetInt32(2).ToString();
+                string idGVCN=db.reader.GetString(3);    
+
+                ListViewItem item = new ListViewItem();
+                item.Text = (metroListView1.Items.Count + 1).ToString();
+                item.SubItems.Add(idLop);
+                item.SubItems.Add(tenLop);
+                item.SubItems.Add(siSo);
+                item.SubItems.Add(idGVCN);
+               
+
+                metroListView1.Items.Add(item);
+
+            }
+            db.reader.Close();
+        }
+
+        private void metroListView1_DrawItem(object sender, DrawListViewItemEventArgs e)
+        {
+            e.DrawDefault = true;
+        }
     }
 }

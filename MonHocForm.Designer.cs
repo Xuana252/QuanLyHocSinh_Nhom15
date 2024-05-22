@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroListView1 = new MetroFramework.Controls.MetroListView();
+            this.MonListView1 = new MetroFramework.Controls.MetroListView();
             this.STTMon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IDMon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TenMon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ThemMonButton = new System.Windows.Forms.Button();
+            this.ThemSuaMonButton = new System.Windows.Forms.Button();
             this.XoaMonButton = new System.Windows.Forms.Button();
             this.IDMonTextBox = new MetroFramework.Controls.MetroTextBox();
             this.TenMonTextBox = new MetroFramework.Controls.MetroTextBox();
@@ -40,32 +40,32 @@
             this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // metroListView1
+            // MonListView1
             // 
-            this.metroListView1.BackColor = System.Drawing.Color.MintCream;
-            this.metroListView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.MonListView1.BackColor = System.Drawing.Color.MintCream;
+            this.MonListView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MonListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.STTMon,
             this.IDMon,
             this.TenMon});
-            this.metroListView1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroListView1.FullRowSelect = true;
-            this.metroListView1.GridLines = true;
-            this.metroListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.metroListView1.Location = new System.Drawing.Point(23, 63);
-            this.metroListView1.Name = "metroListView1";
-            this.metroListView1.OwnerDraw = true;
-            this.metroListView1.Size = new System.Drawing.Size(215, 375);
-            this.metroListView1.Style = MetroFramework.MetroColorStyle.Teal;
-            this.metroListView1.TabIndex = 0;
-            this.metroListView1.UseCompatibleStateImageBehavior = false;
-            this.metroListView1.UseCustomBackColor = true;
-            this.metroListView1.UseCustomForeColor = true;
-            this.metroListView1.UseSelectable = true;
-            this.metroListView1.UseStyleColors = true;
-            this.metroListView1.View = System.Windows.Forms.View.Details;
-            this.metroListView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.metroListView1_ColumnWidthChanging);
-            this.metroListView1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.metroListView1_DrawItem);
+            this.MonListView1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.MonListView1.FullRowSelect = true;
+            this.MonListView1.GridLines = true;
+            this.MonListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.MonListView1.Location = new System.Drawing.Point(23, 63);
+            this.MonListView1.Name = "MonListView1";
+            this.MonListView1.OwnerDraw = true;
+            this.MonListView1.Size = new System.Drawing.Size(215, 375);
+            this.MonListView1.Style = MetroFramework.MetroColorStyle.Teal;
+            this.MonListView1.TabIndex = 0;
+            this.MonListView1.UseCompatibleStateImageBehavior = false;
+            this.MonListView1.UseCustomBackColor = true;
+            this.MonListView1.UseCustomForeColor = true;
+            this.MonListView1.UseSelectable = true;
+            this.MonListView1.UseStyleColors = true;
+            this.MonListView1.View = System.Windows.Forms.View.Details;
+            this.MonListView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.MonListView1_ColumnWidthChanging);
+            this.MonListView1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.MonListView1_DrawItem);
             // 
             // STTMon
             // 
@@ -80,19 +80,19 @@
             this.TenMon.Text = "Tên môn";
             this.TenMon.Width = 92;
             // 
-            // ThemMonButton
+            // ThemSuaMonButton
             // 
-            this.ThemMonButton.BackColor = System.Drawing.Color.Teal;
-            this.ThemMonButton.FlatAppearance.BorderSize = 0;
-            this.ThemMonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ThemMonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThemMonButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.ThemMonButton.Location = new System.Drawing.Point(264, 224);
-            this.ThemMonButton.Name = "ThemMonButton";
-            this.ThemMonButton.Size = new System.Drawing.Size(94, 32);
-            this.ThemMonButton.TabIndex = 3;
-            this.ThemMonButton.Text = "Thêm/Sửa";
-            this.ThemMonButton.UseVisualStyleBackColor = false;
+            this.ThemSuaMonButton.BackColor = System.Drawing.Color.Teal;
+            this.ThemSuaMonButton.FlatAppearance.BorderSize = 0;
+            this.ThemSuaMonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ThemSuaMonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThemSuaMonButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.ThemSuaMonButton.Location = new System.Drawing.Point(264, 224);
+            this.ThemSuaMonButton.Name = "ThemSuaMonButton";
+            this.ThemSuaMonButton.Size = new System.Drawing.Size(94, 32);
+            this.ThemSuaMonButton.TabIndex = 3;
+            this.ThemSuaMonButton.Text = "Thêm/Sửa";
+            this.ThemSuaMonButton.UseVisualStyleBackColor = false;
             // 
             // XoaMonButton
             // 
@@ -179,9 +179,9 @@
             this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(23, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 25);
+            this.label1.Size = new System.Drawing.Size(203, 25);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Subjects list";
+            this.label1.Text = "Danh sách môn học";
             // 
             // ExitButton
             // 
@@ -210,8 +210,8 @@
             this.Controls.Add(this.TenMonTextBox);
             this.Controls.Add(this.IDMonTextBox);
             this.Controls.Add(this.XoaMonButton);
-            this.Controls.Add(this.ThemMonButton);
-            this.Controls.Add(this.metroListView1);
+            this.Controls.Add(this.ThemSuaMonButton);
+            this.Controls.Add(this.MonListView1);
             this.DisplayHeader = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -223,7 +223,7 @@
             this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "MonHocForm";
-            this.VisibleChanged += new System.EventHandler(this.MonHocForm_VisibleChanged);
+            this.Shown += new System.EventHandler(this.MonHocForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,11 +231,11 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroListView metroListView1;
+        private MetroFramework.Controls.MetroListView MonListView1;
         private System.Windows.Forms.ColumnHeader STTMon;
         private System.Windows.Forms.ColumnHeader IDMon;
         private System.Windows.Forms.ColumnHeader TenMon;
-        private System.Windows.Forms.Button ThemMonButton;
+        private System.Windows.Forms.Button ThemSuaMonButton;
         private System.Windows.Forms.Button XoaMonButton;
         private MetroFramework.Controls.MetroTextBox IDMonTextBox;
         private MetroFramework.Controls.MetroTextBox TenMonTextBox;

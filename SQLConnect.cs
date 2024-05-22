@@ -11,11 +11,22 @@ namespace QuanLyHocSinh_Nhom15
 {
     sealed class SQLConnect
     {
+        //Singleton
         private static SQLConnect _instance;
+
+        //Chuỗi kết nối
         string strCon = @"Data Source=studentmanagement.c3kuwokswvvn.ap-southeast-2.rds.amazonaws.com,1433;Initial Catalog=StudentManagement;User ID=admin;Password=12345678;Encrypt=False;TrustServerCertificate=True";
+        
+        //Đối tượng kết nối
         public SqlConnection sqlCon = null; 
+        
+        //Command
         public SqlCommand sqlCmd = null;
+        
+        //Đầu đọc dữ liệu
         public SqlDataReader reader = null;
+
+        //Hàm gọi đối tượng singleton
         public static SQLConnect GetInstance() 
         {
             if(_instance == null) 
@@ -23,6 +34,7 @@ namespace QuanLyHocSinh_Nhom15
             return _instance;
         }
 
+        //Hàm mở kết nối
         public void Open()
         {
             try
@@ -35,10 +47,6 @@ namespace QuanLyHocSinh_Nhom15
                 if (sqlCon.State == System.Data.ConnectionState.Closed)
                 {
                     sqlCon.Open();
-                    if(sqlCon.State==System.Data.ConnectionState.Open) 
-                    {
-                        Error._instsance.Show("thanh cong");
-                    }
                 }
 
                 sqlCmd = new SqlCommand();

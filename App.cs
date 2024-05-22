@@ -18,7 +18,6 @@ namespace QuanLyHocSinh_Nhom15
         static MonHocForm       monHocForm = new MonHocForm();
         static DangKi           dangKiForm = new DangKi();
         static DiemForm         diemForm = new DiemForm();
-        static Error            errorForm = new Error();
         static GiaoVienForm     giaoVienForm = new GiaoVienForm();
         static HocSinhForm      studentForm = new HocSinhForm();
         static LopForm          lopForm = new LopForm();

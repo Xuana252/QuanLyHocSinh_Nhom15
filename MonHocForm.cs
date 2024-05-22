@@ -22,48 +22,50 @@ namespace QuanLyHocSinh_Nhom15
             Hide();
         }
 
-        private void MonHocForm_VisibleChanged(object sender, EventArgs e)
+
+
+
+
+        private void MonHocForm_Shown(object sender, EventArgs e)
         {
-            if (Visible == true)
+            SQLConnect db = SQLConnect.GetInstance();
+            db.Open();
+            db.sqlCmd.CommandType = CommandType.Text;
+            db.sqlCmd.CommandText = "SELECT * FROM MONHOC";
+
+            db.sqlCmd.Connection = db.sqlCon;
+
+            db.reader = db.sqlCmd.ExecuteReader();
+
+            MonListView1.Items.Clear();
+
+            while (db.reader.Read())
             {
-                SQLConnect db = SQLConnect.GetInstance();
-                db.Open();
-                db.sqlCmd.CommandType = CommandType.Text;
-                db.sqlCmd.CommandText = "SELECT * FROM MONHOC";
+                string idMonHoc = db.reader.GetString(0);
+                string tenMonHoc = db.reader.GetString(1);
 
-                db.sqlCmd.Connection = db.sqlCon;
 
-                db.reader = db.sqlCmd.ExecuteReader();
+                ListViewItem item = new ListViewItem();
+                item.Text = (MonListView1.Items.Count + 1).ToString();
+                item.SubItems.Add(idMonHoc);
+                item.SubItems.Add(tenMonHoc);
 
-                metroListView1.Items.Clear();
+                MonListView1.Items.Add(item);
 
-                while (db.reader.Read())
-                {
-                    string idMonHoc = db.reader.GetString(0);
-                    string tenMonHoc = db.reader.GetString(1);
-                    
-
-                    ListViewItem item = new ListViewItem();
-                    item.Text = (metroListView1.Items.Count + 1).ToString();
-                    item.SubItems.Add(idMonHoc);
-                    item.SubItems.Add(tenMonHoc);
-
-                    metroListView1.Items.Add(item);
-
-                }
-                db.reader.Close();
             }
+            db.reader.Close();
+        }
+        private void MonListView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            e.NewWidth = this.MonListView1.Columns[e.ColumnIndex].Width;
+            e.Cancel = true;
         }
 
-        private void metroListView1_DrawItem(object sender, DrawListViewItemEventArgs e)
+        private void MonListView1_DrawItem(object sender, DrawListViewItemEventArgs e)
         {
             e.DrawDefault = true;
         }
-
-        private void metroListView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
-        {
-            e.NewWidth = this.metroListView1.Columns[e.ColumnIndex].Width;
-            e.Cancel = true;
-        }
     }
+
+       
 }

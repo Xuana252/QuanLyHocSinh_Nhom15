@@ -28,41 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LoginButton = new System.Windows.Forms.Button();
+            this.DangKiButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.DangKiVaiTroComboBox = new MetroFramework.Controls.MetroComboBox();
+            this.DangKiIDTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.DangKiUsernameTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.DangKiPasswordTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
+            this.DangKiPasswordTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.metroTextBox5 = new MetroFramework.Controls.MetroTextBox();
-            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.DangKiHoVaTenTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.DangKiNgaySinhDateTime1 = new MetroFramework.Controls.MetroDateTime();
+            this.DangKiDiaChiTextBox = new System.Windows.Forms.RichTextBox();
+            this.DangKiMonHocComboBox = new MetroFramework.Controls.MetroComboBox();
             this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // LoginButton
+            // DangKiButton
             // 
-            this.LoginButton.BackColor = System.Drawing.Color.Teal;
-            this.LoginButton.FlatAppearance.BorderSize = 0;
-            this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.LoginButton.Location = new System.Drawing.Point(636, 316);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(82, 32);
-            this.LoginButton.TabIndex = 3;
-            this.LoginButton.Text = "Đăng kí";
-            this.LoginButton.UseVisualStyleBackColor = false;
+            this.DangKiButton.BackColor = System.Drawing.Color.Teal;
+            this.DangKiButton.FlatAppearance.BorderSize = 0;
+            this.DangKiButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DangKiButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DangKiButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.DangKiButton.Location = new System.Drawing.Point(636, 316);
+            this.DangKiButton.Name = "DangKiButton";
+            this.DangKiButton.Size = new System.Drawing.Size(82, 32);
+            this.DangKiButton.TabIndex = 3;
+            this.DangKiButton.Text = "Đăng kí";
+            this.DangKiButton.UseVisualStyleBackColor = false;
+            this.DangKiButton.Click += new System.EventHandler(this.DangKiButton_Click);
             // 
             // label1
             // 
@@ -108,112 +109,113 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Vai trò";
             // 
-            // metroComboBox1
+            // DangKiVaiTroComboBox
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(183, 272);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(180, 29);
-            this.metroComboBox1.TabIndex = 8;
-            this.metroComboBox1.UseSelectable = true;
+            this.DangKiVaiTroComboBox.FormattingEnabled = true;
+            this.DangKiVaiTroComboBox.ItemHeight = 23;
+            this.DangKiVaiTroComboBox.Location = new System.Drawing.Point(183, 272);
+            this.DangKiVaiTroComboBox.Name = "DangKiVaiTroComboBox";
+            this.DangKiVaiTroComboBox.Size = new System.Drawing.Size(180, 29);
+            this.DangKiVaiTroComboBox.TabIndex = 8;
+            this.DangKiVaiTroComboBox.UseSelectable = true;
             // 
-            // metroTextBox1
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(158, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(183, 48);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "ID";
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(180, 23);
-            this.metroTextBox1.TabIndex = 9;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMark = "ID";
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroTextBox2
+            // DangKiIDTextBox
             // 
             // 
             // 
             // 
-            this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(158, 1);
-            this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox2.CustomButton.TabIndex = 1;
-            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox2.CustomButton.UseSelectable = true;
-            this.metroTextBox2.CustomButton.Visible = false;
-            this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(183, 108);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.PromptText = "Username";
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.SelectionLength = 0;
-            this.metroTextBox2.SelectionStart = 0;
-            this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(180, 23);
-            this.metroTextBox2.TabIndex = 10;
-            this.metroTextBox2.UseSelectable = true;
-            this.metroTextBox2.WaterMark = "Username";
-            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.DangKiIDTextBox.CustomButton.Image = null;
+            this.DangKiIDTextBox.CustomButton.Location = new System.Drawing.Point(158, 1);
+            this.DangKiIDTextBox.CustomButton.Name = "";
+            this.DangKiIDTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.DangKiIDTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.DangKiIDTextBox.CustomButton.TabIndex = 1;
+            this.DangKiIDTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.DangKiIDTextBox.CustomButton.UseSelectable = true;
+            this.DangKiIDTextBox.CustomButton.Visible = false;
+            this.DangKiIDTextBox.Lines = new string[0];
+            this.DangKiIDTextBox.Location = new System.Drawing.Point(183, 48);
+            this.DangKiIDTextBox.MaxLength = 32767;
+            this.DangKiIDTextBox.Name = "DangKiIDTextBox";
+            this.DangKiIDTextBox.PasswordChar = '\0';
+            this.DangKiIDTextBox.PromptText = "ID";
+            this.DangKiIDTextBox.ReadOnly = true;
+            this.DangKiIDTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.DangKiIDTextBox.SelectedText = "";
+            this.DangKiIDTextBox.SelectionLength = 0;
+            this.DangKiIDTextBox.SelectionStart = 0;
+            this.DangKiIDTextBox.ShortcutsEnabled = true;
+            this.DangKiIDTextBox.Size = new System.Drawing.Size(180, 23);
+            this.DangKiIDTextBox.TabIndex = 9;
+            this.DangKiIDTextBox.UseSelectable = true;
+            this.DangKiIDTextBox.WaterMark = "ID";
+            this.DangKiIDTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.DangKiIDTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroTextBox3
+            // DangKiUsernameTextBox
             // 
             // 
             // 
             // 
-            this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(158, 1);
-            this.metroTextBox3.CustomButton.Name = "";
-            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox3.CustomButton.TabIndex = 1;
-            this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox3.CustomButton.UseSelectable = true;
-            this.metroTextBox3.CustomButton.Visible = false;
-            this.metroTextBox3.Lines = new string[0];
-            this.metroTextBox3.Location = new System.Drawing.Point(183, 173);
-            this.metroTextBox3.MaxLength = 32767;
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.PasswordChar = '●';
-            this.metroTextBox3.PromptText = "password";
-            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox3.SelectedText = "";
-            this.metroTextBox3.SelectionLength = 0;
-            this.metroTextBox3.SelectionStart = 0;
-            this.metroTextBox3.ShortcutsEnabled = true;
-            this.metroTextBox3.Size = new System.Drawing.Size(180, 23);
-            this.metroTextBox3.TabIndex = 11;
-            this.metroTextBox3.UseSelectable = true;
-            this.metroTextBox3.UseSystemPasswordChar = true;
-            this.metroTextBox3.WaterMark = "password";
-            this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.DangKiUsernameTextBox.CustomButton.Image = null;
+            this.DangKiUsernameTextBox.CustomButton.Location = new System.Drawing.Point(158, 1);
+            this.DangKiUsernameTextBox.CustomButton.Name = "";
+            this.DangKiUsernameTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.DangKiUsernameTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.DangKiUsernameTextBox.CustomButton.TabIndex = 1;
+            this.DangKiUsernameTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.DangKiUsernameTextBox.CustomButton.UseSelectable = true;
+            this.DangKiUsernameTextBox.CustomButton.Visible = false;
+            this.DangKiUsernameTextBox.Lines = new string[0];
+            this.DangKiUsernameTextBox.Location = new System.Drawing.Point(183, 108);
+            this.DangKiUsernameTextBox.MaxLength = 32767;
+            this.DangKiUsernameTextBox.Name = "DangKiUsernameTextBox";
+            this.DangKiUsernameTextBox.PasswordChar = '\0';
+            this.DangKiUsernameTextBox.PromptText = "Username";
+            this.DangKiUsernameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.DangKiUsernameTextBox.SelectedText = "";
+            this.DangKiUsernameTextBox.SelectionLength = 0;
+            this.DangKiUsernameTextBox.SelectionStart = 0;
+            this.DangKiUsernameTextBox.ShortcutsEnabled = true;
+            this.DangKiUsernameTextBox.Size = new System.Drawing.Size(180, 23);
+            this.DangKiUsernameTextBox.TabIndex = 10;
+            this.DangKiUsernameTextBox.UseSelectable = true;
+            this.DangKiUsernameTextBox.WaterMark = "Username";
+            this.DangKiUsernameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.DangKiUsernameTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // DangKiPasswordTextBox1
+            // 
+            // 
+            // 
+            // 
+            this.DangKiPasswordTextBox1.CustomButton.Image = null;
+            this.DangKiPasswordTextBox1.CustomButton.Location = new System.Drawing.Point(158, 1);
+            this.DangKiPasswordTextBox1.CustomButton.Name = "";
+            this.DangKiPasswordTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.DangKiPasswordTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.DangKiPasswordTextBox1.CustomButton.TabIndex = 1;
+            this.DangKiPasswordTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.DangKiPasswordTextBox1.CustomButton.UseSelectable = true;
+            this.DangKiPasswordTextBox1.CustomButton.Visible = false;
+            this.DangKiPasswordTextBox1.Lines = new string[0];
+            this.DangKiPasswordTextBox1.Location = new System.Drawing.Point(183, 173);
+            this.DangKiPasswordTextBox1.MaxLength = 32767;
+            this.DangKiPasswordTextBox1.Name = "DangKiPasswordTextBox1";
+            this.DangKiPasswordTextBox1.PasswordChar = '●';
+            this.DangKiPasswordTextBox1.PromptText = "password";
+            this.DangKiPasswordTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.DangKiPasswordTextBox1.SelectedText = "";
+            this.DangKiPasswordTextBox1.SelectionLength = 0;
+            this.DangKiPasswordTextBox1.SelectionStart = 0;
+            this.DangKiPasswordTextBox1.ShortcutsEnabled = true;
+            this.DangKiPasswordTextBox1.Size = new System.Drawing.Size(180, 23);
+            this.DangKiPasswordTextBox1.TabIndex = 11;
+            this.DangKiPasswordTextBox1.UseSelectable = true;
+            this.DangKiPasswordTextBox1.UseSystemPasswordChar = true;
+            this.DangKiPasswordTextBox1.WaterMark = "password";
+            this.DangKiPasswordTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.DangKiPasswordTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // label5
             // 
@@ -226,38 +228,38 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Nhập lại mật khẩu";
             // 
-            // metroTextBox4
+            // DangKiPasswordTextBox2
             // 
             // 
             // 
             // 
-            this.metroTextBox4.CustomButton.Image = null;
-            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(158, 1);
-            this.metroTextBox4.CustomButton.Name = "";
-            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox4.CustomButton.TabIndex = 1;
-            this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox4.CustomButton.UseSelectable = true;
-            this.metroTextBox4.CustomButton.Visible = false;
-            this.metroTextBox4.Lines = new string[0];
-            this.metroTextBox4.Location = new System.Drawing.Point(183, 222);
-            this.metroTextBox4.MaxLength = 32767;
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.PasswordChar = '●';
-            this.metroTextBox4.PromptText = "password";
-            this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox4.SelectedText = "";
-            this.metroTextBox4.SelectionLength = 0;
-            this.metroTextBox4.SelectionStart = 0;
-            this.metroTextBox4.ShortcutsEnabled = true;
-            this.metroTextBox4.Size = new System.Drawing.Size(180, 23);
-            this.metroTextBox4.TabIndex = 13;
-            this.metroTextBox4.UseSelectable = true;
-            this.metroTextBox4.UseSystemPasswordChar = true;
-            this.metroTextBox4.WaterMark = "password";
-            this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.DangKiPasswordTextBox2.CustomButton.Image = null;
+            this.DangKiPasswordTextBox2.CustomButton.Location = new System.Drawing.Point(158, 1);
+            this.DangKiPasswordTextBox2.CustomButton.Name = "";
+            this.DangKiPasswordTextBox2.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.DangKiPasswordTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.DangKiPasswordTextBox2.CustomButton.TabIndex = 1;
+            this.DangKiPasswordTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.DangKiPasswordTextBox2.CustomButton.UseSelectable = true;
+            this.DangKiPasswordTextBox2.CustomButton.Visible = false;
+            this.DangKiPasswordTextBox2.Lines = new string[0];
+            this.DangKiPasswordTextBox2.Location = new System.Drawing.Point(183, 222);
+            this.DangKiPasswordTextBox2.MaxLength = 32767;
+            this.DangKiPasswordTextBox2.Name = "DangKiPasswordTextBox2";
+            this.DangKiPasswordTextBox2.PasswordChar = '●';
+            this.DangKiPasswordTextBox2.PromptText = "password";
+            this.DangKiPasswordTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.DangKiPasswordTextBox2.SelectedText = "";
+            this.DangKiPasswordTextBox2.SelectionLength = 0;
+            this.DangKiPasswordTextBox2.SelectionStart = 0;
+            this.DangKiPasswordTextBox2.ShortcutsEnabled = true;
+            this.DangKiPasswordTextBox2.Size = new System.Drawing.Size(180, 23);
+            this.DangKiPasswordTextBox2.TabIndex = 13;
+            this.DangKiPasswordTextBox2.UseSelectable = true;
+            this.DangKiPasswordTextBox2.UseSystemPasswordChar = true;
+            this.DangKiPasswordTextBox2.WaterMark = "password";
+            this.DangKiPasswordTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.DangKiPasswordTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // label6
             // 
@@ -303,66 +305,66 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "Môn học ";
             // 
-            // metroTextBox5
+            // DangKiHoVaTenTextBox
             // 
             // 
             // 
             // 
-            this.metroTextBox5.CustomButton.Image = null;
-            this.metroTextBox5.CustomButton.Location = new System.Drawing.Point(222, 1);
-            this.metroTextBox5.CustomButton.Name = "";
-            this.metroTextBox5.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox5.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox5.CustomButton.TabIndex = 1;
-            this.metroTextBox5.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox5.CustomButton.UseSelectable = true;
-            this.metroTextBox5.CustomButton.Visible = false;
-            this.metroTextBox5.Lines = new string[0];
-            this.metroTextBox5.Location = new System.Drawing.Point(474, 48);
-            this.metroTextBox5.MaxLength = 32767;
-            this.metroTextBox5.Name = "metroTextBox5";
-            this.metroTextBox5.PasswordChar = '\0';
-            this.metroTextBox5.PromptText = "Họ và tên";
-            this.metroTextBox5.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox5.SelectedText = "";
-            this.metroTextBox5.SelectionLength = 0;
-            this.metroTextBox5.SelectionStart = 0;
-            this.metroTextBox5.ShortcutsEnabled = true;
-            this.metroTextBox5.Size = new System.Drawing.Size(244, 23);
-            this.metroTextBox5.TabIndex = 18;
-            this.metroTextBox5.UseSelectable = true;
-            this.metroTextBox5.WaterMark = "Họ và tên";
-            this.metroTextBox5.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox5.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.DangKiHoVaTenTextBox.CustomButton.Image = null;
+            this.DangKiHoVaTenTextBox.CustomButton.Location = new System.Drawing.Point(222, 1);
+            this.DangKiHoVaTenTextBox.CustomButton.Name = "";
+            this.DangKiHoVaTenTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.DangKiHoVaTenTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.DangKiHoVaTenTextBox.CustomButton.TabIndex = 1;
+            this.DangKiHoVaTenTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.DangKiHoVaTenTextBox.CustomButton.UseSelectable = true;
+            this.DangKiHoVaTenTextBox.CustomButton.Visible = false;
+            this.DangKiHoVaTenTextBox.Lines = new string[0];
+            this.DangKiHoVaTenTextBox.Location = new System.Drawing.Point(474, 48);
+            this.DangKiHoVaTenTextBox.MaxLength = 32767;
+            this.DangKiHoVaTenTextBox.Name = "DangKiHoVaTenTextBox";
+            this.DangKiHoVaTenTextBox.PasswordChar = '\0';
+            this.DangKiHoVaTenTextBox.PromptText = "Họ và tên";
+            this.DangKiHoVaTenTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.DangKiHoVaTenTextBox.SelectedText = "";
+            this.DangKiHoVaTenTextBox.SelectionLength = 0;
+            this.DangKiHoVaTenTextBox.SelectionStart = 0;
+            this.DangKiHoVaTenTextBox.ShortcutsEnabled = true;
+            this.DangKiHoVaTenTextBox.Size = new System.Drawing.Size(244, 23);
+            this.DangKiHoVaTenTextBox.TabIndex = 18;
+            this.DangKiHoVaTenTextBox.UseSelectable = true;
+            this.DangKiHoVaTenTextBox.WaterMark = "Họ và tên";
+            this.DangKiHoVaTenTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.DangKiHoVaTenTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroDateTime1
+            // DangKiNgaySinhDateTime1
             // 
-            this.metroDateTime1.CustomFormat = "";
-            this.metroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.metroDateTime1.Location = new System.Drawing.Point(474, 85);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(244, 29);
-            this.metroDateTime1.TabIndex = 19;
+            this.DangKiNgaySinhDateTime1.CustomFormat = "dd/MM/yyyy";
+            this.DangKiNgaySinhDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DangKiNgaySinhDateTime1.Location = new System.Drawing.Point(474, 85);
+            this.DangKiNgaySinhDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DangKiNgaySinhDateTime1.Name = "DangKiNgaySinhDateTime1";
+            this.DangKiNgaySinhDateTime1.Size = new System.Drawing.Size(244, 29);
+            this.DangKiNgaySinhDateTime1.TabIndex = 19;
             // 
-            // richTextBox1
+            // DangKiDiaChiTextBox
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Location = new System.Drawing.Point(474, 131);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(244, 78);
-            this.richTextBox1.TabIndex = 20;
-            this.richTextBox1.Text = "";
+            this.DangKiDiaChiTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DangKiDiaChiTextBox.Location = new System.Drawing.Point(474, 131);
+            this.DangKiDiaChiTextBox.Name = "DangKiDiaChiTextBox";
+            this.DangKiDiaChiTextBox.Size = new System.Drawing.Size(244, 78);
+            this.DangKiDiaChiTextBox.TabIndex = 20;
+            this.DangKiDiaChiTextBox.Text = "";
             // 
-            // metroComboBox2
+            // DangKiMonHocComboBox
             // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
-            this.metroComboBox2.Location = new System.Drawing.Point(474, 224);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(244, 29);
-            this.metroComboBox2.TabIndex = 21;
-            this.metroComboBox2.UseSelectable = true;
+            this.DangKiMonHocComboBox.FormattingEnabled = true;
+            this.DangKiMonHocComboBox.ItemHeight = 23;
+            this.DangKiMonHocComboBox.Location = new System.Drawing.Point(474, 224);
+            this.DangKiMonHocComboBox.Name = "DangKiMonHocComboBox";
+            this.DangKiMonHocComboBox.Size = new System.Drawing.Size(244, 29);
+            this.DangKiMonHocComboBox.TabIndex = 21;
+            this.DangKiMonHocComboBox.UseSelectable = true;
             // 
             // ExitButton
             // 
@@ -386,25 +388,25 @@
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(774, 383);
             this.Controls.Add(this.ExitButton);
-            this.Controls.Add(this.metroComboBox2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.metroDateTime1);
-            this.Controls.Add(this.metroTextBox5);
+            this.Controls.Add(this.DangKiMonHocComboBox);
+            this.Controls.Add(this.DangKiDiaChiTextBox);
+            this.Controls.Add(this.DangKiNgaySinhDateTime1);
+            this.Controls.Add(this.DangKiHoVaTenTextBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.metroTextBox4);
+            this.Controls.Add(this.DangKiPasswordTextBox2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.metroTextBox3);
-            this.Controls.Add(this.metroTextBox2);
-            this.Controls.Add(this.metroTextBox1);
-            this.Controls.Add(this.metroComboBox1);
+            this.Controls.Add(this.DangKiPasswordTextBox1);
+            this.Controls.Add(this.DangKiUsernameTextBox);
+            this.Controls.Add(this.DangKiIDTextBox);
+            this.Controls.Add(this.DangKiVaiTroComboBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.LoginButton);
+            this.Controls.Add(this.DangKiButton);
             this.DisplayHeader = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -416,6 +418,7 @@
             this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "DangKi";
+            this.Shown += new System.EventHandler(this.DangKi_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,25 +426,25 @@
 
         #endregion
 
-        private System.Windows.Forms.Button LoginButton;
+        private System.Windows.Forms.Button DangKiButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private MetroFramework.Controls.MetroComboBox DangKiVaiTroComboBox;
+        private MetroFramework.Controls.MetroTextBox DangKiIDTextBox;
+        private MetroFramework.Controls.MetroTextBox DangKiUsernameTextBox;
+        private MetroFramework.Controls.MetroTextBox DangKiPasswordTextBox1;
         private System.Windows.Forms.Label label5;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
+        private MetroFramework.Controls.MetroTextBox DangKiPasswordTextBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private MetroFramework.Controls.MetroTextBox metroTextBox5;
-        private MetroFramework.Controls.MetroDateTime metroDateTime1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private MetroFramework.Controls.MetroTextBox DangKiHoVaTenTextBox;
+        private MetroFramework.Controls.MetroDateTime DangKiNgaySinhDateTime1;
+        private System.Windows.Forms.RichTextBox DangKiDiaChiTextBox;
+        private MetroFramework.Controls.MetroComboBox DangKiMonHocComboBox;
         private System.Windows.Forms.Button ExitButton;
     }
 }

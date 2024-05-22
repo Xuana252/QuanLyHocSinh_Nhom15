@@ -53,9 +53,9 @@
             this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(23, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 25);
+            this.label1.Size = new System.Drawing.Size(191, 25);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Classes list";
+            this.label1.Text = "Danh sách lớp học";
             // 
             // metroListView1
             // 
@@ -83,6 +83,7 @@
             this.metroListView1.UseSelectable = true;
             this.metroListView1.UseStyleColors = true;
             this.metroListView1.View = System.Windows.Forms.View.Details;
+            this.metroListView1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.metroListView1_DrawItem);
             // 
             // STT
             // 
@@ -258,6 +259,7 @@
             this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "LopForm";
+            this.Shown += new System.EventHandler(this.LopForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -28,5 +28,12 @@ namespace QuanLyHocSinh_Nhom15
             Visible = true;
             label1.Text = text;
         }
+
+        public static Error GetInstance()
+        {
+            if( _instsance == null )
+                _instsance = new Error();   
+            return _instsance;
+        }
     }
 }
