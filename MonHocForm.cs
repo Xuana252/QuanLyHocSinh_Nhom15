@@ -31,7 +31,7 @@ namespace QuanLyHocSinh_Nhom15
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
             db.sqlCmd.CommandType = CommandType.Text;
-            db.sqlCmd.CommandText = "SELECT * FROM MONHOC";
+            db.sqlCmd.CommandText = "SELECT * FROM MONHOC WHERE idMonHoc <> 'NO'";
 
             db.sqlCmd.Connection = db.sqlCon;
 

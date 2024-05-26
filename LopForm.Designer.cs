@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.metroListView1 = new MetroFramework.Controls.MetroListView();
+            this.DanhSachLopHocListView = new MetroFramework.Controls.MetroListView();
             this.STT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IDLop = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TenLop = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Siso = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IDGVCN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.ThemLopButton = new System.Windows.Forms.Button();
-            this.XoalopButton = new System.Windows.Forms.Button();
+            this.DanhSachLopHocTenLopTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.DanhSachLopHocNumericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.DanhSachLopHocThemLopButton = new System.Windows.Forms.Button();
+            this.DanhSachLopHocXoalopButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.DanhSachLopHocSuaButton = new System.Windows.Forms.Button();
+            this.DanhSachLopHocGVCNComboBox = new MetroFramework.Controls.MetroComboBox();
             this.ExitButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DanhSachLopHocNumericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,33 +57,34 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Danh sách lớp học";
             // 
-            // metroListView1
+            // DanhSachLopHocListView
             // 
-            this.metroListView1.BackColor = System.Drawing.Color.MintCream;
-            this.metroListView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.DanhSachLopHocListView.BackColor = System.Drawing.Color.MintCream;
+            this.DanhSachLopHocListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DanhSachLopHocListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.STT,
             this.IDLop,
             this.TenLop,
             this.Siso,
             this.IDGVCN});
-            this.metroListView1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroListView1.FullRowSelect = true;
-            this.metroListView1.GridLines = true;
-            this.metroListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.metroListView1.Location = new System.Drawing.Point(28, 74);
-            this.metroListView1.Name = "metroListView1";
-            this.metroListView1.OwnerDraw = true;
-            this.metroListView1.Size = new System.Drawing.Size(353, 438);
-            this.metroListView1.Style = MetroFramework.MetroColorStyle.Teal;
-            this.metroListView1.TabIndex = 9;
-            this.metroListView1.UseCompatibleStateImageBehavior = false;
-            this.metroListView1.UseCustomBackColor = true;
-            this.metroListView1.UseCustomForeColor = true;
-            this.metroListView1.UseSelectable = true;
-            this.metroListView1.UseStyleColors = true;
-            this.metroListView1.View = System.Windows.Forms.View.Details;
-            this.metroListView1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.metroListView1_DrawItem);
+            this.DanhSachLopHocListView.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.DanhSachLopHocListView.FullRowSelect = true;
+            this.DanhSachLopHocListView.GridLines = true;
+            this.DanhSachLopHocListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.DanhSachLopHocListView.Location = new System.Drawing.Point(28, 74);
+            this.DanhSachLopHocListView.Name = "DanhSachLopHocListView";
+            this.DanhSachLopHocListView.OwnerDraw = true;
+            this.DanhSachLopHocListView.Size = new System.Drawing.Size(353, 438);
+            this.DanhSachLopHocListView.Style = MetroFramework.MetroColorStyle.Teal;
+            this.DanhSachLopHocListView.TabIndex = 9;
+            this.DanhSachLopHocListView.UseCompatibleStateImageBehavior = false;
+            this.DanhSachLopHocListView.UseCustomBackColor = true;
+            this.DanhSachLopHocListView.UseCustomForeColor = true;
+            this.DanhSachLopHocListView.UseSelectable = true;
+            this.DanhSachLopHocListView.UseStyleColors = true;
+            this.DanhSachLopHocListView.View = System.Windows.Forms.View.Details;
+            this.DanhSachLopHocListView.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.metroListView1_ColumnWidthChanging);
+            this.DanhSachLopHocListView.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.metroListView1_DrawItem);
             // 
             // STT
             // 
@@ -107,78 +108,78 @@
             this.IDGVCN.Text = "ID GVCN";
             this.IDGVCN.Width = 81;
             // 
-            // metroTextBox1
+            // DanhSachLopHocTenLopTextBox
             // 
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(60, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(438, 146);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "Tên lớp";
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(82, 23);
-            this.metroTextBox1.TabIndex = 10;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMark = "Tên lớp";
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.DanhSachLopHocTenLopTextBox.CustomButton.Image = null;
+            this.DanhSachLopHocTenLopTextBox.CustomButton.Location = new System.Drawing.Point(60, 1);
+            this.DanhSachLopHocTenLopTextBox.CustomButton.Name = "";
+            this.DanhSachLopHocTenLopTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.DanhSachLopHocTenLopTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.DanhSachLopHocTenLopTextBox.CustomButton.TabIndex = 1;
+            this.DanhSachLopHocTenLopTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.DanhSachLopHocTenLopTextBox.CustomButton.UseSelectable = true;
+            this.DanhSachLopHocTenLopTextBox.CustomButton.Visible = false;
+            this.DanhSachLopHocTenLopTextBox.Lines = new string[0];
+            this.DanhSachLopHocTenLopTextBox.Location = new System.Drawing.Point(438, 146);
+            this.DanhSachLopHocTenLopTextBox.MaxLength = 32767;
+            this.DanhSachLopHocTenLopTextBox.Name = "DanhSachLopHocTenLopTextBox";
+            this.DanhSachLopHocTenLopTextBox.PasswordChar = '\0';
+            this.DanhSachLopHocTenLopTextBox.PromptText = "Tên lớp";
+            this.DanhSachLopHocTenLopTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.DanhSachLopHocTenLopTextBox.SelectedText = "";
+            this.DanhSachLopHocTenLopTextBox.SelectionLength = 0;
+            this.DanhSachLopHocTenLopTextBox.SelectionStart = 0;
+            this.DanhSachLopHocTenLopTextBox.ShortcutsEnabled = true;
+            this.DanhSachLopHocTenLopTextBox.Size = new System.Drawing.Size(82, 23);
+            this.DanhSachLopHocTenLopTextBox.TabIndex = 10;
+            this.DanhSachLopHocTenLopTextBox.UseSelectable = true;
+            this.DanhSachLopHocTenLopTextBox.WaterMark = "Tên lớp";
+            this.DanhSachLopHocTenLopTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.DanhSachLopHocTenLopTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // numericUpDown1
+            // DanhSachLopHocNumericUpDown1
             // 
-            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown1.Location = new System.Drawing.Point(461, 492);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(59, 20);
-            this.numericUpDown1.TabIndex = 11;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.DanhSachLopHocNumericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DanhSachLopHocNumericUpDown1.Location = new System.Drawing.Point(461, 492);
+            this.DanhSachLopHocNumericUpDown1.Name = "DanhSachLopHocNumericUpDown1";
+            this.DanhSachLopHocNumericUpDown1.Size = new System.Drawing.Size(59, 20);
+            this.DanhSachLopHocNumericUpDown1.TabIndex = 11;
+            this.DanhSachLopHocNumericUpDown1.Value = new decimal(new int[] {
             40,
             0,
             0,
             0});
             // 
-            // ThemLopButton
+            // DanhSachLopHocThemLopButton
             // 
-            this.ThemLopButton.BackColor = System.Drawing.Color.Teal;
-            this.ThemLopButton.FlatAppearance.BorderSize = 0;
-            this.ThemLopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ThemLopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThemLopButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.ThemLopButton.Location = new System.Drawing.Point(438, 342);
-            this.ThemLopButton.Name = "ThemLopButton";
-            this.ThemLopButton.Size = new System.Drawing.Size(82, 32);
-            this.ThemLopButton.TabIndex = 12;
-            this.ThemLopButton.Text = "Thêm lớp";
-            this.ThemLopButton.UseVisualStyleBackColor = false;
+            this.DanhSachLopHocThemLopButton.BackColor = System.Drawing.Color.Teal;
+            this.DanhSachLopHocThemLopButton.FlatAppearance.BorderSize = 0;
+            this.DanhSachLopHocThemLopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DanhSachLopHocThemLopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhSachLopHocThemLopButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.DanhSachLopHocThemLopButton.Location = new System.Drawing.Point(438, 342);
+            this.DanhSachLopHocThemLopButton.Name = "DanhSachLopHocThemLopButton";
+            this.DanhSachLopHocThemLopButton.Size = new System.Drawing.Size(82, 32);
+            this.DanhSachLopHocThemLopButton.TabIndex = 12;
+            this.DanhSachLopHocThemLopButton.Text = "Thêm lớp";
+            this.DanhSachLopHocThemLopButton.UseVisualStyleBackColor = false;
             // 
-            // XoalopButton
+            // DanhSachLopHocXoalopButton
             // 
-            this.XoalopButton.BackColor = System.Drawing.Color.Teal;
-            this.XoalopButton.FlatAppearance.BorderSize = 0;
-            this.XoalopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.XoalopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.XoalopButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.XoalopButton.Location = new System.Drawing.Point(438, 401);
-            this.XoalopButton.Name = "XoalopButton";
-            this.XoalopButton.Size = new System.Drawing.Size(82, 32);
-            this.XoalopButton.TabIndex = 13;
-            this.XoalopButton.Text = "Xóa lớp";
-            this.XoalopButton.UseVisualStyleBackColor = false;
+            this.DanhSachLopHocXoalopButton.BackColor = System.Drawing.Color.Teal;
+            this.DanhSachLopHocXoalopButton.FlatAppearance.BorderSize = 0;
+            this.DanhSachLopHocXoalopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DanhSachLopHocXoalopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhSachLopHocXoalopButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.DanhSachLopHocXoalopButton.Location = new System.Drawing.Point(438, 401);
+            this.DanhSachLopHocXoalopButton.Name = "DanhSachLopHocXoalopButton";
+            this.DanhSachLopHocXoalopButton.Size = new System.Drawing.Size(82, 32);
+            this.DanhSachLopHocXoalopButton.TabIndex = 13;
+            this.DanhSachLopHocXoalopButton.Text = "Xóa lớp";
+            this.DanhSachLopHocXoalopButton.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -191,30 +192,30 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Sĩ số tối đa";
             // 
-            // button1
+            // DanhSachLopHocSuaButton
             // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(438, 284);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 32);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Sửa";
-            this.button1.UseVisualStyleBackColor = false;
+            this.DanhSachLopHocSuaButton.BackColor = System.Drawing.Color.Teal;
+            this.DanhSachLopHocSuaButton.FlatAppearance.BorderSize = 0;
+            this.DanhSachLopHocSuaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DanhSachLopHocSuaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhSachLopHocSuaButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.DanhSachLopHocSuaButton.Location = new System.Drawing.Point(438, 284);
+            this.DanhSachLopHocSuaButton.Name = "DanhSachLopHocSuaButton";
+            this.DanhSachLopHocSuaButton.Size = new System.Drawing.Size(82, 32);
+            this.DanhSachLopHocSuaButton.TabIndex = 15;
+            this.DanhSachLopHocSuaButton.Text = "Sửa";
+            this.DanhSachLopHocSuaButton.UseVisualStyleBackColor = false;
             // 
-            // metroComboBox1
+            // DanhSachLopHocGVCNComboBox
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(438, 194);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.PromptText = "GVCN";
-            this.metroComboBox1.Size = new System.Drawing.Size(82, 29);
-            this.metroComboBox1.TabIndex = 27;
-            this.metroComboBox1.UseSelectable = true;
+            this.DanhSachLopHocGVCNComboBox.FormattingEnabled = true;
+            this.DanhSachLopHocGVCNComboBox.ItemHeight = 23;
+            this.DanhSachLopHocGVCNComboBox.Location = new System.Drawing.Point(438, 194);
+            this.DanhSachLopHocGVCNComboBox.Name = "DanhSachLopHocGVCNComboBox";
+            this.DanhSachLopHocGVCNComboBox.PromptText = "GVCN";
+            this.DanhSachLopHocGVCNComboBox.Size = new System.Drawing.Size(82, 29);
+            this.DanhSachLopHocGVCNComboBox.TabIndex = 27;
+            this.DanhSachLopHocGVCNComboBox.UseSelectable = true;
             // 
             // ExitButton
             // 
@@ -239,14 +240,14 @@
             this.ClientSize = new System.Drawing.Size(582, 535);
             this.ControlBox = false;
             this.Controls.Add(this.ExitButton);
-            this.Controls.Add(this.metroComboBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.DanhSachLopHocGVCNComboBox);
+            this.Controls.Add(this.DanhSachLopHocSuaButton);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.XoalopButton);
-            this.Controls.Add(this.ThemLopButton);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.metroTextBox1);
-            this.Controls.Add(this.metroListView1);
+            this.Controls.Add(this.DanhSachLopHocXoalopButton);
+            this.Controls.Add(this.DanhSachLopHocThemLopButton);
+            this.Controls.Add(this.DanhSachLopHocNumericUpDown1);
+            this.Controls.Add(this.DanhSachLopHocTenLopTextBox);
+            this.Controls.Add(this.DanhSachLopHocListView);
             this.Controls.Add(this.label1);
             this.DisplayHeader = false;
             this.MaximizeBox = false;
@@ -260,7 +261,7 @@
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "LopForm";
             this.Shown += new System.EventHandler(this.LopForm_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DanhSachLopHocNumericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,19 +270,19 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private MetroFramework.Controls.MetroListView metroListView1;
+        private MetroFramework.Controls.MetroListView DanhSachLopHocListView;
         private System.Windows.Forms.ColumnHeader STT;
         private System.Windows.Forms.ColumnHeader IDLop;
         private System.Windows.Forms.ColumnHeader TenLop;
         private System.Windows.Forms.ColumnHeader Siso;
         private System.Windows.Forms.ColumnHeader IDGVCN;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button ThemLopButton;
-        private System.Windows.Forms.Button XoalopButton;
+        private MetroFramework.Controls.MetroTextBox DanhSachLopHocTenLopTextBox;
+        private System.Windows.Forms.NumericUpDown DanhSachLopHocNumericUpDown1;
+        private System.Windows.Forms.Button DanhSachLopHocThemLopButton;
+        private System.Windows.Forms.Button DanhSachLopHocXoalopButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private System.Windows.Forms.Button DanhSachLopHocSuaButton;
+        private MetroFramework.Controls.MetroComboBox DanhSachLopHocGVCNComboBox;
         private System.Windows.Forms.Button ExitButton;
     }
 }

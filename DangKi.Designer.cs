@@ -383,6 +383,7 @@
             // 
             // DangKi
             // 
+            this.AcceptButton = this.DangKiButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
@@ -418,7 +419,7 @@
             this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "DangKi";
-            this.Shown += new System.EventHandler(this.DangKi_Shown);
+            this.VisibleChanged += new System.EventHandler(this.DangKi_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

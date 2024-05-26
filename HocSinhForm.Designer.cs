@@ -28,93 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
+            this.HocSinhHoTenTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.HocSinhEmailTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.HocSinhNgaySinhDateTime = new MetroFramework.Controls.MetroDateTime();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.HocSinhDiaChiTextBox = new System.Windows.Forms.RichTextBox();
+            this.HocSinhGioiTinhComboBox = new MetroFramework.Controls.MetroComboBox();
+            this.HocSinhOKButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // metroTextBox1
+            // HocSinhHoTenTextBox
             // 
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(282, 2);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(136, 45);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "Họ và tên";
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(312, 32);
-            this.metroTextBox1.TabIndex = 0;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMark = "Họ và tên";
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.HocSinhHoTenTextBox.CustomButton.Image = null;
+            this.HocSinhHoTenTextBox.CustomButton.Location = new System.Drawing.Point(282, 2);
+            this.HocSinhHoTenTextBox.CustomButton.Name = "";
+            this.HocSinhHoTenTextBox.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.HocSinhHoTenTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.HocSinhHoTenTextBox.CustomButton.TabIndex = 1;
+            this.HocSinhHoTenTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.HocSinhHoTenTextBox.CustomButton.UseSelectable = true;
+            this.HocSinhHoTenTextBox.CustomButton.Visible = false;
+            this.HocSinhHoTenTextBox.Lines = new string[0];
+            this.HocSinhHoTenTextBox.Location = new System.Drawing.Point(136, 45);
+            this.HocSinhHoTenTextBox.MaxLength = 32767;
+            this.HocSinhHoTenTextBox.Name = "HocSinhHoTenTextBox";
+            this.HocSinhHoTenTextBox.PasswordChar = '\0';
+            this.HocSinhHoTenTextBox.PromptText = "Họ và tên";
+            this.HocSinhHoTenTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.HocSinhHoTenTextBox.SelectedText = "";
+            this.HocSinhHoTenTextBox.SelectionLength = 0;
+            this.HocSinhHoTenTextBox.SelectionStart = 0;
+            this.HocSinhHoTenTextBox.ShortcutsEnabled = true;
+            this.HocSinhHoTenTextBox.Size = new System.Drawing.Size(312, 32);
+            this.HocSinhHoTenTextBox.TabIndex = 0;
+            this.HocSinhHoTenTextBox.UseSelectable = true;
+            this.HocSinhHoTenTextBox.WaterMark = "Họ và tên";
+            this.HocSinhHoTenTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.HocSinhHoTenTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroTextBox2
-            // 
-            // 
+            // HocSinhEmailTextBox
             // 
             // 
-            this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(282, 2);
-            this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox2.CustomButton.TabIndex = 1;
-            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox2.CustomButton.UseSelectable = true;
-            this.metroTextBox2.CustomButton.Visible = false;
-            this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(136, 372);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.PromptText = "Email";
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.SelectionLength = 0;
-            this.metroTextBox2.SelectionStart = 0;
-            this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(312, 32);
-            this.metroTextBox2.TabIndex = 1;
-            this.metroTextBox2.UseSelectable = true;
-            this.metroTextBox2.WaterMark = "Email";
-            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroDateTime1
             // 
-            this.metroDateTime1.CustomFormat = "DD/MM/YY";
-            this.metroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.metroDateTime1.Location = new System.Drawing.Point(136, 307);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(312, 29);
-            this.metroDateTime1.TabIndex = 5;
+            this.HocSinhEmailTextBox.CustomButton.Image = null;
+            this.HocSinhEmailTextBox.CustomButton.Location = new System.Drawing.Point(282, 2);
+            this.HocSinhEmailTextBox.CustomButton.Name = "";
+            this.HocSinhEmailTextBox.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.HocSinhEmailTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.HocSinhEmailTextBox.CustomButton.TabIndex = 1;
+            this.HocSinhEmailTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.HocSinhEmailTextBox.CustomButton.UseSelectable = true;
+            this.HocSinhEmailTextBox.CustomButton.Visible = false;
+            this.HocSinhEmailTextBox.Lines = new string[0];
+            this.HocSinhEmailTextBox.Location = new System.Drawing.Point(136, 372);
+            this.HocSinhEmailTextBox.MaxLength = 32767;
+            this.HocSinhEmailTextBox.Name = "HocSinhEmailTextBox";
+            this.HocSinhEmailTextBox.PasswordChar = '\0';
+            this.HocSinhEmailTextBox.PromptText = "Email";
+            this.HocSinhEmailTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.HocSinhEmailTextBox.SelectedText = "";
+            this.HocSinhEmailTextBox.SelectionLength = 0;
+            this.HocSinhEmailTextBox.SelectionStart = 0;
+            this.HocSinhEmailTextBox.ShortcutsEnabled = true;
+            this.HocSinhEmailTextBox.Size = new System.Drawing.Size(312, 32);
+            this.HocSinhEmailTextBox.TabIndex = 1;
+            this.HocSinhEmailTextBox.UseSelectable = true;
+            this.HocSinhEmailTextBox.WaterMark = "Email";
+            this.HocSinhEmailTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.HocSinhEmailTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.HocSinhEmailTextBox.VisibleChanged += new System.EventHandler(this.HocSinhEmailTextBox_VisibleChanged);
+            // 
+            // HocSinhNgaySinhDateTime
+            // 
+            this.HocSinhNgaySinhDateTime.CustomFormat = "dd/MM/yyyy";
+            this.HocSinhNgaySinhDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.HocSinhNgaySinhDateTime.Location = new System.Drawing.Point(136, 307);
+            this.HocSinhNgaySinhDateTime.MinimumSize = new System.Drawing.Size(0, 29);
+            this.HocSinhNgaySinhDateTime.Name = "HocSinhNgaySinhDateTime";
+            this.HocSinhNgaySinhDateTime.Size = new System.Drawing.Size(312, 29);
+            this.HocSinhNgaySinhDateTime.TabIndex = 5;
             // 
             // label1
             // 
@@ -171,42 +172,43 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Email";
             // 
-            // richTextBox1
+            // HocSinhDiaChiTextBox
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Location = new System.Drawing.Point(136, 158);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(312, 96);
-            this.richTextBox1.TabIndex = 11;
-            this.richTextBox1.Text = "";
+            this.HocSinhDiaChiTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HocSinhDiaChiTextBox.Location = new System.Drawing.Point(136, 158);
+            this.HocSinhDiaChiTextBox.Name = "HocSinhDiaChiTextBox";
+            this.HocSinhDiaChiTextBox.Size = new System.Drawing.Size(312, 96);
+            this.HocSinhDiaChiTextBox.TabIndex = 11;
+            this.HocSinhDiaChiTextBox.Text = "";
             // 
-            // metroComboBox1
+            // HocSinhGioiTinhComboBox
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Items.AddRange(new object[] {
+            this.HocSinhGioiTinhComboBox.FormattingEnabled = true;
+            this.HocSinhGioiTinhComboBox.ItemHeight = 23;
+            this.HocSinhGioiTinhComboBox.Items.AddRange(new object[] {
             "Nam",
-            "Nữ"});
-            this.metroComboBox1.Location = new System.Drawing.Point(136, 103);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(189, 29);
-            this.metroComboBox1.TabIndex = 12;
-            this.metroComboBox1.UseSelectable = true;
+            "Nu"});
+            this.HocSinhGioiTinhComboBox.Location = new System.Drawing.Point(136, 103);
+            this.HocSinhGioiTinhComboBox.Name = "HocSinhGioiTinhComboBox";
+            this.HocSinhGioiTinhComboBox.Size = new System.Drawing.Size(189, 29);
+            this.HocSinhGioiTinhComboBox.TabIndex = 12;
+            this.HocSinhGioiTinhComboBox.UseSelectable = true;
             // 
-            // button1
+            // HocSinhOKButton
             // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(20, 432);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(427, 30);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = false;
+            this.HocSinhOKButton.BackColor = System.Drawing.Color.Teal;
+            this.HocSinhOKButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.HocSinhOKButton.FlatAppearance.BorderSize = 0;
+            this.HocSinhOKButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HocSinhOKButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HocSinhOKButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.HocSinhOKButton.Location = new System.Drawing.Point(20, 432);
+            this.HocSinhOKButton.Name = "HocSinhOKButton";
+            this.HocSinhOKButton.Size = new System.Drawing.Size(427, 30);
+            this.HocSinhOKButton.TabIndex = 13;
+            this.HocSinhOKButton.Text = "OK";
+            this.HocSinhOKButton.UseVisualStyleBackColor = false;
+            this.HocSinhOKButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // ExitButton
             // 
@@ -225,23 +227,24 @@
             // 
             // HocSinhForm
             // 
+            this.AcceptButton = this.HocSinhOKButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(467, 482);
             this.ControlBox = false;
             this.Controls.Add(this.ExitButton);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.metroComboBox1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.HocSinhOKButton);
+            this.Controls.Add(this.HocSinhGioiTinhComboBox);
+            this.Controls.Add(this.HocSinhDiaChiTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.metroDateTime1);
-            this.Controls.Add(this.metroTextBox2);
-            this.Controls.Add(this.metroTextBox1);
+            this.Controls.Add(this.HocSinhNgaySinhDateTime);
+            this.Controls.Add(this.HocSinhEmailTextBox);
+            this.Controls.Add(this.HocSinhHoTenTextBox);
             this.DisplayHeader = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -260,17 +263,17 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroDateTime metroDateTime1;
+        private MetroFramework.Controls.MetroTextBox HocSinhHoTenTextBox;
+        private MetroFramework.Controls.MetroTextBox HocSinhEmailTextBox;
+        private MetroFramework.Controls.MetroDateTime HocSinhNgaySinhDateTime;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox HocSinhDiaChiTextBox;
+        private MetroFramework.Controls.MetroComboBox HocSinhGioiTinhComboBox;
+        private System.Windows.Forms.Button HocSinhOKButton;
         private System.Windows.Forms.Button ExitButton;
     }
 }

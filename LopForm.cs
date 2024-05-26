@@ -33,7 +33,7 @@ namespace QuanLyHocSinh_Nhom15
 
             db.reader = db.sqlCmd.ExecuteReader();
 
-            metroListView1.Items.Clear();
+            DanhSachLopHocListView.Items.Clear();
 
             while (db.reader.Read())
             {
@@ -43,14 +43,14 @@ namespace QuanLyHocSinh_Nhom15
                 string idGVCN=db.reader.GetString(3);    
 
                 ListViewItem item = new ListViewItem();
-                item.Text = (metroListView1.Items.Count + 1).ToString();
+                item.Text = (DanhSachLopHocListView.Items.Count + 1).ToString();
                 item.SubItems.Add(idLop);
                 item.SubItems.Add(tenLop);
                 item.SubItems.Add(siSo);
                 item.SubItems.Add(idGVCN);
                
 
-                metroListView1.Items.Add(item);
+                DanhSachLopHocListView.Items.Add(item);
 
             }
             db.reader.Close();
@@ -59,6 +59,12 @@ namespace QuanLyHocSinh_Nhom15
         private void metroListView1_DrawItem(object sender, DrawListViewItemEventArgs e)
         {
             e.DrawDefault = true;
+        }
+
+        private void metroListView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            e.NewWidth = this.DanhSachLopHocListView.Columns[e.ColumnIndex].Width;
+            e.Cancel = true;
         }
     }
 }

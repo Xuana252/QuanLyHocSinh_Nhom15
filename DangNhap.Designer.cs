@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Button LoginButton;
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.UserNameTextBox = new MetroFramework.Controls.MetroTextBox();
             this.PasswordTextBox = new MetroFramework.Controls.MetroTextBox();
             this.SignInLabel = new System.Windows.Forms.Label();
-            this.LoginButton = new System.Windows.Forms.Button();
             this.LoginNoteLabel = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
+            LoginButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,18 +128,20 @@
             // 
             // LoginButton
             // 
-            this.LoginButton.BackColor = System.Drawing.Color.Teal;
-            this.LoginButton.FlatAppearance.BorderSize = 0;
-            this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.LoginButton.Location = new System.Drawing.Point(179, 176);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(114, 32);
-            this.LoginButton.TabIndex = 2;
-            this.LoginButton.Text = "Đăng nhập";
-            this.LoginButton.UseVisualStyleBackColor = false;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            LoginButton.BackColor = System.Drawing.Color.Teal;
+            LoginButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            LoginButton.FlatAppearance.BorderSize = 0;
+            LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            LoginButton.ForeColor = System.Drawing.SystemColors.Window;
+            LoginButton.Location = new System.Drawing.Point(179, 176);
+            LoginButton.Name = "LoginButton";
+            LoginButton.Size = new System.Drawing.Size(114, 32);
+            LoginButton.TabIndex = 2;
+            LoginButton.TabStop = false;
+            LoginButton.Text = "Đăng nhập";
+            LoginButton.UseVisualStyleBackColor = false;
+            LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // LoginNoteLabel
             // 
@@ -168,13 +171,14 @@
             // 
             // DangNhap
             // 
+            this.AcceptButton = LoginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(319, 261);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.LoginNoteLabel);
-            this.Controls.Add(this.LoginButton);
+            this.Controls.Add(LoginButton);
             this.Controls.Add(this.SignInLabel);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.UserNameTextBox);
@@ -200,7 +204,6 @@
         private MetroFramework.Controls.MetroTextBox UserNameTextBox;
         private MetroFramework.Controls.MetroTextBox PasswordTextBox;
         private System.Windows.Forms.Label SignInLabel;
-        private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Label LoginNoteLabel;
         private System.Windows.Forms.Button ExitButton;
     }

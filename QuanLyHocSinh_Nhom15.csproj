@@ -91,6 +91,7 @@
     <Compile Include="DiemForm.Designer.cs">
       <DependentUpon>DiemForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HocSinh.cs" />
     <Compile Include="LopForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +113,7 @@
       <DependentUpon>HocSinhForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SQLConnect.cs" />
+    <Compile Include="TaiKhoan.cs" />
     <EmbeddedResource Include="App.resx">
       <DependentUpon>App.cs</DependentUpon>
     </EmbeddedResource>
