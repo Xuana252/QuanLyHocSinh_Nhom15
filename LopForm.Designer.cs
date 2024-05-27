@@ -37,10 +37,9 @@
             this.IDGVCN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DanhSachLopHocTenLopTextBox = new MetroFramework.Controls.MetroTextBox();
             this.DanhSachLopHocNumericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.DanhSachLopHocThemLopButton = new System.Windows.Forms.Button();
+            this.DanhSachLopHocThemSuaLopButton = new System.Windows.Forms.Button();
             this.DanhSachLopHocXoalopButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.DanhSachLopHocSuaButton = new System.Windows.Forms.Button();
             this.DanhSachLopHocGVCNComboBox = new MetroFramework.Controls.MetroComboBox();
             this.ExitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DanhSachLopHocNumericUpDown1)).BeginInit();
@@ -153,19 +152,19 @@
             0,
             0});
             // 
-            // DanhSachLopHocThemLopButton
+            // DanhSachLopHocThemSuaLopButton
             // 
-            this.DanhSachLopHocThemLopButton.BackColor = System.Drawing.Color.Teal;
-            this.DanhSachLopHocThemLopButton.FlatAppearance.BorderSize = 0;
-            this.DanhSachLopHocThemLopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DanhSachLopHocThemLopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DanhSachLopHocThemLopButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.DanhSachLopHocThemLopButton.Location = new System.Drawing.Point(438, 342);
-            this.DanhSachLopHocThemLopButton.Name = "DanhSachLopHocThemLopButton";
-            this.DanhSachLopHocThemLopButton.Size = new System.Drawing.Size(82, 32);
-            this.DanhSachLopHocThemLopButton.TabIndex = 12;
-            this.DanhSachLopHocThemLopButton.Text = "Thêm lớp";
-            this.DanhSachLopHocThemLopButton.UseVisualStyleBackColor = false;
+            this.DanhSachLopHocThemSuaLopButton.BackColor = System.Drawing.Color.Teal;
+            this.DanhSachLopHocThemSuaLopButton.FlatAppearance.BorderSize = 0;
+            this.DanhSachLopHocThemSuaLopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DanhSachLopHocThemSuaLopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhSachLopHocThemSuaLopButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.DanhSachLopHocThemSuaLopButton.Location = new System.Drawing.Point(438, 265);
+            this.DanhSachLopHocThemSuaLopButton.Name = "DanhSachLopHocThemSuaLopButton";
+            this.DanhSachLopHocThemSuaLopButton.Size = new System.Drawing.Size(82, 32);
+            this.DanhSachLopHocThemSuaLopButton.TabIndex = 12;
+            this.DanhSachLopHocThemSuaLopButton.Text = "Thêm lớp";
+            this.DanhSachLopHocThemSuaLopButton.UseVisualStyleBackColor = false;
             // 
             // DanhSachLopHocXoalopButton
             // 
@@ -174,7 +173,7 @@
             this.DanhSachLopHocXoalopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DanhSachLopHocXoalopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DanhSachLopHocXoalopButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.DanhSachLopHocXoalopButton.Location = new System.Drawing.Point(438, 401);
+            this.DanhSachLopHocXoalopButton.Location = new System.Drawing.Point(438, 326);
             this.DanhSachLopHocXoalopButton.Name = "DanhSachLopHocXoalopButton";
             this.DanhSachLopHocXoalopButton.Size = new System.Drawing.Size(82, 32);
             this.DanhSachLopHocXoalopButton.TabIndex = 13;
@@ -191,20 +190,6 @@
             this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 14;
             this.label2.Text = "Sĩ số tối đa";
-            // 
-            // DanhSachLopHocSuaButton
-            // 
-            this.DanhSachLopHocSuaButton.BackColor = System.Drawing.Color.Teal;
-            this.DanhSachLopHocSuaButton.FlatAppearance.BorderSize = 0;
-            this.DanhSachLopHocSuaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DanhSachLopHocSuaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DanhSachLopHocSuaButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.DanhSachLopHocSuaButton.Location = new System.Drawing.Point(438, 284);
-            this.DanhSachLopHocSuaButton.Name = "DanhSachLopHocSuaButton";
-            this.DanhSachLopHocSuaButton.Size = new System.Drawing.Size(82, 32);
-            this.DanhSachLopHocSuaButton.TabIndex = 15;
-            this.DanhSachLopHocSuaButton.Text = "Sửa";
-            this.DanhSachLopHocSuaButton.UseVisualStyleBackColor = false;
             // 
             // DanhSachLopHocGVCNComboBox
             // 
@@ -241,10 +226,9 @@
             this.ControlBox = false;
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.DanhSachLopHocGVCNComboBox);
-            this.Controls.Add(this.DanhSachLopHocSuaButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DanhSachLopHocXoalopButton);
-            this.Controls.Add(this.DanhSachLopHocThemLopButton);
+            this.Controls.Add(this.DanhSachLopHocThemSuaLopButton);
             this.Controls.Add(this.DanhSachLopHocNumericUpDown1);
             this.Controls.Add(this.DanhSachLopHocTenLopTextBox);
             this.Controls.Add(this.DanhSachLopHocListView);
@@ -278,10 +262,9 @@
         private System.Windows.Forms.ColumnHeader IDGVCN;
         private MetroFramework.Controls.MetroTextBox DanhSachLopHocTenLopTextBox;
         private System.Windows.Forms.NumericUpDown DanhSachLopHocNumericUpDown1;
-        private System.Windows.Forms.Button DanhSachLopHocThemLopButton;
+        private System.Windows.Forms.Button DanhSachLopHocThemSuaLopButton;
         private System.Windows.Forms.Button DanhSachLopHocXoalopButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button DanhSachLopHocSuaButton;
         private MetroFramework.Controls.MetroComboBox DanhSachLopHocGVCNComboBox;
         private System.Windows.Forms.Button ExitButton;
     }
