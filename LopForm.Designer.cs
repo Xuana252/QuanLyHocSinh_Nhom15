@@ -157,13 +157,13 @@
             this.DanhSachLopHocThemSuaLopButton.BackColor = System.Drawing.Color.Teal;
             this.DanhSachLopHocThemSuaLopButton.FlatAppearance.BorderSize = 0;
             this.DanhSachLopHocThemSuaLopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DanhSachLopHocThemSuaLopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhSachLopHocThemSuaLopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.DanhSachLopHocThemSuaLopButton.ForeColor = System.Drawing.SystemColors.Window;
             this.DanhSachLopHocThemSuaLopButton.Location = new System.Drawing.Point(438, 265);
             this.DanhSachLopHocThemSuaLopButton.Name = "DanhSachLopHocThemSuaLopButton";
             this.DanhSachLopHocThemSuaLopButton.Size = new System.Drawing.Size(82, 32);
             this.DanhSachLopHocThemSuaLopButton.TabIndex = 12;
-            this.DanhSachLopHocThemSuaLopButton.Text = "Thêm lớp";
+            this.DanhSachLopHocThemSuaLopButton.Text = "Thêm/Sửa";
             this.DanhSachLopHocThemSuaLopButton.UseVisualStyleBackColor = false;
             // 
             // DanhSachLopHocXoalopButton
