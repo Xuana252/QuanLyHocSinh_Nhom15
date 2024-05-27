@@ -116,8 +116,7 @@ namespace QuanLyHocSinh_Nhom15
         //Sự kiện xảy ra khi form xuất hiện 
         private void HocSinhEmailTextBox_VisibleChanged(object sender, EventArgs e)
         {
-            if (Visible == false)
-                ClearForm();
+
             if (hocSinh.flagSua)
             {
                 HocSinhHoTenTextBox.Text = hocSinh.HoTen;
@@ -125,8 +124,11 @@ namespace QuanLyHocSinh_Nhom15
                 HocSinhEmailTextBox.Text = hocSinh.Email;
                 HocSinhGioiTinhComboBox.Text = hocSinh.GioiTinh;
                 HocSinhNgaySinhDateTime.Value = DateTime.ParseExact(hocSinh.NgaySinh, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                
+
             }
+            else
+                ClearForm();
+                
         }
     }
 }

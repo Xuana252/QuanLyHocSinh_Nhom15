@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Data.SqlClient;
 using MetroFramework.Controls;
 using System.Runtime.CompilerServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace QuanLyHocSinh_Nhom15
 {
@@ -27,6 +28,7 @@ namespace QuanLyHocSinh_Nhom15
         //Khởi tạo các đối tượng thuộc các class quan trọng
         TaiKhoan user = TaiKhoan.GetInstance();
         HocSinh HocSinh = HocSinh.GetInstance();
+        LopHoc LopHoc = LopHoc.GetInstance();
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -97,8 +99,39 @@ namespace QuanLyHocSinh_Nhom15
             //Load danh sách học sinh tiếp nhận dựa trên thanh tìm kiếm nếu trống thì lấy toàn bộ danh sách
 
             //CODE MỚI
+            TiepNhanListView.Items.Clear();
+            foreach (ListViewItem hocSinh in HocSinh.LayDanhSach())
+            {
+                if (hocSinh.SubItems[2]!=null)
+                {
+                    if (hoTenTimKiem.Length == 0)//Nếu thanh tìm kiếm trống
+                    {
+                        ListViewItem item = new ListViewItem();
+                        item.Text = (hocSinh.Text);
+                        item.SubItems.Add(hocSinh.SubItems[1].Text);
+                        item.SubItems.Add(hocSinh.SubItems[3].Text);
+                        item.SubItems.Add(hocSinh.SubItems[6].Text);
+                        item.SubItems.Add(hocSinh.SubItems[5].Text);
+                        item.SubItems.Add(hocSinh.SubItems[4].Text);
 
-            HocSinh.LayDanhSach(TiepNhanListView, hoTenTimKiem);
+                        TiepNhanListView.Items.Add(item);
+                    }
+                    else if (hocSinh.SubItems[1].Text == hoTenTimKiem)//Ngược lại nếu tên học sinh trùng với ten trong thanh tìm kiếm
+                    {
+                        ListViewItem item = new ListViewItem();
+                        item.Text = (hocSinh.Text);
+                        item.SubItems.Add(hocSinh.SubItems[1].Text);
+                        item.SubItems.Add(hocSinh.SubItems[3].Text);
+                        item.SubItems.Add(hocSinh.SubItems[6].Text);
+                        item.SubItems.Add(hocSinh.SubItems[5].Text);
+                        item.SubItems.Add(hocSinh.SubItems[4].Text);
+
+                        TiepNhanListView.Items.Add(item);
+                    }
+                    
+                }
+                
+            }
 
             //CODE CŨ
 
@@ -141,9 +174,47 @@ namespace QuanLyHocSinh_Nhom15
 
         //Hàm load Tab Danh sách lớp
 
-        public void LoadTabDanhSachLop()
+        public void LoadTabDanhSachLop(string tenLop,string hoTenTimKiem)
         {
-            HocSinh.LayDanhSach2(DanhSachLopListView2);
+            //Load danh sách lớp học vào combobox lớp học
+            foreach(ListViewItem item in LopHoc.LayDanhSach())
+            {
+                DanhSachLopTenLopComboBox.Items.Add(item.SubItems[1].Text);
+            }    
+
+            //Load danh sách học sinh tiếp nhận dựa trên thanh tìm kiếm
+
+            DanhSachLopListView2.Items.Clear();
+            foreach (ListViewItem hocSinh in HocSinh.LayDanhSach())
+            {
+                if (hocSinh.SubItems[2] != null)
+                {
+                    if (hoTenTimKiem.Length == 0)//Nếu thanh tìm kiếm trống
+                    {
+                        ListViewItem item = new ListViewItem();
+                        item.Text = ((DanhSachLopListView2.Items.Count+1).ToString());
+                        item.SubItems.Add(hocSinh.SubItems[0].Text);
+                        item.SubItems.Add(hocSinh.SubItems[1].Text);
+                        item.SubItems.Add(hocSinh.SubItems[3].Text);
+                        item.SubItems.Add(hocSinh.SubItems[6].Text.Substring(hocSinh.SubItems[6].Text.Length - 4));
+
+                        DanhSachLopListView2.Items.Add(item);
+                    }
+                    else if (hocSinh.SubItems[1].Text == hoTenTimKiem)//Ngược lại nếu tên học sinh trùng với ten trong thanh tìm kiếm
+                    {
+                        ListViewItem item = new ListViewItem();
+                        item.Text = ((DanhSachLopListView2.Items.Count + 1).ToString());
+                        item.SubItems.Add(hocSinh.SubItems[0].Text);
+                        item.SubItems.Add(hocSinh.SubItems[1].Text);
+                        item.SubItems.Add(hocSinh.SubItems[3].Text);
+                        item.SubItems.Add(hocSinh.SubItems[6].Text.Substring(hocSinh.SubItems[6].Text.Length-4));
+
+                        DanhSachLopListView2.Items.Add(item);
+                    }
+
+                }
+
+            }
         }
 
         //Sự kiện khi thay đổi tab chủ yếu dùng để gọi các hàm load dành cho từng trang tương ứng
@@ -161,7 +232,7 @@ namespace QuanLyHocSinh_Nhom15
                     LoadTabTiepNhan("");
                     break;
                 case 4:
-                    LoadTabDanhSachLop();
+                    LoadTabDanhSachLop("","");
                     break;
                 case 5:
                     break;
@@ -182,6 +253,7 @@ namespace QuanLyHocSinh_Nhom15
         //TAB TIẾP NHẬN: Sự kiện khi bấm nút thêm sửa học sinh
         private void TiepNhanThemHocSinhButton_Click(object sender, EventArgs e)
         {
+            //Kiểm tra nếu người dùng có đang chọn học sinh nào không nếu có thì bật cờ chỉnh sửa để cấu hình chức năng chỉnh sửa
             if (TiepNhanListView.SelectedItems.Count > 0)
             {
                 HocSinh.flagSua = true;
@@ -346,7 +418,12 @@ namespace QuanLyHocSinh_Nhom15
             }
         }
 
-        
+        //TAB DANH SÁCH LỚP: Sự kiện xảy ra khi bấm nút tìm kiếm học sinh 
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            LoadTabDanhSachLop("", DanhSachLopSearchTextBox.Text.Trim());
+        }
+
 
         //Khối sự kiện dành cho việc vẽ các item dành cho listview
         //---------------------------------------------------------------------------------------------------------------------------------
@@ -416,6 +493,8 @@ namespace QuanLyHocSinh_Nhom15
         {
             e.DrawDefault = true;
         }
+
+        
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
     }

@@ -110,7 +110,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TiepNhanXoaHocSinhButton = new MetroFramework.Controls.MetroButton();
             this.TiepNhanThemSuaHocSinhButton = new MetroFramework.Controls.MetroButton();
             this.TabDanhSachLop = new MetroFramework.Controls.MetroTabPage();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.DanhSachLopTimKiemButton = new MetroFramework.Controls.MetroButton();
             this.DanhSachLopSiSoLabel = new System.Windows.Forms.Label();
             this.DanhSachLopTenLopComboBox = new MetroFramework.Controls.MetroComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -161,6 +161,7 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
+            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.AppTabControl.SuspendLayout();
             this.TabTraCuu.SuspendLayout();
@@ -233,7 +234,7 @@ namespace QuanLyHocSinh_Nhom15
             this.AppTabControl.Location = new System.Drawing.Point(0, 48);
             this.AppTabControl.Multiline = true;
             this.AppTabControl.Name = "AppTabControl";
-            this.AppTabControl.SelectedIndex = 3;
+            this.AppTabControl.SelectedIndex = 4;
             this.AppTabControl.Size = new System.Drawing.Size(1081, 607);
             this.AppTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AppTabControl.Style = MetroFramework.MetroColorStyle.Teal;
@@ -988,12 +989,12 @@ namespace QuanLyHocSinh_Nhom15
             // columnHeader36
             // 
             this.columnHeader36.Text = "ID";
-            this.columnHeader36.Width = 150;
+            this.columnHeader36.Width = 80;
             // 
             // columnHeader26
             // 
             this.columnHeader26.Text = "Họ và tên";
-            this.columnHeader26.Width = 147;
+            this.columnHeader26.Width = 210;
             // 
             // columnHeader27
             // 
@@ -1096,7 +1097,7 @@ namespace QuanLyHocSinh_Nhom15
             // TabDanhSachLop
             // 
             this.TabDanhSachLop.BackColor = System.Drawing.Color.Teal;
-            this.TabDanhSachLop.Controls.Add(this.metroButton2);
+            this.TabDanhSachLop.Controls.Add(this.DanhSachLopTimKiemButton);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopSiSoLabel);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopTenLopComboBox);
             this.TabDanhSachLop.Controls.Add(this.label14);
@@ -1125,14 +1126,15 @@ namespace QuanLyHocSinh_Nhom15
             this.TabDanhSachLop.VerticalScrollbarHighlightOnWheel = false;
             this.TabDanhSachLop.VerticalScrollbarSize = 10;
             // 
-            // metroButton2
+            // DanhSachLopTimKiemButton
             // 
-            this.metroButton2.Location = new System.Drawing.Point(860, 85);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(75, 23);
-            this.metroButton2.TabIndex = 28;
-            this.metroButton2.Text = "Tìm kiếm";
-            this.metroButton2.UseSelectable = true;
+            this.DanhSachLopTimKiemButton.Location = new System.Drawing.Point(860, 85);
+            this.DanhSachLopTimKiemButton.Name = "DanhSachLopTimKiemButton";
+            this.DanhSachLopTimKiemButton.Size = new System.Drawing.Size(75, 23);
+            this.DanhSachLopTimKiemButton.TabIndex = 28;
+            this.DanhSachLopTimKiemButton.Text = "Tìm kiếm";
+            this.DanhSachLopTimKiemButton.UseSelectable = true;
+            this.DanhSachLopTimKiemButton.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // DanhSachLopSiSoLabel
             // 
@@ -1188,7 +1190,8 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader14,
             this.columnHeader15,
             this.columnHeader16,
-            this.columnHeader17});
+            this.columnHeader17,
+            this.columnHeader37});
             this.DanhSachLopListView1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.DanhSachLopListView1.FullRowSelect = true;
             this.DanhSachLopListView1.GridLines = true;
@@ -1278,10 +1281,10 @@ namespace QuanLyHocSinh_Nhom15
             this.DanhSachLopListView2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DanhSachLopListView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader31,
+            this.columnHeader35,
             this.columnHeader32,
             this.columnHeader33,
-            this.columnHeader34,
-            this.columnHeader35});
+            this.columnHeader34});
             this.DanhSachLopListView2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.DanhSachLopListView2.FullRowSelect = true;
             this.DanhSachLopListView2.GridLines = true;
@@ -1306,12 +1309,12 @@ namespace QuanLyHocSinh_Nhom15
             // columnHeader32
             // 
             this.columnHeader32.Text = "Họ tên";
-            this.columnHeader32.Width = 139;
+            this.columnHeader32.Width = 210;
             // 
             // columnHeader33
             // 
             this.columnHeader33.Text = "Giới tính";
-            this.columnHeader33.Width = 92;
+            this.columnHeader33.Width = 55;
             // 
             // columnHeader34
             // 
@@ -1320,8 +1323,8 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // columnHeader35
             // 
-            this.columnHeader35.Text = "Địa chỉ";
-            this.columnHeader35.Width = 159;
+            this.columnHeader35.Text = "ID";
+            this.columnHeader35.Width = 100;
             // 
             // DanhSachLopSearchTextBox
             // 
@@ -1712,6 +1715,11 @@ namespace QuanLyHocSinh_Nhom15
             this.label1.Size = new System.Drawing.Size(191, 24);
             this.label1.TabIndex = 0;
             // 
+            // columnHeader37
+            // 
+            this.columnHeader37.Text = "ID";
+            this.columnHeader37.Width = 0;
+            // 
             // App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1896,7 +1904,8 @@ namespace QuanLyHocSinh_Nhom15
         private MetroFramework.Controls.MetroButton BaoCaoThemBangDiemButton;
         private System.Windows.Forms.ColumnHeader columnHeader36;
         private MetroFramework.Controls.MetroButton TiepNhanTimKiemButton;
-        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton DanhSachLopTimKiemButton;
+        private System.Windows.Forms.ColumnHeader columnHeader37;
     }
 }
 

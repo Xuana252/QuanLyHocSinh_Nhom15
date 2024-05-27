@@ -98,6 +98,7 @@
     <Compile Include="LopForm.Designer.cs">
       <DependentUpon>LopForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LopHoc.cs" />
     <Compile Include="MonHocForm.cs">
       <SubType>Form</SubType>
     </Compile>

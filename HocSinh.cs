@@ -20,7 +20,7 @@ namespace QuanLyHocSinh_Nhom15
         public string DiaChi;
         public string NgaySinh;
 
-        public bool flagSua=false;//Biến cờ hiệu dùng để xác định nút Thêm Sửa thực hiện chức năng gì
+        public bool flagSua = false;//Biến cờ hiệu dùng để xác định nút Thêm Sửa thực hiện chức năng gì
         public static HocSinh GetInstance()
         {
             if (_instance == null)
@@ -29,7 +29,7 @@ namespace QuanLyHocSinh_Nhom15
         }
 
         //Hàm thêm học sinh
-        public void ThemHocSinh(string hoTen,string gioiTinh,string diaChi,string ngaySinh,string email)
+        public void ThemHocSinh(string hoTen, string gioiTinh, string diaChi, string ngaySinh, string email)
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
@@ -58,7 +58,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show(ex.Message/*.Substring(ex.Message.IndexOf('\n'))*/);
+                Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message.Substring(ex.Message.IndexOf('\n')));
             }
         }
 
@@ -91,7 +91,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show(ex.Message/*.Substring(ex.Message.IndexOf('\n'))*/);
+                Error.GetInstance().Show("Xảy ra lỗi:\n"+ex.Message.Substring(ex.Message.IndexOf('\n')));
             }
 
             flagSua = false;
@@ -120,87 +120,52 @@ namespace QuanLyHocSinh_Nhom15
                 }
                 catch (Exception ex)
                 {
-                    Error.GetInstance().Show(ex.Message.Substring(ex.Message.IndexOf('\n')));
+                    Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message.Substring(ex.Message.IndexOf('\n')));
                 }
             }
         }
 
-        //Hàm lấy danh sách học sinh dành cho tab tiếp nhận
-        public void LayDanhSach(ListView lv,string hoTenTimKiem)
+        //Hàm lấy danh sách học sinh 
+        public List<ListViewItem> LayDanhSach()
         {
+            List<ListViewItem> itemList = new List<ListViewItem>();
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
             db.sqlCmd.CommandType = CommandType.Text;
 
-            if (hoTenTimKiem.Length == 0)
-                db.sqlCmd.CommandText = "SELECT idHocSinh,HoTen,GioiTinh,Email,DiaChi,CONVERT(VARCHAR(10),NgaySinh,103) FROM HOCSINH WHERE idLop IS NULL";
-            else
-            {
-                db.sqlCmd.CommandText = "SELECT idHocSinh,HoTen,GioiTinh,Email,DiaChi,CONVERT(VARCHAR(10),NgaySinh,103) FROM HOCSINH WHERE idLop IS NULL AND hoTen=@hoTen";
-                db.sqlCmd.Parameters.AddWithValue("@hoTen", hoTenTimKiem);
-            }
+            db.sqlCmd.CommandText = "SELECT idHocSinh,HoTen,idLop,GioiTinh,Email,DiaChi,CONVERT(VARCHAR(10),NgaySinh,103) FROM HOCSINH";
+
 
             db.sqlCmd.Connection = db.sqlCon;
 
             db.reader = db.sqlCmd.ExecuteReader();
 
-            lv.Items.Clear();
 
             while (db.reader.Read())
             {
                 string idHocSinh = db.reader.GetString(0);
                 string hoTen = db.reader.GetString(1);
-                string gioiTinh = db.reader.GetString(2);
-                string email = db.reader.GetString(3);
-                string diaChi = db.reader.GetString(4);
-                string ngaySinh = db.reader.GetString(5);
+                string idLop = !db.reader.IsDBNull(2) ? db.reader.GetString(2) : null;
+                string gioiTinh = db.reader.GetString(3);
+                string email = db.reader.GetString(4);
+                string diaChi = db.reader.GetString(5);
+                string ngaySinh = db.reader.GetString(6);
 
                 ListViewItem item = new ListViewItem();
                 item.Text = (idHocSinh);
                 item.SubItems.Add(hoTen);
+                item.SubItems.Add(idLop);
                 item.SubItems.Add(gioiTinh);
-                item.SubItems.Add(ngaySinh);
-                item.SubItems.Add(diaChi);
                 item.SubItems.Add(email);
-
-                lv.Items.Add(item);
-
-            }
-            db.reader.Close();
-        }
-
-        //Hàm lấy danh sách tiếp nhận dành cho tab danh sách lớp
-        public void LayDanhSach2(ListView lv)
-        {
-            SQLConnect db = SQLConnect.GetInstance();
-            db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
-            db.sqlCmd.CommandText = "SELECT HoTen,GioiTinh,CAST(YEAR(NgaySinh) AS CHAR(4)),DiaChi FROM HOCSINH WHERE idLop IS NULL";
-
-            db.sqlCmd.Connection = db.sqlCon;
-
-            db.reader = db.sqlCmd.ExecuteReader();
-
-            lv.Items.Clear();
-
-            while (db.reader.Read())
-            {
-                string hoTen = db.reader.GetString(0);
-                string gioiTinh = db.reader.GetString(1);
-                string namSinh = db.reader.GetString(2);
-                string diaChi = db.reader.GetString(3);
-
-                ListViewItem item = new ListViewItem();
-                item.Text = ((lv.Items.Count + 1).ToString());
-                item.SubItems.Add(hoTen);
-                item.SubItems.Add(gioiTinh);
-                item.SubItems.Add(namSinh);
                 item.SubItems.Add(diaChi);
+                item.SubItems.Add(ngaySinh);
 
-                lv.Items.Add(item);
+                itemList.Add(item);
 
             }
             db.reader.Close();
+            return itemList;
         }
+
     }
 }
