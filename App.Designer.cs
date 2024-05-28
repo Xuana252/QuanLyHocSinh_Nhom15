@@ -110,6 +110,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TiepNhanXoaHocSinhButton = new MetroFramework.Controls.MetroButton();
             this.TiepNhanThemSuaHocSinhButton = new MetroFramework.Controls.MetroButton();
             this.TabDanhSachLop = new MetroFramework.Controls.MetroTabPage();
+            this.DanhSachLopSSLabel = new MetroFramework.Controls.MetroLabel();
             this.DanhSachLopTimKiemButton = new MetroFramework.Controls.MetroButton();
             this.DanhSachLopSiSoLabel = new System.Windows.Forms.Label();
             this.DanhSachLopTenLopComboBox = new MetroFramework.Controls.MetroComboBox();
@@ -162,7 +163,6 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.DanhSachLopSSLabel = new MetroFramework.Controls.MetroLabel();
             this.panel1.SuspendLayout();
             this.AppTabControl.SuspendLayout();
             this.TabTraCuu.SuspendLayout();
@@ -1098,13 +1098,13 @@ namespace QuanLyHocSinh_Nhom15
             // TabDanhSachLop
             // 
             this.TabDanhSachLop.BackColor = System.Drawing.Color.Teal;
+            this.TabDanhSachLop.Controls.Add(this.DanhSachLopListView1);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopSSLabel);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopTimKiemButton);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopSiSoLabel);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopTenLopComboBox);
             this.TabDanhSachLop.Controls.Add(this.label14);
             this.TabDanhSachLop.Controls.Add(this.label7);
-            this.TabDanhSachLop.Controls.Add(this.DanhSachLopListView1);
             this.TabDanhSachLop.Controls.Add(this.metroPanel1);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopListView2);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopSearchTextBox);
@@ -1127,6 +1127,15 @@ namespace QuanLyHocSinh_Nhom15
             this.TabDanhSachLop.VerticalScrollbarBarColor = true;
             this.TabDanhSachLop.VerticalScrollbarHighlightOnWheel = false;
             this.TabDanhSachLop.VerticalScrollbarSize = 10;
+            // 
+            // DanhSachLopSSLabel
+            // 
+            this.DanhSachLopSSLabel.AutoSize = true;
+            this.DanhSachLopSSLabel.Location = new System.Drawing.Point(66, 126);
+            this.DanhSachLopSSLabel.Name = "DanhSachLopSSLabel";
+            this.DanhSachLopSSLabel.Size = new System.Drawing.Size(16, 19);
+            this.DanhSachLopSSLabel.TabIndex = 29;
+            this.DanhSachLopSSLabel.Text = "0";
             // 
             // DanhSachLopTimKiemButton
             // 
@@ -1726,15 +1735,6 @@ namespace QuanLyHocSinh_Nhom15
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 24);
             this.label1.TabIndex = 0;
-            // 
-            // DanhSachLopSSLabel
-            // 
-            this.DanhSachLopSSLabel.AutoSize = true;
-            this.DanhSachLopSSLabel.Location = new System.Drawing.Point(66, 126);
-            this.DanhSachLopSSLabel.Name = "DanhSachLopSSLabel";
-            this.DanhSachLopSSLabel.Size = new System.Drawing.Size(16, 19);
-            this.DanhSachLopSSLabel.TabIndex = 29;
-            this.DanhSachLopSSLabel.Text = "0";
             // 
             // App
             // 

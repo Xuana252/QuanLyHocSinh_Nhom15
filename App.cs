@@ -64,6 +64,48 @@ namespace QuanLyHocSinh_Nhom15
             studentForm = new HocSinhForm(this);
             lopForm = new LopForm(this);
 
+            //--------------------------Điều chỉnh các control tùy thuộc vào quyền hạn (vai trò) của User----------------------------------------------------------
+            if (user.idVaiTro != "QL")
+            {
+                AppTabControl.TabPages.Remove(TabTiepNhan); //Không hiển thị tab tiếp nhận
+
+                AppTabControl.ItemSize =new Size( (AppTabControl.Width-10) / 5,0);
+
+                //TAB BÁO CÁO MÔN
+                QuanLyMonHocButton.Visible=false;//Không hiển thị nút quản lí môn học
+
+                //TAB TỔNG KẾT 
+                TongKetDiemDatNumericBox.Enabled=false;//Không cho phép thay đổi điểm qua môn
+
+                //TAB DANH SÁCH LỚP
+                //Không hiển thị các control liên quan đến danh sách học sinh tiếp nhận
+                //------------------------------------------------------------
+                label7.Visible=false;
+                metroLabel11.Visible=false;
+                DanhSachLopListView2.Visible=false;
+                DanhSachLopQuanLiButton.Visible=false;
+                DanhSachLopSearchTextBox.Visible=false;
+                DanhSachLopTimKiemButton.Visible=false;
+                DanhSachLopXoaHocSinhButton.Visible=false;
+                DanhSachLopThemHocSinhButton.Visible = false;
+                metroPanel1.Visible=false;
+                //---------------------------------------------------------------
+
+                //Điều chỉnh chiều rộng của listview danh sách học sinh lớp và các cột của nó
+                DanhSachLopListView1.Width = 1073;
+                foreach (ColumnHeader header in DanhSachLopListView1.Columns)
+                {
+                    if (header.Index != 0)
+                        header.Width = 1040 / 5;
+                }
+
+                //TAB TÀI KHOẢN
+                TaiKhoanQuanLiTaiKhoanButton.Visible=false;//Không hiển thị nút quản lí tài khoản
+                TaiKhoanDangKiButton.Visible=false;//Không hiển thị nút đăng kí
+
+            }
+            //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
         }
 
         //Hàm load Tab Tiếp nhận
@@ -241,21 +283,21 @@ namespace QuanLyHocSinh_Nhom15
         //Sự kiện khi thay đổi tab dùng để dánh dấu tab đang chuyển tới
         private void AppTabControl_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            switch (AppTabControl.SelectedIndex)
+            switch (e.TabPage.Name)
             {
-                case 0:
+                case "TabTraCuu":
                     break;
-                case 1:
+                case "TabBaoCao":
                     break;
-                case 2:
+                case "TabTongKet":
                     break;
-                case 3:
+                case "TabTiepNhan":
                     LoadTabTiepNhan("");
                     break;
-                case 4:
+                case "TabDanhSachLop":
                     LoadTabDanhSachLop("", "");
                     break;
-                case 5:
+                case "TabUser":
                     break;
 
             }
