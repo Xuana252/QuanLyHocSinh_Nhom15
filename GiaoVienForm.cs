@@ -36,46 +36,102 @@ namespace QuanLyHocSinh_Nhom15
             e.DrawDefault = true;
 
         }
-
+        
         private void GiaoVienForm_Shown(object sender, EventArgs e)
         {
-            SQLConnect db = SQLConnect.GetInstance();
-            db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
-            db.sqlCmd.CommandText = "SELECT GIAOVIEN.idGiaoVien, TenTaiKhoan, MatKhau, tenVaiTro,HoTen,TenMonHoc, CONVERT(VARCHAR(10),NgaySinh,103),DiaChi FROM TAIKHOAN JOIN GIAOVIEN ON TAIKHOAN.idGiaoVien=GIAOVIEN.idGiaoVien JOIN MONHOC ON GIAOVIEN.idMonHoc=MONHOC.idMonHoc JOIN VAITRO ON VAITRO.idVaiTro=TAIKHOAN.idVaiTro";
-
-            db.sqlCmd.Connection = db.sqlCon;
-
-            db.reader = db.sqlCmd.ExecuteReader();
-
             metroListView1.Items.Clear();
+            List<ListViewItem> MergedTaiKhoans = TaiKhoan.GetInstance().LayDanhSach();
+            List<ListViewItem> GiaoViens = GiaoVien.GetInstance().LayDanhSach();
+            List<ListViewItem> MonHocs = MonHoc.GetInstance().LayDanhSach();
+            List<ListViewItem> VaiTros = VaiTro.GetInstance().LayDanhSach();
 
-            while (db.reader.Read())
+            MergeDanhSach(MergedTaiKhoans, GiaoViens, MonHocs, VaiTros);
+            foreach (ListViewItem taiKhoan in MergedTaiKhoans)
             {
-                string idGiaoVien = db.reader.GetString(0);
-                string tenTaiKhoan = db.reader.GetString(1);
-                string matKhau = db.reader.GetString(2);
-                string vaiTro = db.reader.GetString(3);
-                string tenGiaoVien = db.reader.GetString(4).Trim();
-                string monHoc = db.reader.GetString(5);
-                string ngaySinh = db.reader.GetString(6);
-                string diaChi = db.reader.GetString(7);
-
-                ListViewItem item = new ListViewItem();
-                item.Text = (metroListView1.Items.Count + 1).ToString();
-                item.SubItems.Add(idGiaoVien);
-                item.SubItems.Add(tenTaiKhoan);
-                item.SubItems.Add(matKhau);
-                item.SubItems.Add(vaiTro);
-                item.SubItems.Add(tenGiaoVien);
-                item.SubItems.Add(monHoc);
-                item.SubItems.Add(ngaySinh);
-                item.SubItems.Add(diaChi);
+                ListViewItem item = new ListViewItem(metroListView1.Items.Count.ToString());
+                item.SubItems.Add(taiKhoan.SubItems[1]);//IDGiaoVien
+                item.SubItems.Add(taiKhoan.SubItems[2]);//TenTaiKhoan
+                item.SubItems.Add(taiKhoan.SubItems[3]);//MatKhau
+                item.SubItems.Add(taiKhoan.SubItems[13]);//VaiTro
+                item.SubItems.Add(taiKhoan.SubItems[6]);//HoTen
+                item.SubItems.Add(taiKhoan.SubItems[11]);//MonHoc
+                item.SubItems.Add(taiKhoan.SubItems[7]);//NgaySinh
+                item.SubItems.Add(taiKhoan.SubItems[8]);//DiaChi
 
                 metroListView1.Items.Add(item);
-
             }
-            db.reader.Close();
+        }
+
+        //Hàm gộp danh sách tài khoản và thông tin giáo viên tương ứng
+        private void MergeDanhSach(List<ListViewItem> taiKhoans, List<ListViewItem> giaoViens, List<ListViewItem> monHocs, List<ListViewItem> vaiTros)
+        {
+            Dictionary<string, ListViewItem> lookupGiaoVien = new Dictionary<string, ListViewItem>();
+            Dictionary<string, ListViewItem> lookupMonHoc = new Dictionary<string, ListViewItem>();
+            Dictionary<string, ListViewItem> lookupVaiTro = new Dictionary<string, ListViewItem>();
+
+            //Thêm key giáo viên vào Dictionary
+            foreach (ListViewItem giaoVien in giaoViens)
+            {
+                string idGiaoVien = giaoVien.Text;
+                if (!lookupGiaoVien.ContainsKey(idGiaoVien))
+                {
+                    lookupGiaoVien.Add(idGiaoVien, giaoVien);
+                }
+            }
+
+            //Thêm key môn học vào Dictionary
+            foreach (ListViewItem monHoc in monHocs)
+            {
+                string idMonHoc = monHoc.Text;
+                if (!lookupMonHoc.ContainsKey(idMonHoc))
+                {
+                    lookupMonHoc.Add(idMonHoc, monHoc);
+                }
+            }
+
+            //Thêm key vai trò vào Dictionary
+            foreach (ListViewItem vaiTro in vaiTros)
+            {
+                string idVaiTro = vaiTro.Text;
+                if (!lookupVaiTro.ContainsKey(idVaiTro))
+                {
+                    lookupVaiTro.Add(idVaiTro, vaiTro);
+                }
+            }
+
+            //Thêm thông tin giáo viên dựa vào id
+            //Thêm thông tin môn học dựa vào id
+            //Thêm thông tin vai trò dựa vào id
+            foreach (ListViewItem item in taiKhoans)
+            {
+                //Thêm thông tin giáo viên dựa vào id
+                string idGiaoVien = item.SubItems[1].Text;
+                if (lookupGiaoVien.ContainsKey(idGiaoVien))
+                {
+                    ListViewItem giaoVien = lookupGiaoVien[idGiaoVien];
+                    foreach (ListViewItem.ListViewSubItem subitem in giaoVien.SubItems)
+                        item.SubItems.Add(subitem);
+                }
+
+                //Thêm thông tin môn học dựa vào id
+                string idMonHoc = item.SubItems[9].Text;
+                if (lookupMonHoc.ContainsKey(idMonHoc))
+                {
+                    ListViewItem monHoc = lookupMonHoc[idMonHoc];
+                    foreach (ListViewItem.ListViewSubItem subitem in monHoc.SubItems)
+                        item.SubItems.Add(subitem);
+                }
+
+                //Thêm thông tin vai trò dựa vào id
+                string idVaiTro = item.SubItems[4].Text;
+                if (lookupVaiTro.ContainsKey(idVaiTro))
+                {
+                    ListViewItem vaiTro = lookupVaiTro[idVaiTro];
+                    foreach (ListViewItem.ListViewSubItem subitem in vaiTro.SubItems)
+                        item.SubItems.Add(subitem);
+
+                }
+            }
         }
     }
 }

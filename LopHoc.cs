@@ -12,7 +12,7 @@ namespace QuanLyHocSinh_Nhom15
     sealed class LopHoc
     {
         private static LopHoc _instance;
-        public string idLop;
+        public string idLop="";
         public string TenLop;
         public string SiSo;
         public string idGiaoVien;
@@ -164,5 +164,6 @@ namespace QuanLyHocSinh_Nhom15
             db.reader.Close();
             return itemList;
         }
+
     }
 }

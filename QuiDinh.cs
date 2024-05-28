@@ -91,7 +91,13 @@ namespace QuanLyHocSinh_Nhom15
                 Error.GetInstance().Show("Xảy ra lỗi trong quá trình thay đổi dữ liệu" + ex.Message);
             }
         }
-        
+
+        //Hàm thay đổi điểm qua môn
+        public void ThayDoiDiemQuaMon(decimal DiemQuaMon)
+        {
+
+        }
+
         //Hàm Load tuổi qui định
         public void LoadTuoiQuiDinh()
         {
@@ -117,10 +123,52 @@ namespace QuanLyHocSinh_Nhom15
             db.reader.Close();
         }
 
-
-        public void ThayDoiDiemQuaMon(decimal DiemQuaMon)
+        //Hàm Load sỉ số tối đa
+        public void LoadSiSoToiDa()
         {
+            SQLConnect db = SQLConnect.GetInstance();
+            db.Open();
+            db.sqlCmd.CommandType = CommandType.Text;
 
+            db.sqlCmd.CommandText = "SELECT SiSoToiDa FROM QUIDINH";
+
+            db.sqlCmd.Connection = db.sqlCon;
+
+            db.reader = db.sqlCmd.ExecuteReader();
+
+            if (db.reader.Read())
+            {
+                SiSoToiDa = db.reader.GetInt32(0);
+            }
+            else
+            {
+                Error.GetInstance().Show("Xảy ra lỗi trong quá trình lấy dữ liệu sỉ số tối đa từ hệ thống\n");
+            }
+            db.reader.Close();
+        }
+
+        //Hàm load điểm qua môn 
+        public void LoadDiemQuaMon()
+        {
+            SQLConnect db = SQLConnect.GetInstance();
+            db.Open();
+            db.sqlCmd.CommandType = CommandType.Text;
+
+            db.sqlCmd.CommandText = "SELECT DiemQuaMon FROM QUIDINH";
+
+            db.sqlCmd.Connection = db.sqlCon;
+
+            db.reader = db.sqlCmd.ExecuteReader();
+
+            if (db.reader.Read())
+            {
+                DiemQuaMon = db.reader.GetDecimal(0);
+            }
+            else
+            {
+                Error.GetInstance().Show("Xảy ra lỗi trong quá trình lấy dữ liệu tuổi qui định từ hệ thống\n");
+            }
+            db.reader.Close();
         }
 
     }

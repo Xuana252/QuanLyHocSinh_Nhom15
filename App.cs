@@ -104,7 +104,7 @@ namespace QuanLyHocSinh_Nhom15
 
                         TiepNhanListView.Items.Add(item);
                     }
-                    else if (hocSinh.SubItems[1].Text == hoTenTimKiem)//Ngược lại nếu tên học sinh trùng với ten trong thanh tìm kiếm
+                    else if (hocSinh.SubItems[1].Text.Contains(hoTenTimKiem))//Ngược lại nếu tên học sinh trùng với ten trong thanh tìm kiếm
                     {
                         ListViewItem item = new ListViewItem();
                         item.Text = (hocSinh.Text);
@@ -172,8 +172,12 @@ namespace QuanLyHocSinh_Nhom15
                 DanhSachLopTenLopComboBox.Items.Add(item.SubItems[1].Text +" - "+item.Text);
             }
 
-            if(idLop.Length==0)
-               DanhSachLopListView1.Items.Clear(); //Làm trống danh sách học sinh lớp học
+            if (idLop.Length == 0)
+            {
+                DanhSachLopListView1.Items.Clear(); //Làm trống danh sách học sinh lớp học
+
+                DanhSachLopSSLabel.Text = "0";//Cập nhật sỉ số thành 0 nếu không có lớp nào được chọn
+            }
             else
             {
                 //Cập nhật danh sách học sinh lớp học dựa theo idLop
@@ -189,11 +193,14 @@ namespace QuanLyHocSinh_Nhom15
                         item.SubItems.Add(hocSinh.SubItems[6].Text.Substring(hocSinh.SubItems[6].Text.Length - 4));
                         item.SubItems.Add(hocSinh.SubItems[5]);
                         item.SubItems.Add(hocSinh.Text);
-                        
+
 
                         DanhSachLopListView1.Items.Add(item);
                     }
                 }
+                //Cập nhật sỉ số lớp đã chọn
+                DanhSachLopSSLabel.Text = DanhSachLopListView1.Items.Count.ToString();
+
             }
  
             //Load danh sách học sinh tiếp nhận dựa trên thanh tìm kiếm
@@ -214,7 +221,7 @@ namespace QuanLyHocSinh_Nhom15
 
                         DanhSachLopListView2.Items.Add(item);
                     }
-                    else if (hocSinh.SubItems[1].Text == hoTenTimKiem)//Ngược lại nếu tên học sinh trùng với ten trong thanh tìm kiếm
+                    else if (hocSinh.SubItems[1].Text.Contains(hoTenTimKiem))//Ngược lại nếu tên học sinh bao gồm trong thanh tìm kiếm
                     {
                         ListViewItem item = new ListViewItem();
                         item.Text = ((DanhSachLopListView2.Items.Count + 1).ToString());
@@ -405,7 +412,7 @@ namespace QuanLyHocSinh_Nhom15
         //TAB DANH SÁCH LỚP: Sự kiện xảy ra khi bấm nút tìm kiếm học sinh 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            LoadTabDanhSachLop("", DanhSachLopSearchTextBox.Text.Trim());
+            LoadTabDanhSachLop(LopHoc.idLop, DanhSachLopSearchTextBox.Text.Trim());
         }
 
         //TAB DANH SÁCH LỚP: Sự kiện xảy ra khi bấm nút xem lớp
@@ -440,6 +447,7 @@ namespace QuanLyHocSinh_Nhom15
                     DanhSachLopListView1.Items.Add(item);
                 }
             }
+            //Cập nhật sỉ số lớp đã chọn
             DanhSachLopSSLabel.Text=DanhSachLopListView1.Items.Count.ToString();
         }
 

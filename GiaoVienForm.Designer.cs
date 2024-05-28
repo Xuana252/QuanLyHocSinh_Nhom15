@@ -35,7 +35,7 @@
             this.IDGiaoVien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UserName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.VaiTro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Vai_Tro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.HoTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IDMonHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NgaySinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -76,7 +76,7 @@
             this.IDGiaoVien,
             this.UserName,
             this.Password,
-            this.VaiTro,
+            this.Vai_Tro,
             this.HoTen,
             this.IDMonHoc,
             this.NgaySinh,
@@ -116,10 +116,10 @@
             this.Password.Text = "Mật khẩu";
             this.Password.Width = 200;
             // 
-            // VaiTro
+            // Vai_Tro
             // 
-            this.VaiTro.Text = "Vai trò";
-            this.VaiTro.Width = 200;
+            this.Vai_Tro.Text = "Vai trò";
+            this.Vai_Tro.Width = 200;
             // 
             // HoTen
             // 
@@ -177,7 +177,7 @@
         private System.Windows.Forms.ColumnHeader IDGiaoVien;
         private System.Windows.Forms.ColumnHeader UserName;
         private System.Windows.Forms.ColumnHeader Password;
-        private System.Windows.Forms.ColumnHeader VaiTro;
+        private System.Windows.Forms.ColumnHeader Vai_Tro;
         private System.Windows.Forms.ColumnHeader HoTen;
         private System.Windows.Forms.ColumnHeader IDMonHoc;
         private System.Windows.Forms.ColumnHeader NgaySinh;
