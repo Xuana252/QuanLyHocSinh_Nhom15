@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.DanhSachLopHocGVCNComboBox = new MetroFramework.Controls.MetroComboBox();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.DanhSachLopHocKhoiComboBox = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DanhSachLopHocNumericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,6 +85,7 @@
             this.DanhSachLopHocListView.View = System.Windows.Forms.View.Details;
             this.DanhSachLopHocListView.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.metroListView1_ColumnWidthChanging);
             this.DanhSachLopHocListView.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.metroListView1_DrawItem);
+            this.DanhSachLopHocListView.SelectedIndexChanged += new System.EventHandler(this.DanhSachLopHocListView_SelectedIndexChanged);
             // 
             // STT
             // 
@@ -122,7 +124,7 @@
             this.DanhSachLopHocTenLopTextBox.CustomButton.UseSelectable = true;
             this.DanhSachLopHocTenLopTextBox.CustomButton.Visible = false;
             this.DanhSachLopHocTenLopTextBox.Lines = new string[0];
-            this.DanhSachLopHocTenLopTextBox.Location = new System.Drawing.Point(438, 146);
+            this.DanhSachLopHocTenLopTextBox.Location = new System.Drawing.Point(438, 110);
             this.DanhSachLopHocTenLopTextBox.MaxLength = 32767;
             this.DanhSachLopHocTenLopTextBox.Name = "DanhSachLopHocTenLopTextBox";
             this.DanhSachLopHocTenLopTextBox.PasswordChar = '\0';
@@ -151,6 +153,7 @@
             0,
             0,
             0});
+            this.DanhSachLopHocNumericUpDown1.ValueChanged += new System.EventHandler(this.DanhSachLopHocNumericUpDown1_ValueChanged);
             // 
             // DanhSachLopHocThemSuaLopButton
             // 
@@ -165,6 +168,7 @@
             this.DanhSachLopHocThemSuaLopButton.TabIndex = 12;
             this.DanhSachLopHocThemSuaLopButton.Text = "Thêm/Sửa";
             this.DanhSachLopHocThemSuaLopButton.UseVisualStyleBackColor = false;
+            this.DanhSachLopHocThemSuaLopButton.Click += new System.EventHandler(this.DanhSachLopHocThemSuaLopButton_Click);
             // 
             // DanhSachLopHocXoalopButton
             // 
@@ -179,6 +183,7 @@
             this.DanhSachLopHocXoalopButton.TabIndex = 13;
             this.DanhSachLopHocXoalopButton.Text = "Xóa lớp";
             this.DanhSachLopHocXoalopButton.UseVisualStyleBackColor = false;
+            this.DanhSachLopHocXoalopButton.Click += new System.EventHandler(this.DanhSachLopHocXoalopButton_Click);
             // 
             // label2
             // 
@@ -217,6 +222,21 @@
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // DanhSachLopHocKhoiComboBox
+            // 
+            this.DanhSachLopHocKhoiComboBox.FormattingEnabled = true;
+            this.DanhSachLopHocKhoiComboBox.ItemHeight = 23;
+            this.DanhSachLopHocKhoiComboBox.Items.AddRange(new object[] {
+            "10",
+            "11",
+            "12"});
+            this.DanhSachLopHocKhoiComboBox.Location = new System.Drawing.Point(438, 149);
+            this.DanhSachLopHocKhoiComboBox.Name = "DanhSachLopHocKhoiComboBox";
+            this.DanhSachLopHocKhoiComboBox.PromptText = "Khối";
+            this.DanhSachLopHocKhoiComboBox.Size = new System.Drawing.Size(82, 29);
+            this.DanhSachLopHocKhoiComboBox.TabIndex = 29;
+            this.DanhSachLopHocKhoiComboBox.UseSelectable = true;
+            // 
             // LopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,6 +244,7 @@
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(582, 535);
             this.ControlBox = false;
+            this.Controls.Add(this.DanhSachLopHocKhoiComboBox);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.DanhSachLopHocGVCNComboBox);
             this.Controls.Add(this.label2);
@@ -244,7 +265,7 @@
             this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "LopForm";
-            this.Shown += new System.EventHandler(this.LopForm_Shown);
+            this.VisibleChanged += new System.EventHandler(this.LopForm_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.DanhSachLopHocNumericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -267,5 +288,6 @@
         private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroComboBox DanhSachLopHocGVCNComboBox;
         private System.Windows.Forms.Button ExitButton;
+        private MetroFramework.Controls.MetroComboBox DanhSachLopHocKhoiComboBox;
     }
 }

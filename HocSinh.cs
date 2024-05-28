@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -97,6 +98,73 @@ namespace QuanLyHocSinh_Nhom15
             flagSua = false;
         }
 
+        //Hàm thêm học sinh vào danh sách lớp
+        public void ThemHocSinhVaoLop(ListView.SelectedListViewItemCollection items, string idLop)
+        {
+            SQLConnect db = SQLConnect.GetInstance();
+            db.Open();
+            db.sqlCmd.CommandType = CommandType.Text;
+
+            SqlParameter idHocSinhParam = new SqlParameter("@idHocSinh", SqlDbType.Char, 7);
+            SqlParameter idLopParam = new SqlParameter("@idLop", SqlDbType.Char, 3);
+
+            db.sqlCmd.Parameters.Add(idHocSinhParam);
+            db.sqlCmd.Parameters.Add(idLopParam);
+
+            idLopParam.Value = idLop;
+
+            foreach (ListViewItem item in items)
+            {
+
+                idHocSinhParam.Value = item.SubItems[1].Text;
+
+                db.sqlCmd.CommandText = "UPDATE HOCSINH SET idLop = @idLop WHERE idHocSinh=@idHocSinh";
+
+                db.sqlCmd.Connection = db.sqlCon;
+
+                try
+                {
+                    db.sqlCmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message.Substring(ex.Message.IndexOf('\n')));
+                }
+            }
+        }
+
+        //Hàm xóa học sinh khỏi lớp
+
+        public void XoaHocSinhKhoiLop(ListView.SelectedListViewItemCollection items)
+        {
+            SQLConnect db = SQLConnect.GetInstance();
+            db.Open();
+            db.sqlCmd.CommandType = CommandType.Text;
+
+            SqlParameter idHocSinhParam = new SqlParameter("@idHocSinh", SqlDbType.Char, 7);
+
+            db.sqlCmd.Parameters.Add(idHocSinhParam);
+
+
+            foreach (ListViewItem item in items)
+            {
+
+                idHocSinhParam.Value = item.SubItems[5].Text;
+
+                db.sqlCmd.CommandText = "UPDATE HOCSINH SET idLop = null WHERE idHocSinh=@idHocSinh";
+
+                db.sqlCmd.Connection = db.sqlCon;
+
+                try
+                {
+                    db.sqlCmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message.Substring(ex.Message.IndexOf('\n')));
+                }
+            }
+        }
 
         //Hàm xóa học sinh
         public void XoaHocSinh(ListView.SelectedListViewItemCollection items)
@@ -104,13 +172,17 @@ namespace QuanLyHocSinh_Nhom15
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
             db.sqlCmd.CommandType = CommandType.Text;
+
+            SqlParameter idHocSinhParam = new SqlParameter("@idHocSinh", SqlDbType.Char, 7);
+
+            db.sqlCmd.Parameters.Add(idHocSinhParam);
+
             foreach (ListViewItem item in items)
             {
+
+                idHocSinhParam.Value = item.SubItems[0].Text;
+
                 db.sqlCmd.CommandText = "DELETE FROM HOCSINH WHERE idHocSinh=@idHocSinh";
-
-
-                db.sqlCmd.Parameters.AddWithValue("@idHocSinh", item.Text);
-
 
                 db.sqlCmd.Connection = db.sqlCon;
 
@@ -145,7 +217,7 @@ namespace QuanLyHocSinh_Nhom15
             {
                 string idHocSinh = db.reader.GetString(0);
                 string hoTen = db.reader.GetString(1);
-                string idLop = !db.reader.IsDBNull(2) ? db.reader.GetString(2) : null;
+                string idLop = !db.reader.IsDBNull(2) ? db.reader.GetString(2) : "NULL";
                 string gioiTinh = db.reader.GetString(3);
                 string email = db.reader.GetString(4);
                 string diaChi = db.reader.GetString(5);

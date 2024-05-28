@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using MetroFramework.Controls;
 using System.Runtime.CompilerServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Diagnostics.Eventing.Reader;
 
 namespace QuanLyHocSinh_Nhom15
 {
@@ -29,6 +30,7 @@ namespace QuanLyHocSinh_Nhom15
         TaiKhoan user = TaiKhoan.GetInstance();
         HocSinh HocSinh = HocSinh.GetInstance();
         LopHoc LopHoc = LopHoc.GetInstance();
+        QuiDinh QuiDinh = QuiDinh.GetInstance();
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -60,40 +62,26 @@ namespace QuanLyHocSinh_Nhom15
             diemForm = new DiemForm();
             giaoVienForm = new GiaoVienForm();
             studentForm = new HocSinhForm(this);
-            lopForm = new LopForm();
+            lopForm = new LopForm(this);
 
         }
 
         //Hàm load Tab Tiếp nhận
         public void LoadTabTiepNhan(string hoTenTimKiem)
         {
-            SQLConnect db = SQLConnect.GetInstance();
-            db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
-
-            //Load tuổi tối thiểu và tối đa
-
-            db.sqlCmd.CommandText = "SELECT TuoiToiThieu, TuoiToiDa FROM QUIDINH";
-
-            db.sqlCmd.Connection = db.sqlCon;
-
-            db.reader = db.sqlCmd.ExecuteReader();
-
-            if (db.reader.Read())
-            {
-                TiepNhanMinAgeNumericBox.ValueChanged -= TiepCanMinAgeNumericBox_ValueChanged;
-                this.TiepNhanMinAgeNumericBox.Value = db.reader.GetInt32(0);
+            //Load tuổi qui định trong hệ thống sau đó gán giá trị tương ứng
+            QuiDinh.LoadTuoiQuiDinh();
+            TiepNhanMinAgeNumericBox.ValueChanged -= TiepCanMinAgeNumericBox_ValueChanged;
+            this.TiepNhanMinAgeNumericBox.Value = QuiDinh.TuoiToiThieu;
 
 
-                TiepNhanMaxAgeNumericBox.ValueChanged -= TiepNhanMaxAgeNumericBox_ValueChanged;
-                this.TiepNhanMaxAgeNumericBox.Value = db.reader.GetInt32(1);
+            TiepNhanMaxAgeNumericBox.ValueChanged -= TiepNhanMaxAgeNumericBox_ValueChanged;
+            this.TiepNhanMaxAgeNumericBox.Value = QuiDinh.TuoiToiDa;
 
-                TiepNhanMinAgeNumericBox.ValueChanged += TiepCanMinAgeNumericBox_ValueChanged;
-                TiepNhanMaxAgeNumericBox.ValueChanged += TiepNhanMaxAgeNumericBox_ValueChanged;
+            TiepNhanMinAgeNumericBox.ValueChanged += TiepCanMinAgeNumericBox_ValueChanged;
+            TiepNhanMaxAgeNumericBox.ValueChanged += TiepNhanMaxAgeNumericBox_ValueChanged;
 
 
-            }
-            db.reader.Close();
 
 
             //Load danh sách học sinh tiếp nhận dựa trên thanh tìm kiếm nếu trống thì lấy toàn bộ danh sách
@@ -102,7 +90,7 @@ namespace QuanLyHocSinh_Nhom15
             TiepNhanListView.Items.Clear();
             foreach (ListViewItem hocSinh in HocSinh.LayDanhSach())
             {
-                if (hocSinh.SubItems[2]!=null)
+                if (hocSinh.SubItems[2].Text=="NULL")
                 {
                     if (hoTenTimKiem.Length == 0)//Nếu thanh tìm kiếm trống
                     {
@@ -174,20 +162,46 @@ namespace QuanLyHocSinh_Nhom15
 
         //Hàm load Tab Danh sách lớp
 
-        public void LoadTabDanhSachLop(string tenLop,string hoTenTimKiem)
+        public void LoadTabDanhSachLop(string idLop,string hoTenTimKiem)
         {
+            List<ListViewItem> DanhSachHocSinh = HocSinh.LayDanhSach();
             //Load danh sách lớp học vào combobox lớp học
+            DanhSachLopTenLopComboBox.Items.Clear();
             foreach(ListViewItem item in LopHoc.LayDanhSach())
             {
-                DanhSachLopTenLopComboBox.Items.Add(item.SubItems[1].Text);
-            }    
+                DanhSachLopTenLopComboBox.Items.Add(item.SubItems[1].Text +" - "+item.Text);
+            }
 
+            if(idLop.Length==0)
+               DanhSachLopListView1.Items.Clear(); //Làm trống danh sách học sinh lớp học
+            else
+            {
+                //Cập nhật danh sách học sinh lớp học dựa theo idLop
+                DanhSachLopListView1.Items.Clear();
+                foreach (ListViewItem hocSinh in DanhSachHocSinh)
+                {
+                    if (LopHoc.idLop == hocSinh.SubItems[2].Text)
+                    {
+                        ListViewItem item = new ListViewItem();
+                        item.Text = ((DanhSachLopListView1.Items.Count + 1).ToString());
+                        item.SubItems.Add(hocSinh.SubItems[1]);
+                        item.SubItems.Add(hocSinh.SubItems[3]);
+                        item.SubItems.Add(hocSinh.SubItems[6].Text.Substring(hocSinh.SubItems[6].Text.Length - 4));
+                        item.SubItems.Add(hocSinh.SubItems[5]);
+                        item.SubItems.Add(hocSinh.Text);
+                        
+
+                        DanhSachLopListView1.Items.Add(item);
+                    }
+                }
+            }
+ 
             //Load danh sách học sinh tiếp nhận dựa trên thanh tìm kiếm
 
             DanhSachLopListView2.Items.Clear();
-            foreach (ListViewItem hocSinh in HocSinh.LayDanhSach())
+            foreach (ListViewItem hocSinh in DanhSachHocSinh)
             {
-                if (hocSinh.SubItems[2] != null)
+                if (hocSinh.SubItems[2].Text == "NULL")
                 {
                     if (hoTenTimKiem.Length == 0)//Nếu thanh tìm kiếm trống
                     {
@@ -217,8 +231,8 @@ namespace QuanLyHocSinh_Nhom15
             }
         }
 
-        //Sự kiện khi thay đổi tab chủ yếu dùng để gọi các hàm load dành cho từng trang tương ứng
-        private void AppTabControl_Deselecting(object sender, TabControlCancelEventArgs e)
+        //Sự kiện khi thay đổi tab dùng để dánh dấu tab đang chuyển tới
+        private void AppTabControl_Selecting(object sender, TabControlCancelEventArgs e)
         {
             switch (AppTabControl.SelectedIndex)
             {
@@ -232,14 +246,22 @@ namespace QuanLyHocSinh_Nhom15
                     LoadTabTiepNhan("");
                     break;
                 case 4:
-                    LoadTabDanhSachLop("","");
+                    LoadTabDanhSachLop("", "");
                     break;
                 case 5:
                     break;
 
             }
         }
+
+        
         //Sự kiện khi bấm nút X thoát
+
+        //Sự kiện khi chọn combobox tên lớp
+        private void DanhSachLopTenLopComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DanhSachLopTenLopComboBox.Text = DanhSachLopTenLopComboBox.SelectedItem.ToString();
+        }
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -316,10 +338,6 @@ namespace QuanLyHocSinh_Nhom15
         }
 
 
-        
-
-
-
         //TAB TIẾP NHẬN: Sự kiện khi bấm nút xóa học sinh
         private void TiepNhanXoaHocSinhButton_Click(object sender, EventArgs e)
         {
@@ -367,27 +385,10 @@ namespace QuanLyHocSinh_Nhom15
         {
             if(TiepNhanMaxAgeNumericBox.Value<TiepNhanMinAgeNumericBox.Value)
             {
-                TiepNhanMaxAgeNumericBox.Value = TiepNhanMinAgeNumericBox.Value + 1;
+                TiepNhanMaxAgeNumericBox.Value = TiepNhanMinAgeNumericBox.Value;
             }
-            
-            SQLConnect db = SQLConnect.GetInstance();
-            db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
 
-            db.sqlCmd.CommandText = "UPDATE QUIDINH SET TuoiToiDa = @TuoiToiDa;";
-
-            db.sqlCmd.Parameters.AddWithValue("@TuoiToiDa", (int)TiepNhanMaxAgeNumericBox.Value);
-
-            db.sqlCmd.Connection = db.sqlCon;
-
-            try
-            {
-                db.sqlCmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Error.GetInstance().Show("Xảy ra lỗi trong quá trình thay đổi dữ liệu"+ex.Message);
-            }
+            QuiDinh.ThayDoiTuoiToiDa((int)TiepNhanMaxAgeNumericBox.Value);
         }
 
         //TAB TIẾP NHẬN: Sự kiện khi giá trị tuổi tối thiểu thay đổi
@@ -395,27 +396,10 @@ namespace QuanLyHocSinh_Nhom15
         {
             if (TiepNhanMaxAgeNumericBox.Value < TiepNhanMinAgeNumericBox.Value)
             {
-                TiepNhanMaxAgeNumericBox.Value = TiepNhanMinAgeNumericBox.Value + 1;
+                TiepNhanMinAgeNumericBox.Value = TiepNhanMaxAgeNumericBox.Value;
             }
 
-            SQLConnect db = SQLConnect.GetInstance();
-            db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
-
-            db.sqlCmd.CommandText = "UPDATE QUIDINH SET TuoiToiThieu = @TuoiToiThieu;";
-
-            db.sqlCmd.Parameters.AddWithValue("@TuoiToiThieu", (int)TiepNhanMinAgeNumericBox.Value);
-
-            db.sqlCmd.Connection = db.sqlCon;
-
-            try
-            {
-                db.sqlCmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Error.GetInstance().Show("Xảy ra lỗi trong quá trình thay đổi dữ liệu" + ex.Message);
-            }
+            QuiDinh.ThayDoiTuoiToiThieu((int)TiepNhanMinAgeNumericBox.Value);
         }
 
         //TAB DANH SÁCH LỚP: Sự kiện xảy ra khi bấm nút tìm kiếm học sinh 
@@ -424,6 +408,64 @@ namespace QuanLyHocSinh_Nhom15
             LoadTabDanhSachLop("", DanhSachLopSearchTextBox.Text.Trim());
         }
 
+        //TAB DANH SÁCH LỚP: Sự kiện xảy ra khi bấm nút xem lớp
+        private void DanhSachLopXemLopButton_Click(object sender, EventArgs e)
+        {
+            //Kiểm tra đã chọn lớp hay chưa
+            if (DanhSachLopTenLopComboBox.Text.Length>0)
+            {
+                string idLop = DanhSachLopTenLopComboBox.Text.Substring(DanhSachLopTenLopComboBox.Text.Length-3);
+                LopHoc.idLop = idLop;
+            }
+            else
+            {
+                Error.GetInstance().Show("Vui lòng chọn lớp muốn xem");
+                return;
+            }
+            
+
+            DanhSachLopListView1.Items.Clear();
+            //Lấy danh sách học sinh dựa vào idLop từ tên lớp đã chọn
+            foreach (ListViewItem hocSinh in HocSinh.LayDanhSach())
+            {
+                if (hocSinh.SubItems[2].Text == LopHoc.idLop)
+                {
+                    ListViewItem item = new ListViewItem((DanhSachLopListView1.Items.Count + 1).ToString());
+                    item.SubItems.Add(hocSinh.SubItems[1]);
+                    item.SubItems.Add(hocSinh.SubItems[3]);
+                    item.SubItems.Add(hocSinh.SubItems[6].Text.Substring(hocSinh.SubItems[6].Text.Length - 4));
+                    item.SubItems.Add(hocSinh.SubItems[5]);
+                    item.SubItems.Add(hocSinh.Text);
+
+                    DanhSachLopListView1.Items.Add(item);
+                }
+            }
+            DanhSachLopSSLabel.Text=DanhSachLopListView1.Items.Count.ToString();
+        }
+
+        //TAB DANH SÁCH LỚP: Sự kiện xảy ra khi bấm nút thêm học sinh vào danh sách lớp
+        private void DanhSachLopThemHocSinhButton_Click(object sender, EventArgs e)
+        {
+            if (LopHoc.idLop.Length == 0)
+                Error.GetInstance().Show("Vui lòng xem lớp trước khi thêm học sinh");
+            else
+            {
+                LopHoc.ThemHocSinhVaoLop(DanhSachLopListView2.SelectedItems);
+                LoadTabDanhSachLop(LopHoc.idLop, "");
+            }
+        }
+
+        //TAB DANH SÁCH LỚP: Sự kiện xảy ra khi bấm nút xóa học sinh ra khỏi lớp
+        private void DanhSachLopXoaHocSinhButton_Click(object sender, EventArgs e)
+        {
+            if (LopHoc.idLop.Length == 0)
+                Error.GetInstance().Show("Vui lòng xem lớp trước khi thêm học sinh");
+            else
+            {
+                LopHoc.XoaHocSinhKhoiLop(DanhSachLopListView1.SelectedItems);
+                LoadTabDanhSachLop(LopHoc.idLop, "");
+            }
+        }
 
         //Khối sự kiện dành cho việc vẽ các item dành cho listview
         //---------------------------------------------------------------------------------------------------------------------------------
@@ -494,7 +536,6 @@ namespace QuanLyHocSinh_Nhom15
             e.DrawDefault = true;
         }
 
-        
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
     }

@@ -79,6 +79,7 @@
     <Compile Include="Error.Designer.cs">
       <DependentUpon>Error.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiaoVien.cs" />
     <Compile Include="GiaoVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +114,7 @@
     <Compile Include="HocSinhForm.Designer.cs">
       <DependentUpon>HocSinhForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuiDinh.cs" />
     <Compile Include="SQLConnect.cs" />
     <Compile Include="TaiKhoan.cs" />
     <EmbeddedResource Include="App.resx">
@@ -164,6 +166,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

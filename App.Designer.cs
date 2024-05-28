@@ -121,15 +121,16 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.DanhSachLopThemHocSinhButton = new MetroFramework.Controls.MetroButton();
             this.DanhSachLopXoaHocSinhButton = new MetroFramework.Controls.MetroButton();
             this.DanhSachLopListView2 = new MetroFramework.Controls.MetroListView();
             this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DanhSachLopSearchTextBox = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -161,7 +162,7 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DanhSachLopSSLabel = new MetroFramework.Controls.MetroLabel();
             this.panel1.SuspendLayout();
             this.AppTabControl.SuspendLayout();
             this.TabTraCuu.SuspendLayout();
@@ -243,7 +244,7 @@ namespace QuanLyHocSinh_Nhom15
             this.AppTabControl.UseCustomForeColor = true;
             this.AppTabControl.UseSelectable = true;
             this.AppTabControl.UseStyleColors = true;
-            this.AppTabControl.Deselecting += new System.Windows.Forms.TabControlCancelEventHandler(this.AppTabControl_Deselecting);
+            this.AppTabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.AppTabControl_Selecting);
             // 
             // TabTraCuu
             // 
@@ -1097,6 +1098,7 @@ namespace QuanLyHocSinh_Nhom15
             // TabDanhSachLop
             // 
             this.TabDanhSachLop.BackColor = System.Drawing.Color.Teal;
+            this.TabDanhSachLop.Controls.Add(this.DanhSachLopSSLabel);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopTimKiemButton);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopSiSoLabel);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopTenLopComboBox);
@@ -1148,6 +1150,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // DanhSachLopTenLopComboBox
             // 
+            this.DanhSachLopTenLopComboBox.FormatString = "Sub";
             this.DanhSachLopTenLopComboBox.FormattingEnabled = true;
             this.DanhSachLopTenLopComboBox.ItemHeight = 23;
             this.DanhSachLopTenLopComboBox.Location = new System.Drawing.Point(66, 79);
@@ -1156,6 +1159,7 @@ namespace QuanLyHocSinh_Nhom15
             this.DanhSachLopTenLopComboBox.Size = new System.Drawing.Size(158, 29);
             this.DanhSachLopTenLopComboBox.TabIndex = 26;
             this.DanhSachLopTenLopComboBox.UseSelectable = true;
+            this.DanhSachLopTenLopComboBox.SelectedIndexChanged += new System.EventHandler(this.DanhSachLopTenLopComboBox_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -1216,12 +1220,12 @@ namespace QuanLyHocSinh_Nhom15
             // columnHeader14
             // 
             this.columnHeader14.Text = "Họ tên";
-            this.columnHeader14.Width = 139;
+            this.columnHeader14.Width = 210;
             // 
             // columnHeader15
             // 
             this.columnHeader15.Text = "Giới tính";
-            this.columnHeader15.Width = 92;
+            this.columnHeader15.Width = 55;
             // 
             // columnHeader16
             // 
@@ -1232,6 +1236,11 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.columnHeader17.Text = "Địa chỉ";
             this.columnHeader17.Width = 159;
+            // 
+            // columnHeader37
+            // 
+            this.columnHeader37.Text = "ID";
+            this.columnHeader37.Width = 0;
             // 
             // metroPanel1
             // 
@@ -1262,6 +1271,7 @@ namespace QuanLyHocSinh_Nhom15
             this.DanhSachLopThemHocSinhButton.UseCustomBackColor = true;
             this.DanhSachLopThemHocSinhButton.UseCustomForeColor = true;
             this.DanhSachLopThemHocSinhButton.UseSelectable = true;
+            this.DanhSachLopThemHocSinhButton.Click += new System.EventHandler(this.DanhSachLopThemHocSinhButton_Click);
             // 
             // DanhSachLopXoaHocSinhButton
             // 
@@ -1274,6 +1284,7 @@ namespace QuanLyHocSinh_Nhom15
             this.DanhSachLopXoaHocSinhButton.UseCustomBackColor = true;
             this.DanhSachLopXoaHocSinhButton.UseCustomForeColor = true;
             this.DanhSachLopXoaHocSinhButton.UseSelectable = true;
+            this.DanhSachLopXoaHocSinhButton.Click += new System.EventHandler(this.DanhSachLopXoaHocSinhButton_Click);
             // 
             // DanhSachLopListView2
             // 
@@ -1306,6 +1317,11 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader31.Text = "STT";
             this.columnHeader31.Width = 39;
             // 
+            // columnHeader35
+            // 
+            this.columnHeader35.Text = "ID";
+            this.columnHeader35.Width = 100;
+            // 
             // columnHeader32
             // 
             this.columnHeader32.Text = "Họ tên";
@@ -1320,11 +1336,6 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.columnHeader34.Text = "Năm sinh";
             this.columnHeader34.Width = 83;
-            // 
-            // columnHeader35
-            // 
-            this.columnHeader35.Text = "ID";
-            this.columnHeader35.Width = 100;
             // 
             // DanhSachLopSearchTextBox
             // 
@@ -1422,6 +1433,7 @@ namespace QuanLyHocSinh_Nhom15
             this.DanhSachLopXemLopButton.TabIndex = 2;
             this.DanhSachLopXemLopButton.Text = "Xem lớp";
             this.DanhSachLopXemLopButton.UseSelectable = true;
+            this.DanhSachLopXemLopButton.Click += new System.EventHandler(this.DanhSachLopXemLopButton_Click);
             // 
             // TabUser
             // 
@@ -1715,10 +1727,14 @@ namespace QuanLyHocSinh_Nhom15
             this.label1.Size = new System.Drawing.Size(191, 24);
             this.label1.TabIndex = 0;
             // 
-            // columnHeader37
+            // DanhSachLopSSLabel
             // 
-            this.columnHeader37.Text = "ID";
-            this.columnHeader37.Width = 0;
+            this.DanhSachLopSSLabel.AutoSize = true;
+            this.DanhSachLopSSLabel.Location = new System.Drawing.Point(66, 126);
+            this.DanhSachLopSSLabel.Name = "DanhSachLopSSLabel";
+            this.DanhSachLopSSLabel.Size = new System.Drawing.Size(16, 19);
+            this.DanhSachLopSSLabel.TabIndex = 29;
+            this.DanhSachLopSSLabel.Text = "0";
             // 
             // App
             // 
@@ -1906,6 +1922,7 @@ namespace QuanLyHocSinh_Nhom15
         private MetroFramework.Controls.MetroButton TiepNhanTimKiemButton;
         private MetroFramework.Controls.MetroButton DanhSachLopTimKiemButton;
         private System.Windows.Forms.ColumnHeader columnHeader37;
+        private MetroFramework.Controls.MetroLabel DanhSachLopSSLabel;
     }
 }
 
