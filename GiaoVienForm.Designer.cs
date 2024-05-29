@@ -35,11 +35,12 @@
             this.IDGiaoVien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UserName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.VaiTro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Vai_Tro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.HoTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IDMonHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NgaySinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DiaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -76,11 +77,12 @@
             this.IDGiaoVien,
             this.UserName,
             this.Password,
-            this.VaiTro,
+            this.Vai_Tro,
             this.HoTen,
             this.IDMonHoc,
             this.NgaySinh,
-            this.DiaChi});
+            this.DiaChi,
+            this.columnHeader1});
             this.metroListView1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.metroListView1.FullRowSelect = true;
             this.metroListView1.GridLines = true;
@@ -116,10 +118,10 @@
             this.Password.Text = "Mật khẩu";
             this.Password.Width = 200;
             // 
-            // VaiTro
+            // Vai_Tro
             // 
-            this.VaiTro.Text = "Vai trò";
-            this.VaiTro.Width = 200;
+            this.Vai_Tro.Text = "Vai trò";
+            this.Vai_Tro.Width = 200;
             // 
             // HoTen
             // 
@@ -128,18 +130,27 @@
             // 
             // IDMonHoc
             // 
+            this.IDMonHoc.DisplayIndex = 7;
             this.IDMonHoc.Text = "Môn học";
             this.IDMonHoc.Width = 200;
             // 
             // NgaySinh
             // 
+            this.NgaySinh.DisplayIndex = 8;
             this.NgaySinh.Text = "Ngày sinh";
             this.NgaySinh.Width = 200;
             // 
             // DiaChi
             // 
+            this.DiaChi.DisplayIndex = 9;
             this.DiaChi.Text = "Địa chỉ";
             this.DiaChi.Width = 200;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.DisplayIndex = 6;
+            this.columnHeader1.Text = "Giới tính";
+            this.columnHeader1.Width = 80;
             // 
             // GiaoVienForm
             // 
@@ -162,7 +173,7 @@
             this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "GiaoVienForm";
-            this.Shown += new System.EventHandler(this.GiaoVienForm_Shown);
+            this.VisibleChanged += new System.EventHandler(this.GiaoVienForm_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,10 +188,11 @@
         private System.Windows.Forms.ColumnHeader IDGiaoVien;
         private System.Windows.Forms.ColumnHeader UserName;
         private System.Windows.Forms.ColumnHeader Password;
-        private System.Windows.Forms.ColumnHeader VaiTro;
+        private System.Windows.Forms.ColumnHeader Vai_Tro;
         private System.Windows.Forms.ColumnHeader HoTen;
         private System.Windows.Forms.ColumnHeader IDMonHoc;
         private System.Windows.Forms.ColumnHeader NgaySinh;
         private System.Windows.Forms.ColumnHeader DiaChi;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

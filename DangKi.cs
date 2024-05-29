@@ -6,6 +6,7 @@ using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -46,52 +47,25 @@ namespace QuanLyHocSinh_Nhom15
             }
             else
             {
-                SQLConnect db = SQLConnect.GetInstance();
-                db.Open();
-                db.sqlCmd.CommandType = CommandType.Text;
 
                 string idGiaoVien = DangKiIDTextBox.Text;
                 string tenTaiKhoan = DangKiUsernameTextBox.Text;
-                string password = DangKiPasswordTextBox1.Text;
+                string matKhau = DangKiPasswordTextBox1.Text;
                 string hoTen = DangKiHoVaTenTextBox.Text;
                 string diaChi = DangKiDiaChiTextBox.Text;
                 string ngaySinh = DangKiNgaySinhDateTime1.Text;
                 string vaiTro = DangKiVaiTroComboBox.Text;
                 string monHoc = DangKiMonHocComboBox.Text;
+                string gioiTinh = DangKiGioiTinhComboBox.Text;
 
-
-                db.sqlCmd.CommandText = "SET DATEFORMAT DMY; " +
-                           "DECLARE @idMonHoc CHAR(2), @idVaiTro CHAR(2), @idTaiKhoan CHAR(5);" +
-                           "SELECT @idMonHoc = idMonHoc FROM MONHOC WHERE TenMonHoc = @monHoc;" +
-                           "SELECT @idVaiTro = idVaiTro FROM VAITRO WHERE TenVaiTro = @vaiTro;" +
-                           "SELECT @idTaiKhoan = RIGHT(YEAR(GETDATE()), 2) + " +
-                           "RIGHT('000' + CAST(ISNULL((SELECT MAX(CAST(RIGHT(idTaiKhoan, 3) AS INT)) + 1 FROM TAIKHOAN " +
-                           "WHERE idTaiKhoan LIKE RIGHT(YEAR(GETDATE()), 2) + '%'), 1) AS VARCHAR(3)), 3);" +
-                           "INSERT INTO GIAOVIEN VALUES (@idGiaoVien, @hoTen, @ngaySinh, @diaChi, @idMonHoc);" +
-                           "INSERT INTO TAIKHOAN VALUES (@idTaiKhoan, @idGiaoVien, @tenTaiKhoan, @password, @idVaiTro);";
-
-                
-                db.sqlCmd.Parameters.AddWithValue("@monHoc", monHoc);
-                db.sqlCmd.Parameters.AddWithValue("@vaiTro", vaiTro);
-                db.sqlCmd.Parameters.AddWithValue("@idGiaoVien", idGiaoVien);
-                db.sqlCmd.Parameters.AddWithValue("@hoTen", hoTen);
-                db.sqlCmd.Parameters.AddWithValue("@ngaySinh", ngaySinh);
-                db.sqlCmd.Parameters.AddWithValue("@diaChi", diaChi);
-                db.sqlCmd.Parameters.AddWithValue("@tenTaiKhoan", tenTaiKhoan);
-                db.sqlCmd.Parameters.AddWithValue("@password", password);
-
-
-                db.sqlCmd.Connection = db.sqlCon;
-
-                try
+                if(!TaiKhoan.GetInstance().TonTai(tenTaiKhoan,matKhau))
                 {
-                    db.sqlCmd.ExecuteNonQuery();
+                    GiaoVien.GetInstance().ThemGiaoVien(idGiaoVien, hoTen, ngaySinh, diaChi, monHoc,gioiTinh);
+                    TaiKhoan.GetInstance().DangKiTaiKhoan(idGiaoVien, tenTaiKhoan, matKhau, vaiTro);
                     this.Hide();
                 }
-                catch (Exception ex) 
-                {
-                    Error.GetInstance().Show(ex.Message);    
-                }
+                else
+                    Error.GetInstance().Show("Tên tài khoản-mật khẩu đã tồn tại trong hệ thống vui lòng chọn tên tài khoản hoặc mật khẩu khác");
 
             }    
 
@@ -103,56 +77,27 @@ namespace QuanLyHocSinh_Nhom15
             if(Visible==true)
             {
                 ClearForm();
-                SQLConnect db = SQLConnect.GetInstance();
-                db.Open();
-                db.sqlCmd.CommandType = CommandType.Text;
 
                 //Cập nhật danh sách môn học
-                db.sqlCmd.CommandText = "SELECT TenMonHoc FROM MONHOC";
-
-                db.sqlCmd.Connection = db.sqlCon;
-
-                db.reader = db.sqlCmd.ExecuteReader();
-
                 DangKiMonHocComboBox.Items.Clear();
-
-                while (db.reader.Read())
+                foreach(ListViewItem monHoc in MonHoc.GetInstance().LayDanhSach())
                 {
-                    DangKiMonHocComboBox.Items.Add(db.reader.GetString(0));
+                    DangKiMonHocComboBox.Items.Add(monHoc.SubItems[1].Text);
                 }
-                db.reader.Close();
 
                 //Cập nhật danh sách vai trò
-                db.sqlCmd.CommandText = "SELECT TenVaiTro FROM VAITRO";
-
-                db.sqlCmd.Connection = db.sqlCon;
-
-                db.reader = db.sqlCmd.ExecuteReader();
-
                 DangKiVaiTroComboBox.Items.Clear();
-
-                while (db.reader.Read())
+                foreach (ListViewItem vaiTro in VaiTro.GetInstance().LayDanhSach())
                 {
-                    DangKiVaiTroComboBox.Items.Add(db.reader.GetString(0));
+                    DangKiVaiTroComboBox.Items.Add(vaiTro.SubItems[1].Text);
                 }
-                db.reader.Close();
-
                 //Cập nhật ID giáo viên trong form
-                db.sqlCmd.CommandText = "SELECT  RIGHT('00000' + CAST(ISNULL((SELECT MAX(CAST(RIGHT(idGiaoVien, 5) AS INT)) + 1 FROM GIAOVIEN), 1) AS VARCHAR(5)), 5) AS result;";
+                DangKiIDTextBox.Text=GiaoVien.GetInstance().LayIdDangKi();
 
-                db.sqlCmd.Connection = db.sqlCon;
-
-                db.reader = db.sqlCmd.ExecuteReader();
-
-                if (db.reader.Read())
-                {
-                    DangKiIDTextBox.Text = db.reader.GetString(0);
-                }
-                db.reader.Close();
-
-                //Chọn môn học và vai trò mặc định và ngày sinh mặc định cho tài khoản giáo viên
+                //Chọn môn học, vai trò, ngày sinh, giới tính mặc định cho tài khoản giáo viên
                 DangKiMonHocComboBox.SelectedIndex = 0;
                 DangKiVaiTroComboBox.SelectedIndex = 1;
+                DangKiGioiTinhComboBox.SelectedIndex = 0;
                 DangKiNgaySinhDateTime1.Value = new DateTime(2000, 01, 01);
             }
         }

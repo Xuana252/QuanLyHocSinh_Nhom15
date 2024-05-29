@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Button LoginButton;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.UserNameTextBox = new MetroFramework.Controls.MetroTextBox();
             this.PasswordTextBox = new MetroFramework.Controls.MetroTextBox();
@@ -39,6 +40,23 @@
             LoginButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // LoginButton
+            // 
+            LoginButton.BackColor = System.Drawing.Color.Teal;
+            LoginButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            LoginButton.FlatAppearance.BorderSize = 0;
+            LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            LoginButton.ForeColor = System.Drawing.SystemColors.Window;
+            LoginButton.Location = new System.Drawing.Point(179, 176);
+            LoginButton.Name = "LoginButton";
+            LoginButton.Size = new System.Drawing.Size(114, 32);
+            LoginButton.TabIndex = 2;
+            LoginButton.TabStop = false;
+            LoginButton.Text = "Đăng nhập";
+            LoginButton.UseVisualStyleBackColor = false;
+            LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // metroStyleManager1
             // 
@@ -126,23 +144,6 @@
             this.SignInLabel.TabIndex = 3;
             this.SignInLabel.Text = "Chào mừng bạn";
             // 
-            // LoginButton
-            // 
-            LoginButton.BackColor = System.Drawing.Color.Teal;
-            LoginButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            LoginButton.FlatAppearance.BorderSize = 0;
-            LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            LoginButton.ForeColor = System.Drawing.SystemColors.Window;
-            LoginButton.Location = new System.Drawing.Point(179, 176);
-            LoginButton.Name = "LoginButton";
-            LoginButton.Size = new System.Drawing.Size(114, 32);
-            LoginButton.TabIndex = 2;
-            LoginButton.TabStop = false;
-            LoginButton.Text = "Đăng nhập";
-            LoginButton.UseVisualStyleBackColor = false;
-            LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
-            // 
             // LoginNoteLabel
             // 
             this.LoginNoteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -183,6 +184,7 @@
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.UserNameTextBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -190,7 +192,6 @@
             this.Padding = new System.Windows.Forms.Padding(30, 92, 30, 30);
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
-            this.ShowIcon = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);

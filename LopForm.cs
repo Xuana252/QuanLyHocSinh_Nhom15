@@ -17,6 +17,7 @@ namespace QuanLyHocSinh_Nhom15
 
         LopHoc lopHoc = LopHoc.GetInstance();
         GiaoVien giaoVien = GiaoVien.GetInstance();
+        QuiDinh quiDinh = QuiDinh.GetInstance();    
         
         public LopForm(App MainApp)
         {
@@ -73,27 +74,39 @@ namespace QuanLyHocSinh_Nhom15
 
         void LoadForm()
         {
-            //lấy danh sách giáo viên vào combobox
-            DanhSachLopHocGVCNComboBox.Items.Clear();
-            foreach (ListViewItem item in giaoVien.LayDanhSach())
-            {
-                DanhSachLopHocGVCNComboBox.Items.Add(item.Text);
-            }
+            //Load sỉ số tối đa từ hệ thống và gán giá trị tương ứng
+            quiDinh.LoadSiSoToiDa();
+            DanhSachLopHocNumericUpDown1.ValueChanged -= DanhSachLopHocNumericUpDown1_ValueChanged;
+            DanhSachLopHocNumericUpDown1.Value = quiDinh.SiSoToiDa;
+            DanhSachLopHocNumericUpDown1.ValueChanged += DanhSachLopHocNumericUpDown1_ValueChanged;
 
+            List<ListViewItem> giaoViens = GiaoVien.GetInstance().LayDanhSach();
+            List<ListViewItem> lopHocs = LopHoc.GetInstance().LayDanhSach();
+            List<string> GVCNList = new List<string>();
             //lấy danh sách lớp học vào listview
             DanhSachLopHocListView.Items.Clear();
-            foreach (ListViewItem item in lopHoc.LayDanhSach())
+            foreach (ListViewItem lopHoc in lopHocs)
             {
                 ListViewItem lop = new ListViewItem();
                 lop.Text = (DanhSachLopHocListView.Items.Count + 1).ToString();
-                lop.SubItems.Add(item.SubItems[0].Text);
-                lop.SubItems.Add(item.SubItems[1].Text);
-                lop.SubItems.Add(item.SubItems[2].Text);
-                lop.SubItems.Add(item.SubItems[3].Text);
+                lop.SubItems.Add(lopHoc.SubItems[0].Text);
+                lop.SubItems.Add(lopHoc.SubItems[1].Text);
+                lop.SubItems.Add(lopHoc.SubItems[2].Text);
+                lop.SubItems.Add(lopHoc.SubItems[3].Text);
+                GVCNList.Add(lopHoc.SubItems[3].Text);
 
                 DanhSachLopHocListView.Items.Add(lop);
             }
 
+            //lấy danh sách giáo viên vào combobox
+            DanhSachLopHocGVCNComboBox.Items.Clear();
+            foreach (ListViewItem giaoVien in giaoViens)
+            {
+                if (!GVCNList.Contains(giaoVien.SubItems[0].Text))
+                    DanhSachLopHocGVCNComboBox.Items.Add(giaoVien.Text);
+            }
+
+           
         }
 
         //hàm clearform
@@ -125,24 +138,7 @@ namespace QuanLyHocSinh_Nhom15
         //Sự kiện xảy ra khi chọn sỉ số tối đa
         private void DanhSachLopHocNumericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            SQLConnect db = SQLConnect.GetInstance();
-            db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
-
-            db.sqlCmd.CommandText = "UPDATE QUIDINH SET SiSoToiDa = @SiSoToiDa;";
-
-            db.sqlCmd.Parameters.AddWithValue("@SiSoToiDa", (int)DanhSachLopHocNumericUpDown1.Value);
-
-            db.sqlCmd.Connection = db.sqlCon;
-
-            try
-            {
-                db.sqlCmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Error.GetInstance().Show("Xảy ra lỗi trong quá trình thay đổi dữ liệu" + ex.Message);
-            }
+            quiDinh.ThayDoiSiSoToiDa((int)DanhSachLopHocNumericUpDown1.Value);
         }
 
         //hàm kiểm tra điền đầy đủ

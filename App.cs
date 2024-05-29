@@ -13,6 +13,7 @@ using MetroFramework.Controls;
 using System.Runtime.CompilerServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Diagnostics.Eventing.Reader;
+using MetroFramework.Properties;
 
 namespace QuanLyHocSinh_Nhom15
 {
@@ -55,6 +56,12 @@ namespace QuanLyHocSinh_Nhom15
             UserDateofBirthLabel.Text = user.ngaySinh;
             UserSubjectLabel.Text = user.monHoc;
             UserRoleLabel.Text = user.vaiTro;
+            UserAddressLabel.Text = user.diaChi;
+            UserGenderLabel.Text = user.gioiTinh;
+            if (user.gioiTinh == "Nam")
+                pictureBox1.Image = Properties.Resources.Male;
+            else
+                pictureBox1.Image= Properties.Resources.Female;
 
             //Tạo Form cần thiết 
             monHocForm = new MonHocForm();
@@ -63,6 +70,48 @@ namespace QuanLyHocSinh_Nhom15
             giaoVienForm = new GiaoVienForm();
             studentForm = new HocSinhForm(this);
             lopForm = new LopForm(this);
+
+            //--------------------------Điều chỉnh các control tùy thuộc vào quyền hạn (vai trò) của User----------------------------------------------------------
+            if (user.idVaiTro != "QL")
+            {
+                AppTabControl.TabPages.Remove(TabTiepNhan); //Không hiển thị tab tiếp nhận
+
+                AppTabControl.ItemSize =new Size( (AppTabControl.Width-10) / 5,0);
+
+                //TAB BÁO CÁO MÔN
+                QuanLyMonHocButton.Visible=false;//Không hiển thị nút quản lí môn học
+
+                //TAB TỔNG KẾT 
+                TongKetDiemDatNumericBox.Enabled=false;//Không cho phép thay đổi điểm qua môn
+
+                //TAB DANH SÁCH LỚP
+                //Không hiển thị các control liên quan đến danh sách học sinh tiếp nhận
+                //------------------------------------------------------------
+                label7.Visible=false;
+                metroLabel11.Visible=false;
+                DanhSachLopListView2.Visible=false;
+                DanhSachLopQuanLiButton.Visible=false;
+                DanhSachLopSearchTextBox.Visible=false;
+                DanhSachLopTimKiemButton.Visible=false;
+                DanhSachLopXoaHocSinhButton.Visible=false;
+                DanhSachLopThemHocSinhButton.Visible = false;
+                metroPanel1.Visible=false;
+                //---------------------------------------------------------------
+
+                //Điều chỉnh chiều rộng của listview danh sách học sinh lớp và các cột của nó
+                DanhSachLopListView1.Width = 1073;
+                foreach (ColumnHeader header in DanhSachLopListView1.Columns)
+                {
+                    if (header.Index != 0)
+                        header.Width = 1040 / 5;
+                }
+
+                //TAB TÀI KHOẢN
+                TaiKhoanQuanLiTaiKhoanButton.Visible=false;//Không hiển thị nút quản lí tài khoản
+                TaiKhoanDangKiButton.Visible=false;//Không hiển thị nút đăng kí
+
+            }
+            //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         }
 
@@ -104,7 +153,7 @@ namespace QuanLyHocSinh_Nhom15
 
                         TiepNhanListView.Items.Add(item);
                     }
-                    else if (hocSinh.SubItems[1].Text == hoTenTimKiem)//Ngược lại nếu tên học sinh trùng với ten trong thanh tìm kiếm
+                    else if (hocSinh.SubItems[1].Text.Contains(hoTenTimKiem))//Ngược lại nếu tên học sinh trùng với ten trong thanh tìm kiếm
                     {
                         ListViewItem item = new ListViewItem();
                         item.Text = (hocSinh.Text);
@@ -172,8 +221,12 @@ namespace QuanLyHocSinh_Nhom15
                 DanhSachLopTenLopComboBox.Items.Add(item.SubItems[1].Text +" - "+item.Text);
             }
 
-            if(idLop.Length==0)
-               DanhSachLopListView1.Items.Clear(); //Làm trống danh sách học sinh lớp học
+            if (idLop.Length == 0)
+            {
+                DanhSachLopListView1.Items.Clear(); //Làm trống danh sách học sinh lớp học
+
+                DanhSachLopSSLabel.Text = "0";//Cập nhật sỉ số thành 0 nếu không có lớp nào được chọn
+            }
             else
             {
                 //Cập nhật danh sách học sinh lớp học dựa theo idLop
@@ -189,11 +242,14 @@ namespace QuanLyHocSinh_Nhom15
                         item.SubItems.Add(hocSinh.SubItems[6].Text.Substring(hocSinh.SubItems[6].Text.Length - 4));
                         item.SubItems.Add(hocSinh.SubItems[5]);
                         item.SubItems.Add(hocSinh.Text);
-                        
+
 
                         DanhSachLopListView1.Items.Add(item);
                     }
                 }
+                //Cập nhật sỉ số lớp đã chọn
+                DanhSachLopSSLabel.Text = DanhSachLopListView1.Items.Count.ToString();
+
             }
  
             //Load danh sách học sinh tiếp nhận dựa trên thanh tìm kiếm
@@ -214,7 +270,7 @@ namespace QuanLyHocSinh_Nhom15
 
                         DanhSachLopListView2.Items.Add(item);
                     }
-                    else if (hocSinh.SubItems[1].Text == hoTenTimKiem)//Ngược lại nếu tên học sinh trùng với ten trong thanh tìm kiếm
+                    else if (hocSinh.SubItems[1].Text.Contains(hoTenTimKiem))//Ngược lại nếu tên học sinh bao gồm trong thanh tìm kiếm
                     {
                         ListViewItem item = new ListViewItem();
                         item.Text = ((DanhSachLopListView2.Items.Count + 1).ToString());
@@ -234,21 +290,21 @@ namespace QuanLyHocSinh_Nhom15
         //Sự kiện khi thay đổi tab dùng để dánh dấu tab đang chuyển tới
         private void AppTabControl_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            switch (AppTabControl.SelectedIndex)
+            switch (e.TabPage.Name)
             {
-                case 0:
+                case "TabTraCuu":
                     break;
-                case 1:
+                case "TabBaoCao":
                     break;
-                case 2:
+                case "TabTongKet":
                     break;
-                case 3:
+                case "TabTiepNhan":
                     LoadTabTiepNhan("");
                     break;
-                case 4:
+                case "TabDanhSachLop":
                     LoadTabDanhSachLop("", "");
                     break;
-                case 5:
+                case "TabUser":
                     break;
 
             }
@@ -405,7 +461,7 @@ namespace QuanLyHocSinh_Nhom15
         //TAB DANH SÁCH LỚP: Sự kiện xảy ra khi bấm nút tìm kiếm học sinh 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            LoadTabDanhSachLop("", DanhSachLopSearchTextBox.Text.Trim());
+            LoadTabDanhSachLop(LopHoc.idLop, DanhSachLopSearchTextBox.Text.Trim());
         }
 
         //TAB DANH SÁCH LỚP: Sự kiện xảy ra khi bấm nút xem lớp
@@ -440,6 +496,7 @@ namespace QuanLyHocSinh_Nhom15
                     DanhSachLopListView1.Items.Add(item);
                 }
             }
+            //Cập nhật sỉ số lớp đã chọn
             DanhSachLopSSLabel.Text=DanhSachLopListView1.Items.Count.ToString();
         }
 

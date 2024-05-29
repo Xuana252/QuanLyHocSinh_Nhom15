@@ -30,6 +30,7 @@ namespace QuanLyHocSinh_Nhom15
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(App));
             this.panel1 = new System.Windows.Forms.Panel();
             this.ExitButton = new System.Windows.Forms.Button();
             this.AppNameLabel = new System.Windows.Forms.Label();
@@ -110,11 +111,6 @@ namespace QuanLyHocSinh_Nhom15
             this.TiepNhanXoaHocSinhButton = new MetroFramework.Controls.MetroButton();
             this.TiepNhanThemSuaHocSinhButton = new MetroFramework.Controls.MetroButton();
             this.TabDanhSachLop = new MetroFramework.Controls.MetroTabPage();
-            this.DanhSachLopTimKiemButton = new MetroFramework.Controls.MetroButton();
-            this.DanhSachLopSiSoLabel = new System.Windows.Forms.Label();
-            this.DanhSachLopTenLopComboBox = new MetroFramework.Controls.MetroComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.DanhSachLopListView1 = new MetroFramework.Controls.MetroListView();
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -122,6 +118,12 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DanhSachLopSSLabel = new MetroFramework.Controls.MetroLabel();
+            this.DanhSachLopTimKiemButton = new MetroFramework.Controls.MetroButton();
+            this.DanhSachLopSiSoLabel = new System.Windows.Forms.Label();
+            this.DanhSachLopTenLopComboBox = new MetroFramework.Controls.MetroComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.DanhSachLopThemHocSinhButton = new MetroFramework.Controls.MetroButton();
             this.DanhSachLopXoaHocSinhButton = new MetroFramework.Controls.MetroButton();
@@ -140,6 +142,7 @@ namespace QuanLyHocSinh_Nhom15
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.DanhSachLopXemLopButton = new MetroFramework.Controls.MetroButton();
             this.TabUser = new MetroFramework.Controls.MetroTabPage();
+            this.label8 = new System.Windows.Forms.Label();
             this.TaiKhoanQuanLiTaiKhoanButton = new MetroFramework.Controls.MetroButton();
             this.UserRoleLabel = new System.Windows.Forms.Label();
             this.UserSubjectLabel = new System.Windows.Forms.Label();
@@ -162,7 +165,12 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.DanhSachLopSSLabel = new MetroFramework.Controls.MetroLabel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.UserGenderLabel = new System.Windows.Forms.Label();
+            this.UserAddressLabel = new System.Windows.Forms.Label();
+            this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.AppTabControl.SuspendLayout();
             this.TabTraCuu.SuspendLayout();
@@ -181,7 +189,11 @@ namespace QuanLyHocSinh_Nhom15
             this.metroPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.TabUser.SuspendLayout();
+            this.metroPanel4.SuspendLayout();
             this.metroPanel2.SuspendLayout();
+            this.metroPanel5.SuspendLayout();
+            this.metroPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -235,11 +247,11 @@ namespace QuanLyHocSinh_Nhom15
             this.AppTabControl.Location = new System.Drawing.Point(0, 48);
             this.AppTabControl.Multiline = true;
             this.AppTabControl.Name = "AppTabControl";
-            this.AppTabControl.SelectedIndex = 4;
+            this.AppTabControl.SelectedIndex = 5;
             this.AppTabControl.Size = new System.Drawing.Size(1081, 607);
             this.AppTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AppTabControl.Style = MetroFramework.MetroColorStyle.Teal;
-            this.AppTabControl.TabIndex = 1;
+            this.AppTabControl.TabIndex = 0;
             this.AppTabControl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.AppTabControl.UseCustomForeColor = true;
             this.AppTabControl.UseSelectable = true;
@@ -1098,13 +1110,13 @@ namespace QuanLyHocSinh_Nhom15
             // TabDanhSachLop
             // 
             this.TabDanhSachLop.BackColor = System.Drawing.Color.Teal;
+            this.TabDanhSachLop.Controls.Add(this.DanhSachLopListView1);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopSSLabel);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopTimKiemButton);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopSiSoLabel);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopTenLopComboBox);
             this.TabDanhSachLop.Controls.Add(this.label14);
             this.TabDanhSachLop.Controls.Add(this.label7);
-            this.TabDanhSachLop.Controls.Add(this.DanhSachLopListView1);
             this.TabDanhSachLop.Controls.Add(this.metroPanel1);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopListView2);
             this.TabDanhSachLop.Controls.Add(this.DanhSachLopSearchTextBox);
@@ -1127,63 +1139,6 @@ namespace QuanLyHocSinh_Nhom15
             this.TabDanhSachLop.VerticalScrollbarBarColor = true;
             this.TabDanhSachLop.VerticalScrollbarHighlightOnWheel = false;
             this.TabDanhSachLop.VerticalScrollbarSize = 10;
-            // 
-            // DanhSachLopTimKiemButton
-            // 
-            this.DanhSachLopTimKiemButton.Location = new System.Drawing.Point(860, 85);
-            this.DanhSachLopTimKiemButton.Name = "DanhSachLopTimKiemButton";
-            this.DanhSachLopTimKiemButton.Size = new System.Drawing.Size(75, 23);
-            this.DanhSachLopTimKiemButton.TabIndex = 28;
-            this.DanhSachLopTimKiemButton.Text = "Tìm kiếm";
-            this.DanhSachLopTimKiemButton.UseSelectable = true;
-            this.DanhSachLopTimKiemButton.Click += new System.EventHandler(this.metroButton2_Click);
-            // 
-            // DanhSachLopSiSoLabel
-            // 
-            this.DanhSachLopSiSoLabel.AutoSize = true;
-            this.DanhSachLopSiSoLabel.BackColor = System.Drawing.Color.Transparent;
-            this.DanhSachLopSiSoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DanhSachLopSiSoLabel.Location = new System.Drawing.Point(66, 126);
-            this.DanhSachLopSiSoLabel.Name = "DanhSachLopSiSoLabel";
-            this.DanhSachLopSiSoLabel.Size = new System.Drawing.Size(0, 16);
-            this.DanhSachLopSiSoLabel.TabIndex = 27;
-            // 
-            // DanhSachLopTenLopComboBox
-            // 
-            this.DanhSachLopTenLopComboBox.FormatString = "Sub";
-            this.DanhSachLopTenLopComboBox.FormattingEnabled = true;
-            this.DanhSachLopTenLopComboBox.ItemHeight = 23;
-            this.DanhSachLopTenLopComboBox.Location = new System.Drawing.Point(66, 79);
-            this.DanhSachLopTenLopComboBox.Name = "DanhSachLopTenLopComboBox";
-            this.DanhSachLopTenLopComboBox.PromptText = "Tên Lớp";
-            this.DanhSachLopTenLopComboBox.Size = new System.Drawing.Size(158, 29);
-            this.DanhSachLopTenLopComboBox.TabIndex = 26;
-            this.DanhSachLopTenLopComboBox.UseSelectable = true;
-            this.DanhSachLopTenLopComboBox.SelectedIndexChanged += new System.EventHandler(this.DanhSachLopTenLopComboBox_SelectedIndexChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label14.Location = new System.Drawing.Point(2, 164);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(111, 18);
-            this.label14.TabIndex = 24;
-            this.label14.Text = "Danh sách lớp :";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label7.Location = new System.Drawing.Point(554, 161);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(210, 18);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Danh sách học sinh tiếp nhận :";
             // 
             // DanhSachLopListView1
             // 
@@ -1241,6 +1196,72 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.columnHeader37.Text = "ID";
             this.columnHeader37.Width = 0;
+            // 
+            // DanhSachLopSSLabel
+            // 
+            this.DanhSachLopSSLabel.AutoSize = true;
+            this.DanhSachLopSSLabel.Location = new System.Drawing.Point(66, 126);
+            this.DanhSachLopSSLabel.Name = "DanhSachLopSSLabel";
+            this.DanhSachLopSSLabel.Size = new System.Drawing.Size(16, 19);
+            this.DanhSachLopSSLabel.TabIndex = 29;
+            this.DanhSachLopSSLabel.Text = "0";
+            // 
+            // DanhSachLopTimKiemButton
+            // 
+            this.DanhSachLopTimKiemButton.Location = new System.Drawing.Point(860, 85);
+            this.DanhSachLopTimKiemButton.Name = "DanhSachLopTimKiemButton";
+            this.DanhSachLopTimKiemButton.Size = new System.Drawing.Size(75, 23);
+            this.DanhSachLopTimKiemButton.TabIndex = 28;
+            this.DanhSachLopTimKiemButton.Text = "Tìm kiếm";
+            this.DanhSachLopTimKiemButton.UseSelectable = true;
+            this.DanhSachLopTimKiemButton.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
+            // DanhSachLopSiSoLabel
+            // 
+            this.DanhSachLopSiSoLabel.AutoSize = true;
+            this.DanhSachLopSiSoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.DanhSachLopSiSoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhSachLopSiSoLabel.Location = new System.Drawing.Point(66, 126);
+            this.DanhSachLopSiSoLabel.Name = "DanhSachLopSiSoLabel";
+            this.DanhSachLopSiSoLabel.Size = new System.Drawing.Size(0, 16);
+            this.DanhSachLopSiSoLabel.TabIndex = 27;
+            // 
+            // DanhSachLopTenLopComboBox
+            // 
+            this.DanhSachLopTenLopComboBox.FormatString = "Sub";
+            this.DanhSachLopTenLopComboBox.FormattingEnabled = true;
+            this.DanhSachLopTenLopComboBox.ItemHeight = 23;
+            this.DanhSachLopTenLopComboBox.Location = new System.Drawing.Point(66, 79);
+            this.DanhSachLopTenLopComboBox.Name = "DanhSachLopTenLopComboBox";
+            this.DanhSachLopTenLopComboBox.PromptText = "Tên Lớp";
+            this.DanhSachLopTenLopComboBox.Size = new System.Drawing.Size(158, 29);
+            this.DanhSachLopTenLopComboBox.TabIndex = 26;
+            this.DanhSachLopTenLopComboBox.UseSelectable = true;
+            this.DanhSachLopTenLopComboBox.SelectedIndexChanged += new System.EventHandler(this.DanhSachLopTenLopComboBox_SelectedIndexChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label14.Location = new System.Drawing.Point(2, 164);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(111, 18);
+            this.label14.TabIndex = 24;
+            this.label14.Text = "Danh sách lớp :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label7.Location = new System.Drawing.Point(554, 161);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(210, 18);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Danh sách học sinh tiếp nhận :";
             // 
             // metroPanel1
             // 
@@ -1437,19 +1458,11 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // TabUser
             // 
+            this.TabUser.Controls.Add(this.metroPanel5);
             this.TabUser.Controls.Add(this.TaiKhoanQuanLiTaiKhoanButton);
-            this.TabUser.Controls.Add(this.UserRoleLabel);
-            this.TabUser.Controls.Add(this.UserSubjectLabel);
-            this.TabUser.Controls.Add(this.UserDateofBirthLabel);
-            this.TabUser.Controls.Add(this.UserNameLabel);
-            this.TabUser.Controls.Add(this.UserIDLabel);
             this.TabUser.Controls.Add(this.metroPanel4);
-            this.TabUser.Controls.Add(this.label13);
-            this.TabUser.Controls.Add(this.label12);
-            this.TabUser.Controls.Add(this.label11);
-            this.TabUser.Controls.Add(this.label10);
-            this.TabUser.Controls.Add(this.label9);
             this.TabUser.Controls.Add(this.metroPanel2);
+            this.TabUser.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TabUser.HorizontalScrollbarBarColor = true;
             this.TabUser.HorizontalScrollbarHighlightOnWheel = false;
             this.TabUser.HorizontalScrollbarSize = 10;
@@ -1462,6 +1475,18 @@ namespace QuanLyHocSinh_Nhom15
             this.TabUser.VerticalScrollbarBarColor = true;
             this.TabUser.VerticalScrollbarHighlightOnWheel = false;
             this.TabUser.VerticalScrollbarSize = 10;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Teal;
+            this.label8.Location = new System.Drawing.Point(56, 127);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(93, 24);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Giới tính:";
             // 
             // TaiKhoanQuanLiTaiKhoanButton
             // 
@@ -1479,7 +1504,7 @@ namespace QuanLyHocSinh_Nhom15
             this.UserRoleLabel.BackColor = System.Drawing.Color.Transparent;
             this.UserRoleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserRoleLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.UserRoleLabel.Location = new System.Drawing.Point(689, 251);
+            this.UserRoleLabel.Location = new System.Drawing.Point(212, 219);
             this.UserRoleLabel.Name = "UserRoleLabel";
             this.UserRoleLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.UserRoleLabel.Size = new System.Drawing.Size(73, 16);
@@ -1492,7 +1517,7 @@ namespace QuanLyHocSinh_Nhom15
             this.UserSubjectLabel.BackColor = System.Drawing.Color.Transparent;
             this.UserSubjectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserSubjectLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.UserSubjectLabel.Location = new System.Drawing.Point(689, 207);
+            this.UserSubjectLabel.Location = new System.Drawing.Point(212, 175);
             this.UserSubjectLabel.Name = "UserSubjectLabel";
             this.UserSubjectLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.UserSubjectLabel.Size = new System.Drawing.Size(92, 16);
@@ -1505,7 +1530,7 @@ namespace QuanLyHocSinh_Nhom15
             this.UserDateofBirthLabel.BackColor = System.Drawing.Color.Transparent;
             this.UserDateofBirthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserDateofBirthLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.UserDateofBirthLabel.Location = new System.Drawing.Point(689, 165);
+            this.UserDateofBirthLabel.Location = new System.Drawing.Point(212, 303);
             this.UserDateofBirthLabel.Name = "UserDateofBirthLabel";
             this.UserDateofBirthLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.UserDateofBirthLabel.Size = new System.Drawing.Size(117, 16);
@@ -1518,7 +1543,7 @@ namespace QuanLyHocSinh_Nhom15
             this.UserNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.UserNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserNameLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.UserNameLabel.Location = new System.Drawing.Point(689, 122);
+            this.UserNameLabel.Location = new System.Drawing.Point(212, 90);
             this.UserNameLabel.Name = "UserNameLabel";
             this.UserNameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.UserNameLabel.Size = new System.Drawing.Size(81, 16);
@@ -1531,7 +1556,7 @@ namespace QuanLyHocSinh_Nhom15
             this.UserIDLabel.BackColor = System.Drawing.Color.Transparent;
             this.UserIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserIDLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.UserIDLabel.Location = new System.Drawing.Point(689, 77);
+            this.UserIDLabel.Location = new System.Drawing.Point(212, 45);
             this.UserIDLabel.Name = "UserIDLabel";
             this.UserIDLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.UserIDLabel.Size = new System.Drawing.Size(55, 16);
@@ -1540,13 +1565,14 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // metroPanel4
             // 
+            this.metroPanel4.Controls.Add(this.pictureBox1);
             this.metroPanel4.HorizontalScrollbarBarColor = true;
             this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel4.HorizontalScrollbarSize = 10;
             this.metroPanel4.Location = new System.Drawing.Point(158, 116);
             this.metroPanel4.Name = "metroPanel4";
             this.metroPanel4.Size = new System.Drawing.Size(134, 131);
-            this.metroPanel4.TabIndex = 8;
+            this.metroPanel4.TabIndex = 1;
             this.metroPanel4.UseCustomBackColor = true;
             this.metroPanel4.UseCustomForeColor = true;
             this.metroPanel4.UseStyleColors = true;
@@ -1560,7 +1586,7 @@ namespace QuanLyHocSinh_Nhom15
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Teal;
-            this.label13.Location = new System.Drawing.Point(522, 245);
+            this.label13.Location = new System.Drawing.Point(56, 211);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(93, 24);
             this.label13.TabIndex = 7;
@@ -1572,7 +1598,7 @@ namespace QuanLyHocSinh_Nhom15
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Teal;
-            this.label12.Location = new System.Drawing.Point(522, 201);
+            this.label12.Location = new System.Drawing.Point(51, 169);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(98, 24);
             this.label12.TabIndex = 6;
@@ -1584,7 +1610,7 @@ namespace QuanLyHocSinh_Nhom15
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Teal;
-            this.label11.Location = new System.Drawing.Point(522, 157);
+            this.label11.Location = new System.Drawing.Point(40, 295);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(109, 24);
             this.label11.TabIndex = 5;
@@ -1596,11 +1622,11 @@ namespace QuanLyHocSinh_Nhom15
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Teal;
-            this.label10.Location = new System.Drawing.Point(522, 116);
+            this.label10.Location = new System.Drawing.Point(44, 84);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(111, 24);
+            this.label10.Size = new System.Drawing.Size(105, 24);
             this.label10.TabIndex = 4;
-            this.label10.Text = "Họ và tên: ";
+            this.label10.Text = "Họ và tên:";
             // 
             // label9
             // 
@@ -1608,7 +1634,7 @@ namespace QuanLyHocSinh_Nhom15
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Teal;
-            this.label9.Location = new System.Drawing.Point(522, 71);
+            this.label9.Location = new System.Drawing.Point(114, 39);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 24);
             this.label9.TabIndex = 3;
@@ -1727,14 +1753,100 @@ namespace QuanLyHocSinh_Nhom15
             this.label1.Size = new System.Drawing.Size(191, 24);
             this.label1.TabIndex = 0;
             // 
-            // DanhSachLopSSLabel
+            // label16
             // 
-            this.DanhSachLopSSLabel.AutoSize = true;
-            this.DanhSachLopSSLabel.Location = new System.Drawing.Point(66, 126);
-            this.DanhSachLopSSLabel.Name = "DanhSachLopSSLabel";
-            this.DanhSachLopSSLabel.Size = new System.Drawing.Size(16, 19);
-            this.DanhSachLopSSLabel.TabIndex = 29;
-            this.DanhSachLopSSLabel.Text = "0";
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Teal;
+            this.label16.Location = new System.Drawing.Point(69, 256);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(80, 24);
+            this.label16.TabIndex = 29;
+            this.label16.Text = "Địa chỉ:";
+            // 
+            // UserGenderLabel
+            // 
+            this.UserGenderLabel.AutoSize = true;
+            this.UserGenderLabel.BackColor = System.Drawing.Color.Transparent;
+            this.UserGenderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserGenderLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.UserGenderLabel.Location = new System.Drawing.Point(213, 133);
+            this.UserGenderLabel.Name = "UserGenderLabel";
+            this.UserGenderLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UserGenderLabel.Size = new System.Drawing.Size(91, 16);
+            this.UserGenderLabel.TabIndex = 30;
+            this.UserGenderLabel.Text = "UserGender";
+            // 
+            // UserAddressLabel
+            // 
+            this.UserAddressLabel.AutoSize = true;
+            this.UserAddressLabel.BackColor = System.Drawing.Color.Transparent;
+            this.UserAddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserAddressLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.UserAddressLabel.Location = new System.Drawing.Point(212, 262);
+            this.UserAddressLabel.Name = "UserAddressLabel";
+            this.UserAddressLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UserAddressLabel.Size = new System.Drawing.Size(98, 16);
+            this.UserAddressLabel.TabIndex = 31;
+            this.UserAddressLabel.Text = "UserAddress";
+            // 
+            // metroPanel5
+            // 
+            this.metroPanel5.BackColor = System.Drawing.Color.LightCyan;
+            this.metroPanel5.Controls.Add(this.metroPanel6);
+            this.metroPanel5.Controls.Add(this.UserAddressLabel);
+            this.metroPanel5.Controls.Add(this.UserGenderLabel);
+            this.metroPanel5.Controls.Add(this.UserRoleLabel);
+            this.metroPanel5.Controls.Add(this.UserSubjectLabel);
+            this.metroPanel5.Controls.Add(this.UserDateofBirthLabel);
+            this.metroPanel5.Controls.Add(this.UserNameLabel);
+            this.metroPanel5.Controls.Add(this.UserIDLabel);
+            this.metroPanel5.HorizontalScrollbarBarColor = true;
+            this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.HorizontalScrollbarSize = 10;
+            this.metroPanel5.Location = new System.Drawing.Point(450, 32);
+            this.metroPanel5.Name = "metroPanel5";
+            this.metroPanel5.Size = new System.Drawing.Size(603, 465);
+            this.metroPanel5.TabIndex = 32;
+            this.metroPanel5.UseCustomBackColor = true;
+            this.metroPanel5.VerticalScrollbarBarColor = true;
+            this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel6
+            // 
+            this.metroPanel6.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.metroPanel6.Controls.Add(this.label16);
+            this.metroPanel6.Controls.Add(this.label8);
+            this.metroPanel6.Controls.Add(this.label13);
+            this.metroPanel6.Controls.Add(this.label12);
+            this.metroPanel6.Controls.Add(this.label11);
+            this.metroPanel6.Controls.Add(this.label10);
+            this.metroPanel6.Controls.Add(this.label9);
+            this.metroPanel6.HorizontalScrollbarBarColor = true;
+            this.metroPanel6.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel6.HorizontalScrollbarSize = 10;
+            this.metroPanel6.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel6.Name = "metroPanel6";
+            this.metroPanel6.Size = new System.Drawing.Size(167, 464);
+            this.metroPanel6.TabIndex = 32;
+            this.metroPanel6.UseCustomBackColor = true;
+            this.metroPanel6.VerticalScrollbarBarColor = true;
+            this.metroPanel6.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel6.VerticalScrollbarSize = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.Male;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(134, 131);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // App
             // 
@@ -1746,6 +1858,7 @@ namespace QuanLyHocSinh_Nhom15
             this.Controls.Add(this.AppTabControl);
             this.Controls.Add(this.panel1);
             this.DisplayHeader = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "App";
@@ -1782,8 +1895,13 @@ namespace QuanLyHocSinh_Nhom15
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.TabUser.ResumeLayout(false);
-            this.TabUser.PerformLayout();
+            this.metroPanel4.ResumeLayout(false);
             this.metroPanel2.ResumeLayout(false);
+            this.metroPanel5.ResumeLayout(false);
+            this.metroPanel5.PerformLayout();
+            this.metroPanel6.ResumeLayout(false);
+            this.metroPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1923,6 +2041,13 @@ namespace QuanLyHocSinh_Nhom15
         private MetroFramework.Controls.MetroButton DanhSachLopTimKiemButton;
         private System.Windows.Forms.ColumnHeader columnHeader37;
         private MetroFramework.Controls.MetroLabel DanhSachLopSSLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label8;
+        private MetroFramework.Controls.MetroPanel metroPanel5;
+        private MetroFramework.Controls.MetroPanel metroPanel6;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label UserAddressLabel;
+        private System.Windows.Forms.Label UserGenderLabel;
     }
 }
 
