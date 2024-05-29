@@ -117,6 +117,12 @@ namespace QuanLyHocSinh_Nhom15
         private void HocSinhEmailTextBox_VisibleChanged(object sender, EventArgs e)
         {
 
+                
+        }
+
+        //Sự kiện xảy ra khi form xuất hiện
+        private void HocSinhForm_VisibleChanged(object sender, EventArgs e)
+        {
             if (hocSinh.flagSua)
             {
                 HocSinhHoTenTextBox.Text = hocSinh.HoTen;
@@ -128,7 +134,6 @@ namespace QuanLyHocSinh_Nhom15
             }
             else
                 ClearForm();
-                
         }
     }
 }

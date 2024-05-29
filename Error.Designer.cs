@@ -56,11 +56,11 @@
             this.ErrorLabel.AutoSize = true;
             this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ErrorLabel.ForeColor = System.Drawing.Color.Teal;
-            this.ErrorLabel.Location = new System.Drawing.Point(86, 5);
+            this.ErrorLabel.Location = new System.Drawing.Point(102, 5);
             this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(122, 31);
+            this.ErrorLabel.Size = new System.Drawing.Size(98, 31);
             this.ErrorLabel.TabIndex = 1;
-            this.ErrorLabel.Text = "!!!Error!!!";
+            this.ErrorLabel.Text = "!!!Lỗi!!!";
             // 
             // label1
             // 
