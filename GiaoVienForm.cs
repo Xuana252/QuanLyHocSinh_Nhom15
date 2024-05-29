@@ -36,30 +36,35 @@ namespace QuanLyHocSinh_Nhom15
             e.DrawDefault = true;
 
         }
-        
-        private void GiaoVienForm_Shown(object sender, EventArgs e)
+        //Sự kiện xảy ra khi biểu mẩu xuất hiện và biến mất
+        private void GiaoVienForm_VisibleChanged(object sender, EventArgs e)
         {
-            metroListView1.Items.Clear();
-            List<ListViewItem> MergedTaiKhoans = TaiKhoan.GetInstance().LayDanhSach();
-            List<ListViewItem> GiaoViens = GiaoVien.GetInstance().LayDanhSach();
-            List<ListViewItem> MonHocs = MonHoc.GetInstance().LayDanhSach();
-            List<ListViewItem> VaiTros = VaiTro.GetInstance().LayDanhSach();
-
-            MergeDanhSach(MergedTaiKhoans, GiaoViens, MonHocs, VaiTros);
-            foreach (ListViewItem taiKhoan in MergedTaiKhoans)
+            if(Visible==true)
             {
-                ListViewItem item = new ListViewItem(metroListView1.Items.Count.ToString());
-                item.SubItems.Add(taiKhoan.SubItems[1]);//IDGiaoVien
-                item.SubItems.Add(taiKhoan.SubItems[2]);//TenTaiKhoan
-                item.SubItems.Add(taiKhoan.SubItems[3]);//MatKhau
-                item.SubItems.Add(taiKhoan.SubItems[13]);//VaiTro
-                item.SubItems.Add(taiKhoan.SubItems[6]);//HoTen
-                item.SubItems.Add(taiKhoan.SubItems[11]);//MonHoc
-                item.SubItems.Add(taiKhoan.SubItems[7]);//NgaySinh
-                item.SubItems.Add(taiKhoan.SubItems[8]);//DiaChi
+                metroListView1.Items.Clear();
+                List<ListViewItem> MergedTaiKhoans = TaiKhoan.GetInstance().LayDanhSach();
+                List<ListViewItem> GiaoViens = GiaoVien.GetInstance().LayDanhSach();
+                List<ListViewItem> MonHocs = MonHoc.GetInstance().LayDanhSach();
+                List<ListViewItem> VaiTros = VaiTro.GetInstance().LayDanhSach();
 
-                metroListView1.Items.Add(item);
-            }
+                MergeDanhSach(MergedTaiKhoans, GiaoViens, MonHocs, VaiTros);
+                foreach (ListViewItem taiKhoan in MergedTaiKhoans)
+                {
+                    ListViewItem item = new ListViewItem(metroListView1.Items.Count.ToString());
+                    item.SubItems.Add(taiKhoan.SubItems[1]);//IDGiaoVien
+                    item.SubItems.Add(taiKhoan.SubItems[2]);//TenTaiKhoan
+                    item.SubItems.Add(taiKhoan.SubItems[3]);//MatKhau
+                    item.SubItems.Add(taiKhoan.SubItems[14]);//VaiTro
+                    item.SubItems.Add(taiKhoan.SubItems[6]);//HoTen
+                    item.SubItems.Add(taiKhoan.SubItems[12]);//GioiTinh
+                    item.SubItems.Add(taiKhoan.SubItems[7]);//MonHoc
+                    item.SubItems.Add(taiKhoan.SubItems[8]);//NgaySinh
+                    item.SubItems.Add(taiKhoan.SubItems[10]);//DiaChi
+
+                    metroListView1.Items.Add(item);
+                }
+            }    
+
         }
 
         //Hàm gộp danh sách tài khoản và thông tin giáo viên tương ứng
@@ -133,5 +138,7 @@ namespace QuanLyHocSinh_Nhom15
                 }
             }
         }
+
+       
     }
 }

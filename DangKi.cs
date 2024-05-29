@@ -56,10 +56,11 @@ namespace QuanLyHocSinh_Nhom15
                 string ngaySinh = DangKiNgaySinhDateTime1.Text;
                 string vaiTro = DangKiVaiTroComboBox.Text;
                 string monHoc = DangKiMonHocComboBox.Text;
+                string gioiTinh = DangKiGioiTinhComboBox.Text;
 
                 if(!TaiKhoan.GetInstance().TonTai(tenTaiKhoan,matKhau))
                 {
-                    GiaoVien.GetInstance().ThemGiaoVien(idGiaoVien, hoTen, ngaySinh, diaChi, monHoc);
+                    GiaoVien.GetInstance().ThemGiaoVien(idGiaoVien, hoTen, ngaySinh, diaChi, monHoc,gioiTinh);
                     TaiKhoan.GetInstance().DangKiTaiKhoan(idGiaoVien, tenTaiKhoan, matKhau, vaiTro);
                     this.Hide();
                 }
@@ -93,9 +94,10 @@ namespace QuanLyHocSinh_Nhom15
                 //Cập nhật ID giáo viên trong form
                 DangKiIDTextBox.Text=GiaoVien.GetInstance().LayIdDangKi();
 
-                //Chọn môn học và vai trò mặc định và ngày sinh mặc định cho tài khoản giáo viên
+                //Chọn môn học, vai trò, ngày sinh, giới tính mặc định cho tài khoản giáo viên
                 DangKiMonHocComboBox.SelectedIndex = 0;
                 DangKiVaiTroComboBox.SelectedIndex = 1;
+                DangKiGioiTinhComboBox.SelectedIndex = 0;
                 DangKiNgaySinhDateTime1.Value = new DateTime(2000, 01, 01);
             }
         }

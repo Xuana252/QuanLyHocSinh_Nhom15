@@ -48,6 +48,8 @@
             this.DangKiDiaChiTextBox = new System.Windows.Forms.RichTextBox();
             this.DangKiMonHocComboBox = new MetroFramework.Controls.MetroComboBox();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.DangKiGioiTinhComboBox = new MetroFramework.Controls.MetroComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // DangKiButton
@@ -299,11 +301,11 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Teal;
-            this.label9.Location = new System.Drawing.Point(394, 225);
+            this.label9.Location = new System.Drawing.Point(398, 225);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 20);
+            this.label9.Size = new System.Drawing.Size(70, 20);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Môn học ";
+            this.label9.Text = "Môn học";
             // 
             // DangKiHoVaTenTextBox
             // 
@@ -381,6 +383,30 @@
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // DangKiGioiTinhComboBox
+            // 
+            this.DangKiGioiTinhComboBox.FormattingEnabled = true;
+            this.DangKiGioiTinhComboBox.ItemHeight = 23;
+            this.DangKiGioiTinhComboBox.Items.AddRange(new object[] {
+            "Nam",
+            "Nu"});
+            this.DangKiGioiTinhComboBox.Location = new System.Drawing.Point(474, 272);
+            this.DangKiGioiTinhComboBox.Name = "DangKiGioiTinhComboBox";
+            this.DangKiGioiTinhComboBox.Size = new System.Drawing.Size(244, 29);
+            this.DangKiGioiTinhComboBox.TabIndex = 23;
+            this.DangKiGioiTinhComboBox.UseSelectable = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Teal;
+            this.label10.Location = new System.Drawing.Point(401, 281);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(67, 20);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Giới tính";
+            // 
             // DangKi
             // 
             this.AcceptButton = this.DangKiButton;
@@ -388,6 +414,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(774, 383);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.DangKiGioiTinhComboBox);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.DangKiMonHocComboBox);
             this.Controls.Add(this.DangKiDiaChiTextBox);
@@ -447,5 +475,7 @@
         private System.Windows.Forms.RichTextBox DangKiDiaChiTextBox;
         private MetroFramework.Controls.MetroComboBox DangKiMonHocComboBox;
         private System.Windows.Forms.Button ExitButton;
+        private MetroFramework.Controls.MetroComboBox DangKiGioiTinhComboBox;
+        private System.Windows.Forms.Label label10;
     }
 }

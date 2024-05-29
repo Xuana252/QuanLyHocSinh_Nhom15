@@ -13,6 +13,7 @@ using MetroFramework.Controls;
 using System.Runtime.CompilerServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Diagnostics.Eventing.Reader;
+using MetroFramework.Properties;
 
 namespace QuanLyHocSinh_Nhom15
 {
@@ -55,6 +56,12 @@ namespace QuanLyHocSinh_Nhom15
             UserDateofBirthLabel.Text = user.ngaySinh;
             UserSubjectLabel.Text = user.monHoc;
             UserRoleLabel.Text = user.vaiTro;
+            UserAddressLabel.Text = user.diaChi;
+            UserGenderLabel.Text = user.gioiTinh;
+            if (user.gioiTinh == "Nam")
+                pictureBox1.Image = Properties.Resources.Male;
+            else
+                pictureBox1.Image= Properties.Resources.Female;
 
             //Tạo Form cần thiết 
             monHocForm = new MonHocForm();
