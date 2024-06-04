@@ -256,6 +256,7 @@
             this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "StudentForm";
+            this.VisibleChanged += new System.EventHandler(this.HocSinhForm_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
