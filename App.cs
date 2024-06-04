@@ -32,6 +32,9 @@ namespace QuanLyHocSinh_Nhom15
         HocSinh HocSinh = HocSinh.GetInstance();
         LopHoc LopHoc = LopHoc.GetInstance();
         QuiDinh QuiDinh = QuiDinh.GetInstance();
+        MonHoc MonHoc = MonHoc.GetInstance();
+        BangDiem BangDiem = BangDiem.GetInstance();
+        ChiTietBangDiem chiTietBangDiem= ChiTietBangDiem.GetInstance();
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -66,7 +69,7 @@ namespace QuanLyHocSinh_Nhom15
             //Tạo Form cần thiết 
             monHocForm = new MonHocForm();
             dangKiForm = new DangKi();
-            diemForm = new DiemForm();
+            diemForm = new DiemForm(this);
             giaoVienForm = new GiaoVienForm();
             studentForm = new HocSinhForm(this);
             lopForm = new LopForm(this);
@@ -109,6 +112,9 @@ namespace QuanLyHocSinh_Nhom15
                 //TAB TÀI KHOẢN
                 TaiKhoanQuanLiTaiKhoanButton.Visible=false;//Không hiển thị nút quản lí tài khoản
                 TaiKhoanDangKiButton.Visible=false;//Không hiển thị nút đăng kí
+
+                //TAB BÁO CÁO MÔN
+
 
             }
             //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -286,6 +292,29 @@ namespace QuanLyHocSinh_Nhom15
 
             }
         }
+        //Hàm load Tab báo cáo môn
+        public void LoadTabBaoCaoMon()
+        {
+            string tempTenLop=BaoCaoLopComboBox.Text;
+            string tempTenMon=BaoCaoMonHocComboBox.Text;
+            BaoCaoLopComboBox.Items.Clear();
+            foreach (ListViewItem item in LopHoc.LayDanhSach())
+            {
+                BaoCaoLopComboBox.Items.Add(item.SubItems[1].Text);
+            }
+            BaoCaoLopComboBox.Text = tempTenLop;
+            BaoCaoMonHocComboBox.Items.Clear();
+            foreach (ListViewItem item in MonHoc.LayDanhSach())
+            {
+                BaoCaoMonHocComboBox.Items.Add(item.SubItems[1].Text);
+            }
+            BaoCaoMonHocComboBox.Text = tempTenMon;
+            BaoCaoListView.Items.Clear();
+            foreach(ListViewItem item in BangDiem.LayDanhSach(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value))
+            {
+                BaoCaoListView.Items.Add(item);
+            }    
+        }
 
         //Sự kiện khi thay đổi tab dùng để dánh dấu tab đang chuyển tới
         private void AppTabControl_Selecting(object sender, TabControlCancelEventArgs e)
@@ -295,6 +324,7 @@ namespace QuanLyHocSinh_Nhom15
                 case "TabTraCuu":
                     break;
                 case "TabBaoCao":
+                    LoadTabBaoCaoMon();
                     break;
                 case "TabTongKet":
                     break;
@@ -351,7 +381,18 @@ namespace QuanLyHocSinh_Nhom15
         //TAB BÁO CÁO: Sự kiện khi bấm nút thêm sửa điểm
         private void BaoCaoThemSuaDiemButton_Click(object sender, EventArgs e)
         {
-            diemForm.Show();
+            if (BaoCaoListView.SelectedItems.Count > 0)
+            {
+                diemForm.idbangdiem = BangDiem.getIdBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
+                diemForm.idhocsinh = BaoCaoListView.SelectedItems[0].SubItems[5].Text;
+                if (BaoCaoListView.SelectedItems[0].SubItems[3].Text != "0")
+                    diemForm.flagSua = true;
+                diemForm.Show();
+            }
+            else
+            {
+                Error.GetInstance().Show("Vui lòng chọn học sinh cần thêm điểm");   
+            }    
         }
         //TAB DANH SÁCH LỚP: Sự kiện khi bấm nút quản lí danh sách lớp
         private void DanhSachLopQuanLiButton_Click(object sender, EventArgs e)
@@ -592,6 +633,38 @@ namespace QuanLyHocSinh_Nhom15
         {
             e.DrawDefault = true;
         }
+
+        private void BaoCaoXemBangDiemButton_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in BangDiem.LayDanhSach(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value))
+            {
+                BaoCaoListView.Items.Add(item); 
+            } 
+                
+        }
+
+        private void BaoCaoXoaBangDiemButton_Click(object sender, EventArgs e)
+        {
+            BangDiem.XoaBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
+        }
+
+
+        private void BaoCaoThemBangDiemButton_Click(object sender, EventArgs e)
+        {
+            BangDiem.ThemBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
+        }
+
+        private void BaoCaoXoaDiemButton_Click(object sender, EventArgs e)
+        {
+            if(BaoCaoListView.SelectedItems.Count > 0) 
+            {
+                string idbangdiem = BangDiem.getIdBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
+                chiTietBangDiem.XoaDiem(idbangdiem,BaoCaoListView.SelectedItems[0].SubItems[5].Text);
+            }
+            
+        }
+
+       
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 

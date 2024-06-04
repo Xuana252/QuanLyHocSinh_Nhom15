@@ -19,6 +19,8 @@ namespace QuanLyHocSinh_Nhom15
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
+            IDMonTextBox.Clear();
+            TenMonTextBox.Clear();
             Hide();
         }
 
@@ -65,7 +67,46 @@ namespace QuanLyHocSinh_Nhom15
         {
             e.DrawDefault = true;
         }
+
+        private void ThemSuaMonButton_Click(object sender, EventArgs e)
+        {
+            if (IDMonTextBox.Text == "" || TenMonTextBox.Text == "")
+            {
+                Error.GetInstance().Show("Vui lòng nhập đầy đủ thông tin");
+                return;
+            }    
+            if(MonListView1.SelectedItems.Count > 0)
+            {
+                MonHoc.GetInstance().SuaMonHoc(IDMonTextBox.Text,TenMonTextBox.Text);
+                MonHocForm_Shown(sender,e);
+            }
+            else
+            {
+                MonHoc.GetInstance().ThemMonHoc(IDMonTextBox.Text, TenMonTextBox.Text);
+                MonHocForm_Shown(sender, e);
+            }
+        }
+
+        private void XoaMonButton_Click(object sender, EventArgs e)
+        {
+            MonHoc.GetInstance().XoaMonHoc(MonListView1.SelectedItems);
+            MonHocForm_Shown(sender, e);
+        }
+
+        private void MonListView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (MonListView1.SelectedItems.Count > 0)
+            {
+                IDMonTextBox.Text = MonListView1.SelectedItems[0].SubItems[1].Text;
+                TenMonTextBox.Text = MonListView1.SelectedItems[0].SubItems[2].Text;
+            }
+            else
+            {
+                
+                IDMonTextBox.Text = string.Empty;
+                TenMonTextBox.Text = string.Empty;
+            }
+        }
     }
 
-       
 }
