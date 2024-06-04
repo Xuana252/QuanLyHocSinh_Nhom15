@@ -39,7 +39,7 @@ namespace QuanLyHocSinh_Nhom15
                 DangKiPasswordTextBox1.Clear();
                 DangKiPasswordTextBox2.Clear();
             }
-            else if(DangKiPasswordTextBox1.Text.Length<8)
+            else if(DangKiPasswordTextBox1.Text.Length<8)//kiểm tra độ dài mật khẩu phù hợp
             {
                 Error.GetInstance().Show("Mật khẩu phải dài hơn 8 kí tự");
                 DangKiPasswordTextBox1.Clear();
