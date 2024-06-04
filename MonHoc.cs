@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +15,8 @@ namespace QuanLyHocSinh_Nhom15
         private static MonHoc _instance;
         public string idMonHoc;
         public string TenMonHoc;
+
+        public bool flagSua = false;
 
         public static MonHoc GetInstance()
         {
@@ -54,9 +58,86 @@ namespace QuanLyHocSinh_Nhom15
         }
 
         //Hàm thêm môn học
+        public void ThemMonHoc(string id, string tenmon)
+        {
+            SQLConnect db = SQLConnect.GetInstance();
+            db.Open();
+            db.sqlCmd.CommandType = CommandType.Text;
+
+
+            db.sqlCmd.CommandText = "insert into MONHOC values(@idmon, @tenmon)";
+
+            db.sqlCmd.Parameters.AddWithValue("@idmon", id);
+            db.sqlCmd.Parameters.AddWithValue("@tenmon", tenmon);
+
+            db.sqlCmd.Connection = db.sqlCon;
+
+            try
+            {
+                db.sqlCmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message.Substring(ex.Message.IndexOf('\n')));
+            }
+        }
 
         //Hàm sửa môn học
+        public void SuaMonHoc(string id, string tenmon)
+        {
+            SQLConnect db = SQLConnect.GetInstance();
+            db.Open();
+            db.sqlCmd.CommandType = CommandType.Text;
+
+
+            db.sqlCmd.CommandText = "update MONHOC set idMonHoc=@idmonhoc, TenMonHoc=@tenmon";
+            
+            db.sqlCmd.Parameters.AddWithValue("@idmon", id);
+            db.sqlCmd.Parameters.AddWithValue("@tenmon", tenmon);
+
+
+            db.sqlCmd.Connection = db.sqlCon;
+
+            try
+            {
+                db.sqlCmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message.Substring(ex.Message.IndexOf('\n')));
+            }
+
+        }
 
         //Hàm xóa môn học
+        public void XoaMonHoc(ListView.SelectedListViewItemCollection items)
+        {
+            SQLConnect db = SQLConnect.GetInstance();
+            db.Open();
+            db.sqlCmd.CommandType = CommandType.Text;
+
+            SqlParameter idMonHocParam = new SqlParameter("@idMonHoc", SqlDbType.Char, 2);
+
+            db.sqlCmd.Parameters.Add(idMonHocParam);
+
+            foreach (ListViewItem item in items)
+            {
+
+                idMonHocParam.Value = item.SubItems[1].Text;
+
+                db.sqlCmd.CommandText = "DELETE FROM MONHOC WHERE idMonHoc=@idMonHoc";
+
+                db.sqlCmd.Connection = db.sqlCon;
+
+                try
+                {
+                    db.sqlCmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message);
+                }
+            }
+        }
     }
 }

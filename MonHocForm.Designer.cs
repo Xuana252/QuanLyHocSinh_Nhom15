@@ -66,6 +66,7 @@
             this.MonListView1.View = System.Windows.Forms.View.Details;
             this.MonListView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.MonListView1_ColumnWidthChanging);
             this.MonListView1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.MonListView1_DrawItem);
+            this.MonListView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.MonListView1_ItemSelectionChanged);
             // 
             // STTMon
             // 
@@ -93,6 +94,7 @@
             this.ThemSuaMonButton.TabIndex = 3;
             this.ThemSuaMonButton.Text = "Thêm/Sửa";
             this.ThemSuaMonButton.UseVisualStyleBackColor = false;
+            this.ThemSuaMonButton.Click += new System.EventHandler(this.ThemSuaMonButton_Click);
             // 
             // XoaMonButton
             // 
@@ -107,6 +109,7 @@
             this.XoaMonButton.TabIndex = 4;
             this.XoaMonButton.Text = "Xóa";
             this.XoaMonButton.UseVisualStyleBackColor = false;
+            this.XoaMonButton.Click += new System.EventHandler(this.XoaMonButton_Click);
             // 
             // IDMonTextBox
             // 

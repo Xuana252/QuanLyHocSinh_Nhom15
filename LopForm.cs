@@ -105,8 +105,6 @@ namespace QuanLyHocSinh_Nhom15
                 if (!GVCNList.Contains(giaoVien.SubItems[0].Text))
                     DanhSachLopHocGVCNComboBox.Items.Add(giaoVien.Text);
             }
-
-           
         }
 
         //hàm clearform

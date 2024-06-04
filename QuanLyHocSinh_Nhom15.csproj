@@ -61,6 +61,7 @@
     <Compile Include="App.Designer.cs">
       <DependentUpon>App.cs</DependentUpon>
     </Compile>
+    <Compile Include="BangDiem.cs" />
     <Compile Include="DangKi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +180,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Male.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
