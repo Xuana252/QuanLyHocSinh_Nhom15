@@ -53,7 +53,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex) 
             {
-                MessageBox.Show(ex.Message);
+                Error.GetInstance().Show(ex.Message);
             }
             
         }

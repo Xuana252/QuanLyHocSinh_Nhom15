@@ -55,66 +55,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App.cs">
+    <Compile Include="Forms\App.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="App.Designer.cs">
+    <Compile Include="Forms\App.Designer.cs">
       <DependentUpon>App.cs</DependentUpon>
     </Compile>
-    <Compile Include="BangDiem.cs" />
-    <Compile Include="DangKi.cs">
+    <Compile Include="Classes\BangDiem.cs" />
+    <Compile Include="Forms\DangKi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangKi.Designer.cs">
+    <Compile Include="Forms\DangKi.Designer.cs">
       <DependentUpon>DangKi.cs</DependentUpon>
     </Compile>
-    <Compile Include="DangNhap.cs">
+    <Compile Include="Forms\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangNhap.Designer.cs">
+    <Compile Include="Forms\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChiTietBangDiem.cs" />
-    <Compile Include="Error.cs">
+    <Compile Include="Classes\ChiTietBangDiem.cs" />
+    <Compile Include="Forms\Error.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Error.Designer.cs">
+    <Compile Include="Forms\Error.Designer.cs">
       <DependentUpon>Error.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaoVien.cs" />
-    <Compile Include="GiaoVienForm.cs">
+    <Compile Include="Classes\GiaoVien.cs" />
+    <Compile Include="Forms\GiaoVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoVienForm.Designer.cs">
+    <Compile Include="Forms\GiaoVienForm.Designer.cs">
       <DependentUpon>GiaoVienForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DiemForm.cs">
+    <Compile Include="Forms\DiemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DiemForm.Designer.cs">
+    <Compile Include="Forms\DiemForm.Designer.cs">
       <DependentUpon>DiemForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HocSinh.cs" />
-    <Compile Include="LopForm.cs">
+    <Compile Include="Classes\HocSinh.cs" />
+    <Compile Include="Forms\LopForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LopForm.Designer.cs">
+    <Compile Include="Forms\LopForm.Designer.cs">
       <DependentUpon>LopForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LopHoc.cs" />
-    <Compile Include="MonHoc.cs" />
-    <Compile Include="MonHocForm.cs">
+    <Compile Include="Classes\LopHoc.cs" />
+    <Compile Include="Classes\MonHoc.cs" />
+    <Compile Include="Forms\MonHocForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MonHocForm.Designer.cs">
+    <Compile Include="Forms\MonHocForm.Designer.cs">
       <DependentUpon>MonHocForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="HocSinhForm.cs">
+    <Compile Include="Forms\HocSinhForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HocSinhForm.Designer.cs">
+    <Compile Include="Forms\HocSinhForm.Designer.cs">
       <DependentUpon>HocSinhForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -122,35 +122,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="QuiDinh.cs" />
-    <Compile Include="SQLConnect.cs" />
-    <Compile Include="TaiKhoan.cs" />
-    <Compile Include="VaiTro.cs" />
-    <EmbeddedResource Include="App.resx">
+    <Compile Include="Classes\QuiDinh.cs" />
+    <Compile Include="Classes\SQLConnect.cs" />
+    <Compile Include="Classes\TaiKhoan.cs" />
+    <Compile Include="Classes\VaiTro.cs" />
+    <EmbeddedResource Include="Forms\App.resx">
       <DependentUpon>App.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DangKi.resx">
+    <EmbeddedResource Include="Forms\DangKi.resx">
       <DependentUpon>DangKi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DangNhap.resx">
+    <EmbeddedResource Include="Forms\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Error.resx">
+    <EmbeddedResource Include="Forms\Error.resx">
       <DependentUpon>Error.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoVienForm.resx">
+    <EmbeddedResource Include="Forms\GiaoVienForm.resx">
       <DependentUpon>GiaoVienForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DiemForm.resx">
+    <EmbeddedResource Include="Forms\DiemForm.resx">
       <DependentUpon>DiemForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HocSinhForm.resx">
+    <EmbeddedResource Include="Forms\HocSinhForm.resx">
       <DependentUpon>HocSinhForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LopForm.resx">
+    <EmbeddedResource Include="Forms\LopForm.resx">
       <DependentUpon>LopForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MonHocForm.resx">
+    <EmbeddedResource Include="Forms\MonHocForm.resx">
       <DependentUpon>MonHocForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

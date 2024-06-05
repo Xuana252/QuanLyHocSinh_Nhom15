@@ -55,7 +55,7 @@
             this.ErrorLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ErrorLabel.AutoSize = true;
             this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorLabel.ForeColor = System.Drawing.Color.Teal;
+            this.ErrorLabel.ForeColor = System.Drawing.Color.Cyan;
             this.ErrorLabel.Location = new System.Drawing.Point(102, 5);
             this.ErrorLabel.Name = "ErrorLabel";
             this.ErrorLabel.Size = new System.Drawing.Size(98, 31);
