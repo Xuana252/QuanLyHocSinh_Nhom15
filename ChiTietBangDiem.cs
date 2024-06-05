@@ -94,5 +94,31 @@ namespace QuanLyHocSinh_Nhom15
                 Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message);
             }
         }
+
+        public decimal TinhDiemTBHocKy(string idhocsinh,decimal namhoc,string hocky)
+        {
+            decimal diemtb = 0;
+            int i = 0;
+            SQLConnect db = SQLConnect.GetInstance();
+            db.Open();
+            db.sqlCmd.CommandType = CommandType.Text;
+            db.sqlCmd.CommandText = "select diemtb from CHITIETBANGDIEM, BANGDIEM where CHITIETBANGDIEM.idbangdiem = BANGDIEM.idbangdiem and hocky = @hocky and namhoc = @namhoc and idhocsinh=@idhocsinh ";
+            db.sqlCmd.Parameters.AddWithValue("@idhocsinh", idhocsinh);
+            db.sqlCmd.Parameters.AddWithValue("@namhoc", namhoc);
+            db.sqlCmd.Parameters.AddWithValue("@hocky", hocky);
+
+            db.sqlCmd.Connection = db.sqlCon;
+            db.reader = db.sqlCmd.ExecuteReader();
+            while (db.reader.Read())
+            {
+                diemtb=diemtb+db.reader.GetDecimal(0);
+                i++;
+            }
+            db.reader.Close();
+            diemtb = diemtb / i;
+            return diemtb;
+
+
+        }
     }
 }

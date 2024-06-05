@@ -207,11 +207,9 @@ namespace QuanLyHocSinh_Nhom15
 
             db.sqlCmd.CommandText = "SELECT idHocSinh,HoTen,idLop,GioiTinh,Email,DiaChi,CONVERT(VARCHAR(10),NgaySinh,103) FROM HOCSINH";
 
-
             db.sqlCmd.Connection = db.sqlCon;
 
             db.reader = db.sqlCmd.ExecuteReader();
-
 
             while (db.reader.Read())
             {
@@ -236,6 +234,35 @@ namespace QuanLyHocSinh_Nhom15
 
             }
             db.reader.Close();
+            return itemList;
+        }
+
+        public List<ListViewItem> TraCuu(string hoten,decimal namhoc)
+        {
+            int i = 1;
+            List<ListViewItem> itemList = new List<ListViewItem>();
+            SQLConnect db = SQLConnect.GetInstance();
+            db.Open();
+            db.sqlCmd.CommandType = CommandType.Text;
+
+            db.sqlCmd.CommandText = "select hoten, tenlop, idhocsinh from HOCSINH, LOPHOC where HOCSINH.idlop=LOPHOC.idlop and hoten=N'%@hoten%' ";
+            db.sqlCmd.Parameters.AddWithValue("@hoten", hoten);
+
+            db.sqlCmd.Connection = db.sqlCon;
+
+            db.reader = db.sqlCmd.ExecuteReader();
+            while(db.reader.Read())
+            {
+                string hotenhocsinh=db.reader.GetString(0);
+                string tenlop =db.reader.GetString(1);
+                string idhocsinh= db.reader.GetString(2);
+                
+
+                ListViewItem item = new ListViewItem();
+                item.Text = i.ToString();
+                item.SubItems.Add
+
+            }
             return itemList;
         }
 

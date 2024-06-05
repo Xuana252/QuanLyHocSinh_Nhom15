@@ -45,9 +45,15 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.TabBaoCao = new MetroFramework.Controls.MetroTabPage();
+            this.BaoCaoXoaBangDiem = new System.Windows.Forms.Button();
+            this.BaoCaoXemBangDiem = new System.Windows.Forms.Button();
+            this.BaoCaoXoaDiem = new System.Windows.Forms.Button();
+            this.BaoCaoThemSuaDiem = new System.Windows.Forms.Button();
+            this.BaoCaoThemBangDiem = new System.Windows.Forms.Button();
             this.BaoCaoNamHocNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.BaoCaoListView = new MetroFramework.Controls.MetroListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -67,6 +73,7 @@ namespace QuanLyHocSinh_Nhom15
             this.label2 = new System.Windows.Forms.Label();
             this.BaoCaoMonHocComboBox = new MetroFramework.Controls.MetroComboBox();
             this.TabTongKet = new MetroFramework.Controls.MetroTabPage();
+            this.button6 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.TongKetDiemDatNumericBox = new System.Windows.Forms.NumericUpDown();
             this.TongKetNamComboBox = new MetroFramework.Controls.MetroComboBox();
@@ -166,12 +173,8 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.BaoCaoThemBangDiem = new System.Windows.Forms.Button();
-            this.BaoCaoThemSuaDiem = new System.Windows.Forms.Button();
-            this.BaoCaoXoaDiem = new System.Windows.Forms.Button();
-            this.BaoCaoXemBangDiem = new System.Windows.Forms.Button();
-            this.BaoCaoXoaBangDiem = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
             this.panel1.SuspendLayout();
             this.AppTabControl.SuspendLayout();
             this.TabTraCuu.SuspendLayout();
@@ -195,6 +198,7 @@ namespace QuanLyHocSinh_Nhom15
             this.metroPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -261,6 +265,8 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // TabTraCuu
             // 
+            this.TabTraCuu.Controls.Add(this.metroLabel17);
+            this.TabTraCuu.Controls.Add(this.numericUpDown1);
             this.TabTraCuu.Controls.Add(this.TraCuuTimKiemButton);
             this.TabTraCuu.Controls.Add(this.TraCuuTextBox);
             this.TabTraCuu.Controls.Add(this.metroLabel7);
@@ -284,7 +290,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TraCuuTimKiemButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TraCuuTimKiemButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.search;
             this.TraCuuTimKiemButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TraCuuTimKiemButton.Location = new System.Drawing.Point(316, 77);
+            this.TraCuuTimKiemButton.Location = new System.Drawing.Point(570, 78);
             this.TraCuuTimKiemButton.Name = "TraCuuTimKiemButton";
             this.TraCuuTimKiemButton.Size = new System.Drawing.Size(130, 34);
             this.TraCuuTimKiemButton.TabIndex = 14;
@@ -307,7 +313,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TraCuuTextBox.CustomButton.UseSelectable = true;
             this.TraCuuTextBox.CustomButton.Visible = false;
             this.TraCuuTextBox.Lines = new string[0];
-            this.TraCuuTextBox.Location = new System.Drawing.Point(69, 83);
+            this.TraCuuTextBox.Location = new System.Drawing.Point(70, 89);
             this.TraCuuTextBox.MaxLength = 32767;
             this.TraCuuTextBox.Name = "TraCuuTextBox";
             this.TraCuuTextBox.PasswordChar = '\0';
@@ -325,9 +331,10 @@ namespace QuanLyHocSinh_Nhom15
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(15, 87);
+            this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel7.Location = new System.Drawing.Point(3, 87);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel7.Size = new System.Drawing.Size(63, 25);
             this.metroLabel7.TabIndex = 10;
             this.metroLabel7.Text = "Họ tên";
             // 
@@ -340,7 +347,8 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader19,
             this.columnHeader20,
             this.columnHeader21,
-            this.columnHeader22});
+            this.columnHeader22,
+            this.columnHeader38});
             this.TraCuuListView.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.TraCuuListView.FullRowSelect = true;
             this.TraCuuListView.GridLines = true;
@@ -380,6 +388,11 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.columnHeader22.Text = "TB Học Kỳ 2";
             this.columnHeader22.Width = 318;
+            // 
+            // columnHeader38
+            // 
+            this.columnHeader38.Text = "id";
+            this.columnHeader38.Width = 0;
             // 
             // panel5
             // 
@@ -433,6 +446,71 @@ namespace QuanLyHocSinh_Nhom15
             this.TabBaoCao.VerticalScrollbarBarColor = true;
             this.TabBaoCao.VerticalScrollbarHighlightOnWheel = false;
             this.TabBaoCao.VerticalScrollbarSize = 10;
+            // 
+            // BaoCaoXoaBangDiem
+            // 
+            this.BaoCaoXoaBangDiem.BackColor = System.Drawing.SystemColors.Control;
+            this.BaoCaoXoaBangDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BaoCaoXoaBangDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BaoCaoXoaBangDiem.Location = new System.Drawing.Point(868, 482);
+            this.BaoCaoXoaBangDiem.Name = "BaoCaoXoaBangDiem";
+            this.BaoCaoXoaBangDiem.Size = new System.Drawing.Size(184, 35);
+            this.BaoCaoXoaBangDiem.TabIndex = 28;
+            this.BaoCaoXoaBangDiem.Text = "Xóa bảng điểm";
+            this.BaoCaoXoaBangDiem.UseVisualStyleBackColor = false;
+            this.BaoCaoXoaBangDiem.Click += new System.EventHandler(this.BaoCaoXoaBangDiemButton_Click);
+            // 
+            // BaoCaoXemBangDiem
+            // 
+            this.BaoCaoXemBangDiem.BackColor = System.Drawing.SystemColors.Control;
+            this.BaoCaoXemBangDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BaoCaoXemBangDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BaoCaoXemBangDiem.Location = new System.Drawing.Point(868, 431);
+            this.BaoCaoXemBangDiem.Name = "BaoCaoXemBangDiem";
+            this.BaoCaoXemBangDiem.Size = new System.Drawing.Size(184, 35);
+            this.BaoCaoXemBangDiem.TabIndex = 27;
+            this.BaoCaoXemBangDiem.Text = "Xem bảng điểm";
+            this.BaoCaoXemBangDiem.UseVisualStyleBackColor = false;
+            this.BaoCaoXemBangDiem.Click += new System.EventHandler(this.BaoCaoXemBangDiemButton_Click);
+            // 
+            // BaoCaoXoaDiem
+            // 
+            this.BaoCaoXoaDiem.BackColor = System.Drawing.SystemColors.Control;
+            this.BaoCaoXoaDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BaoCaoXoaDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BaoCaoXoaDiem.Location = new System.Drawing.Point(868, 210);
+            this.BaoCaoXoaDiem.Name = "BaoCaoXoaDiem";
+            this.BaoCaoXoaDiem.Size = new System.Drawing.Size(184, 35);
+            this.BaoCaoXoaDiem.TabIndex = 26;
+            this.BaoCaoXoaDiem.Text = "Xóa điểm";
+            this.BaoCaoXoaDiem.UseVisualStyleBackColor = false;
+            this.BaoCaoXoaDiem.Click += new System.EventHandler(this.BaoCaoXoaDiemButton_Click);
+            // 
+            // BaoCaoThemSuaDiem
+            // 
+            this.BaoCaoThemSuaDiem.BackColor = System.Drawing.SystemColors.Control;
+            this.BaoCaoThemSuaDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BaoCaoThemSuaDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BaoCaoThemSuaDiem.Location = new System.Drawing.Point(868, 156);
+            this.BaoCaoThemSuaDiem.Name = "BaoCaoThemSuaDiem";
+            this.BaoCaoThemSuaDiem.Size = new System.Drawing.Size(184, 35);
+            this.BaoCaoThemSuaDiem.TabIndex = 25;
+            this.BaoCaoThemSuaDiem.Text = "Thêm/Sửa điểm";
+            this.BaoCaoThemSuaDiem.UseVisualStyleBackColor = false;
+            this.BaoCaoThemSuaDiem.Click += new System.EventHandler(this.BaoCaoThemSuaDiemButton_Click);
+            // 
+            // BaoCaoThemBangDiem
+            // 
+            this.BaoCaoThemBangDiem.BackColor = System.Drawing.SystemColors.Control;
+            this.BaoCaoThemBangDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BaoCaoThemBangDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BaoCaoThemBangDiem.Location = new System.Drawing.Point(868, 104);
+            this.BaoCaoThemBangDiem.Name = "BaoCaoThemBangDiem";
+            this.BaoCaoThemBangDiem.Size = new System.Drawing.Size(184, 35);
+            this.BaoCaoThemBangDiem.TabIndex = 24;
+            this.BaoCaoThemBangDiem.Text = "Thêm bảng điểm";
+            this.BaoCaoThemBangDiem.UseVisualStyleBackColor = false;
+            this.BaoCaoThemBangDiem.Click += new System.EventHandler(this.BaoCaoThemBangDiemButton_Click);
             // 
             // BaoCaoNamHocNumericUpDown
             // 
@@ -645,6 +723,18 @@ namespace QuanLyHocSinh_Nhom15
             this.TabTongKet.VerticalScrollbarBarColor = true;
             this.TabTongKet.VerticalScrollbarHighlightOnWheel = false;
             this.TabTongKet.VerticalScrollbarSize = 10;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.SystemColors.Control;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(868, 386);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(184, 35);
+            this.button6.TabIndex = 28;
+            this.button6.Text = "Xem";
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // label15
             // 
@@ -1806,82 +1896,38 @@ namespace QuanLyHocSinh_Nhom15
             this.label1.Size = new System.Drawing.Size(191, 24);
             this.label1.TabIndex = 0;
             // 
-            // BaoCaoThemBangDiem
+            // numericUpDown1
             // 
-            this.BaoCaoThemBangDiem.BackColor = System.Drawing.SystemColors.Control;
-            this.BaoCaoThemBangDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BaoCaoThemBangDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BaoCaoThemBangDiem.Location = new System.Drawing.Point(868, 104);
-            this.BaoCaoThemBangDiem.Name = "BaoCaoThemBangDiem";
-            this.BaoCaoThemBangDiem.Size = new System.Drawing.Size(184, 35);
-            this.BaoCaoThemBangDiem.TabIndex = 24;
-            this.BaoCaoThemBangDiem.Text = "Thêm bảng điểm";
-            this.BaoCaoThemBangDiem.UseVisualStyleBackColor = false;
-            this.BaoCaoThemBangDiem.Click += new System.EventHandler(this.BaoCaoThemBangDiemButton_Click);
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(423, 86);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDown1.TabIndex = 15;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            2024,
+            0,
+            0,
+            0});
             // 
-            // BaoCaoThemSuaDiem
+            // metroLabel17
             // 
-            this.BaoCaoThemSuaDiem.BackColor = System.Drawing.SystemColors.Control;
-            this.BaoCaoThemSuaDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BaoCaoThemSuaDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BaoCaoThemSuaDiem.Location = new System.Drawing.Point(868, 156);
-            this.BaoCaoThemSuaDiem.Name = "BaoCaoThemSuaDiem";
-            this.BaoCaoThemSuaDiem.Size = new System.Drawing.Size(184, 35);
-            this.BaoCaoThemSuaDiem.TabIndex = 25;
-            this.BaoCaoThemSuaDiem.Text = "Thêm/Sửa điểm";
-            this.BaoCaoThemSuaDiem.UseVisualStyleBackColor = false;
-            this.BaoCaoThemSuaDiem.Click += new System.EventHandler(this.BaoCaoThemSuaDiemButton_Click);
-            // 
-            // BaoCaoXoaDiem
-            // 
-            this.BaoCaoXoaDiem.BackColor = System.Drawing.SystemColors.Control;
-            this.BaoCaoXoaDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BaoCaoXoaDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BaoCaoXoaDiem.Location = new System.Drawing.Point(868, 210);
-            this.BaoCaoXoaDiem.Name = "BaoCaoXoaDiem";
-            this.BaoCaoXoaDiem.Size = new System.Drawing.Size(184, 35);
-            this.BaoCaoXoaDiem.TabIndex = 26;
-            this.BaoCaoXoaDiem.Text = "Xóa điểm";
-            this.BaoCaoXoaDiem.UseVisualStyleBackColor = false;
-            this.BaoCaoXoaDiem.Click += new System.EventHandler(this.BaoCaoXoaDiemButton_Click);
-            // 
-            // BaoCaoXemBangDiem
-            // 
-            this.BaoCaoXemBangDiem.BackColor = System.Drawing.SystemColors.Control;
-            this.BaoCaoXemBangDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BaoCaoXemBangDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BaoCaoXemBangDiem.Location = new System.Drawing.Point(868, 431);
-            this.BaoCaoXemBangDiem.Name = "BaoCaoXemBangDiem";
-            this.BaoCaoXemBangDiem.Size = new System.Drawing.Size(184, 35);
-            this.BaoCaoXemBangDiem.TabIndex = 27;
-            this.BaoCaoXemBangDiem.Text = "Xem bảng điểm";
-            this.BaoCaoXemBangDiem.UseVisualStyleBackColor = false;
-            this.BaoCaoXemBangDiem.Click += new System.EventHandler(this.BaoCaoXemBangDiemButton_Click);
-            // 
-            // BaoCaoXoaBangDiem
-            // 
-            this.BaoCaoXoaBangDiem.BackColor = System.Drawing.SystemColors.Control;
-            this.BaoCaoXoaBangDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BaoCaoXoaBangDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BaoCaoXoaBangDiem.Location = new System.Drawing.Point(868, 482);
-            this.BaoCaoXoaBangDiem.Name = "BaoCaoXoaBangDiem";
-            this.BaoCaoXoaBangDiem.Size = new System.Drawing.Size(184, 35);
-            this.BaoCaoXoaBangDiem.TabIndex = 28;
-            this.BaoCaoXoaBangDiem.Text = "Xóa bảng điểm";
-            this.BaoCaoXoaBangDiem.UseVisualStyleBackColor = false;
-            this.BaoCaoXoaBangDiem.Click += new System.EventHandler(this.BaoCaoXoaBangDiemButton_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.SystemColors.Control;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(868, 386);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(184, 35);
-            this.button6.TabIndex = 28;
-            this.button6.Text = "Xem";
-            this.button6.UseVisualStyleBackColor = false;
+            this.metroLabel17.AutoSize = true;
+            this.metroLabel17.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel17.Location = new System.Drawing.Point(335, 87);
+            this.metroLabel17.Name = "metroLabel17";
+            this.metroLabel17.Size = new System.Drawing.Size(82, 25);
+            this.metroLabel17.TabIndex = 16;
+            this.metroLabel17.Text = "Năm học";
             // 
             // App
             // 
@@ -1937,6 +1983,7 @@ namespace QuanLyHocSinh_Nhom15
             this.metroPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2084,6 +2131,9 @@ namespace QuanLyHocSinh_Nhom15
         private System.Windows.Forms.Button BaoCaoXoaDiem;
         private System.Windows.Forms.Button BaoCaoThemSuaDiem;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ColumnHeader columnHeader38;
+        private MetroFramework.Controls.MetroLabel metroLabel17;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 
