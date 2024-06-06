@@ -694,7 +694,7 @@ namespace QuanLyHocSinh_Nhom15
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            
         }
 
 
