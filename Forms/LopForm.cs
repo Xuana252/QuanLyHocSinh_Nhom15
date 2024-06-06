@@ -37,7 +37,7 @@ namespace QuanLyHocSinh_Nhom15
             {
                 string tenLop = DanhSachLopHocTenLopTextBox.Text.Trim();
                 string idGVCN = DanhSachLopHocGVCNComboBox.Text;
-                string khoiLop = DanhSachLopHocKhoiComboBox.Text;
+                string khoiLop = KhoiGroupBox.Controls.OfType<MetroRadioButton>().FirstOrDefault(r => r.Checked).Text;
                 if (DanhSachLopHocListView.SelectedItems.Count > 0)
                     lopHoc.SuaLop(DanhSachLopHocListView.SelectedItems[0].SubItems[1].Text, tenLop, idGVCN);
                 else
@@ -125,14 +125,22 @@ namespace QuanLyHocSinh_Nhom15
             if (DanhSachLopHocListView.SelectedItems.Count > 0)
             {
                 DanhSachLopHocTenLopTextBox.Text = DanhSachLopHocListView.SelectedItems[0].SubItems[2].Text;
+                DanhSachLopHocGVCNComboBox.Items.Add(DanhSachLopHocListView.SelectedItems[0].SubItems[4].Text);
                 DanhSachLopHocGVCNComboBox.Text = DanhSachLopHocListView.SelectedItems[0].SubItems[4].Text;
-                DanhSachLopHocKhoiComboBox.Text = DanhSachLopHocListView.SelectedItems[0].SubItems[1].Text.Substring(0, 2);
-                DanhSachLopHocKhoiComboBox.Enabled = false;
+                KhoiGroupBox.Controls.OfType<MetroRadioButton>().First(r => r.Text != null && r.Text == DanhSachLopHocListView.SelectedItems[0].SubItems[2].Text.Substring(0, 2)).Checked = true;
+
+                KhoiGroupBox.Enabled = false;
             }
             else
-                DanhSachLopHocKhoiComboBox.Enabled = true;
+                KhoiGroupBox.Enabled = true;
         }
 
+        //Sự kiện xảy ra khi người dùng bỏ chọn lớp trong danh sách
+        private void DanhSachLopHocListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (!(e.IsSelected))
+                DanhSachLopHocGVCNComboBox.Items.Remove(e.Item.SubItems[4].Text);
+        }
         //Sự kiện xảy ra khi chọn sỉ số tối đa
         private void DanhSachLopHocNumericUpDown1_ValueChanged(object sender, EventArgs e)
         {
@@ -152,16 +160,41 @@ namespace QuanLyHocSinh_Nhom15
 
         //Khối sự kiện dành cho việc vẽ các item dành cho listview
         //---------------------------------------------------------------------------------------------------------------------------------
-        private void metroListView1_DrawItem(object sender, DrawListViewItemEventArgs e)
+
+        private void ListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            if (sender is MetroListView listView)
+            {
+                e.NewWidth = listView.Columns[e.ColumnIndex].Width;
+                e.Cancel = true;
+            }
+        }
+
+        private void ListView_DrawItem(object sender, DrawListViewItemEventArgs e)
         {
             e.DrawDefault = true;
         }
 
-        private void metroListView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        private void ListView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
-            e.NewWidth = this.DanhSachLopHocListView.Columns[e.ColumnIndex].Width;
-            e.Cancel = true;
+            e.DrawDefault = false;
+            if (sender is MetroListView listView)
+            {
+                using (Font headerFont = new Font("Arial", 12, FontStyle.Regular))
+                {
+                    Rectangle headerBounds = e.Bounds;
+
+                    e.Graphics.FillRectangle(Brushes.Teal, e.Bounds);
+
+                    TextRenderer.DrawText(e.Graphics, listView.Columns[e.ColumnIndex].Text, headerFont, headerBounds, Color.White, Color.Empty, TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
+
+                    e.Graphics.DrawLine(Pens.DarkGray, headerBounds.Left, headerBounds.Bottom - 1, headerBounds.Right, headerBounds.Bottom - 1);
+                }
+            }
+
         }
+
+       
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -48,8 +48,11 @@
             this.DangKiDiaChiTextBox = new System.Windows.Forms.RichTextBox();
             this.DangKiMonHocComboBox = new MetroFramework.Controls.MetroComboBox();
             this.ExitButton = new System.Windows.Forms.Button();
-            this.DangKiGioiTinhComboBox = new MetroFramework.Controls.MetroComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.GioiTinhGroupBox = new System.Windows.Forms.GroupBox();
+            this.NuRadioButton = new MetroFramework.Controls.MetroRadioButton();
+            this.NamRadioButton = new MetroFramework.Controls.MetroRadioButton();
+            this.GioiTinhGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // DangKiButton
@@ -383,19 +386,6 @@
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // DangKiGioiTinhComboBox
-            // 
-            this.DangKiGioiTinhComboBox.FormattingEnabled = true;
-            this.DangKiGioiTinhComboBox.ItemHeight = 23;
-            this.DangKiGioiTinhComboBox.Items.AddRange(new object[] {
-            "Nam",
-            "Nu"});
-            this.DangKiGioiTinhComboBox.Location = new System.Drawing.Point(474, 272);
-            this.DangKiGioiTinhComboBox.Name = "DangKiGioiTinhComboBox";
-            this.DangKiGioiTinhComboBox.Size = new System.Drawing.Size(244, 29);
-            this.DangKiGioiTinhComboBox.TabIndex = 23;
-            this.DangKiGioiTinhComboBox.UseSelectable = true;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -407,6 +397,46 @@
             this.label10.TabIndex = 24;
             this.label10.Text = "Giới tính";
             // 
+            // GioiTinhGroupBox
+            // 
+            this.GioiTinhGroupBox.Controls.Add(this.NuRadioButton);
+            this.GioiTinhGroupBox.Controls.Add(this.NamRadioButton);
+            this.GioiTinhGroupBox.Location = new System.Drawing.Point(474, 265);
+            this.GioiTinhGroupBox.Name = "GioiTinhGroupBox";
+            this.GioiTinhGroupBox.Size = new System.Drawing.Size(150, 45);
+            this.GioiTinhGroupBox.TabIndex = 25;
+            this.GioiTinhGroupBox.TabStop = false;
+            // 
+            // NuRadioButton
+            // 
+            this.NuRadioButton.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
+            this.NuRadioButton.Location = new System.Drawing.Point(82, 9);
+            this.NuRadioButton.Name = "NuRadioButton";
+            this.NuRadioButton.Size = new System.Drawing.Size(62, 30);
+            this.NuRadioButton.Style = MetroFramework.MetroColorStyle.Teal;
+            this.NuRadioButton.TabIndex = 17;
+            this.NuRadioButton.Tag = "Nu";
+            this.NuRadioButton.Text = "Nữ";
+            this.NuRadioButton.UseCustomForeColor = true;
+            this.NuRadioButton.UseSelectable = true;
+            this.NuRadioButton.UseStyleColors = true;
+            // 
+            // NamRadioButton
+            // 
+            this.NamRadioButton.Checked = true;
+            this.NamRadioButton.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
+            this.NamRadioButton.Location = new System.Drawing.Point(6, 9);
+            this.NamRadioButton.Name = "NamRadioButton";
+            this.NamRadioButton.Size = new System.Drawing.Size(71, 30);
+            this.NamRadioButton.Style = MetroFramework.MetroColorStyle.Teal;
+            this.NamRadioButton.TabIndex = 16;
+            this.NamRadioButton.TabStop = true;
+            this.NamRadioButton.Tag = "Nam";
+            this.NamRadioButton.Text = "Nam";
+            this.NamRadioButton.UseCustomForeColor = true;
+            this.NamRadioButton.UseSelectable = true;
+            this.NamRadioButton.UseStyleColors = true;
+            // 
             // DangKi
             // 
             this.AcceptButton = this.DangKiButton;
@@ -414,8 +444,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(774, 383);
+            this.Controls.Add(this.GioiTinhGroupBox);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.DangKiGioiTinhComboBox);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.DangKiMonHocComboBox);
             this.Controls.Add(this.DangKiDiaChiTextBox);
@@ -448,6 +478,7 @@
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "DangKi";
             this.VisibleChanged += new System.EventHandler(this.DangKi_VisibleChanged);
+            this.GioiTinhGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,7 +506,9 @@
         private System.Windows.Forms.RichTextBox DangKiDiaChiTextBox;
         private MetroFramework.Controls.MetroComboBox DangKiMonHocComboBox;
         private System.Windows.Forms.Button ExitButton;
-        private MetroFramework.Controls.MetroComboBox DangKiGioiTinhComboBox;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox GioiTinhGroupBox;
+        private MetroFramework.Controls.MetroRadioButton NuRadioButton;
+        private MetroFramework.Controls.MetroRadioButton NamRadioButton;
     }
 }

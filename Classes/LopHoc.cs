@@ -78,7 +78,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message.Substring(ex.Message.IndexOf('\n')));
+                Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message/*.Substring(ex.Message.IndexOf('\n'))*/);
             }
             flagSua = false;
         }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.ErrorOKButton = new System.Windows.Forms.Button();
-            this.ErrorLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ErrorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ErrorOKButton
@@ -50,29 +50,30 @@
             this.ErrorOKButton.UseVisualStyleBackColor = false;
             this.ErrorOKButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ErrorLabel
-            // 
-            this.ErrorLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ErrorLabel.AutoSize = true;
-            this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorLabel.ForeColor = System.Drawing.Color.Cyan;
-            this.ErrorLabel.Location = new System.Drawing.Point(102, 5);
-            this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(98, 31);
-            this.ErrorLabel.TabIndex = 1;
-            this.ErrorLabel.Text = "!!!Lỗi!!!";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(17, 48);
+            this.label1.Location = new System.Drawing.Point(23, 48);
             this.label1.MaximumSize = new System.Drawing.Size(247, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(228, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "text will change depends on bugs ";
+            // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ErrorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ErrorLabel.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ErrorIcon;
+            this.ErrorLabel.Location = new System.Drawing.Point(81, 8);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(134, 40);
+            this.ErrorLabel.TabIndex = 1;
+            this.ErrorLabel.Text = "!!!      !!!";
+            this.ErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Error
             // 

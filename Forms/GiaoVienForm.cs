@@ -25,17 +25,6 @@ namespace QuanLyHocSinh_Nhom15
         }
 
 
-        private void metroListView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
-        {
-            e.NewWidth = this.metroListView1.Columns[e.ColumnIndex].Width;
-            e.Cancel = true;
-        }
-
-        private void metroListView1_DrawItem(object sender, DrawListViewItemEventArgs e)
-        {
-            e.DrawDefault = true;
-
-        }
         //Sự kiện xảy ra khi biểu mẩu xuất hiện và biến mất
         private void GiaoVienForm_VisibleChanged(object sender, EventArgs e)
         {
@@ -139,6 +128,43 @@ namespace QuanLyHocSinh_Nhom15
             }
         }
 
-       
+        //Khối sự kiện dành cho việc vẽ các item dành cho listview
+        //---------------------------------------------------------------------------------------------------------------------------------
+
+        private void ListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            if (sender is MetroListView listView)
+            {
+                e.NewWidth = listView.Columns[e.ColumnIndex].Width;
+                e.Cancel = true;
+            }
+        }
+
+        private void ListView_DrawItem(object sender, DrawListViewItemEventArgs e)
+        {
+            e.DrawDefault = true;
+        }
+
+        private void ListView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.DrawDefault = false;
+            if (sender is MetroListView listView)
+            {
+                using (Font headerFont = new Font("Arial", 12, FontStyle.Regular))
+                {
+                    Rectangle headerBounds = e.Bounds;
+
+                    e.Graphics.FillRectangle(Brushes.Teal, e.Bounds);
+
+                    TextRenderer.DrawText(e.Graphics, listView.Columns[e.ColumnIndex].Text, headerFont, headerBounds, Color.White, Color.Empty, TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
+
+                    e.Graphics.DrawLine(Pens.DarkGray, headerBounds.Left, headerBounds.Bottom - 1, headerBounds.Right, headerBounds.Bottom - 1);
+                }
+            }
+
+        }
+
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
     }
 }

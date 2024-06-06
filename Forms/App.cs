@@ -14,6 +14,7 @@ using System.Runtime.CompilerServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Diagnostics.Eventing.Reader;
 using MetroFramework.Properties;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QuanLyHocSinh_Nhom15
 {
@@ -51,6 +52,8 @@ namespace QuanLyHocSinh_Nhom15
         //Sự kiện khi App load lần đầu
         private void App_Load(object sender, EventArgs e)
         {
+            //Vẽ lại khung cho app
+           
 
             //Cập nhật các thông số ban đầu của app
             AppTabControl.SelectedIndex = 0;
@@ -74,6 +77,13 @@ namespace QuanLyHocSinh_Nhom15
             studentForm = new HocSinhForm(this);
             lopForm = new LopForm(this);
 
+            Graphics g = this.CreateGraphics();
+
+            // Draw a rectangular border around the form
+            using (Pen pen = new Pen(Color.Black, 10))
+            {
+                g.DrawRectangle(pen, 0, 0, this.ClientSize.Width - 1, this.ClientSize.Height - 1);
+            }
             //--------------------------Điều chỉnh các control tùy thuộc vào quyền hạn (vai trò) của User----------------------------------------------------------
             if (user.idVaiTro != "QL")
             {
@@ -102,13 +112,13 @@ namespace QuanLyHocSinh_Nhom15
                 //---------------------------------------------------------------
 
                 //Điều chỉnh chiều rộng của listview danh sách học sinh lớp và các cột của nó
-                DanhSachLopListView1.Width = 1073;
+                DanhSachLopListView1.Width = 1070;
                 foreach (ColumnHeader header in DanhSachLopListView1.Columns)
                 {
                     if (header.Index != 0)
-                        header.Width = 1040 / 5;
+                        header.Width = 1037 / 5;
                 }
-
+                DanhSachLopListView1.Refresh();
                 //TAB TÀI KHOẢN
                 TaiKhoanQuanLiTaiKhoanButton.Visible=false;//Không hiển thị nút quản lí tài khoản
                 TaiKhoanDangKiButton.Visible=false;//Không hiển thị nút đăng kí
@@ -376,6 +386,7 @@ namespace QuanLyHocSinh_Nhom15
             else
                 HocSinh.flagSua = false;
             studentForm.Show();
+            TiepNhanListView.SelectedItems.Clear();
         }
 
         //TAB BÁO CÁO: Sự kiện khi bấm nút thêm sửa điểm
@@ -424,16 +435,46 @@ namespace QuanLyHocSinh_Nhom15
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
-        //TAB TỔNG KẾT: Sự kiện khi chọn combobox học kì/môn học (đảm bảo đã chọn học kì thì không thể chọn combo môn học)
-        private void TongKetMonHocCaHocKiComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        //TAB BÁO CÁO MÔN: Sự kiện khi bấm nút Xem bảng điểm
+        private void BaoCaoXemBangDiemButton_Click(object sender, EventArgs e)
         {
-            if (this.TongKetMonHocCaHocKiComboBox.Text != "Môn học")
-                this.TongKetMonComboBox.Enabled = false;
-            else
-                this.TongKetMonComboBox.Enabled = true;
+            foreach (ListViewItem item in BangDiem.LayDanhSach(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value))
+            {
+                BaoCaoListView.Items.Add(item);
+            }
+
+        }
+        //TAB BÁO CÁO MÔN: Sự kiện khi bấm nút Xóa bảng điểm
+        private void BaoCaoXoaBangDiemButton_Click(object sender, EventArgs e)
+        {
+            BangDiem.XoaBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
         }
 
+        //TAB BÁO CÁO MÔN: Sự kiện khi bấm nút Thêm bảng điểm
+        private void BaoCaoThemBangDiemButton_Click(object sender, EventArgs e)
+        {
+            BangDiem.ThemBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
+        }
+
+        //TAB BÁO CÁO MÔN: Sự kiện khi bấm nút Xóa điểm
+        private void BaoCaoXoaDiemButton_Click(object sender, EventArgs e)
+        {
+            if (BaoCaoListView.SelectedItems.Count > 0)
+            {
+                string idbangdiem = BangDiem.getIdBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
+                chiTietBangDiem.XoaDiem(idbangdiem, BaoCaoListView.SelectedItems[0].SubItems[5].Text);
+            }
+
+        }
+
+        //TAB TỔNG KẾT: Sự kiện khi bấm chọn nút Môn học
+        private void MonHocRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (MonHocRadioButton.Checked == true)
+                TongKetMonComboBox.Enabled = true;
+            else
+                TongKetMonComboBox.Enabled = false;
+        }
 
         //TAB TIẾP NHẬN: Sự kiện khi bấm nút xóa học sinh
         private void TiepNhanXoaHocSinhButton_Click(object sender, EventArgs e)
@@ -568,103 +609,38 @@ namespace QuanLyHocSinh_Nhom15
         //Khối sự kiện dành cho việc vẽ các item dành cho listview
         //---------------------------------------------------------------------------------------------------------------------------------
 
-        private void TraCuuListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        private void ListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
-            e.NewWidth = this.TraCuuListView.Columns[e.ColumnIndex].Width;
-            e.Cancel = true;
-        }
-
-        private void TraCuuListView_DrawItem(object sender, DrawListViewItemEventArgs e)
-        {
-            e.DrawDefault = true;
-        }
-
-        private void BaoCaoListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
-        {
-            e.NewWidth = this.BaoCaoListView.Columns[e.ColumnIndex].Width;
-            e.Cancel = true;
-        }
-
-        private void BaoCaoListView_DrawItem(object sender, DrawListViewItemEventArgs e)
-        {
-            e.DrawDefault = true;
-        }
-
-        private void TongKetListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
-        {
-            e.NewWidth = this.TongKetListView.Columns[e.ColumnIndex].Width;
-            e.Cancel = true;
-        }
-
-        private void TongKetListView_DrawItem(object sender, DrawListViewItemEventArgs e)
-        {
-            e.DrawDefault = true;
-        }
-
-        private void TiepNhanListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
-        {
-            e.NewWidth = this.TiepNhanListView.Columns[e.ColumnIndex].Width;
-            e.Cancel = true;
-        }
-
-        private void TiepNhanListView_DrawItem(object sender, DrawListViewItemEventArgs e)
-        {
-            e.DrawDefault = true;
-        }
-
-        private void DanhSachLopListView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
-        {
-            e.NewWidth = this.DanhSachLopListView1.Columns[e.ColumnIndex].Width;
-            e.Cancel = true;
-        }
-
-        private void DanhSachLopListView1_DrawItem(object sender, DrawListViewItemEventArgs e)
-        {
-            e.DrawDefault = true;
-        }
-
-        private void DanhSachLopListView2_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
-        {
-            e.NewWidth = this.DanhSachLopListView2.Columns[e.ColumnIndex].Width;
-            e.Cancel = true;
-        }
-
-        private void DanhSachLopListView2_DrawItem(object sender, DrawListViewItemEventArgs e)
-        {
-            e.DrawDefault = true;
-        }
-
-        private void BaoCaoXemBangDiemButton_Click(object sender, EventArgs e)
-        {
-            foreach (ListViewItem item in BangDiem.LayDanhSach(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value))
+            if (sender is MetroListView listView)
             {
-                BaoCaoListView.Items.Add(item); 
-            } 
-                
-        }
-
-        private void BaoCaoXoaBangDiemButton_Click(object sender, EventArgs e)
-        {
-            BangDiem.XoaBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
-        }
-
-
-        private void BaoCaoThemBangDiemButton_Click(object sender, EventArgs e)
-        {
-            BangDiem.ThemBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
-        }
-
-        private void BaoCaoXoaDiemButton_Click(object sender, EventArgs e)
-        {
-            if(BaoCaoListView.SelectedItems.Count > 0) 
-            {
-                string idbangdiem = BangDiem.getIdBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
-                chiTietBangDiem.XoaDiem(idbangdiem,BaoCaoListView.SelectedItems[0].SubItems[5].Text);
+                e.NewWidth = listView.Columns[e.ColumnIndex].Width;
+                e.Cancel = true;
             }
-            
         }
 
-       
+        private void ListView_DrawItem(object sender, DrawListViewItemEventArgs e)
+        {
+            e.DrawDefault = true;
+        }
+
+        private void ListView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.DrawDefault = false;
+            if (sender is MetroListView listView)
+            {
+                using (Font headerFont = new Font("Arial", 12, FontStyle.Regular))
+                {
+                    Rectangle headerBounds = e.Bounds;
+
+                    e.Graphics.FillRectangle(Brushes.Teal, e.Bounds);
+
+                    TextRenderer.DrawText(e.Graphics, listView.Columns[e.ColumnIndex].Text, headerFont, headerBounds, Color.White, Color.Empty, TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
+
+                    e.Graphics.DrawLine(Pens.DarkGray, headerBounds.Left, headerBounds.Bottom - 1, headerBounds.Right, headerBounds.Bottom - 1);
+                }
+            }
+           
+        }
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
