@@ -45,6 +45,7 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.TabBaoCao = new MetroFramework.Controls.MetroTabPage();
@@ -76,7 +77,6 @@ namespace QuanLyHocSinh_Nhom15
             this.MonHocRadioButton = new System.Windows.Forms.RadioButton();
             this.label15 = new System.Windows.Forms.Label();
             this.TongKetDiemDatNumericBox = new System.Windows.Forms.NumericUpDown();
-            this.TongKetNamComboBox = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.TongKetMonComboBox = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
@@ -183,6 +183,7 @@ namespace QuanLyHocSinh_Nhom15
             this.panel1.SuspendLayout();
             this.AppTabControl.SuspendLayout();
             this.TabTraCuu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TraCuuNamHoc)).BeginInit();
             this.panel5.SuspendLayout();
             this.TabBaoCao.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -281,6 +282,8 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // TabTraCuu
             // 
+            this.TabTraCuu.Controls.Add(this.metroLabel17);
+            this.TabTraCuu.Controls.Add(this.TraCuuNamHoc);
             this.TabTraCuu.Controls.Add(this.TraCuuTimKiemButton);
             this.TabTraCuu.Controls.Add(this.TraCuuTextBox);
             this.TabTraCuu.Controls.Add(this.metroLabel7);
@@ -314,7 +317,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TraCuuTextBox.CustomButton.UseSelectable = true;
             this.TraCuuTextBox.CustomButton.Visible = false;
             this.TraCuuTextBox.Lines = new string[0];
-            this.TraCuuTextBox.Location = new System.Drawing.Point(69, 83);
+            this.TraCuuTextBox.Location = new System.Drawing.Point(70, 89);
             this.TraCuuTextBox.MaxLength = 32767;
             this.TraCuuTextBox.Name = "TraCuuTextBox";
             this.TraCuuTextBox.PasswordChar = '\0';
@@ -332,9 +335,10 @@ namespace QuanLyHocSinh_Nhom15
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(15, 87);
+            this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel7.Location = new System.Drawing.Point(3, 87);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel7.Size = new System.Drawing.Size(63, 25);
             this.metroLabel7.TabIndex = 10;
             this.metroLabel7.Text = "Họ tên";
             // 
@@ -347,7 +351,8 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader19,
             this.columnHeader20,
             this.columnHeader21,
-            this.columnHeader22});
+            this.columnHeader22,
+            this.columnHeader38});
             this.TraCuuListView.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.TraCuuListView.FullRowSelect = true;
             this.TraCuuListView.GridLines = true;
@@ -389,6 +394,11 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.columnHeader22.Text = "TB Học Kỳ 2";
             this.columnHeader22.Width = 318;
+            // 
+            // columnHeader38
+            // 
+            this.columnHeader38.Text = "id";
+            this.columnHeader38.Width = 0;
             // 
             // panel5
             // 
@@ -2166,6 +2176,7 @@ namespace QuanLyHocSinh_Nhom15
             this.AppTabControl.ResumeLayout(false);
             this.TabTraCuu.ResumeLayout(false);
             this.TabTraCuu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TraCuuNamHoc)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.TabBaoCao.ResumeLayout(false);
@@ -2312,7 +2323,6 @@ namespace QuanLyHocSinh_Nhom15
         private System.Windows.Forms.Button TaiKhoanDangKiButton;
         private System.Windows.Forms.NumericUpDown BaoCaoNamHocNumericUpDown;
         private MetroFramework.Controls.MetroLabel metroLabel13;
-        private MetroFramework.Controls.MetroComboBox TongKetNamComboBox;
         private MetroFramework.Controls.MetroLabel metroLabel14;
         private MetroFramework.Controls.MetroLabel metroLabel15;
         private System.Windows.Forms.NumericUpDown TiepNhanMaxAgeNumericBox;

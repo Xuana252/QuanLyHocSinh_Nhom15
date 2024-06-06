@@ -39,9 +39,9 @@ namespace QuanLyHocSinh_Nhom15
                             "SELECT @idlop = idLop FROM LOPHOC WHERE TenLop = @tenlop; " +
                             "SELECT HOCSINH.idHocSinh, HoTen, Diem15p, Diem1Tiet, diemtb " +
                             "FROM HOCSINH " +
-                            "LEFT JOIN CHITIETBANGDIEM ON HOCSINH.idHocSinh = CHITIETBANGDIEM.idHocSinh " +
-                            "LEFT JOIN BANGDIEM ON CHITIETBANGDIEM.idBangDiem = BANGDIEM.idBangDiem " +
+                            "JOIN BANGDIEM ON HOCSINH.idlop = BANGDIEM.idlop " +
                             "AND BANGDIEM.idMonHoc = @idmonhoc AND BANGDIEM.HocKy = @hocky AND BANGDIEM.NamHoc = @namhoc " +
+                            "LEFT JOIN CHITIETBANGDIEM ON CHITIETBANGDIEM.idhocsinh = HOCSINH.idHocSinh and CHITIETBANGDIEM.idBangDiem=BANGDIEM.idBangDiem " +                            
                             "WHERE HOCSINH.idLop = @idlop;";
             db.sqlCmd.Parameters.AddWithValue("@tenlop", tenlop);
             db.sqlCmd.Parameters.AddWithValue("@tenmon", tenmon);

@@ -326,6 +326,16 @@ namespace QuanLyHocSinh_Nhom15
             }    
         }
 
+        //Hàm load Tab tổng kết
+        public void LoadTabTongKet()
+        {
+            TongKetMonComboBox.Items.Clear();
+            foreach (ListViewItem item in MonHoc.LayDanhSach())
+            {
+                TongKetMonComboBox.Items.Add(item.SubItems[1].Text);
+            }
+        }
+
         //Sự kiện khi thay đổi tab dùng để dánh dấu tab đang chuyển tới
         private void AppTabControl_Selecting(object sender, TabControlCancelEventArgs e)
         {
@@ -337,6 +347,7 @@ namespace QuanLyHocSinh_Nhom15
                     LoadTabBaoCaoMon();
                     break;
                 case "TabTongKet":
+                    LoadTabTongKet();
                     break;
                 case "TabTiepNhan":
                     LoadTabTiepNhan("");
