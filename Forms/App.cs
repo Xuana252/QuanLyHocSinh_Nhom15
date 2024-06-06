@@ -316,6 +316,16 @@ namespace QuanLyHocSinh_Nhom15
             }    
         }
 
+        //Hàm load Tab tổng kết
+        public void LoadTabTongKet()
+        {
+            TongKetMonComboBox.Items.Clear();
+            foreach (ListViewItem item in MonHoc.LayDanhSach())
+            {
+                TongKetMonComboBox.Items.Add(item.SubItems[1].Text);
+            }
+        }
+
         //Sự kiện khi thay đổi tab dùng để dánh dấu tab đang chuyển tới
         private void AppTabControl_Selecting(object sender, TabControlCancelEventArgs e)
         {
@@ -327,6 +337,7 @@ namespace QuanLyHocSinh_Nhom15
                     LoadTabBaoCaoMon();
                     break;
                 case "TabTongKet":
+                    LoadTabTongKet();
                     break;
                 case "TabTiepNhan":
                     LoadTabTiepNhan("");
@@ -636,6 +647,7 @@ namespace QuanLyHocSinh_Nhom15
 
         private void BaoCaoXemBangDiemButton_Click(object sender, EventArgs e)
         {
+            BaoCaoListView.Items.Clear();
             foreach (ListViewItem item in BangDiem.LayDanhSach(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value))
             {
                 BaoCaoListView.Items.Add(item); 
@@ -651,6 +663,11 @@ namespace QuanLyHocSinh_Nhom15
 
         private void BaoCaoThemBangDiemButton_Click(object sender, EventArgs e)
         {
+            if(BaoCaoHocKiComboBox.Text==""||BaoCaoLopComboBox.Text==""||BaoCaoMonHocComboBox.Text=="")
+            {
+                Error.GetInstance().Show("Vui lòng nhập đầy đủ thông tin!!!");
+                return;
+            }    
             BangDiem.ThemBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
         }
 
@@ -660,11 +677,27 @@ namespace QuanLyHocSinh_Nhom15
             {
                 string idbangdiem = BangDiem.getIdBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
                 chiTietBangDiem.XoaDiem(idbangdiem,BaoCaoListView.SelectedItems[0].SubItems[5].Text);
+                this.LoadTabBaoCaoMon();
             }
             
         }
 
-       
+        private void TraCuuTimKiemButton_Click(object sender, EventArgs e)
+        {
+            TraCuuListView.Items.Clear();
+            foreach (ListViewItem item in HocSinh.TraCuu(TraCuuTextBox.Text, TraCuuNamHoc.Value))
+            {
+                TraCuuListView.Items.Add(item);
+            } 
+                
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 

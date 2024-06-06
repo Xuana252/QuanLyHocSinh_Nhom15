@@ -237,34 +237,83 @@ namespace QuanLyHocSinh_Nhom15
             return itemList;
         }
 
-        public List<ListViewItem> TraCuu(string hoten,decimal namhoc)
+        public List<ListViewItem> TraCuu(string hoten, decimal namhoc)
         {
-            int i = 1;
             List<ListViewItem> itemList = new List<ListViewItem>();
             SQLConnect db = SQLConnect.GetInstance();
+
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+                db.sqlCmd.CommandType = CommandType.Text;
+                db.sqlCmd.CommandText = @"
+                               WITH TraCuuResult AS (
+                        SELECT 
+                            hoten,
+                            tenlop,
+                            idhocsinh
+                        FROM 
+                            HOCSINH 
+                        JOIN 
+                            LOPHOC ON HOCSINH.idlop = LOPHOC.idlop
+                        WHERE 
+                            hoten LIKE '%'+@hoten+'%'
+                    ),
+                    DiemTBHocKy AS (
+                        SELECT 
+                            idhocsinh,
+                            AVG(CASE WHEN hocky = '1' THEN diemtb ELSE NULL END) AS diemtb_hocky_1,
+                            AVG(CASE WHEN hocky = '2' THEN diemtb ELSE NULL END) AS diemtb_hocky_2
+                        FROM 
+                            CHITIETBANGDIEM 
+                        JOIN 
+                            BANGDIEM ON CHITIETBANGDIEM.idbangdiem = BANGDIEM.idbangdiem
+                        WHERE 
+                            hocky IN ('1', '2') 
+                            AND namhoc = @namhoc
+                        GROUP BY 
+                            idhocsinh
+                    )
+                    SELECT 
+                        ROW_NUMBER() OVER(ORDER BY hoten) AS STT,
+                        hoten,
+                        tenlop,
+                        ISNULL(CONVERT(DECIMAL(18, 2), diemtb_hocky_1), 0) AS diemtb_hocky_1,
+                        ISNULL(CONVERT(DECIMAL(18, 2), diemtb_hocky_2), 0) AS diemtb_hocky_2,
+                        TraCuuResult.idhocsinh
+                    FROM 
+                        TraCuuResult 
+                    LEFT JOIN 
+                        DiemTBHocKy ON TraCuuResult.idhocsinh = DiemTBHocKy.idhocsinh;";
 
-            db.sqlCmd.CommandText = "select hoten, tenlop, idhocsinh from HOCSINH, LOPHOC where HOCSINH.idlop=LOPHOC.idlop and hoten=N'%@hoten%' ";
-            db.sqlCmd.Parameters.AddWithValue("@hoten", hoten);
+                db.sqlCmd.Parameters.AddWithValue("@hoten", hoten);
+                db.sqlCmd.Parameters.AddWithValue("@namhoc", namhoc);
+                db.sqlCmd.Connection = db.sqlCon;
 
-            db.sqlCmd.Connection = db.sqlCon;
+                using (db.reader = db.sqlCmd.ExecuteReader())
+                {
+                    int i = 1;
+                    while (db.reader.Read())
+                    {
+                        string hotenhocsinh = db.reader.GetString(1);
+                        string tenlop = db.reader.GetString(2);
+                        string idhocsinh = db.reader.GetString(5);
 
-            db.reader = db.sqlCmd.ExecuteReader();
-            while(db.reader.Read())
-            {
-                string hotenhocsinh=db.reader.GetString(0);
-                string tenlop =db.reader.GetString(1);
-                string idhocsinh= db.reader.GetString(2);
-                
+                        ListViewItem item = new ListViewItem();
+                        item.Text = i.ToString();
+                        item.SubItems.Add(hotenhocsinh);
+                        item.SubItems.Add(tenlop);
+                        item.SubItems.Add(db.reader.GetDecimal(3).ToString()); // DiemTB Hoc Ky 1
+                        item.SubItems.Add(db.reader.GetDecimal(4).ToString()); // DiemTB Hoc Ky 2
+                        item.SubItems.Add(idhocsinh);
 
-                ListViewItem item = new ListViewItem();
-                item.Text = i.ToString();
-                item.SubItems.Add
-
-            }
+                        itemList.Add(item);
+                        i++;
+                    }
+                }
             return itemList;
         }
+
+            
+        
 
     }
 }

@@ -115,6 +115,10 @@ namespace QuanLyHocSinh_Nhom15
                 i++;
             }
             db.reader.Close();
+            if (i== 0)
+            {
+                return 0;
+            }
             diemtb = diemtb / i;
             return diemtb;
 
