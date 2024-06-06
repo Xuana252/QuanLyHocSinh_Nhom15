@@ -56,9 +56,9 @@ namespace QuanLyHocSinh_Nhom15
                 string ngaySinh = DangKiNgaySinhDateTime1.Text;
                 string vaiTro = DangKiVaiTroComboBox.Text;
                 string monHoc = DangKiMonHocComboBox.Text;
-                string gioiTinh = DangKiGioiTinhComboBox.Text;
+                string gioiTinh = GioiTinhGroupBox.Controls.OfType<MetroRadioButton>().FirstOrDefault(r => r.Checked).Tag.ToString();
 
-                if(!TaiKhoan.GetInstance().TonTai(tenTaiKhoan,matKhau))
+                if (!TaiKhoan.GetInstance().TonTai(tenTaiKhoan,matKhau))
                 {
                     GiaoVien.GetInstance().ThemGiaoVien(idGiaoVien, hoTen, ngaySinh, diaChi, monHoc,gioiTinh);
                     TaiKhoan.GetInstance().DangKiTaiKhoan(idGiaoVien, tenTaiKhoan, matKhau, vaiTro);
@@ -97,7 +97,6 @@ namespace QuanLyHocSinh_Nhom15
                 //Chọn môn học, vai trò, ngày sinh, giới tính mặc định cho tài khoản giáo viên
                 DangKiMonHocComboBox.SelectedIndex = 0;
                 DangKiVaiTroComboBox.SelectedIndex = 1;
-                DangKiGioiTinhComboBox.SelectedIndex = 0;
                 DangKiNgaySinhDateTime1.Value = new DateTime(2000, 01, 01);
             }
         }
@@ -116,9 +115,9 @@ namespace QuanLyHocSinh_Nhom15
         //hàm kiểm tra điền đầy đủ
         bool DienDayDu()
         {
-            foreach (Control control in this.Controls)
+            foreach (Control control in this.Controls )
             {
-                if (control.Text.Length == 0)
+                if (control.Text.Length == 0 && !(control is System.Windows.Forms.GroupBox))
                     return false;
             }
             return true;

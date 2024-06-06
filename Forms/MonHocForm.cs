@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,16 +58,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             db.reader.Close();
         }
-        private void MonListView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
-        {
-            e.NewWidth = this.MonListView1.Columns[e.ColumnIndex].Width;
-            e.Cancel = true;
-        }
-
-        private void MonListView1_DrawItem(object sender, DrawListViewItemEventArgs e)
-        {
-            e.DrawDefault = true;
-        }
+       
 
         private void ThemSuaMonButton_Click(object sender, EventArgs e)
         {
@@ -107,6 +99,43 @@ namespace QuanLyHocSinh_Nhom15
                 TenMonTextBox.Text = string.Empty;
             }
         }
+        //Khối sự kiện dành cho việc vẽ các item dành cho listview
+        //---------------------------------------------------------------------------------------------------------------------------------
+
+        private void ListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            if (sender is MetroListView listView)
+            {
+                e.NewWidth = listView.Columns[e.ColumnIndex].Width;
+                e.Cancel = true;
+            }
+        }
+
+        private void ListView_DrawItem(object sender, DrawListViewItemEventArgs e)
+        {
+            e.DrawDefault = true;
+        }
+
+        private void ListView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.DrawDefault = false;
+            if (sender is MetroListView listView)
+            {
+                using (Font headerFont = new Font("Arial", 12, FontStyle.Regular))
+                {
+                    Rectangle headerBounds = e.Bounds;
+
+                    e.Graphics.FillRectangle(Brushes.Teal, e.Bounds);
+
+                    TextRenderer.DrawText(e.Graphics, listView.Columns[e.ColumnIndex].Text, headerFont, headerBounds, Color.White, Color.Empty, TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
+
+                    e.Graphics.DrawLine(Pens.DarkGray, headerBounds.Left, headerBounds.Bottom - 1, headerBounds.Right, headerBounds.Bottom - 1);
+                }
+            }
+
+        }
+
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------
     }
 
 }

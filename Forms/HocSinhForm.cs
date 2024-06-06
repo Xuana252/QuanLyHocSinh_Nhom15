@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace QuanLyHocSinh_Nhom15
 {
@@ -38,7 +39,7 @@ namespace QuanLyHocSinh_Nhom15
             {
                 //CODE MỚI
                 string hoTen = HocSinhHoTenTextBox.Text;
-                string gioiTinh = HocSinhGioiTinhComboBox.Text;
+                string gioiTinh = GioiTinhGroupBox.Controls.OfType<MetroRadioButton>().FirstOrDefault(r => r.Checked).Tag.ToString();
                 string diaChi = HocSinhDiaChiTextBox.Text;
                 string ngaySinh = HocSinhNgaySinhDateTime.Text;
                 string email = HocSinhEmailTextBox.Text;
@@ -107,17 +108,10 @@ namespace QuanLyHocSinh_Nhom15
         {
             foreach (Control control in this.Controls)
             {
-                if (control.Text.Length == 0)
+                if (control.Text.Length == 0&&!(control is System.Windows.Forms.GroupBox))
                     return false;
             }
             return true;
-        }
-
-        //Sự kiện xảy ra khi form xuất hiện 
-        private void HocSinhEmailTextBox_VisibleChanged(object sender, EventArgs e)
-        {
-
-                
         }
 
         //Sự kiện xảy ra khi form xuất hiện
@@ -128,12 +122,13 @@ namespace QuanLyHocSinh_Nhom15
                 HocSinhHoTenTextBox.Text = hocSinh.HoTen;
                 HocSinhDiaChiTextBox.Text = hocSinh.DiaChi;
                 HocSinhEmailTextBox.Text = hocSinh.Email;
-                HocSinhGioiTinhComboBox.Text = hocSinh.GioiTinh;
+                GioiTinhGroupBox.Controls.OfType<MetroRadioButton>().First(r => r.Tag != null && r.Tag.ToString() == hocSinh.GioiTinh).Checked = true;
                 HocSinhNgaySinhDateTime.Value = DateTime.ParseExact(hocSinh.NgaySinh, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
             }
             else
                 ClearForm();
         }
+
     }
 }

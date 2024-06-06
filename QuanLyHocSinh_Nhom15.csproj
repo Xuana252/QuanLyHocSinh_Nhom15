@@ -184,5 +184,41 @@
   <ItemGroup>
     <None Include="Resources\search.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AppIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ViewIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImportIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExportIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DatabaseIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ErrorIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SignOutIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SignUpIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExitIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MaximizeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MinimizeIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

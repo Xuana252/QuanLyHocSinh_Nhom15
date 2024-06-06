@@ -37,9 +37,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.HocSinhDiaChiTextBox = new System.Windows.Forms.RichTextBox();
-            this.HocSinhGioiTinhComboBox = new MetroFramework.Controls.MetroComboBox();
             this.HocSinhOKButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.GioiTinhGroupBox = new System.Windows.Forms.GroupBox();
+            this.NuRadioButton = new MetroFramework.Controls.MetroRadioButton();
+            this.NamRadioButton = new MetroFramework.Controls.MetroRadioButton();
+            this.GioiTinhGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // HocSinhHoTenTextBox
@@ -105,7 +108,6 @@
             this.HocSinhEmailTextBox.WaterMark = "Email";
             this.HocSinhEmailTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.HocSinhEmailTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.HocSinhEmailTextBox.VisibleChanged += new System.EventHandler(this.HocSinhEmailTextBox_VisibleChanged);
             // 
             // HocSinhNgaySinhDateTime
             // 
@@ -175,24 +177,11 @@
             // HocSinhDiaChiTextBox
             // 
             this.HocSinhDiaChiTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HocSinhDiaChiTextBox.Location = new System.Drawing.Point(136, 158);
+            this.HocSinhDiaChiTextBox.Location = new System.Drawing.Point(138, 161);
             this.HocSinhDiaChiTextBox.Name = "HocSinhDiaChiTextBox";
             this.HocSinhDiaChiTextBox.Size = new System.Drawing.Size(312, 96);
             this.HocSinhDiaChiTextBox.TabIndex = 11;
             this.HocSinhDiaChiTextBox.Text = "";
-            // 
-            // HocSinhGioiTinhComboBox
-            // 
-            this.HocSinhGioiTinhComboBox.FormattingEnabled = true;
-            this.HocSinhGioiTinhComboBox.ItemHeight = 23;
-            this.HocSinhGioiTinhComboBox.Items.AddRange(new object[] {
-            "Nam",
-            "Nu"});
-            this.HocSinhGioiTinhComboBox.Location = new System.Drawing.Point(136, 103);
-            this.HocSinhGioiTinhComboBox.Name = "HocSinhGioiTinhComboBox";
-            this.HocSinhGioiTinhComboBox.Size = new System.Drawing.Size(189, 29);
-            this.HocSinhGioiTinhComboBox.TabIndex = 12;
-            this.HocSinhGioiTinhComboBox.UseSelectable = true;
             // 
             // HocSinhOKButton
             // 
@@ -225,6 +214,46 @@
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // GioiTinhGroupBox
+            // 
+            this.GioiTinhGroupBox.Controls.Add(this.NuRadioButton);
+            this.GioiTinhGroupBox.Controls.Add(this.NamRadioButton);
+            this.GioiTinhGroupBox.Location = new System.Drawing.Point(138, 91);
+            this.GioiTinhGroupBox.Name = "GioiTinhGroupBox";
+            this.GioiTinhGroupBox.Size = new System.Drawing.Size(159, 45);
+            this.GioiTinhGroupBox.TabIndex = 15;
+            this.GioiTinhGroupBox.TabStop = false;
+            // 
+            // NuRadioButton
+            // 
+            this.NuRadioButton.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
+            this.NuRadioButton.Location = new System.Drawing.Point(82, 9);
+            this.NuRadioButton.Name = "NuRadioButton";
+            this.NuRadioButton.Size = new System.Drawing.Size(71, 30);
+            this.NuRadioButton.Style = MetroFramework.MetroColorStyle.Teal;
+            this.NuRadioButton.TabIndex = 17;
+            this.NuRadioButton.Tag = "Nu";
+            this.NuRadioButton.Text = "Nữ";
+            this.NuRadioButton.UseCustomForeColor = true;
+            this.NuRadioButton.UseSelectable = true;
+            this.NuRadioButton.UseStyleColors = true;
+            // 
+            // NamRadioButton
+            // 
+            this.NamRadioButton.Checked = true;
+            this.NamRadioButton.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
+            this.NamRadioButton.Location = new System.Drawing.Point(6, 9);
+            this.NamRadioButton.Name = "NamRadioButton";
+            this.NamRadioButton.Size = new System.Drawing.Size(71, 30);
+            this.NamRadioButton.Style = MetroFramework.MetroColorStyle.Teal;
+            this.NamRadioButton.TabIndex = 16;
+            this.NamRadioButton.TabStop = true;
+            this.NamRadioButton.Tag = "Nam";
+            this.NamRadioButton.Text = "Nam";
+            this.NamRadioButton.UseCustomForeColor = true;
+            this.NamRadioButton.UseSelectable = true;
+            this.NamRadioButton.UseStyleColors = true;
+            // 
             // HocSinhForm
             // 
             this.AcceptButton = this.HocSinhOKButton;
@@ -233,9 +262,9 @@
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(467, 482);
             this.ControlBox = false;
+            this.Controls.Add(this.GioiTinhGroupBox);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.HocSinhOKButton);
-            this.Controls.Add(this.HocSinhGioiTinhComboBox);
             this.Controls.Add(this.HocSinhDiaChiTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -257,6 +286,7 @@
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "StudentForm";
             this.VisibleChanged += new System.EventHandler(this.HocSinhForm_VisibleChanged);
+            this.GioiTinhGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,8 +303,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox HocSinhDiaChiTextBox;
-        private MetroFramework.Controls.MetroComboBox HocSinhGioiTinhComboBox;
         private System.Windows.Forms.Button HocSinhOKButton;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.GroupBox GioiTinhGroupBox;
+        private MetroFramework.Controls.MetroRadioButton NuRadioButton;
+        private MetroFramework.Controls.MetroRadioButton NamRadioButton;
     }
 }

@@ -64,8 +64,9 @@
             this.MonListView1.UseSelectable = true;
             this.MonListView1.UseStyleColors = true;
             this.MonListView1.View = System.Windows.Forms.View.Details;
-            this.MonListView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.MonListView1_ColumnWidthChanging);
-            this.MonListView1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.MonListView1_DrawItem);
+            this.MonListView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.ListView_ColumnWidthChanging);
+            this.MonListView1.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListView_DrawColumnHeader);
+            this.MonListView1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.ListView_DrawItem);
             this.MonListView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.MonListView1_ItemSelectionChanged);
             // 
             // STTMon

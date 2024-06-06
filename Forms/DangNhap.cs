@@ -26,7 +26,7 @@ namespace QuanLyHocSinh_Nhom15
         //Sự kiện khi bấm nút đăng nhập
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            //if (TaiKhoan.GetInstance().DangNhap(UserNameTextBox.Text.Trim(),PasswordTextBox.Text.Trim()))
+            //if (TaiKhoan.GetInstance().DangNhap(UserNameTextBox.Text.Trim(), PasswordTextBox.Text.Trim()))
             //{
             //    //nếu đăng nhập thành công thì gọi cửa sổ app
             //    App app = new App();
@@ -39,10 +39,10 @@ namespace QuanLyHocSinh_Nhom15
             //    Error.GetInstance().Show("thông tin tên tài khoản hoặc mật khẩu không đúng");
             //    UserNameTextBox.Text = string.Empty;
             //    PasswordTextBox.Text = string.Empty;
-            //}    
+            //}
             App app = new App();
-               this.Hide();
-               app.Show();
+            this.Hide();
+            app.Show();
         }
 
 
