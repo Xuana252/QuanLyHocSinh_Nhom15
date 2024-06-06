@@ -48,13 +48,72 @@ namespace QuanLyHocSinh_Nhom15
         {
             InitializeComponent();
         }
+        //Sự kiện khi bấm nút MinimizeWindow
+        private void MinimizeButton_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+        //Sự kiện khi bấm nút Maximize/RestoreWindow
+        private void MaximizeRestoreButton_Click(object sender, EventArgs e)
+        {
+            if (WindowState != FormWindowState.Maximized)
+            {
+                
+                WindowState = FormWindowState.Maximized;
+                AppTabControl.ItemSize = new Size((AppTabControl.Width - 10) / AppTabControl.TabCount, 0);
+            }
+            else
+                WindowState = FormWindowState.Normal;
+        }
+
+        //Sự kiện khi bấm nút ExitWindow
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        //Khối sự kiện dành cho việc vẽ các item dành cho listview
+        //---------------------------------------------------------------------------------------------------------------------------------
+
+        private void ListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            if (sender is MetroListView listView)
+            {
+                e.NewWidth = listView.Columns[e.ColumnIndex].Width;
+                e.Cancel = true;
+            }
+        }
+
+        private void ListView_DrawItem(object sender, DrawListViewItemEventArgs e)
+        {
+            e.DrawDefault = true;
+        }
+
+        private void ListView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.DrawDefault = false;
+            if (sender is MetroListView listView)
+            {
+                using (Font headerFont = new Font("Arial", 12, FontStyle.Regular))
+                {
+                    Rectangle headerBounds = e.Bounds;
+
+                    e.Graphics.FillRectangle(Brushes.Teal, e.Bounds);
+
+                    TextRenderer.DrawText(e.Graphics, listView.Columns[e.ColumnIndex].Text, headerFont, headerBounds, Color.White, Color.Empty, TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
+
+                    e.Graphics.DrawLine(Pens.DarkGray, headerBounds.Left, headerBounds.Bottom - 1, headerBounds.Right, headerBounds.Bottom - 1);
+                }
+            }
+
+        }
+
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         //Sự kiện khi App load lần đầu
         private void App_Load(object sender, EventArgs e)
         {
-            //Vẽ lại khung cho app
-           
-
             //Cập nhật các thông số ban đầu của app
             AppTabControl.SelectedIndex = 0;
             UserIDLabel.Text = user.idGiaoVien;
@@ -77,19 +136,13 @@ namespace QuanLyHocSinh_Nhom15
             studentForm = new HocSinhForm(this);
             lopForm = new LopForm(this);
 
-            Graphics g = this.CreateGraphics();
-
-            // Draw a rectangular border around the form
-            using (Pen pen = new Pen(Color.Black, 10))
-            {
-                g.DrawRectangle(pen, 0, 0, this.ClientSize.Width - 1, this.ClientSize.Height - 1);
-            }
+            
             //--------------------------Điều chỉnh các control tùy thuộc vào quyền hạn (vai trò) của User----------------------------------------------------------
             if (user.idVaiTro != "QL")
             {
                 AppTabControl.TabPages.Remove(TabTiepNhan); //Không hiển thị tab tiếp nhận
 
-                AppTabControl.ItemSize =new Size( (AppTabControl.Width-10) / 5,0);
+                AppTabControl.ItemSize =new Size( (AppTabControl.Width-10) / AppTabControl.TabCount,0);
 
                 //TAB BÁO CÁO MÔN
                 QuanLyMonHocButton.Visible=false;//Không hiển thị nút quản lí môn học
@@ -151,7 +204,6 @@ namespace QuanLyHocSinh_Nhom15
 
             //Load danh sách học sinh tiếp nhận dựa trên thanh tìm kiếm nếu trống thì lấy toàn bộ danh sách
 
-            //CODE MỚI
             TiepNhanListView.Items.Clear();
             foreach (ListViewItem hocSinh in HocSinh.LayDanhSach())
             {
@@ -186,43 +238,6 @@ namespace QuanLyHocSinh_Nhom15
                 
             }
 
-            //CODE CŨ
-
-            //if (hoTenTimKiem.Length == 0)
-            //    db.sqlCmd.CommandText = "SELECT idHocSinh,HoTen,GioiTinh,Email,DiaChi,CONVERT(VARCHAR(10),NgaySinh,103) FROM HOCSINH WHERE idLop IS NULL";
-            //else
-            //{
-            //    db.sqlCmd.CommandText = "SELECT idHocSinh,HoTen,GioiTinh,Email,DiaChi,CONVERT(VARCHAR(10),NgaySinh,103) FROM HOCSINH WHERE idLop IS NULL AND hoTen=@hoTen";
-            //    db.sqlCmd.Parameters.AddWithValue("@hoTen", hoTenTimKiem);
-            //}    
-
-            //db.sqlCmd.Connection = db.sqlCon;
-
-            //db.reader = db.sqlCmd.ExecuteReader();
-
-            //TiepNhanListView.Items.Clear();
-
-            //while (db.reader.Read())
-            //{
-            //    string idHocSinh = db.reader.GetString(0);
-            //    string hoTen = db.reader.GetString(1);
-            //    string gioiTinh = db.reader.GetString(2);
-            //    string email = db.reader.GetString(3);
-            //    string diaChi = db.reader.GetString(4);
-            //    string ngaySinh = db.reader.GetString(5);
-
-            //    ListViewItem item = new ListViewItem();
-            //    item.Text = (idHocSinh);
-            //    item.SubItems.Add(hoTen);
-            //    item.SubItems.Add(gioiTinh);
-            //    item.SubItems.Add(ngaySinh);
-            //    item.SubItems.Add(diaChi);
-            //    item.SubItems.Add(email);
-
-            //    TiepNhanListView.Items.Add(item);
-
-            //}
-            //db.reader.Close();
         }
 
         //Hàm load Tab Danh sách lớp
@@ -361,17 +376,22 @@ namespace QuanLyHocSinh_Nhom15
             }
         }
 
-        
-        //Sự kiện khi bấm nút X thoát
-
+       
         //Sự kiện khi chọn combobox tên lớp
         private void DanhSachLopTenLopComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             DanhSachLopTenLopComboBox.Text = DanhSachLopTenLopComboBox.SelectedItem.ToString();
         }
-        private void ExitButton_Click(object sender, EventArgs e)
+       
+        //TAB TRA CỨU: Sự kiên khi bấm nút tìm kiếm
+        private void TraCuuTimKiemButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            TraCuuListView.Items.Clear();
+            foreach (ListViewItem item in HocSinh.TraCuu(TraCuuTextBox.Text, TraCuuNamHoc.Value))
+            {
+                TraCuuListView.Items.Add(item);
+            }
+
         }
         //TAB BÁO CÁO MÔN: Sư kiện khi bấm nút quản lí môn học
         private void QuanLyMonHocButton_Click(object sender, EventArgs e)
@@ -464,6 +484,11 @@ namespace QuanLyHocSinh_Nhom15
         //TAB BÁO CÁO MÔN: Sự kiện khi bấm nút Thêm bảng điểm
         private void BaoCaoThemBangDiemButton_Click(object sender, EventArgs e)
         {
+            if (BaoCaoHocKiComboBox.Text == "" || BaoCaoLopComboBox.Text == "" || BaoCaoMonHocComboBox.Text == "")
+            {
+                Error.GetInstance().Show("Vui lòng nhập đầy đủ thông tin!!!");
+                return;
+            }
             BangDiem.ThemBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
         }
 
@@ -474,6 +499,7 @@ namespace QuanLyHocSinh_Nhom15
             {
                 string idbangdiem = BangDiem.getIdBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
                 chiTietBangDiem.XoaDiem(idbangdiem, BaoCaoListView.SelectedItems[0].SubItems[5].Text);
+                this.LoadTabBaoCaoMon();
             }
 
         }
@@ -616,44 +642,6 @@ namespace QuanLyHocSinh_Nhom15
                 LoadTabDanhSachLop(LopHoc.idLop, "");
             }
         }
-
-        //Khối sự kiện dành cho việc vẽ các item dành cho listview
-        //---------------------------------------------------------------------------------------------------------------------------------
-
-        private void ListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
-        {
-            if (sender is MetroListView listView)
-            {
-                e.NewWidth = listView.Columns[e.ColumnIndex].Width;
-                e.Cancel = true;
-            }
-        }
-
-        private void ListView_DrawItem(object sender, DrawListViewItemEventArgs e)
-        {
-            e.DrawDefault = true;
-        }
-
-        private void ListView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
-        {
-            e.DrawDefault = false;
-            if (sender is MetroListView listView)
-            {
-                using (Font headerFont = new Font("Arial", 12, FontStyle.Regular))
-                {
-                    Rectangle headerBounds = e.Bounds;
-
-                    e.Graphics.FillRectangle(Brushes.Teal, e.Bounds);
-
-                    TextRenderer.DrawText(e.Graphics, listView.Columns[e.ColumnIndex].Text, headerFont, headerBounds, Color.White, Color.Empty, TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
-
-                    e.Graphics.DrawLine(Pens.DarkGray, headerBounds.Left, headerBounds.Bottom - 1, headerBounds.Right, headerBounds.Bottom - 1);
-                }
-            }
-           
-        }
-
-        //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
     }
 
