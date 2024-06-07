@@ -344,6 +344,7 @@ namespace QuanLyHocSinh_Nhom15
         //Hàm load Tab tổng kết
         public void LoadTabTongKet()
         {
+            
             TongKetMonComboBox.Items.Clear();
             foreach (ListViewItem item in MonHoc.LayDanhSach())
             {
@@ -428,11 +429,14 @@ namespace QuanLyHocSinh_Nhom15
                 diemForm.idbangdiem = BangDiem.getIdBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
                 diemForm.idhocsinh = BaoCaoListView.SelectedItems[0].SubItems[5].Text;
                 if (BaoCaoListView.SelectedItems[0].SubItems[3].Text != "0")
+                {
                     diemForm.flagSua = true;
+                }    
                 diemForm.Show();
             }
             else
             {
+                BaoCaoListView.SelectedItems.Clear();
                 Error.GetInstance().Show("Vui lòng chọn học sinh cần thêm điểm");   
             }    
         }
@@ -469,6 +473,7 @@ namespace QuanLyHocSinh_Nhom15
         //TAB BÁO CÁO MÔN: Sự kiện khi bấm nút Xem bảng điểm
         private void BaoCaoXemBangDiemButton_Click(object sender, EventArgs e)
         {
+            BaoCaoListView.Items.Clear();
             foreach (ListViewItem item in BangDiem.LayDanhSach(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value))
             {
                 BaoCaoListView.Items.Add(item);
@@ -643,6 +648,120 @@ namespace QuanLyHocSinh_Nhom15
             }
         }
 
+        private void TongKetXem_Click(object sender, EventArgs e)
+        {
+            TongKetListView.Items.Clear();
+            if(MonHocRadioButton.Checked)
+            {
+                int i = 1;
+                SQLConnect db = SQLConnect.GetInstance();
+                db.Open();
+                db.sqlCmd.CommandType = CommandType.Text;
+
+                db.sqlCmd.CommandText = "declare @idmon char(2); " +
+                    "SELECT @idmon = idMonHoc FROM MONHOC WHERE TenMonHoc = @tenmon; " +
+                    "SELECT LOPHOC.tenlop, LOPHOC.siso, COUNT(CASE WHEN CHITIETBANGDIEM.DiemTB > 5 THEN CHITIETBANGDIEM.idHocSinh ELSE NULL END) FROM LOPHOC " +
+                    "JOIN BANGDIEM ON LOPHOC.idLop = BANGDIEM.idLop JOIN CHITIETBANGDIEM ON BANGDIEM.idBangDiem = CHITIETBANGDIEM.idBangDiem " +
+                    "WHERE BANGDIEM.idMonHoc = @idmon AND BANGDIEM.HocKy = @hocky AND BANGDIEM.NamHoc = @namhoc " +
+                    "GROUP BY LOPHOC.tenlop, LOPHOC.siso;";
+
+                db.sqlCmd.Parameters.AddWithValue("@tenmon", TongKetMonComboBox.Text);
+                db.sqlCmd.Parameters.AddWithValue("@namhoc", TongKetNamHoc.Value);
+                db.sqlCmd.Parameters.AddWithValue("@hocky", groupBox2.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text);
+
+                db.sqlCmd.Connection = db.sqlCon;
+
+                db.reader = db.sqlCmd.ExecuteReader();
+
+                while (db.reader.Read())
+                {
+                    string tenlop = db.reader.GetString(0);
+                    int siso = db.reader.GetInt32(1);
+                    int shocsinhdat = db.reader.GetInt32(2);
+                    float tile = ((float)shocsinhdat / siso) * 100;
+                    string tile1 = tile.ToString() + "%";
+
+                    ListViewItem item = new ListViewItem();
+                    item.Text = i.ToString();
+                    item.SubItems.Add(tenlop);
+                    item.SubItems.Add(siso.ToString());
+                    item.SubItems.Add(shocsinhdat.ToString());
+                    item.SubItems.Add(tile1);
+
+                    TongKetListView.Items.Add(item);
+                }
+                db.reader.Close();
+            }
+            else
+            {
+                int i = 1;
+                SQLConnect db = SQLConnect.GetInstance();
+                db.Open();
+                db.sqlCmd.CommandType = CommandType.Text;
+
+                db.sqlCmd.CommandText = @"WITH DiemTBHocSinh AS (
+                                        SELECT 
+                                            CHITIETBANGDIEM.idhocsinh,
+                                            AVG(CHITIETBANGDIEM.diemtb) AS diemtbhocky
+                                        FROM 
+                                            CHITIETBANGDIEM 
+                                        JOIN 
+                                            BANGDIEM ON CHITIETBANGDIEM.idbangdiem = BANGDIEM.idbangdiem 
+                                        WHERE 
+                                            BANGDIEM.hocky = @hocky
+                                            AND BANGDIEM.namhoc = @namhoc
+                                        GROUP BY 
+                                            CHITIETBANGDIEM.idhocsinh
+                                        HAVING 
+                                            AVG(CHITIETBANGDIEM.diemtb) >= 5
+                                        )
+                                        SELECT 
+                                            LOPHOC.tenlop, 
+                                            LOPHOC.siso,
+                                            COUNT(DISTINCT DiemTBHocSinh.idhocsinh) AS NumStudentsAbove5
+                                        FROM 
+                                            LOPHOC
+                                        JOIN 
+                                            BANGDIEM ON LOPHOC.idLop = BANGDIEM.idLop 
+                                        JOIN 
+                                            CHITIETBANGDIEM ON BANGDIEM.idBangDiem = CHITIETBANGDIEM.idBangDiem
+                                        JOIN 
+                                            DiemTBHocSinh ON CHITIETBANGDIEM.idhocsinh = DiemTBHocSinh.idhocsinh
+                                        WHERE 
+                                            BANGDIEM.HocKy = @hocky
+                                            AND BANGDIEM.NamHoc = @namhoc
+                                        GROUP BY 
+                                            LOPHOC.tenlop, 
+                                            LOPHOC.siso;";
+
+                db.sqlCmd.Parameters.AddWithValue("@namhoc", TongKetNamHoc.Value);
+                db.sqlCmd.Parameters.AddWithValue("@hocky", groupBox2.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text);
+
+                db.sqlCmd.Connection = db.sqlCon;
+
+                db.reader = db.sqlCmd.ExecuteReader();
+
+                while (db.reader.Read())
+                {
+                    string tenlop = db.reader.GetString(0);
+                    int siso = db.reader.GetInt32(1);
+                    int shocsinhdat = db.reader.GetInt32(2);
+                    float tile = ((float)shocsinhdat / siso) * 100;
+                    string tile1 = tile.ToString() + "%";
+
+                    ListViewItem item = new ListViewItem();
+                    item.Text = i.ToString();
+                    item.SubItems.Add(tenlop);
+                    item.SubItems.Add(siso.ToString());
+                    item.SubItems.Add(shocsinhdat.ToString());
+                    item.SubItems.Add(tile1);
+
+                    TongKetListView.Items.Add(item);
+                }
+                db.reader.Close();
+            }    
+            
+        }
     }
 
 

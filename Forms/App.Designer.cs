@@ -183,6 +183,7 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
+            this.TongKetNamHoc = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.AppTabControl.SuspendLayout();
@@ -214,6 +215,7 @@ namespace QuanLyHocSinh_Nhom15
             this.metroPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TongKetNamHoc)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -899,6 +901,7 @@ namespace QuanLyHocSinh_Nhom15
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.MintCream;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.TongKetNamHoc);
             this.panel7.Controls.Add(this.groupBox2);
             this.panel7.Controls.Add(this.TongKetMonHocCaHocKiGroupBox);
             this.panel7.Controls.Add(this.TongKetXem);
@@ -935,13 +938,13 @@ namespace QuanLyHocSinh_Nhom15
             this.HocKi2RadioButton.Name = "HocKi2RadioButton";
             this.HocKi2RadioButton.Size = new System.Drawing.Size(33, 20);
             this.HocKi2RadioButton.TabIndex = 1;
-            this.HocKi2RadioButton.TabStop = true;
             this.HocKi2RadioButton.Text = "2";
             this.HocKi2RadioButton.UseVisualStyleBackColor = true;
             // 
             // HocKi1RadioButton
             // 
             this.HocKi1RadioButton.AutoSize = true;
+            this.HocKi1RadioButton.Checked = true;
             this.HocKi1RadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HocKi1RadioButton.Location = new System.Drawing.Point(10, 26);
             this.HocKi1RadioButton.Name = "HocKi1RadioButton";
@@ -973,13 +976,13 @@ namespace QuanLyHocSinh_Nhom15
             this.CaHocKiRadioButton.Name = "CaHocKiRadioButton";
             this.CaHocKiRadioButton.Size = new System.Drawing.Size(89, 20);
             this.CaHocKiRadioButton.TabIndex = 1;
-            this.CaHocKiRadioButton.TabStop = true;
             this.CaHocKiRadioButton.Text = "Cả học kì";
             this.CaHocKiRadioButton.UseVisualStyleBackColor = true;
             // 
             // MonHocRadioButton
             // 
             this.MonHocRadioButton.AutoSize = true;
+            this.MonHocRadioButton.Checked = true;
             this.MonHocRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MonHocRadioButton.Location = new System.Drawing.Point(10, 26);
             this.MonHocRadioButton.Name = "MonHocRadioButton";
@@ -1004,6 +1007,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TongKetXem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TongKetXem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.TongKetXem.UseVisualStyleBackColor = false;
+            this.TongKetXem.Click += new System.EventHandler(this.TongKetXem_Click);
             // 
             // label15
             // 
@@ -1053,7 +1057,6 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // TongKetMonComboBox
             // 
-            this.TongKetMonComboBox.Enabled = false;
             this.TongKetMonComboBox.FormattingEnabled = true;
             this.TongKetMonComboBox.ItemHeight = 23;
             this.TongKetMonComboBox.Location = new System.Drawing.Point(8, 228);
@@ -1308,7 +1311,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TiepNhanThemSuaHocSinh.Name = "TiepNhanThemSuaHocSinh";
             this.TiepNhanThemSuaHocSinh.Size = new System.Drawing.Size(172, 37);
             this.TiepNhanThemSuaHocSinh.TabIndex = 26;
-            this.TiepNhanThemSuaHocSinh.Text = "Thêm/Sửa điểm";
+            this.TiepNhanThemSuaHocSinh.Text = "Thêm học sinh";
             this.TiepNhanThemSuaHocSinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TiepNhanThemSuaHocSinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.TiepNhanThemSuaHocSinh.UseVisualStyleBackColor = false;
@@ -2255,6 +2258,31 @@ namespace QuanLyHocSinh_Nhom15
             this.label1.Size = new System.Drawing.Size(191, 24);
             this.label1.TabIndex = 0;
             // 
+            // TongKetNamHoc
+            // 
+            this.TongKetNamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TongKetNamHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TongKetNamHoc.Location = new System.Drawing.Point(8, 288);
+            this.TongKetNamHoc.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.TongKetNamHoc.Minimum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.TongKetNamHoc.Name = "TongKetNamHoc";
+            this.TongKetNamHoc.Size = new System.Drawing.Size(202, 26);
+            this.TongKetNamHoc.TabIndex = 31;
+            this.TongKetNamHoc.Value = new decimal(new int[] {
+            2024,
+            0,
+            0,
+            0});
+            // 
             // App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2320,6 +2348,7 @@ namespace QuanLyHocSinh_Nhom15
             this.metroPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TongKetNamHoc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2477,6 +2506,7 @@ namespace QuanLyHocSinh_Nhom15
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private Button MaximizeRestoreButton;
         private Button MinimizeButton;
+        private NumericUpDown TongKetNamHoc;
     }
 }
 
