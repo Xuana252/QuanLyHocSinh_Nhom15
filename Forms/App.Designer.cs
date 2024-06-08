@@ -122,6 +122,23 @@ namespace QuanLyHocSinh_Nhom15
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.TabDanhSachLop = new MetroFramework.Controls.MetroTabPage();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.DanhSachLopThemHocSinhButton = new MetroFramework.Controls.MetroButton();
+            this.DanhSachLopXoaHocSinhButton = new MetroFramework.Controls.MetroButton();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.DanhSachLopListView1 = new MetroFramework.Controls.MetroListView();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DanhSachLopListView2 = new MetroFramework.Controls.MetroListView();
+            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel10 = new System.Windows.Forms.Panel();
             this.DanhSachLopTimKiemButton = new System.Windows.Forms.Button();
             this.DanhSachLopXemLopButton = new System.Windows.Forms.Button();
@@ -132,24 +149,8 @@ namespace QuanLyHocSinh_Nhom15
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.DanhSachLopListView1 = new MetroFramework.Controls.MetroListView();
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label14 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.DanhSachLopThemHocSinhButton = new MetroFramework.Controls.MetroButton();
-            this.DanhSachLopXoaHocSinhButton = new MetroFramework.Controls.MetroButton();
-            this.DanhSachLopListView2 = new MetroFramework.Controls.MetroListView();
-            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel6 = new System.Windows.Forms.Panel();
             this.DanhSachLopQuanLiButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -205,8 +206,12 @@ namespace QuanLyHocSinh_Nhom15
             ((System.ComponentModel.ISupportInitialize)(this.TiepNhanMinAgeNumericBox)).BeginInit();
             this.panel2.SuspendLayout();
             this.TabDanhSachLop.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.panel6.SuspendLayout();
             this.TabUser.SuspendLayout();
             this.metroPanel5.SuspendLayout();
@@ -230,7 +235,7 @@ namespace QuanLyHocSinh_Nhom15
             this.panel1.Controls.Add(this.AppNameLabel);
             this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1081, 656);
+            this.panel1.Size = new System.Drawing.Size(1081, 51);
             this.panel1.TabIndex = 0;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
@@ -238,8 +243,8 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.MinimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MinimizeButton.FlatAppearance.BorderSize = 0;
-            this.MinimizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.MinimizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.MinimizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.MinimizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MinimizeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinimizeButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -255,8 +260,8 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.MaximizeRestoreButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MaximizeRestoreButton.FlatAppearance.BorderSize = 0;
-            this.MaximizeRestoreButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.MaximizeRestoreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.MaximizeRestoreButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.MaximizeRestoreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.MaximizeRestoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MaximizeRestoreButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeRestoreButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -308,22 +313,21 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // AppTabControl
             // 
-            this.AppTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.AppTabControl.Controls.Add(this.TabTraCuu);
             this.AppTabControl.Controls.Add(this.TabBaoCao);
             this.AppTabControl.Controls.Add(this.TabTongKet);
             this.AppTabControl.Controls.Add(this.TabTiepNhan);
             this.AppTabControl.Controls.Add(this.TabDanhSachLop);
             this.AppTabControl.Controls.Add(this.TabUser);
+            this.AppTabControl.Cursor = System.Windows.Forms.Cursors.Default;
+            this.AppTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AppTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.AppTabControl.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
             this.AppTabControl.ItemSize = new System.Drawing.Size(179, 0);
             this.AppTabControl.Location = new System.Drawing.Point(1, 48);
             this.AppTabControl.Multiline = true;
             this.AppTabControl.Name = "AppTabControl";
-            this.AppTabControl.SelectedIndex = 2;
+            this.AppTabControl.SelectedIndex = 4;
             this.AppTabControl.Size = new System.Drawing.Size(1079, 606);
             this.AppTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AppTabControl.Style = MetroFramework.MetroColorStyle.Teal;
@@ -358,8 +362,6 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // metroLabel6
             // 
-            this.metroLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
@@ -371,8 +373,6 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // TraCuuNamHoc
             // 
-            this.TraCuuNamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TraCuuNamHoc.Location = new System.Drawing.Point(546, 85);
             this.TraCuuNamHoc.Maximum = new decimal(new int[] {
             9999,
@@ -395,9 +395,8 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // TraCuuTimKiemButton
             // 
-            this.TraCuuTimKiemButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TraCuuTimKiemButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TraCuuTimKiemButton.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.TraCuuTimKiemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TraCuuTimKiemButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TraCuuTimKiemButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.search;
@@ -413,8 +412,6 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // TraCuuTextBox
             // 
-            this.TraCuuTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -445,8 +442,6 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // metroLabel7
             // 
-            this.metroLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
@@ -469,6 +464,7 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader20,
             this.columnHeader21,
             this.columnHeader22});
+            this.TraCuuListView.Cursor = System.Windows.Forms.Cursors.Default;
             this.TraCuuListView.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.TraCuuListView.FullRowSelect = true;
             this.TraCuuListView.GridLines = true;
@@ -485,6 +481,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TraCuuListView.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.ListView_ColumnWidthChanging);
             this.TraCuuListView.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListView_DrawColumnHeader);
             this.TraCuuListView.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.ListView_DrawItem);
+            this.TraCuuListView.SizeChanged += new System.EventHandler(this.ListView_SizeChanged);
             // 
             // columnHeader18
             // 
@@ -555,7 +552,9 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.MintCream;
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.BackColor = System.Drawing.Color.LightCyan;
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.BaoCaoXoaBangDiem);
             this.panel8.Controls.Add(this.BaoCaoXemBangDiem);
@@ -571,7 +570,7 @@ namespace QuanLyHocSinh_Nhom15
             this.panel8.Controls.Add(this.metroLabel3);
             this.panel8.Controls.Add(this.BaoCaoMonHocComboBox);
             this.panel8.ForeColor = System.Drawing.Color.DarkCyan;
-            this.panel8.Location = new System.Drawing.Point(834, 64);
+            this.panel8.Location = new System.Drawing.Point(832, 64);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(236, 497);
             this.panel8.TabIndex = 29;
@@ -579,6 +578,7 @@ namespace QuanLyHocSinh_Nhom15
             // BaoCaoXoaBangDiem
             // 
             this.BaoCaoXoaBangDiem.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BaoCaoXoaBangDiem.Cursor = System.Windows.Forms.Cursors.Default;
             this.BaoCaoXoaBangDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BaoCaoXoaBangDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaoCaoXoaBangDiem.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.DeleteIcon;
@@ -595,6 +595,7 @@ namespace QuanLyHocSinh_Nhom15
             // BaoCaoXemBangDiem
             // 
             this.BaoCaoXemBangDiem.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BaoCaoXemBangDiem.Cursor = System.Windows.Forms.Cursors.Default;
             this.BaoCaoXemBangDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BaoCaoXemBangDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaoCaoXemBangDiem.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ViewIcon;
@@ -611,6 +612,7 @@ namespace QuanLyHocSinh_Nhom15
             // BaoCaoXoaDiem
             // 
             this.BaoCaoXoaDiem.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BaoCaoXoaDiem.Cursor = System.Windows.Forms.Cursors.Default;
             this.BaoCaoXoaDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BaoCaoXoaDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaoCaoXoaDiem.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.DeleteIcon;
@@ -628,6 +630,7 @@ namespace QuanLyHocSinh_Nhom15
             // BaoCaoThemSuaDiem
             // 
             this.BaoCaoThemSuaDiem.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BaoCaoThemSuaDiem.Cursor = System.Windows.Forms.Cursors.Default;
             this.BaoCaoThemSuaDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BaoCaoThemSuaDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaoCaoThemSuaDiem.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.AddIcon;
@@ -644,6 +647,7 @@ namespace QuanLyHocSinh_Nhom15
             // BaoCaoThemBangDiem
             // 
             this.BaoCaoThemBangDiem.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BaoCaoThemBangDiem.Cursor = System.Windows.Forms.Cursors.Default;
             this.BaoCaoThemBangDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BaoCaoThemBangDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaoCaoThemBangDiem.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.AddIcon;
@@ -794,7 +798,7 @@ namespace QuanLyHocSinh_Nhom15
             this.BaoCaoListView.Location = new System.Drawing.Point(6, 64);
             this.BaoCaoListView.Name = "BaoCaoListView";
             this.BaoCaoListView.OwnerDraw = true;
-            this.BaoCaoListView.Size = new System.Drawing.Size(822, 498);
+            this.BaoCaoListView.Size = new System.Drawing.Size(820, 497);
             this.BaoCaoListView.Style = MetroFramework.MetroColorStyle.Teal;
             this.BaoCaoListView.TabIndex = 22;
             this.BaoCaoListView.UseCompatibleStateImageBehavior = false;
@@ -804,6 +808,7 @@ namespace QuanLyHocSinh_Nhom15
             this.BaoCaoListView.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.ListView_ColumnWidthChanging);
             this.BaoCaoListView.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListView_DrawColumnHeader);
             this.BaoCaoListView.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.ListView_DrawItem);
+            this.BaoCaoListView.SizeChanged += new System.EventHandler(this.ListView_SizeChanged);
             // 
             // columnHeader6
             // 
@@ -832,27 +837,31 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // id
             // 
+            this.id.Text = "";
             this.id.Width = 0;
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Teal;
             this.panel3.Controls.Add(this.QuanLyMonHocButton);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1070, 55);
+            this.panel3.Size = new System.Drawing.Size(1065, 55);
             this.panel3.TabIndex = 7;
             // 
             // QuanLyMonHocButton
             // 
             this.QuanLyMonHocButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.QuanLyMonHocButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.QuanLyMonHocButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.QuanLyMonHocButton.FlatAppearance.BorderSize = 0;
             this.QuanLyMonHocButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.QuanLyMonHocButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuanLyMonHocButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.DatabaseIcon;
-            this.QuanLyMonHocButton.Location = new System.Drawing.Point(850, 12);
+            this.QuanLyMonHocButton.Location = new System.Drawing.Point(845, 12);
             this.QuanLyMonHocButton.Name = "QuanLyMonHocButton";
             this.QuanLyMonHocButton.Size = new System.Drawing.Size(202, 33);
             this.QuanLyMonHocButton.TabIndex = 25;
@@ -897,7 +906,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.BackColor = System.Drawing.Color.MintCream;
+            this.panel7.BackColor = System.Drawing.Color.LightCyan;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.groupBox2);
             this.panel7.Controls.Add(this.TongKetMonHocCaHocKiGroupBox);
@@ -908,9 +917,9 @@ namespace QuanLyHocSinh_Nhom15
             this.panel7.Controls.Add(this.TongKetMonComboBox);
             this.panel7.Controls.Add(this.metroLabel12);
             this.panel7.ForeColor = System.Drawing.Color.DarkCyan;
-            this.panel7.Location = new System.Drawing.Point(841, 64);
+            this.panel7.Location = new System.Drawing.Point(839, 64);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(229, 498);
+            this.panel7.Size = new System.Drawing.Size(229, 500);
             this.panel7.TabIndex = 30;
             // 
             // groupBox2
@@ -993,6 +1002,7 @@ namespace QuanLyHocSinh_Nhom15
             // TongKetXem
             // 
             this.TongKetXem.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TongKetXem.Cursor = System.Windows.Forms.Cursors.Default;
             this.TongKetXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TongKetXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TongKetXem.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ViewIcon;
@@ -1095,7 +1105,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TongKetListView.Location = new System.Drawing.Point(3, 64);
             this.TongKetListView.Name = "TongKetListView";
             this.TongKetListView.OwnerDraw = true;
-            this.TongKetListView.Size = new System.Drawing.Size(832, 498);
+            this.TongKetListView.Size = new System.Drawing.Size(830, 500);
             this.TongKetListView.Style = MetroFramework.MetroColorStyle.Teal;
             this.TongKetListView.TabIndex = 10;
             this.TongKetListView.UseCompatibleStateImageBehavior = false;
@@ -1104,6 +1114,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TongKetListView.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.ListView_ColumnWidthChanging);
             this.TongKetListView.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListView_DrawColumnHeader);
             this.TongKetListView.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.ListView_DrawItem);
+            this.TongKetListView.SizeChanged += new System.EventHandler(this.ListView_SizeChanged);
             // 
             // columnHeader8
             // 
@@ -1138,7 +1149,7 @@ namespace QuanLyHocSinh_Nhom15
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1074, 55);
+            this.panel4.Size = new System.Drawing.Size(1065, 55);
             this.panel4.TabIndex = 9;
             // 
             // label3
@@ -1174,7 +1185,9 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.Color.MintCream;
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel9.BackColor = System.Drawing.Color.LightCyan;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.TiepNhanXoaHocSinh);
             this.panel9.Controls.Add(this.TiepNhanTimKiemHocSinh);
@@ -1189,16 +1202,18 @@ namespace QuanLyHocSinh_Nhom15
             this.panel9.ForeColor = System.Drawing.Color.DarkCyan;
             this.panel9.Location = new System.Drawing.Point(3, 60);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1070, 50);
+            this.panel9.Size = new System.Drawing.Size(1065, 50);
             this.panel9.TabIndex = 29;
             // 
             // TiepNhanXoaHocSinh
             // 
+            this.TiepNhanXoaHocSinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TiepNhanXoaHocSinh.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TiepNhanXoaHocSinh.Cursor = System.Windows.Forms.Cursors.Default;
             this.TiepNhanXoaHocSinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TiepNhanXoaHocSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TiepNhanXoaHocSinh.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.DeleteIcon;
-            this.TiepNhanXoaHocSinh.Location = new System.Drawing.Point(628, 6);
+            this.TiepNhanXoaHocSinh.Location = new System.Drawing.Point(625, 6);
             this.TiepNhanXoaHocSinh.Name = "TiepNhanXoaHocSinh";
             this.TiepNhanXoaHocSinh.Size = new System.Drawing.Size(150, 37);
             this.TiepNhanXoaHocSinh.TabIndex = 28;
@@ -1210,11 +1225,13 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // TiepNhanTimKiemHocSinh
             // 
+            this.TiepNhanTimKiemHocSinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TiepNhanTimKiemHocSinh.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TiepNhanTimKiemHocSinh.Cursor = System.Windows.Forms.Cursors.Default;
             this.TiepNhanTimKiemHocSinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TiepNhanTimKiemHocSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TiepNhanTimKiemHocSinh.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.search;
-            this.TiepNhanTimKiemHocSinh.Location = new System.Drawing.Point(509, 6);
+            this.TiepNhanTimKiemHocSinh.Location = new System.Drawing.Point(506, 6);
             this.TiepNhanTimKiemHocSinh.Name = "TiepNhanTimKiemHocSinh";
             this.TiepNhanTimKiemHocSinh.Size = new System.Drawing.Size(113, 37);
             this.TiepNhanTimKiemHocSinh.TabIndex = 27;
@@ -1226,11 +1243,12 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // metroLabel16
             // 
+            this.metroLabel16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel16.AutoSize = true;
             this.metroLabel16.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel16.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel16.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel16.Location = new System.Drawing.Point(961, 12);
+            this.metroLabel16.Location = new System.Drawing.Point(956, 12);
             this.metroLabel16.Name = "metroLabel16";
             this.metroLabel16.Size = new System.Drawing.Size(58, 25);
             this.metroLabel16.TabIndex = 15;
@@ -1240,10 +1258,11 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // TiepNhanMaxAgeNumericBox
             // 
+            this.TiepNhanMaxAgeNumericBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TiepNhanMaxAgeNumericBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TiepNhanMaxAgeNumericBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TiepNhanMaxAgeNumericBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.TiepNhanMaxAgeNumericBox.Location = new System.Drawing.Point(1025, 12);
+            this.TiepNhanMaxAgeNumericBox.Location = new System.Drawing.Point(1020, 12);
             this.TiepNhanMaxAgeNumericBox.Name = "TiepNhanMaxAgeNumericBox";
             this.TiepNhanMaxAgeNumericBox.Size = new System.Drawing.Size(40, 27);
             this.TiepNhanMaxAgeNumericBox.TabIndex = 13;
@@ -1256,11 +1275,12 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // metroLabel15
             // 
+            this.metroLabel15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel15.AutoSize = true;
             this.metroLabel15.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel15.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel15.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel15.Location = new System.Drawing.Point(784, 13);
+            this.metroLabel15.Location = new System.Drawing.Point(779, 13);
             this.metroLabel15.Name = "metroLabel15";
             this.metroLabel15.Size = new System.Drawing.Size(116, 25);
             this.metroLabel15.TabIndex = 14;
@@ -1270,10 +1290,11 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // TiepNhanMinAgeNumericBox
             // 
+            this.TiepNhanMinAgeNumericBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TiepNhanMinAgeNumericBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TiepNhanMinAgeNumericBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TiepNhanMinAgeNumericBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.TiepNhanMinAgeNumericBox.Location = new System.Drawing.Point(904, 12);
+            this.TiepNhanMinAgeNumericBox.Location = new System.Drawing.Point(899, 12);
             this.TiepNhanMinAgeNumericBox.Name = "TiepNhanMinAgeNumericBox";
             this.TiepNhanMinAgeNumericBox.Size = new System.Drawing.Size(40, 27);
             this.TiepNhanMinAgeNumericBox.TabIndex = 12;
@@ -1286,11 +1307,12 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // metroLabel13
             // 
+            this.metroLabel13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroLabel13.AutoSize = true;
             this.metroLabel13.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel13.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel13.Location = new System.Drawing.Point(185, 11);
+            this.metroLabel13.Location = new System.Drawing.Point(182, 11);
             this.metroLabel13.Name = "metroLabel13";
             this.metroLabel13.Size = new System.Drawing.Size(70, 25);
             this.metroLabel13.TabIndex = 11;
@@ -1301,6 +1323,7 @@ namespace QuanLyHocSinh_Nhom15
             // TiepNhanThemSuaHocSinh
             // 
             this.TiepNhanThemSuaHocSinh.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TiepNhanThemSuaHocSinh.Cursor = System.Windows.Forms.Cursors.Default;
             this.TiepNhanThemSuaHocSinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TiepNhanThemSuaHocSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TiepNhanThemSuaHocSinh.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.AddIcon;
@@ -1316,6 +1339,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // TiepNhanSearchTextBox
             // 
+            this.TiepNhanSearchTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             // 
             // 
             // 
@@ -1329,7 +1353,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TiepNhanSearchTextBox.CustomButton.UseSelectable = true;
             this.TiepNhanSearchTextBox.CustomButton.Visible = false;
             this.TiepNhanSearchTextBox.Lines = new string[0];
-            this.TiepNhanSearchTextBox.Location = new System.Drawing.Point(257, 13);
+            this.TiepNhanSearchTextBox.Location = new System.Drawing.Point(254, 13);
             this.TiepNhanSearchTextBox.MaxLength = 32767;
             this.TiepNhanSearchTextBox.Name = "TiepNhanSearchTextBox";
             this.TiepNhanSearchTextBox.PasswordChar = '\0';
@@ -1354,6 +1378,9 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // TiepNhanListView
             // 
+            this.TiepNhanListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TiepNhanListView.BackColor = System.Drawing.Color.MintCream;
             this.TiepNhanListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TiepNhanListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -1370,7 +1397,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TiepNhanListView.Location = new System.Drawing.Point(4, 107);
             this.TiepNhanListView.Name = "TiepNhanListView";
             this.TiepNhanListView.OwnerDraw = true;
-            this.TiepNhanListView.Size = new System.Drawing.Size(1069, 455);
+            this.TiepNhanListView.Size = new System.Drawing.Size(1064, 454);
             this.TiepNhanListView.Style = MetroFramework.MetroColorStyle.Teal;
             this.TiepNhanListView.TabIndex = 10;
             this.TiepNhanListView.UseCompatibleStateImageBehavior = false;
@@ -1379,6 +1406,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TiepNhanListView.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.ListView_ColumnWidthChanging);
             this.TiepNhanListView.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListView_DrawColumnHeader);
             this.TiepNhanListView.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.ListView_DrawItem);
+            this.TiepNhanListView.SizeChanged += new System.EventHandler(this.ListView_SizeChanged);
             // 
             // columnHeader36
             // 
@@ -1418,7 +1446,7 @@ namespace QuanLyHocSinh_Nhom15
             this.panel2.Controls.Add(this.label6);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1071, 55);
+            this.panel2.Size = new System.Drawing.Size(1065, 55);
             this.panel2.TabIndex = 6;
             // 
             // label6
@@ -1435,12 +1463,11 @@ namespace QuanLyHocSinh_Nhom15
             // TabDanhSachLop
             // 
             this.TabDanhSachLop.BackColor = System.Drawing.SystemColors.Control;
+            this.TabDanhSachLop.Controls.Add(this.metroPanel1);
+            this.TabDanhSachLop.Controls.Add(this.splitContainer1);
             this.TabDanhSachLop.Controls.Add(this.panel10);
-            this.TabDanhSachLop.Controls.Add(this.DanhSachLopListView1);
             this.TabDanhSachLop.Controls.Add(this.label14);
             this.TabDanhSachLop.Controls.Add(this.label7);
-            this.TabDanhSachLop.Controls.Add(this.metroPanel1);
-            this.TabDanhSachLop.Controls.Add(this.DanhSachLopListView2);
             this.TabDanhSachLop.Controls.Add(this.panel6);
             this.TabDanhSachLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabDanhSachLop.HorizontalScrollbarBarColor = true;
@@ -1456,9 +1483,204 @@ namespace QuanLyHocSinh_Nhom15
             this.TabDanhSachLop.VerticalScrollbarHighlightOnWheel = false;
             this.TabDanhSachLop.VerticalScrollbarSize = 10;
             // 
+            // metroPanel1
+            // 
+            this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.metroPanel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel1.Controls.Add(this.DanhSachLopThemHocSinhButton);
+            this.metroPanel1.Controls.Add(this.DanhSachLopXoaHocSinhButton);
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(514, 188);
+            this.metroPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(43, 380);
+            this.metroPanel1.TabIndex = 2;
+            this.metroPanel1.UseCustomBackColor = true;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // DanhSachLopThemHocSinhButton
+            // 
+            this.DanhSachLopThemHocSinhButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DanhSachLopThemHocSinhButton.BackColor = System.Drawing.Color.Honeydew;
+            this.DanhSachLopThemHocSinhButton.BackgroundImage = global::QuanLyHocSinh_Nhom15.Properties.Resources.ImportIcon;
+            this.DanhSachLopThemHocSinhButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.DanhSachLopThemHocSinhButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DanhSachLopThemHocSinhButton.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.DanhSachLopThemHocSinhButton.ForeColor = System.Drawing.Color.Black;
+            this.DanhSachLopThemHocSinhButton.Location = new System.Drawing.Point(-2, 125);
+            this.DanhSachLopThemHocSinhButton.Name = "DanhSachLopThemHocSinhButton";
+            this.DanhSachLopThemHocSinhButton.Size = new System.Drawing.Size(45, 40);
+            this.DanhSachLopThemHocSinhButton.TabIndex = 13;
+            this.DanhSachLopThemHocSinhButton.UseCustomBackColor = true;
+            this.DanhSachLopThemHocSinhButton.UseCustomForeColor = true;
+            this.DanhSachLopThemHocSinhButton.UseSelectable = true;
+            this.DanhSachLopThemHocSinhButton.Click += new System.EventHandler(this.DanhSachLopThemHocSinhButton_Click);
+            // 
+            // DanhSachLopXoaHocSinhButton
+            // 
+            this.DanhSachLopXoaHocSinhButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.DanhSachLopXoaHocSinhButton.BackColor = System.Drawing.Color.Honeydew;
+            this.DanhSachLopXoaHocSinhButton.BackgroundImage = global::QuanLyHocSinh_Nhom15.Properties.Resources.ExportIcon;
+            this.DanhSachLopXoaHocSinhButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.DanhSachLopXoaHocSinhButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DanhSachLopXoaHocSinhButton.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.DanhSachLopXoaHocSinhButton.ForeColor = System.Drawing.Color.Black;
+            this.DanhSachLopXoaHocSinhButton.Location = new System.Drawing.Point(-2, 201);
+            this.DanhSachLopXoaHocSinhButton.Name = "DanhSachLopXoaHocSinhButton";
+            this.DanhSachLopXoaHocSinhButton.Size = new System.Drawing.Size(45, 40);
+            this.DanhSachLopXoaHocSinhButton.TabIndex = 14;
+            this.DanhSachLopXoaHocSinhButton.UseCustomBackColor = true;
+            this.DanhSachLopXoaHocSinhButton.UseCustomForeColor = true;
+            this.DanhSachLopXoaHocSinhButton.UseSelectable = true;
+            this.DanhSachLopXoaHocSinhButton.Click += new System.EventHandler(this.DanhSachLopXoaHocSinhButton_Click);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Location = new System.Drawing.Point(0, 188);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.DanhSachLopListView1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.DanhSachLopListView2);
+            this.splitContainer1.Size = new System.Drawing.Size(1071, 377);
+            this.splitContainer1.SplitterDistance = 514;
+            this.splitContainer1.SplitterWidth = 43;
+            this.splitContainer1.TabIndex = 33;
+            this.splitContainer1.Resize += new System.EventHandler(this.splitContainer1_Resize);
+            // 
+            // DanhSachLopListView1
+            // 
+            this.DanhSachLopListView1.BackColor = System.Drawing.Color.MintCream;
+            this.DanhSachLopListView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DanhSachLopListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15,
+            this.columnHeader16,
+            this.columnHeader17,
+            this.columnHeader37});
+            this.DanhSachLopListView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DanhSachLopListView1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.DanhSachLopListView1.FullRowSelect = true;
+            this.DanhSachLopListView1.GridLines = true;
+            this.DanhSachLopListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.DanhSachLopListView1.Location = new System.Drawing.Point(0, 0);
+            this.DanhSachLopListView1.Margin = new System.Windows.Forms.Padding(0);
+            this.DanhSachLopListView1.Name = "DanhSachLopListView1";
+            this.DanhSachLopListView1.OwnerDraw = true;
+            this.DanhSachLopListView1.Size = new System.Drawing.Size(514, 377);
+            this.DanhSachLopListView1.Style = MetroFramework.MetroColorStyle.Teal;
+            this.DanhSachLopListView1.TabIndex = 0;
+            this.DanhSachLopListView1.UseCompatibleStateImageBehavior = false;
+            this.DanhSachLopListView1.UseSelectable = true;
+            this.DanhSachLopListView1.View = System.Windows.Forms.View.Details;
+            this.DanhSachLopListView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.ListView_ColumnWidthChanging);
+            this.DanhSachLopListView1.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListView_DrawColumnHeader);
+            this.DanhSachLopListView1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.ListView_DrawItem);
+            this.DanhSachLopListView1.SizeChanged += new System.EventHandler(this.ListView_SizeChanged);
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "STT";
+            this.columnHeader13.Width = 39;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Họ tên";
+            this.columnHeader14.Width = 210;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Giới tính";
+            this.columnHeader15.Width = 70;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Năm sinh";
+            this.columnHeader16.Width = 83;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Địa chỉ";
+            this.columnHeader17.Width = 159;
+            // 
+            // columnHeader37
+            // 
+            this.columnHeader37.Text = "";
+            this.columnHeader37.Width = 0;
+            // 
+            // DanhSachLopListView2
+            // 
+            this.DanhSachLopListView2.BackColor = System.Drawing.Color.MintCream;
+            this.DanhSachLopListView2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DanhSachLopListView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader31,
+            this.columnHeader35,
+            this.columnHeader32,
+            this.columnHeader33,
+            this.columnHeader34});
+            this.DanhSachLopListView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DanhSachLopListView2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.DanhSachLopListView2.FullRowSelect = true;
+            this.DanhSachLopListView2.GridLines = true;
+            this.DanhSachLopListView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.DanhSachLopListView2.Location = new System.Drawing.Point(0, 0);
+            this.DanhSachLopListView2.Margin = new System.Windows.Forms.Padding(0);
+            this.DanhSachLopListView2.Name = "DanhSachLopListView2";
+            this.DanhSachLopListView2.OwnerDraw = true;
+            this.DanhSachLopListView2.Size = new System.Drawing.Size(514, 377);
+            this.DanhSachLopListView2.Style = MetroFramework.MetroColorStyle.Teal;
+            this.DanhSachLopListView2.TabIndex = 0;
+            this.DanhSachLopListView2.UseCompatibleStateImageBehavior = false;
+            this.DanhSachLopListView2.UseSelectable = true;
+            this.DanhSachLopListView2.View = System.Windows.Forms.View.Details;
+            this.DanhSachLopListView2.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.ListView_ColumnWidthChanging);
+            this.DanhSachLopListView2.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListView_DrawColumnHeader);
+            this.DanhSachLopListView2.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.ListView_DrawItem);
+            this.DanhSachLopListView2.SizeChanged += new System.EventHandler(this.ListView_SizeChanged);
+            // 
+            // columnHeader31
+            // 
+            this.columnHeader31.Text = "STT";
+            this.columnHeader31.Width = 39;
+            // 
+            // columnHeader35
+            // 
+            this.columnHeader35.Text = "Mã học sinh";
+            this.columnHeader35.Width = 100;
+            // 
+            // columnHeader32
+            // 
+            this.columnHeader32.Text = "Họ tên";
+            this.columnHeader32.Width = 210;
+            // 
+            // columnHeader33
+            // 
+            this.columnHeader33.Text = "Giới tính";
+            this.columnHeader33.Width = 70;
+            // 
+            // columnHeader34
+            // 
+            this.columnHeader34.Text = "Năm sinh";
+            this.columnHeader34.Width = 83;
+            // 
             // panel10
             // 
-            this.panel10.BackColor = System.Drawing.Color.MintCream;
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel10.BackColor = System.Drawing.Color.LightCyan;
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.DanhSachLopTimKiemButton);
             this.panel10.Controls.Add(this.DanhSachLopXemLopButton);
@@ -1477,7 +1699,9 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // DanhSachLopTimKiemButton
             // 
+            this.DanhSachLopTimKiemButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DanhSachLopTimKiemButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DanhSachLopTimKiemButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.DanhSachLopTimKiemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DanhSachLopTimKiemButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DanhSachLopTimKiemButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.search;
@@ -1494,6 +1718,7 @@ namespace QuanLyHocSinh_Nhom15
             // DanhSachLopXemLopButton
             // 
             this.DanhSachLopXemLopButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DanhSachLopXemLopButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.DanhSachLopXemLopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DanhSachLopXemLopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DanhSachLopXemLopButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ViewIcon;
@@ -1545,6 +1770,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // DanhSachLopSearchTextBox
             // 
+            this.DanhSachLopSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -1575,6 +1801,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // metroLabel11
             // 
+            this.metroLabel11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel11.AutoSize = true;
             this.metroLabel11.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel11.FontSize = MetroFramework.MetroLabelSize.Tall;
@@ -1615,65 +1842,6 @@ namespace QuanLyHocSinh_Nhom15
             this.metroLabel8.UseCustomBackColor = true;
             this.metroLabel8.UseCustomForeColor = true;
             // 
-            // DanhSachLopListView1
-            // 
-            this.DanhSachLopListView1.BackColor = System.Drawing.Color.MintCream;
-            this.DanhSachLopListView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DanhSachLopListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader13,
-            this.columnHeader14,
-            this.columnHeader15,
-            this.columnHeader16,
-            this.columnHeader17,
-            this.columnHeader37});
-            this.DanhSachLopListView1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.DanhSachLopListView1.FullRowSelect = true;
-            this.DanhSachLopListView1.GridLines = true;
-            this.DanhSachLopListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.DanhSachLopListView1.Location = new System.Drawing.Point(3, 182);
-            this.DanhSachLopListView1.Margin = new System.Windows.Forms.Padding(0);
-            this.DanhSachLopListView1.Name = "DanhSachLopListView1";
-            this.DanhSachLopListView1.OwnerDraw = true;
-            this.DanhSachLopListView1.Size = new System.Drawing.Size(513, 380);
-            this.DanhSachLopListView1.Style = MetroFramework.MetroColorStyle.Teal;
-            this.DanhSachLopListView1.TabIndex = 20;
-            this.DanhSachLopListView1.UseCompatibleStateImageBehavior = false;
-            this.DanhSachLopListView1.UseSelectable = true;
-            this.DanhSachLopListView1.View = System.Windows.Forms.View.Details;
-            this.DanhSachLopListView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.ListView_ColumnWidthChanging);
-            this.DanhSachLopListView1.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListView_DrawColumnHeader);
-            this.DanhSachLopListView1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.ListView_DrawItem);
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "STT";
-            this.columnHeader13.Width = 39;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Họ tên";
-            this.columnHeader14.Width = 210;
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "Giới tính";
-            this.columnHeader15.Width = 70;
-            // 
-            // columnHeader16
-            // 
-            this.columnHeader16.Text = "Năm sinh";
-            this.columnHeader16.Width = 83;
-            // 
-            // columnHeader17
-            // 
-            this.columnHeader17.Text = "Địa chỉ";
-            this.columnHeader17.Width = 159;
-            // 
-            // columnHeader37
-            // 
-            this.columnHeader37.Text = "Mã học sinh";
-            this.columnHeader37.Width = 0;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -1688,6 +1856,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1697,109 +1866,6 @@ namespace QuanLyHocSinh_Nhom15
             this.label7.Size = new System.Drawing.Size(210, 18);
             this.label7.TabIndex = 21;
             this.label7.Text = "Danh sách học sinh tiếp nhận :";
-            // 
-            // metroPanel1
-            // 
-            this.metroPanel1.BackColor = System.Drawing.Color.DarkCyan;
-            this.metroPanel1.Controls.Add(this.DanhSachLopThemHocSinhButton);
-            this.metroPanel1.Controls.Add(this.DanhSachLopXoaHocSinhButton);
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(516, 182);
-            this.metroPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(41, 380);
-            this.metroPanel1.TabIndex = 19;
-            this.metroPanel1.UseCustomBackColor = true;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // DanhSachLopThemHocSinhButton
-            // 
-            this.DanhSachLopThemHocSinhButton.BackColor = System.Drawing.Color.Honeydew;
-            this.DanhSachLopThemHocSinhButton.BackgroundImage = global::QuanLyHocSinh_Nhom15.Properties.Resources.ImportIcon;
-            this.DanhSachLopThemHocSinhButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.DanhSachLopThemHocSinhButton.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.DanhSachLopThemHocSinhButton.ForeColor = System.Drawing.Color.Black;
-            this.DanhSachLopThemHocSinhButton.Location = new System.Drawing.Point(-2, 125);
-            this.DanhSachLopThemHocSinhButton.Name = "DanhSachLopThemHocSinhButton";
-            this.DanhSachLopThemHocSinhButton.Size = new System.Drawing.Size(45, 40);
-            this.DanhSachLopThemHocSinhButton.TabIndex = 13;
-            this.DanhSachLopThemHocSinhButton.UseCustomBackColor = true;
-            this.DanhSachLopThemHocSinhButton.UseCustomForeColor = true;
-            this.DanhSachLopThemHocSinhButton.UseSelectable = true;
-            this.DanhSachLopThemHocSinhButton.Click += new System.EventHandler(this.DanhSachLopThemHocSinhButton_Click);
-            // 
-            // DanhSachLopXoaHocSinhButton
-            // 
-            this.DanhSachLopXoaHocSinhButton.BackColor = System.Drawing.Color.Honeydew;
-            this.DanhSachLopXoaHocSinhButton.BackgroundImage = global::QuanLyHocSinh_Nhom15.Properties.Resources.ExportIcon;
-            this.DanhSachLopXoaHocSinhButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.DanhSachLopXoaHocSinhButton.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.DanhSachLopXoaHocSinhButton.ForeColor = System.Drawing.Color.Black;
-            this.DanhSachLopXoaHocSinhButton.Location = new System.Drawing.Point(-2, 203);
-            this.DanhSachLopXoaHocSinhButton.Name = "DanhSachLopXoaHocSinhButton";
-            this.DanhSachLopXoaHocSinhButton.Size = new System.Drawing.Size(45, 40);
-            this.DanhSachLopXoaHocSinhButton.TabIndex = 14;
-            this.DanhSachLopXoaHocSinhButton.UseCustomBackColor = true;
-            this.DanhSachLopXoaHocSinhButton.UseCustomForeColor = true;
-            this.DanhSachLopXoaHocSinhButton.UseSelectable = true;
-            this.DanhSachLopXoaHocSinhButton.Click += new System.EventHandler(this.DanhSachLopXoaHocSinhButton_Click);
-            // 
-            // DanhSachLopListView2
-            // 
-            this.DanhSachLopListView2.BackColor = System.Drawing.Color.MintCream;
-            this.DanhSachLopListView2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DanhSachLopListView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader31,
-            this.columnHeader35,
-            this.columnHeader32,
-            this.columnHeader33,
-            this.columnHeader34});
-            this.DanhSachLopListView2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.DanhSachLopListView2.FullRowSelect = true;
-            this.DanhSachLopListView2.GridLines = true;
-            this.DanhSachLopListView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.DanhSachLopListView2.Location = new System.Drawing.Point(557, 182);
-            this.DanhSachLopListView2.Margin = new System.Windows.Forms.Padding(0);
-            this.DanhSachLopListView2.Name = "DanhSachLopListView2";
-            this.DanhSachLopListView2.OwnerDraw = true;
-            this.DanhSachLopListView2.Size = new System.Drawing.Size(513, 380);
-            this.DanhSachLopListView2.Style = MetroFramework.MetroColorStyle.Teal;
-            this.DanhSachLopListView2.TabIndex = 18;
-            this.DanhSachLopListView2.UseCompatibleStateImageBehavior = false;
-            this.DanhSachLopListView2.UseSelectable = true;
-            this.DanhSachLopListView2.View = System.Windows.Forms.View.Details;
-            this.DanhSachLopListView2.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.ListView_ColumnWidthChanging);
-            this.DanhSachLopListView2.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListView_DrawColumnHeader);
-            this.DanhSachLopListView2.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.ListView_DrawItem);
-            // 
-            // columnHeader31
-            // 
-            this.columnHeader31.Text = "STT";
-            this.columnHeader31.Width = 39;
-            // 
-            // columnHeader35
-            // 
-            this.columnHeader35.Text = "Mã học sinh";
-            this.columnHeader35.Width = 100;
-            // 
-            // columnHeader32
-            // 
-            this.columnHeader32.Text = "Họ tên";
-            this.columnHeader32.Width = 210;
-            // 
-            // columnHeader33
-            // 
-            this.columnHeader33.Text = "Giới tính";
-            this.columnHeader33.Width = 70;
-            // 
-            // columnHeader34
-            // 
-            this.columnHeader34.Text = "Năm sinh";
-            this.columnHeader34.Width = 83;
             // 
             // panel6
             // 
@@ -1817,6 +1883,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.DanhSachLopQuanLiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DanhSachLopQuanLiButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DanhSachLopQuanLiButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.DanhSachLopQuanLiButton.FlatAppearance.BorderSize = 0;
             this.DanhSachLopQuanLiButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DanhSachLopQuanLiButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2141,6 +2208,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.TaiKhoanDangKiButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.TaiKhoanDangKiButton.BackColor = System.Drawing.Color.Transparent;
+            this.TaiKhoanDangKiButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TaiKhoanDangKiButton.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
             this.TaiKhoanDangKiButton.FlatAppearance.BorderSize = 0;
             this.TaiKhoanDangKiButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -2180,6 +2248,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.TaiKhoanDangXuatButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.TaiKhoanDangXuatButton.BackColor = System.Drawing.Color.Transparent;
+            this.TaiKhoanDangXuatButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TaiKhoanDangXuatButton.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.TaiKhoanDangXuatButton.FlatAppearance.BorderSize = 0;
             this.TaiKhoanDangXuatButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -2202,6 +2271,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.TaiKhoanQuanLiTaiKhoanButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TaiKhoanQuanLiTaiKhoanButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TaiKhoanQuanLiTaiKhoanButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.TaiKhoanQuanLiTaiKhoanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaiKhoanQuanLiTaiKhoanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TaiKhoanQuanLiTaiKhoanButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.DatabaseIcon;
@@ -2273,6 +2343,7 @@ namespace QuanLyHocSinh_Nhom15
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Load += new System.EventHandler(this.App_Load);
+            this.SizeChanged += new System.EventHandler(this.App_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -2307,9 +2378,13 @@ namespace QuanLyHocSinh_Nhom15
             this.panel2.PerformLayout();
             this.TabDanhSachLop.ResumeLayout(false);
             this.TabDanhSachLop.PerformLayout();
+            this.metroPanel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.metroPanel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.TabUser.ResumeLayout(false);
@@ -2477,6 +2552,7 @@ namespace QuanLyHocSinh_Nhom15
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private Button MaximizeRestoreButton;
         private Button MinimizeButton;
+        private SplitContainer splitContainer1;
     }
 }
 

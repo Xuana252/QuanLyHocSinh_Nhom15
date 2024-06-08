@@ -48,6 +48,15 @@ namespace QuanLyHocSinh_Nhom15
         {
             InitializeComponent();
         }
+        //Sự kiện khi kích thước cửa sổ thay đổi
+        private void App_SizeChanged(object sender, EventArgs e)
+        {
+            if (WindowState != FormWindowState.Maximized)
+                MaximizeRestoreButton.Image = Properties.Resources.MaximizeIcon;
+            else
+                MaximizeRestoreButton.Image = Properties.Resources.RestoreIcon;
+            AppTabControl.ItemSize = new Size((AppTabControl.Width - 10) / AppTabControl.TabCount, 0);
+        }
         //Sự kiện khi bấm nút MinimizeWindow
         private void MinimizeButton_Click(object sender, EventArgs e)
         {
@@ -56,12 +65,8 @@ namespace QuanLyHocSinh_Nhom15
         //Sự kiện khi bấm nút Maximize/RestoreWindow
         private void MaximizeRestoreButton_Click(object sender, EventArgs e)
         {
-            if (WindowState != FormWindowState.Maximized)
-            {
-                
-                WindowState = FormWindowState.Maximized;
-                AppTabControl.ItemSize = new Size((AppTabControl.Width - 10) / AppTabControl.TabCount, 0);
-            }
+            if (WindowState != FormWindowState.Maximized)              
+                WindowState=FormWindowState.Maximized;
             else
                 WindowState = FormWindowState.Normal;
         }
@@ -70,6 +75,23 @@ namespace QuanLyHocSinh_Nhom15
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+
+        //Sự kiện khi kéo thả thanh panel của app (Kéo cửa sổ app theo chuột)
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+
+                if (MousePosition.Y <= 0)
+                {
+                    // Maximize the form
+                    WindowState = FormWindowState.Maximized;
+                }
+            }
         }
 
         //Khối sự kiện dành cho việc vẽ các item dành cho listview
@@ -107,13 +129,32 @@ namespace QuanLyHocSinh_Nhom15
             }
 
         }
+        //Sự kiện xử lý thay đổi kích thước cho các cột trong listview khi thay đổi kích thước cửa sổ
+        private void ListView_SizeChanged(object sender, EventArgs e)
+        {
+            MetroListView listView = (MetroListView)sender;
+            int hiddenColCounts = 0;
+            foreach (ColumnHeader columnHeader in listView.Columns)
+            {
+                if(columnHeader.Width==0)
+                    hiddenColCounts++;
+            }
+            foreach (ColumnHeader columnHeader in listView.Columns)
+            {
+                if (columnHeader.Index != 0)
+                {
+                    if (columnHeader.Width != 0)
+                        columnHeader.Width = (listView.Width - listView.Columns[0].Width) / (listView.Columns.Count - 1 - hiddenColCounts);
+                }
+            }
+        }
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         //Sự kiện khi App load lần đầu
         private void App_Load(object sender, EventArgs e)
-        {
+        { 
             //Cập nhật các thông số ban đầu của app
             AppTabControl.SelectedIndex = 0;
             UserIDLabel.Text = user.idGiaoVien;
@@ -136,7 +177,6 @@ namespace QuanLyHocSinh_Nhom15
             studentForm = new HocSinhForm(this);
             lopForm = new LopForm(this);
 
-            
             //--------------------------Điều chỉnh các control tùy thuộc vào quyền hạn (vai trò) của User----------------------------------------------------------
             if (user.idVaiTro != "QL")
             {
@@ -162,6 +202,7 @@ namespace QuanLyHocSinh_Nhom15
                 DanhSachLopXoaHocSinhButton.Visible=false;
                 DanhSachLopThemHocSinhButton.Visible = false;
                 metroPanel1.Visible=false;
+                columnHeader37.Text = "Mã học sinh";
                 //---------------------------------------------------------------
 
                 //Điều chỉnh chiều rộng của listview danh sách học sinh lớp và các cột của nó
@@ -181,7 +222,6 @@ namespace QuanLyHocSinh_Nhom15
 
             }
             //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-
         }
 
         //Hàm load Tab Tiếp nhận
@@ -376,7 +416,13 @@ namespace QuanLyHocSinh_Nhom15
             }
         }
 
-       
+        //Sự kiện liên quan đến resize Splitter cho tab Danh sách lớp
+        private void splitContainer1_Resize(object sender, EventArgs e)
+        {
+            splitContainer1.SplitterWidth = metroPanel1.Width;
+            splitContainer1.SplitterDistance = (splitContainer1.Width - metroPanel1.Width) / 2 + 1;
+        }
+
         //Sự kiện khi chọn combobox tên lớp
         private void DanhSachLopTenLopComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -457,15 +503,6 @@ namespace QuanLyHocSinh_Nhom15
             giaoVienForm.Show();
         }
 
-        //Sự kiện khi kéo thả thanh panel của app (Kéo cửa sổ app theo chuột)
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
         //TAB BÁO CÁO MÔN: Sự kiện khi bấm nút Xem bảng điểm
         private void BaoCaoXemBangDiemButton_Click(object sender, EventArgs e)
         {
@@ -643,7 +680,7 @@ namespace QuanLyHocSinh_Nhom15
             }
         }
 
-    }
 
+    }
 
 }

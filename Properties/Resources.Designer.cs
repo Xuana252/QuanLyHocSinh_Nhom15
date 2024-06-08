@@ -81,11 +81,31 @@ namespace QuanLyHocSinh_Nhom15.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon AppIcon1 {
+            get {
+                object obj = ResourceManager.GetObject("AppIcon1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap AppLogo {
             get {
                 object obj = ResourceManager.GetObject("AppLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CursorIcon {
+            get {
+                object obj = ResourceManager.GetObject("CursorIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +206,16 @@ namespace QuanLyHocSinh_Nhom15.Properties {
         internal static System.Drawing.Bitmap MinimizeIcon {
             get {
                 object obj = ResourceManager.GetObject("MinimizeIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RestoreIcon {
+            get {
+                object obj = ResourceManager.GetObject("RestoreIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
