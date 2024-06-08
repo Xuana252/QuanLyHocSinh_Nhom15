@@ -86,7 +86,6 @@ namespace QuanLyHocSinh_Nhom15
             this.HocKi1RadioButton = new System.Windows.Forms.RadioButton();
             this.TongKetMonHocCaHocKiGroupBox = new System.Windows.Forms.GroupBox();
             this.CaHocKiRadioButton = new System.Windows.Forms.RadioButton();
-            this.MonHocRadioButton = new System.Windows.Forms.RadioButton();
             this.TongKetXem = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.TongKetDiemDatNumericBox = new System.Windows.Forms.NumericUpDown();
@@ -185,6 +184,7 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
+            this.MonHocRadioButton = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.AppTabControl.SuspendLayout();
@@ -329,7 +329,7 @@ namespace QuanLyHocSinh_Nhom15
             this.AppTabControl.Location = new System.Drawing.Point(1, 48);
             this.AppTabControl.Multiline = true;
             this.AppTabControl.Name = "AppTabControl";
-            this.AppTabControl.SelectedIndex = 1;
+            this.AppTabControl.SelectedIndex = 2;
             this.AppTabControl.Size = new System.Drawing.Size(1079, 606);
             this.AppTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AppTabControl.Style = MetroFramework.MetroColorStyle.Teal;
@@ -1012,20 +1012,6 @@ namespace QuanLyHocSinh_Nhom15
             this.CaHocKiRadioButton.TabIndex = 1;
             this.CaHocKiRadioButton.Text = "Cả học kì";
             this.CaHocKiRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // MonHocRadioButton
-            // 
-            this.MonHocRadioButton.AutoSize = true;
-            this.MonHocRadioButton.Checked = true;
-            this.MonHocRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MonHocRadioButton.Location = new System.Drawing.Point(10, 26);
-            this.MonHocRadioButton.Name = "MonHocRadioButton";
-            this.MonHocRadioButton.Size = new System.Drawing.Size(83, 20);
-            this.MonHocRadioButton.TabIndex = 0;
-            this.MonHocRadioButton.TabStop = true;
-            this.MonHocRadioButton.Text = "Môn học";
-            this.MonHocRadioButton.UseVisualStyleBackColor = true;
-            this.MonHocRadioButton.CheckedChanged += new System.EventHandler(this.MonHocRadioButton_CheckedChanged);
             // 
             // TongKetXem
             // 
@@ -2353,6 +2339,20 @@ namespace QuanLyHocSinh_Nhom15
             this.label1.Size = new System.Drawing.Size(191, 24);
             this.label1.TabIndex = 0;
             // 
+            // MonHocRadioButton
+            // 
+            this.MonHocRadioButton.AutoSize = true;
+            this.MonHocRadioButton.Checked = true;
+            this.MonHocRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MonHocRadioButton.Location = new System.Drawing.Point(10, 26);
+            this.MonHocRadioButton.Name = "MonHocRadioButton";
+            this.MonHocRadioButton.Size = new System.Drawing.Size(83, 20);
+            this.MonHocRadioButton.TabIndex = 0;
+            this.MonHocRadioButton.TabStop = true;
+            this.MonHocRadioButton.Text = "Môn học";
+            this.MonHocRadioButton.UseVisualStyleBackColor = true;
+            this.MonHocRadioButton.CheckedChanged += new System.EventHandler(this.MonHocRadioButton_CheckedChanged);
+            // 
             // App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2561,7 +2561,6 @@ namespace QuanLyHocSinh_Nhom15
         private System.Windows.Forms.Label AppNameLabel;
         private System.Windows.Forms.GroupBox TongKetMonHocCaHocKiGroupBox;
         private System.Windows.Forms.RadioButton CaHocKiRadioButton;
-        private System.Windows.Forms.RadioButton MonHocRadioButton;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton HocKi2RadioButton;
@@ -2583,6 +2582,7 @@ namespace QuanLyHocSinh_Nhom15
         private Button MinimizeButton;
         private SplitContainer splitContainer1;
         private NumericUpDown TongKetNamHoc;
+        private RadioButton MonHocRadioButton;
     }
 }
 
