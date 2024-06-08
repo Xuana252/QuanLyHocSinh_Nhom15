@@ -80,6 +80,7 @@ namespace QuanLyHocSinh_Nhom15
             this.label2 = new System.Windows.Forms.Label();
             this.TabTongKet = new MetroFramework.Controls.MetroTabPage();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.TongKetNamHoc = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.HocKi2RadioButton = new System.Windows.Forms.RadioButton();
             this.HocKi1RadioButton = new System.Windows.Forms.RadioButton();
@@ -184,7 +185,6 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.TongKetNamHoc = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.AppTabControl.SuspendLayout();
@@ -197,6 +197,7 @@ namespace QuanLyHocSinh_Nhom15
             this.panel3.SuspendLayout();
             this.TabTongKet.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TongKetNamHoc)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.TongKetMonHocCaHocKiGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TongKetDiemDatNumericBox)).BeginInit();
@@ -220,7 +221,6 @@ namespace QuanLyHocSinh_Nhom15
             this.metroPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TongKetNamHoc)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -329,7 +329,7 @@ namespace QuanLyHocSinh_Nhom15
             this.AppTabControl.Location = new System.Drawing.Point(1, 48);
             this.AppTabControl.Multiline = true;
             this.AppTabControl.Name = "AppTabControl";
-            this.AppTabControl.SelectedIndex = 4;
+            this.AppTabControl.SelectedIndex = 1;
             this.AppTabControl.Size = new System.Drawing.Size(1079, 606);
             this.AppTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AppTabControl.Style = MetroFramework.MetroColorStyle.Teal;
@@ -924,6 +924,31 @@ namespace QuanLyHocSinh_Nhom15
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(229, 500);
             this.panel7.TabIndex = 30;
+            // 
+            // TongKetNamHoc
+            // 
+            this.TongKetNamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TongKetNamHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TongKetNamHoc.Location = new System.Drawing.Point(8, 288);
+            this.TongKetNamHoc.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.TongKetNamHoc.Minimum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.TongKetNamHoc.Name = "TongKetNamHoc";
+            this.TongKetNamHoc.Size = new System.Drawing.Size(202, 26);
+            this.TongKetNamHoc.TabIndex = 31;
+            this.TongKetNamHoc.Value = new decimal(new int[] {
+            2024,
+            0,
+            0,
+            0});
             // 
             // groupBox2
             // 
@@ -2328,31 +2353,6 @@ namespace QuanLyHocSinh_Nhom15
             this.label1.Size = new System.Drawing.Size(191, 24);
             this.label1.TabIndex = 0;
             // 
-            // TongKetNamHoc
-            // 
-            this.TongKetNamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TongKetNamHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TongKetNamHoc.Location = new System.Drawing.Point(8, 288);
-            this.TongKetNamHoc.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.TongKetNamHoc.Minimum = new decimal(new int[] {
-            2000,
-            0,
-            0,
-            0});
-            this.TongKetNamHoc.Name = "TongKetNamHoc";
-            this.TongKetNamHoc.Size = new System.Drawing.Size(202, 26);
-            this.TongKetNamHoc.TabIndex = 31;
-            this.TongKetNamHoc.Value = new decimal(new int[] {
-            2024,
-            0,
-            0,
-            0});
-            // 
             // App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2390,6 +2390,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TabTongKet.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TongKetNamHoc)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.TongKetMonHocCaHocKiGroupBox.ResumeLayout(false);
@@ -2423,7 +2424,6 @@ namespace QuanLyHocSinh_Nhom15
             this.metroPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TongKetNamHoc)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -558,37 +558,10 @@ namespace QuanLyHocSinh_Nhom15
         //TAB TIẾP NHẬN: Sự kiện khi bấm nút xóa học sinh
         private void TiepNhanXoaHocSinhButton_Click(object sender, EventArgs e)
         {
-            //CODE MỚI
 
             HocSinh.XoaHocSinh(TiepNhanListView.SelectedItems);
             LoadTabTiepNhan("");
 
-            //CODE CŨ
-
-            //SQLConnect db = SQLConnect.GetInstance();
-            //db.Open();
-            //db.sqlCmd.CommandType = CommandType.Text;
-            //foreach (ListViewItem item in TiepNhanListView.SelectedItems)
-            //{
-            //    db.sqlCmd.CommandText = "DELETE FROM HOCSINH WHERE idHocSinh=@idHocSinh";
-
-
-            //    db.sqlCmd.Parameters.AddWithValue("@idHocSinh", item.Text);
-
-
-            //    db.sqlCmd.Connection = db.sqlCon;
-
-            //    try
-            //    {
-            //        db.sqlCmd.ExecuteNonQuery();
-            //        LoadTabTiepNhan("");
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Error.GetInstance().Show(ex.Message.Substring(ex.Message.IndexOf('\n')));
-            //    }
-            //}
-           
         }
         
         //TAB TIẾP NHẬN: Sự kiện khi bấm nút tìm kiếm
@@ -684,7 +657,7 @@ namespace QuanLyHocSinh_Nhom15
                 LoadTabDanhSachLop(LopHoc.idLop, "");
             }
         }
-
+        //TAB TỔNG KẾT: Sự kiện xảy ra khi bấm nút Xem
         private void TongKetXem_Click(object sender, EventArgs e)
         {
             TongKetListView.Items.Clear();
