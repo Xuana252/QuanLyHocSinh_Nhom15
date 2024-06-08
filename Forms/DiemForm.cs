@@ -22,11 +22,16 @@ namespace QuanLyHocSinh_Nhom15
         {
             InitializeComponent();
             mainApp = MainApp;
+           
+           
         }
+
+
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Hide(); 
+            Hide();
+            flagSua = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
