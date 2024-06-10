@@ -47,17 +47,16 @@ namespace QuanLyHocSinh_Nhom15
                 string idMonHoc = db.reader.GetString(0);
                 string tenMonHoc = db.reader.GetString(1);
 
-
+                if (idMonHoc == "00")
+                    continue;
                 ListViewItem item = new ListViewItem();
                 item.Text = (MonListView1.Items.Count + 1).ToString();
                 item.SubItems.Add(idMonHoc);
                 item.SubItems.Add(tenMonHoc);
 
                 MonListView1.Items.Add(item);
-
             }
             db.reader.Close();
-            MonListView1.Items.RemoveAt(0);
         }
        
 
