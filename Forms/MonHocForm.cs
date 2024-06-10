@@ -57,6 +57,7 @@ namespace QuanLyHocSinh_Nhom15
 
             }
             db.reader.Close();
+            MonListView1.Items.RemoveAt(0);
         }
        
 

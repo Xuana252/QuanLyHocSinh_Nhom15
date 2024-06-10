@@ -133,7 +133,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message);
+                Error.GetInstance().Show("Bảng điểm đã tồn tại");
             }
         }
 
