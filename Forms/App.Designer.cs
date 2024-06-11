@@ -334,7 +334,7 @@ namespace QuanLyHocSinh_Nhom15
             this.AppTabControl.Location = new System.Drawing.Point(1, 48);
             this.AppTabControl.Multiline = true;
             this.AppTabControl.Name = "AppTabControl";
-            this.AppTabControl.SelectedIndex = 5;
+            this.AppTabControl.SelectedIndex = 4;
             this.AppTabControl.Size = new System.Drawing.Size(1079, 606);
             this.AppTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AppTabControl.Style = MetroFramework.MetroColorStyle.Teal;
@@ -1991,6 +1991,7 @@ namespace QuanLyHocSinh_Nhom15
             this.DanhSachLopXuatButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.DanhSachLopXuatButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.DanhSachLopXuatButton.UseVisualStyleBackColor = false;
+            this.DanhSachLopXuatButton.Click += new System.EventHandler(this.DanhSachLopXuatButton_Click);
             // 
             // DanhSachLopQuanLiButton
             // 

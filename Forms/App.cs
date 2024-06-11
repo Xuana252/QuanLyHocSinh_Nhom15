@@ -660,6 +660,7 @@ namespace QuanLyHocSinh_Nhom15
             {
                 string idLop = DanhSachLopTenLopComboBox.Text.Substring(DanhSachLopTenLopComboBox.Text.Length-3);
                 LopHoc.idLop = idLop;
+                LopHoc.TenLop = DanhSachLopTenLopComboBox.Text.Split(' ')[0];
             }
             else
             {
@@ -911,7 +912,7 @@ namespace QuanLyHocSinh_Nhom15
                 ThongBaoForm.GetInstance().LogError("Vui lòng chọn xem bảng điểm mong muốn trước khi xuất file");
             }
         }
-
+        //TAB TỔNG KẾT: sự kiên khi bấm nút xuất file excel
         private void TongKetXuatButton_Click(object sender, EventArgs e)
         {
             if (TongKetListView.Items.Count > 0)
@@ -968,7 +969,57 @@ namespace QuanLyHocSinh_Nhom15
             }
         }
 
+        //TAB DANH SÁCH LỚP: Sự kiện khi bấm nút xuất file excel
+        private void DanhSachLopXuatButton_Click(object sender, EventArgs e)
+        {
+            if (BaoCaoListView.Items.Count > 0)
+            {
+                try
+                {
+                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook| *.xls", ValidateNames = true })
+                    {
+                        if (sfd.ShowDialog() == DialogResult.OK)
+                        {
+                            Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                            Workbook wb = app.Workbooks.Add(XlSheetType.xlWorksheet);
+                            Worksheet ws = (Worksheet)app.ActiveSheet;
+                            app.Visible = false;
+                            ws.Cells[2, 1] = "Lớp:";
+                            ws.Cells[2, 2] = BangDiem.tenLop;
 
+                            ws.Cells[5, 1] = "STT";
+                            ws.Cells[5, 2] = "Họ tên";
+                            ws.Cells[5, 3] = "Giới tính";
+                            ws.Cells[5, 4] = "Năm sinh";
+                            ws.Cells[5, 5] = "Địa chỉ";
+
+                            int i = 6;
+                            foreach (ListViewItem item in BaoCaoListView.Items)
+                            {
+                                ws.Cells[i, 1] = item.SubItems[0].Text;
+                                ws.Cells[i, 2] = item.SubItems[1].Text;
+                                ws.Cells[i, 3] = item.SubItems[2].Text;
+                                ws.Cells[i, 4] = item.SubItems[3].Text;
+                                ws.Cells[i, 5] = item.SubItems[4].Text;
+                                i++;
+                            }
+
+                            wb.SaveAs(sfd.FileName, XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, true, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
+                            app.Quit();
+                            ThongBaoForm.GetInstance().Inform("Xuất file thành công");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ThongBaoForm.GetInstance().LogError($"Xảy ra lỗi trong quá trình xuất file: {ex.Message}");
+                }
+            }
+            else
+            {
+                ThongBaoForm.GetInstance().LogError("Vui lòng chọn xem lớp mong muốn trước khi xuất file");
+            }
+        }
     }
 
 }
