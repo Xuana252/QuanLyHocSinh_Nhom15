@@ -186,6 +186,7 @@
             // HocSinhOKButton
             // 
             this.HocSinhOKButton.BackColor = System.Drawing.Color.Teal;
+            this.HocSinhOKButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HocSinhOKButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.HocSinhOKButton.FlatAppearance.BorderSize = 0;
             this.HocSinhOKButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

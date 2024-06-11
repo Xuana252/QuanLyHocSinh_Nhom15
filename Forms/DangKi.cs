@@ -106,6 +106,7 @@ namespace QuanLyHocSinh_Nhom15
                 }
                 if (TaiKhoan.GetInstance().flagSua==false)
                 {
+                    DangKiButton.Text = "Đăng kí";
                     //Cập nhật ID giáo viên trong form
                     GiaoVien.GetInstance().idGiaoVien = GiaoVien.GetInstance().LayIdDangKi();
                     //Chọn môn học, vai trò, ngày sinh, giới tính mặc định cho tài khoản giáo viên
@@ -115,6 +116,7 @@ namespace QuanLyHocSinh_Nhom15
                 }
                 else
                 {
+                    DangKiButton.Text = "Sửa";
                     DangKiUsernameTextBox.Text = TaiKhoan.GetInstance().tenTaiKhoanSua;
                     DangKiPasswordTextBox1.Text = DangKiPasswordTextBox2.Text = TaiKhoan.GetInstance().matKhauSua;
                     DangKiVaiTroComboBox.Text = TaiKhoan.GetInstance().vaiTroSua;

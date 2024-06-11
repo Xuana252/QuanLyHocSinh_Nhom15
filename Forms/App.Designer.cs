@@ -40,6 +40,7 @@ namespace QuanLyHocSinh_Nhom15
             this.AppNameLabel = new System.Windows.Forms.Label();
             this.AppTabControl = new MetroFramework.Controls.MetroTabControl();
             this.TabTraCuu = new MetroFramework.Controls.MetroTabPage();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.TraCuuNamHoc = new System.Windows.Forms.NumericUpDown();
             this.TraCuuTimKiemButton = new System.Windows.Forms.Button();
@@ -76,6 +77,7 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.BaoCaoMonXuatButton = new System.Windows.Forms.Button();
             this.QuanLyMonHocButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.TabTongKet = new MetroFramework.Controls.MetroTabPage();
@@ -100,6 +102,7 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel4 = new System.Windows.Forms.Panel();
+            this.TongKetXuatButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.TabTiepNhan = new MetroFramework.Controls.MetroTabPage();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -153,6 +156,7 @@ namespace QuanLyHocSinh_Nhom15
             this.label14 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.DanhSachLopXuatButton = new System.Windows.Forms.Button();
             this.DanhSachLopQuanLiButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.TabUser = new MetroFramework.Controls.MetroTabPage();
@@ -185,14 +189,11 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.BaoCaoMonXuatButton = new System.Windows.Forms.Button();
-            this.TongKetXuatButton = new System.Windows.Forms.Button();
-            this.DanhSachLopXuatButton = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.AppTabControl.SuspendLayout();
             this.TabTraCuu.SuspendLayout();
+            this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TraCuuNamHoc)).BeginInit();
             this.panel5.SuspendLayout();
             this.TabBaoCao.SuspendLayout();
@@ -225,7 +226,6 @@ namespace QuanLyHocSinh_Nhom15
             this.metroPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroPanel2.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -363,6 +363,23 @@ namespace QuanLyHocSinh_Nhom15
             this.TabTraCuu.VerticalScrollbarHighlightOnWheel = false;
             this.TabTraCuu.VerticalScrollbarSize = 10;
             // 
+            // panel11
+            // 
+            this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel11.BackColor = System.Drawing.Color.LightCyan;
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.metroLabel6);
+            this.panel11.Controls.Add(this.TraCuuNamHoc);
+            this.panel11.Controls.Add(this.TraCuuTimKiemButton);
+            this.panel11.Controls.Add(this.TraCuuTextBox);
+            this.panel11.Controls.Add(this.metroLabel7);
+            this.panel11.ForeColor = System.Drawing.Color.Teal;
+            this.panel11.Location = new System.Drawing.Point(3, 65);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(1066, 59);
+            this.panel11.TabIndex = 17;
+            // 
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
@@ -401,7 +418,7 @@ namespace QuanLyHocSinh_Nhom15
             // TraCuuTimKiemButton
             // 
             this.TraCuuTimKiemButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TraCuuTimKiemButton.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.TraCuuTimKiemButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TraCuuTimKiemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TraCuuTimKiemButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TraCuuTimKiemButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.search;
@@ -585,7 +602,7 @@ namespace QuanLyHocSinh_Nhom15
             // BaoCaoXoaBangDiem
             // 
             this.BaoCaoXoaBangDiem.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BaoCaoXoaBangDiem.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BaoCaoXoaBangDiem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BaoCaoXoaBangDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BaoCaoXoaBangDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaoCaoXoaBangDiem.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.DeleteIcon;
@@ -602,7 +619,7 @@ namespace QuanLyHocSinh_Nhom15
             // BaoCaoXemBangDiem
             // 
             this.BaoCaoXemBangDiem.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BaoCaoXemBangDiem.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BaoCaoXemBangDiem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BaoCaoXemBangDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BaoCaoXemBangDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaoCaoXemBangDiem.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ViewIcon;
@@ -619,7 +636,7 @@ namespace QuanLyHocSinh_Nhom15
             // BaoCaoXoaDiem
             // 
             this.BaoCaoXoaDiem.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BaoCaoXoaDiem.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BaoCaoXoaDiem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BaoCaoXoaDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BaoCaoXoaDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaoCaoXoaDiem.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.DeleteIcon;
@@ -637,7 +654,7 @@ namespace QuanLyHocSinh_Nhom15
             // BaoCaoThemSuaDiem
             // 
             this.BaoCaoThemSuaDiem.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BaoCaoThemSuaDiem.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BaoCaoThemSuaDiem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BaoCaoThemSuaDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BaoCaoThemSuaDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaoCaoThemSuaDiem.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.AddIcon;
@@ -654,7 +671,7 @@ namespace QuanLyHocSinh_Nhom15
             // BaoCaoThemBangDiem
             // 
             this.BaoCaoThemBangDiem.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BaoCaoThemBangDiem.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BaoCaoThemBangDiem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BaoCaoThemBangDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BaoCaoThemBangDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaoCaoThemBangDiem.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.AddIcon;
@@ -860,11 +877,30 @@ namespace QuanLyHocSinh_Nhom15
             this.panel3.Size = new System.Drawing.Size(1065, 55);
             this.panel3.TabIndex = 7;
             // 
+            // BaoCaoMonXuatButton
+            // 
+            this.BaoCaoMonXuatButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BaoCaoMonXuatButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BaoCaoMonXuatButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BaoCaoMonXuatButton.FlatAppearance.BorderSize = 0;
+            this.BaoCaoMonXuatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BaoCaoMonXuatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BaoCaoMonXuatButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ExcelExportIcon;
+            this.BaoCaoMonXuatButton.Location = new System.Drawing.Point(892, 12);
+            this.BaoCaoMonXuatButton.Name = "BaoCaoMonXuatButton";
+            this.BaoCaoMonXuatButton.Size = new System.Drawing.Size(158, 33);
+            this.BaoCaoMonXuatButton.TabIndex = 26;
+            this.BaoCaoMonXuatButton.Text = "Xuất file Excel";
+            this.BaoCaoMonXuatButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BaoCaoMonXuatButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BaoCaoMonXuatButton.UseVisualStyleBackColor = false;
+            this.BaoCaoMonXuatButton.Click += new System.EventHandler(this.BaoCaoMonXuatButton_Click);
+            // 
             // QuanLyMonHocButton
             // 
             this.QuanLyMonHocButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.QuanLyMonHocButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.QuanLyMonHocButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.QuanLyMonHocButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.QuanLyMonHocButton.FlatAppearance.BorderSize = 0;
             this.QuanLyMonHocButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.QuanLyMonHocButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1038,7 +1074,7 @@ namespace QuanLyHocSinh_Nhom15
             // TongKetXem
             // 
             this.TongKetXem.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TongKetXem.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TongKetXem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TongKetXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TongKetXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TongKetXem.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ViewIcon;
@@ -1191,6 +1227,25 @@ namespace QuanLyHocSinh_Nhom15
             this.panel4.Size = new System.Drawing.Size(1065, 55);
             this.panel4.TabIndex = 9;
             // 
+            // TongKetXuatButton
+            // 
+            this.TongKetXuatButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TongKetXuatButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TongKetXuatButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TongKetXuatButton.FlatAppearance.BorderSize = 0;
+            this.TongKetXuatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TongKetXuatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TongKetXuatButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ExcelExportIcon;
+            this.TongKetXuatButton.Location = new System.Drawing.Point(887, 12);
+            this.TongKetXuatButton.Name = "TongKetXuatButton";
+            this.TongKetXuatButton.Size = new System.Drawing.Size(158, 33);
+            this.TongKetXuatButton.TabIndex = 27;
+            this.TongKetXuatButton.Text = "Xuất file Excel";
+            this.TongKetXuatButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TongKetXuatButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.TongKetXuatButton.UseVisualStyleBackColor = false;
+            this.TongKetXuatButton.Click += new System.EventHandler(this.TongKetXuatButton_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -1248,7 +1303,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.TiepNhanXoaHocSinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TiepNhanXoaHocSinh.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TiepNhanXoaHocSinh.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TiepNhanXoaHocSinh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TiepNhanXoaHocSinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TiepNhanXoaHocSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TiepNhanXoaHocSinh.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.DeleteIcon;
@@ -1266,7 +1321,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.TiepNhanTimKiemHocSinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TiepNhanTimKiemHocSinh.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TiepNhanTimKiemHocSinh.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TiepNhanTimKiemHocSinh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TiepNhanTimKiemHocSinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TiepNhanTimKiemHocSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TiepNhanTimKiemHocSinh.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.search;
@@ -1362,7 +1417,7 @@ namespace QuanLyHocSinh_Nhom15
             // TiepNhanThemSuaHocSinh
             // 
             this.TiepNhanThemSuaHocSinh.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TiepNhanThemSuaHocSinh.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TiepNhanThemSuaHocSinh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TiepNhanThemSuaHocSinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TiepNhanThemSuaHocSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TiepNhanThemSuaHocSinh.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.AddIcon;
@@ -1740,7 +1795,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.DanhSachLopTimKiemButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DanhSachLopTimKiemButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DanhSachLopTimKiemButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DanhSachLopTimKiemButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DanhSachLopTimKiemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DanhSachLopTimKiemButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DanhSachLopTimKiemButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.search;
@@ -1757,7 +1812,7 @@ namespace QuanLyHocSinh_Nhom15
             // DanhSachLopXemLopButton
             // 
             this.DanhSachLopXemLopButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DanhSachLopXemLopButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DanhSachLopXemLopButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DanhSachLopXemLopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DanhSachLopXemLopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DanhSachLopXemLopButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ViewIcon;
@@ -1919,11 +1974,29 @@ namespace QuanLyHocSinh_Nhom15
             this.panel6.Size = new System.Drawing.Size(1066, 55);
             this.panel6.TabIndex = 10;
             // 
+            // DanhSachLopXuatButton
+            // 
+            this.DanhSachLopXuatButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DanhSachLopXuatButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DanhSachLopXuatButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DanhSachLopXuatButton.FlatAppearance.BorderSize = 0;
+            this.DanhSachLopXuatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DanhSachLopXuatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhSachLopXuatButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ExcelExportIcon;
+            this.DanhSachLopXuatButton.Location = new System.Drawing.Point(889, 12);
+            this.DanhSachLopXuatButton.Name = "DanhSachLopXuatButton";
+            this.DanhSachLopXuatButton.Size = new System.Drawing.Size(158, 33);
+            this.DanhSachLopXuatButton.TabIndex = 28;
+            this.DanhSachLopXuatButton.Text = "Xuất file Excel";
+            this.DanhSachLopXuatButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DanhSachLopXuatButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.DanhSachLopXuatButton.UseVisualStyleBackColor = false;
+            // 
             // DanhSachLopQuanLiButton
             // 
             this.DanhSachLopQuanLiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DanhSachLopQuanLiButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DanhSachLopQuanLiButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DanhSachLopQuanLiButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DanhSachLopQuanLiButton.FlatAppearance.BorderSize = 0;
             this.DanhSachLopQuanLiButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DanhSachLopQuanLiButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2311,7 +2384,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             this.TaiKhoanQuanLiTaiKhoanButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TaiKhoanQuanLiTaiKhoanButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TaiKhoanQuanLiTaiKhoanButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TaiKhoanQuanLiTaiKhoanButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TaiKhoanQuanLiTaiKhoanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaiKhoanQuanLiTaiKhoanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TaiKhoanQuanLiTaiKhoanButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.DatabaseIcon;
@@ -2365,79 +2438,6 @@ namespace QuanLyHocSinh_Nhom15
             this.label1.Size = new System.Drawing.Size(191, 24);
             this.label1.TabIndex = 0;
             // 
-            // BaoCaoMonXuatButton
-            // 
-            this.BaoCaoMonXuatButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BaoCaoMonXuatButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BaoCaoMonXuatButton.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.BaoCaoMonXuatButton.FlatAppearance.BorderSize = 0;
-            this.BaoCaoMonXuatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BaoCaoMonXuatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BaoCaoMonXuatButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ExcelExportIcon;
-            this.BaoCaoMonXuatButton.Location = new System.Drawing.Point(892, 12);
-            this.BaoCaoMonXuatButton.Name = "BaoCaoMonXuatButton";
-            this.BaoCaoMonXuatButton.Size = new System.Drawing.Size(158, 33);
-            this.BaoCaoMonXuatButton.TabIndex = 26;
-            this.BaoCaoMonXuatButton.Text = "Xuất file Excel";
-            this.BaoCaoMonXuatButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BaoCaoMonXuatButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BaoCaoMonXuatButton.UseVisualStyleBackColor = false;
-            this.BaoCaoMonXuatButton.Click += new System.EventHandler(this.BaoCaoMonXuatButton_Click);
-            // 
-            // TongKetXuatButton
-            // 
-            this.TongKetXuatButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TongKetXuatButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TongKetXuatButton.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.TongKetXuatButton.FlatAppearance.BorderSize = 0;
-            this.TongKetXuatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TongKetXuatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TongKetXuatButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ExcelExportIcon;
-            this.TongKetXuatButton.Location = new System.Drawing.Point(887, 12);
-            this.TongKetXuatButton.Name = "TongKetXuatButton";
-            this.TongKetXuatButton.Size = new System.Drawing.Size(158, 33);
-            this.TongKetXuatButton.TabIndex = 27;
-            this.TongKetXuatButton.Text = "Xuất file Excel";
-            this.TongKetXuatButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.TongKetXuatButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.TongKetXuatButton.UseVisualStyleBackColor = false;
-            this.TongKetXuatButton.Click += new System.EventHandler(this.TongKetXuatButton_Click);
-            // 
-            // DanhSachLopXuatButton
-            // 
-            this.DanhSachLopXuatButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.DanhSachLopXuatButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DanhSachLopXuatButton.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.DanhSachLopXuatButton.FlatAppearance.BorderSize = 0;
-            this.DanhSachLopXuatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DanhSachLopXuatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DanhSachLopXuatButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ExcelExportIcon;
-            this.DanhSachLopXuatButton.Location = new System.Drawing.Point(889, 12);
-            this.DanhSachLopXuatButton.Name = "DanhSachLopXuatButton";
-            this.DanhSachLopXuatButton.Size = new System.Drawing.Size(158, 33);
-            this.DanhSachLopXuatButton.TabIndex = 28;
-            this.DanhSachLopXuatButton.Text = "Xuất file Excel";
-            this.DanhSachLopXuatButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DanhSachLopXuatButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DanhSachLopXuatButton.UseVisualStyleBackColor = false;
-            // 
-            // panel11
-            // 
-            this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel11.BackColor = System.Drawing.Color.LightCyan;
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.Controls.Add(this.metroLabel6);
-            this.panel11.Controls.Add(this.TraCuuNamHoc);
-            this.panel11.Controls.Add(this.TraCuuTimKiemButton);
-            this.panel11.Controls.Add(this.TraCuuTextBox);
-            this.panel11.Controls.Add(this.metroLabel7);
-            this.panel11.ForeColor = System.Drawing.Color.Teal;
-            this.panel11.Location = new System.Drawing.Point(3, 65);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1066, 59);
-            this.panel11.TabIndex = 17;
-            // 
             // App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2462,6 +2462,8 @@ namespace QuanLyHocSinh_Nhom15
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.AppTabControl.ResumeLayout(false);
             this.TabTraCuu.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TraCuuNamHoc)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -2508,8 +2510,6 @@ namespace QuanLyHocSinh_Nhom15
             this.metroPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroPanel2.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }

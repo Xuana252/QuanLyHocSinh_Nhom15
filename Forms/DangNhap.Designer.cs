@@ -45,6 +45,7 @@
             // 
             LoginButton.BackColor = System.Drawing.Color.Teal;
             LoginButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
             LoginButton.FlatAppearance.BorderSize = 0;
             LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -58,6 +58,7 @@
             // DangKiButton
             // 
             this.DangKiButton.BackColor = System.Drawing.Color.Teal;
+            this.DangKiButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DangKiButton.FlatAppearance.BorderSize = 0;
             this.DangKiButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DangKiButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

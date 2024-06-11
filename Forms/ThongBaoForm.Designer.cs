@@ -36,6 +36,7 @@
             // ErrorOKButton
             // 
             this.ErrorOKButton.BackColor = System.Drawing.Color.Teal;
+            this.ErrorOKButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ErrorOKButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ErrorOKButton.FlatAppearance.BorderSize = 0;
             this.ErrorOKButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

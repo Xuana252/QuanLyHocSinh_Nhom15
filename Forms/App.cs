@@ -691,6 +691,7 @@ namespace QuanLyHocSinh_Nhom15
         //TAB DANH SÁCH LỚP: Sự kiện xảy ra khi bấm nút thêm học sinh vào danh sách lớp
         private void DanhSachLopThemHocSinhButton_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (LopHoc.idLop.Length == 0)
                 ThongBaoForm.GetInstance().LogError("Vui lòng xem lớp trước khi thêm học sinh");
             else
@@ -698,11 +699,13 @@ namespace QuanLyHocSinh_Nhom15
                 LopHoc.ThemHocSinhVaoLop(DanhSachLopListView2.SelectedItems);
                 LoadTabDanhSachLop(LopHoc.idLop, "");
             }
+            Cursor.Current = Cursors.Default;
         }
 
         //TAB DANH SÁCH LỚP: Sự kiện xảy ra khi bấm nút xóa học sinh ra khỏi lớp
         private void DanhSachLopXoaHocSinhButton_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (LopHoc.idLop.Length == 0)
                 ThongBaoForm.GetInstance().LogError("Vui lòng xem lớp trước khi thêm học sinh");
             else
@@ -710,6 +713,7 @@ namespace QuanLyHocSinh_Nhom15
                 LopHoc.XoaHocSinhKhoiLop(DanhSachLopListView1.SelectedItems);
                 LoadTabDanhSachLop(LopHoc.idLop, "");
             }
+            Cursor.Current = Cursors.Default;
         }
         //TAB TỔNG KẾT: Sự kiện khi bấm nút thay đổi điểm đạt/qua môn
         private void TongKetDiemDatNumericBox_ValueChanged(object sender, EventArgs e)

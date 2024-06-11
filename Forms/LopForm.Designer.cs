@@ -167,6 +167,7 @@
             // DanhSachLopHocThemSuaLopButton
             // 
             this.DanhSachLopHocThemSuaLopButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DanhSachLopHocThemSuaLopButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DanhSachLopHocThemSuaLopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DanhSachLopHocThemSuaLopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DanhSachLopHocThemSuaLopButton.ForeColor = System.Drawing.Color.Teal;
@@ -184,6 +185,7 @@
             // DanhSachLopHocXoalopButton
             // 
             this.DanhSachLopHocXoalopButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DanhSachLopHocXoalopButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DanhSachLopHocXoalopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DanhSachLopHocXoalopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DanhSachLopHocXoalopButton.ForeColor = System.Drawing.Color.Teal;
