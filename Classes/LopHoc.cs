@@ -50,9 +50,9 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message/*.Substring(ex.Message.IndexOf('\n'))*/);
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message/*.Substring(ex.Message.IndexOf('\n'))*/);
             }
-            
+            db.Close();
         }
 
         //Hàm sửa lớp
@@ -78,9 +78,10 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message/*.Substring(ex.Message.IndexOf('\n'))*/);
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message/*.Substring(ex.Message.IndexOf('\n'))*/);
             }
             flagSua = false;
+            db.Close();
         }
 
         //Hàm xóa lớp
@@ -108,9 +109,10 @@ namespace QuanLyHocSinh_Nhom15
                 }
                 catch (Exception ex)
                 {
-                    Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message/*.Substring(ex.Message.IndexOf('\n'))*/);
+                    ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message/*.Substring(ex.Message.IndexOf('\n'))*/);
                 }
             }
+            db.Close();
         }
 
         //Hàm thêm học sinh vào danh sách lớp
@@ -162,6 +164,7 @@ namespace QuanLyHocSinh_Nhom15
 
             }
             db.reader.Close();
+            db.Close();
             return itemList;
         }
 

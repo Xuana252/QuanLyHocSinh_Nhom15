@@ -37,10 +37,11 @@
             this.Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Vai_Tro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.HoTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IDMonHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NgaySinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DiaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TaiKhoanQuanLiTaiKhoanButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -79,14 +80,15 @@
             this.Password,
             this.Vai_Tro,
             this.HoTen,
+            this.columnHeader1,
             this.IDMonHoc,
             this.NgaySinh,
-            this.DiaChi,
-            this.columnHeader1});
+            this.DiaChi});
             this.metroListView1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.metroListView1.FullRowSelect = true;
             this.metroListView1.GridLines = true;
             this.metroListView1.Location = new System.Drawing.Point(11, 68);
+            this.metroListView1.MultiSelect = false;
             this.metroListView1.Name = "metroListView1";
             this.metroListView1.OwnerDraw = true;
             this.metroListView1.Size = new System.Drawing.Size(980, 451);
@@ -129,29 +131,43 @@
             this.HoTen.Text = "Họ và tên";
             this.HoTen.Width = 200;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Giới tính";
+            this.columnHeader1.Width = 80;
+            // 
             // IDMonHoc
             // 
-            this.IDMonHoc.DisplayIndex = 7;
             this.IDMonHoc.Text = "Môn học";
             this.IDMonHoc.Width = 200;
             // 
             // NgaySinh
             // 
-            this.NgaySinh.DisplayIndex = 8;
             this.NgaySinh.Text = "Ngày sinh";
             this.NgaySinh.Width = 200;
             // 
             // DiaChi
             // 
-            this.DiaChi.DisplayIndex = 9;
             this.DiaChi.Text = "Địa chỉ";
             this.DiaChi.Width = 200;
             // 
-            // columnHeader1
+            // TaiKhoanQuanLiTaiKhoanButton
             // 
-            this.columnHeader1.DisplayIndex = 6;
-            this.columnHeader1.Text = "Giới tính";
-            this.columnHeader1.Width = 80;
+            this.TaiKhoanQuanLiTaiKhoanButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.TaiKhoanQuanLiTaiKhoanButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TaiKhoanQuanLiTaiKhoanButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TaiKhoanQuanLiTaiKhoanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TaiKhoanQuanLiTaiKhoanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaiKhoanQuanLiTaiKhoanButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.SettingIcon;
+            this.TaiKhoanQuanLiTaiKhoanButton.Location = new System.Drawing.Point(331, 17);
+            this.TaiKhoanQuanLiTaiKhoanButton.Name = "TaiKhoanQuanLiTaiKhoanButton";
+            this.TaiKhoanQuanLiTaiKhoanButton.Size = new System.Drawing.Size(199, 33);
+            this.TaiKhoanQuanLiTaiKhoanButton.TabIndex = 34;
+            this.TaiKhoanQuanLiTaiKhoanButton.Text = "Chỉnh sửa thông tin";
+            this.TaiKhoanQuanLiTaiKhoanButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TaiKhoanQuanLiTaiKhoanButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.TaiKhoanQuanLiTaiKhoanButton.UseVisualStyleBackColor = false;
+            this.TaiKhoanQuanLiTaiKhoanButton.Click += new System.EventHandler(this.TaiKhoanQuanLiTaiKhoanButton_Click);
             // 
             // GiaoVienForm
             // 
@@ -160,6 +176,7 @@
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1002, 527);
             this.ControlBox = false;
+            this.Controls.Add(this.TaiKhoanQuanLiTaiKhoanButton);
             this.Controls.Add(this.metroListView1);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label1);
@@ -195,5 +212,6 @@
         private System.Windows.Forms.ColumnHeader NgaySinh;
         private System.Windows.Forms.ColumnHeader DiaChi;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Button TaiKhoanQuanLiTaiKhoanButton;
     }
 }

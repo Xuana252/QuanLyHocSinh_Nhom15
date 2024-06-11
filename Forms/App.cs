@@ -15,6 +15,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Diagnostics.Eventing.Reader;
 using MetroFramework.Properties;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Microsoft.Office.Interop.Excel;
+
+
 
 namespace QuanLyHocSinh_Nhom15
 {
@@ -51,11 +54,18 @@ namespace QuanLyHocSinh_Nhom15
         //Sự kiện khi kích thước cửa sổ thay đổi
         private void App_SizeChanged(object sender, EventArgs e)
         {
+            
             if (WindowState != FormWindowState.Maximized)
                 MaximizeRestoreButton.Image = Properties.Resources.MaximizeIcon;
             else
                 MaximizeRestoreButton.Image = Properties.Resources.RestoreIcon;
-            AppTabControl.ItemSize = new Size((AppTabControl.Width - 10) / AppTabControl.TabCount, 0);
+            if (WindowState != FormWindowState.Minimized)
+            {
+                SuspendLayout();
+                AppTabControl.ItemSize = new Size((AppTabControl.Width - 10) / AppTabControl.TabCount, 0);
+                ResumeLayout();
+            }
+
         }
         //Sự kiện khi bấm nút MinimizeWindow
         private void MinimizeButton_Click(object sender, EventArgs e)
@@ -65,16 +75,18 @@ namespace QuanLyHocSinh_Nhom15
         //Sự kiện khi bấm nút Maximize/RestoreWindow
         private void MaximizeRestoreButton_Click(object sender, EventArgs e)
         {
-            if (WindowState != FormWindowState.Maximized)              
-                WindowState=FormWindowState.Maximized;
+
+            if (WindowState != FormWindowState.Maximized)
+                WindowState = FormWindowState.Maximized;
             else
                 WindowState = FormWindowState.Normal;
+           
         }
 
         //Sự kiện khi bấm nút ExitWindow
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
 
@@ -95,7 +107,7 @@ namespace QuanLyHocSinh_Nhom15
         }
 
         //Khối sự kiện dành cho việc vẽ các item dành cho listview
-        //---------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         private void ListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
@@ -116,9 +128,9 @@ namespace QuanLyHocSinh_Nhom15
             e.DrawDefault = false;
             if (sender is MetroListView listView)
             {
-                using (Font headerFont = new Font("Arial", 12, FontStyle.Regular))
+                using (System.Drawing.Font headerFont = new System.Drawing.Font("Arial", 12, FontStyle.Regular))
                 {
-                    Rectangle headerBounds = e.Bounds;
+                    System.Drawing.Rectangle headerBounds = e.Bounds;
 
                     e.Graphics.FillRectangle(Brushes.Teal, e.Bounds);
 
@@ -149,7 +161,7 @@ namespace QuanLyHocSinh_Nhom15
             }
         }
 
-        //-----------------------------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         //Sự kiện khi App load lần đầu
@@ -173,9 +185,10 @@ namespace QuanLyHocSinh_Nhom15
             monHocForm = new MonHocForm();
             dangKiForm = new DangKi();
             diemForm = new DiemForm(this);
-            giaoVienForm = new GiaoVienForm();
+            giaoVienForm = new GiaoVienForm(dangKiForm);
             studentForm = new HocSinhForm(this);
             lopForm = new LopForm(this);
+            dangKiForm.giaoVien = giaoVienForm;
 
             //--------------------------Điều chỉnh các control tùy thuộc vào quyền hạn (vai trò) của User----------------------------------------------------------
             if (user.idVaiTro != "QL")
@@ -206,6 +219,12 @@ namespace QuanLyHocSinh_Nhom15
                 //---------------------------------------------------------------
 
                 //Điều chỉnh chiều rộng của listview danh sách học sinh lớp và các cột của nó
+                DanhSachLopListView1.Dock = DockStyle.None;
+                DanhSachLopListView1.Anchor= AnchorStyles.Bottom | AnchorStyles.Right |AnchorStyles.Left|AnchorStyles.Top;
+                splitContainer1.Panel1.Controls.Remove(DanhSachLopListView1);
+                this.TabDanhSachLop.Controls.Add(DanhSachLopListView1);
+                DanhSachLopListView1.Location = new System.Drawing.Point(splitContainer1.Location.X,splitContainer1.Location.Y);
+                splitContainer1.Parent.Controls.Remove(splitContainer1 );
                 DanhSachLopListView1.Width = 1070;
                 foreach (ColumnHeader header in DanhSachLopListView1.Columns)
                 {
@@ -384,7 +403,20 @@ namespace QuanLyHocSinh_Nhom15
         //Hàm load Tab tổng kết
         public void LoadTabTongKet()
         {
-            
+            //Load điểm qua môn 
+            QuiDinh.LoadDiemQuaMon();
+            TongKetDiemDatNumericBox.ValueChanged -= TongKetDiemDatNumericBox_ValueChanged;
+            TongKetDiemDatNumericBox.Value = QuiDinh.DiemQuaMon;
+            TongKetDiemDatNumericBox.ValueChanged += TongKetDiemDatNumericBox_ValueChanged;
+
+            //Load năm học
+            TongKetNamHoc.Value = decimal.Parse(DateTime.Today.ToString("yyyy"));
+
+            //Reset các cấu hình mặc định cho tab
+            MonHocRadioButton.Checked = true;
+            HocKi1RadioButton.Checked = true;
+
+            //Load danh sách môn học
             TongKetMonComboBox.Items.Clear();
             foreach (ListViewItem item in MonHoc.LayDanhSach())
             {
@@ -474,33 +506,42 @@ namespace QuanLyHocSinh_Nhom15
             {
                 diemForm.idbangdiem = BangDiem.getIdBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
                 diemForm.idhocsinh = BaoCaoListView.SelectedItems[0].SubItems[5].Text;
+                diemForm.flagSua = false;
                 if (BaoCaoListView.SelectedItems[0].SubItems[3].Text != "0")
                 {
                     diemForm.flagSua = true;
+                    chiTietBangDiem.Diem15p = decimal.Parse(BaoCaoListView.SelectedItems[0].SubItems[2].Text);
+                    chiTietBangDiem.Diem1Tiet = decimal.Parse(BaoCaoListView.SelectedItems[0].SubItems[3].Text);
+                    chiTietBangDiem.DiemTB = decimal.Parse(BaoCaoListView.SelectedItems[0].SubItems[4].Text);
                 }    
                 diemForm.Show();
+                BaoCaoListView.SelectedItems.Clear();
             }
             else
             {
                 BaoCaoListView.SelectedItems.Clear();
-                Error.GetInstance().Show("Vui lòng chọn học sinh cần thêm điểm");   
+                ThongBaoForm.GetInstance().LogError("Vui lòng chọn học sinh cần thêm điểm");   
             }    
         }
+
         //TAB DANH SÁCH LỚP: Sự kiện khi bấm nút quản lí danh sách lớp
         private void DanhSachLopQuanLiButton_Click(object sender, EventArgs e)
         {
             lopForm.Show();
         }
+
         //TAB TÀI KHOẢN: Sự kiện khi bấm nút đăng kí
         private void SignUpButton_Click(object sender, EventArgs e)
         {
             dangKiForm.Show();
         }
+
         //TAB TÀI KHOẢN: Sự kiện khi bấm nút đăng xuất
         private void LogOutButton_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            System.Windows.Forms.Application.Restart();
         }
+
         //TAB TÀI KHOẢN: Sự kiện khi bấm nút quản lí danh sách tài khoản
         private void QuanLiTaiKhoanButton_Click(object sender, EventArgs e)
         {
@@ -510,17 +551,27 @@ namespace QuanLyHocSinh_Nhom15
         //TAB BÁO CÁO MÔN: Sự kiện khi bấm nút Xem bảng điểm
         private void BaoCaoXemBangDiemButton_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             BaoCaoListView.Items.Clear();
+            BangDiem.tenLop = BaoCaoLopComboBox.Text;
+            BangDiem.tenMonHoc = BaoCaoMonHocComboBox.Text;
+            BangDiem.HocKy = int.Parse(BaoCaoHocKiComboBox.Text);
+            BangDiem.NamHoc = (int)BaoCaoNamHocNumericUpDown.Value;
             foreach (ListViewItem item in BangDiem.LayDanhSach(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value))
             {
                 BaoCaoListView.Items.Add(item);
             }
-
+            if(BaoCaoListView.Items.Count == 0)
+                ThongBaoForm.GetInstance().LogError("Chưa có thông tin của bảng điểm này, bạn có thể tạo bảng điểm mới");
+            Cursor.Current = Cursors.Default;
         }
         //TAB BÁO CÁO MÔN: Sự kiện khi bấm nút Xóa bảng điểm
         private void BaoCaoXoaBangDiemButton_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             BangDiem.XoaBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
+            LoadTabBaoCaoMon();
+            Cursor.Current = Cursors.Default;
         }
 
         //TAB BÁO CÁO MÔN: Sự kiện khi bấm nút Thêm bảng điểm
@@ -528,7 +579,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             if (BaoCaoHocKiComboBox.Text == "" || BaoCaoLopComboBox.Text == "" || BaoCaoMonHocComboBox.Text == "")
             {
-                Error.GetInstance().Show("Vui lòng nhập đầy đủ thông tin!!!");
+                ThongBaoForm.GetInstance().LogError("Vui lòng nhập đầy đủ thông tin!!!");
                 return;
             }
             BangDiem.ThemBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
@@ -540,7 +591,10 @@ namespace QuanLyHocSinh_Nhom15
             if (BaoCaoListView.SelectedItems.Count > 0)
             {
                 string idbangdiem = BangDiem.getIdBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
-                chiTietBangDiem.XoaDiem(idbangdiem, BaoCaoListView.SelectedItems[0].SubItems[5].Text);
+                foreach(ListViewItem item in BaoCaoListView.SelectedItems)
+                {
+                    chiTietBangDiem.XoaDiem(idbangdiem, item.SubItems[5].Text);
+                }    
                 this.LoadTabBaoCaoMon();
             }
 
@@ -609,7 +663,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             else
             {
-                Error.GetInstance().Show("Vui lòng chọn lớp muốn xem");
+                ThongBaoForm.GetInstance().LogError("Vui lòng chọn lớp muốn xem");
                 return;
             }
             
@@ -638,7 +692,7 @@ namespace QuanLyHocSinh_Nhom15
         private void DanhSachLopThemHocSinhButton_Click(object sender, EventArgs e)
         {
             if (LopHoc.idLop.Length == 0)
-                Error.GetInstance().Show("Vui lòng xem lớp trước khi thêm học sinh");
+                ThongBaoForm.GetInstance().LogError("Vui lòng xem lớp trước khi thêm học sinh");
             else
             {
                 LopHoc.ThemHocSinhVaoLop(DanhSachLopListView2.SelectedItems);
@@ -650,57 +704,72 @@ namespace QuanLyHocSinh_Nhom15
         private void DanhSachLopXoaHocSinhButton_Click(object sender, EventArgs e)
         {
             if (LopHoc.idLop.Length == 0)
-                Error.GetInstance().Show("Vui lòng xem lớp trước khi thêm học sinh");
+                ThongBaoForm.GetInstance().LogError("Vui lòng xem lớp trước khi thêm học sinh");
             else
             {
                 LopHoc.XoaHocSinhKhoiLop(DanhSachLopListView1.SelectedItems);
                 LoadTabDanhSachLop(LopHoc.idLop, "");
             }
         }
+        //TAB TỔNG KẾT: Sự kiện khi bấm nút thay đổi điểm đạt/qua môn
+        private void TongKetDiemDatNumericBox_ValueChanged(object sender, EventArgs e)
+        {
+            QuiDinh.GetInstance().ThayDoiDiemQuaMon(TongKetDiemDatNumericBox.Value);
+        }
         //TAB TỔNG KẾT: Sự kiện xảy ra khi bấm nút Xem
         private void TongKetXem_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             TongKetListView.Items.Clear();
-            if(MonHocRadioButton.Checked)
+            if (MonHocRadioButton.Checked)
             {
                 int i = 1;
                 SQLConnect db = SQLConnect.GetInstance();
                 db.Open();
                 db.sqlCmd.CommandType = CommandType.Text;
 
-                db.sqlCmd.CommandText = "declare @idmon char(2); " +
+                db.sqlCmd.CommandText = "declare @idmon char(2), @diemquamon decimal(4,2); " +
                     "SELECT @idmon = idMonHoc FROM MONHOC WHERE TenMonHoc = @tenmon; " +
-                    "SELECT LOPHOC.tenlop, LOPHOC.siso, COUNT(CASE WHEN CHITIETBANGDIEM.DiemTB > 5 THEN CHITIETBANGDIEM.idHocSinh ELSE NULL END) FROM LOPHOC " +
+                    "SELECT @diemquamon = DiemQuaMon FROM QUIDINH;"+
+                    "SELECT LOPHOC.tenlop, LOPHOC.siso, COUNT(CASE WHEN CHITIETBANGDIEM.DiemTB >= @diemquamon  THEN CHITIETBANGDIEM.idHocSinh ELSE NULL END) FROM LOPHOC " +
                     "JOIN BANGDIEM ON LOPHOC.idLop = BANGDIEM.idLop JOIN CHITIETBANGDIEM ON BANGDIEM.idBangDiem = CHITIETBANGDIEM.idBangDiem " +
                     "WHERE BANGDIEM.idMonHoc = @idmon AND BANGDIEM.HocKy = @hocky AND BANGDIEM.NamHoc = @namhoc " +
                     "GROUP BY LOPHOC.tenlop, LOPHOC.siso;";
 
                 db.sqlCmd.Parameters.AddWithValue("@tenmon", TongKetMonComboBox.Text);
                 db.sqlCmd.Parameters.AddWithValue("@namhoc", TongKetNamHoc.Value);
-                db.sqlCmd.Parameters.AddWithValue("@hocky", groupBox2.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text);
+                db.sqlCmd.Parameters.AddWithValue("@hocky", TongKetMonHocKiGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text);
 
                 db.sqlCmd.Connection = db.sqlCon;
 
                 db.reader = db.sqlCmd.ExecuteReader();
-
-                while (db.reader.Read())
+                if(db.reader.HasRows)
                 {
-                    string tenlop = db.reader.GetString(0);
-                    int siso = db.reader.GetInt32(1);
-                    int shocsinhdat = db.reader.GetInt32(2);
-                    float tile = ((float)shocsinhdat / siso) * 100;
-                    string tile1 = tile.ToString() + "%";
+                    while (db.reader.Read())
+                    {
+                        string tenlop = db.reader.GetString(0);
+                        int siso = db.reader.GetInt32(1);
+                        int shocsinhdat = db.reader.GetInt32(2);
+                        float tile = ((float)shocsinhdat / siso) * 100;
+                        string tile1 = tile.ToString() + "%";
 
-                    ListViewItem item = new ListViewItem();
-                    item.Text = i.ToString();
-                    item.SubItems.Add(tenlop);
-                    item.SubItems.Add(siso.ToString());
-                    item.SubItems.Add(shocsinhdat.ToString());
-                    item.SubItems.Add(tile1);
+                        ListViewItem item = new ListViewItem();
+                        item.Text = i.ToString();
+                        item.SubItems.Add(tenlop);
+                        item.SubItems.Add(siso.ToString());
+                        item.SubItems.Add(shocsinhdat.ToString());
+                        item.SubItems.Add(tile1);
 
-                    TongKetListView.Items.Add(item);
+                        TongKetListView.Items.Add(item);
+                    }
                 }
+                else
+                {
+                    ThongBaoForm.GetInstance().LogError("Chưa có thông tin cho bảng tổng kết này, nguyên nhân có thể do chưa có bảng điểm phù hợp");
+                }
+               
                 db.reader.Close();
+                db.Close();
             }
             else
             {
@@ -745,7 +814,7 @@ namespace QuanLyHocSinh_Nhom15
                                             LOPHOC.siso;";
 
                 db.sqlCmd.Parameters.AddWithValue("@namhoc", TongKetNamHoc.Value);
-                db.sqlCmd.Parameters.AddWithValue("@hocky", groupBox2.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text);
+                db.sqlCmd.Parameters.AddWithValue("@hocky", TongKetMonHocKiGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text);
 
                 db.sqlCmd.Connection = db.sqlCon;
 
@@ -769,9 +838,133 @@ namespace QuanLyHocSinh_Nhom15
                     TongKetListView.Items.Add(item);
                 }
                 db.reader.Close();
-            }    
-            
+                db.Close();
+            }
+            BangDiem.loaiTongKet = TongKetMonHocCaHocKiGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+            BangDiem.namTongKet = TongKetNamHoc.Value;
+            BangDiem.hocKiTongKet = TongKetMonHocKiGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+            if (BangDiem.loaiTongKet == "Môn học")
+                BangDiem.tenMonTongKet = TongKetMonComboBox.Text;
+            else
+                BangDiem.tenMonTongKet = "Tong hop";
+            Cursor.Current = Cursors.Default;
+
         }
+
+        //TAB BÁO CÁO MÔN: Sự kiện khi bấm nút xuất file 
+        private void BaoCaoMonXuatButton_Click(object sender, EventArgs e)
+        {
+            if (BaoCaoListView.Items.Count > 0)
+            {
+                try
+                {
+                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook| *.xls", ValidateNames = true })
+                    {
+                        if (sfd.ShowDialog() == DialogResult.OK)
+                        {
+                            Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                            Workbook wb = app.Workbooks.Add(XlSheetType.xlWorksheet);
+                            Worksheet ws = (Worksheet)app.ActiveSheet;
+                            app.Visible = false;
+                            ws.Cells[2, 1] = "Lớp:";
+                            ws.Cells[2, 2] = BangDiem.tenLop;
+                            ws.Cells[2, 4] = "Môn học:";
+                            ws.Cells[2, 5] = BangDiem.tenMonHoc;
+                            ws.Cells[3, 1] = "Học kì:";
+                            ws.Cells[3, 2] = BangDiem.HocKy.ToString();
+                            ws.Cells[3, 4] = "Năm học:";
+                            ws.Cells[3, 5] = BangDiem.NamHoc.ToString() + " - " + (BangDiem.NamHoc + 1).ToString();
+                            ws.Cells[5, 1] = "STT";
+                            ws.Cells[5, 2] = "Họ tên";
+                            ws.Cells[5, 3] = "Điểm 15p";
+                            ws.Cells[5, 4] = "Điểm 1 tiết";
+                            ws.Cells[5, 5] = "Điểm TB";
+
+                            int i = 6;
+                            foreach (ListViewItem item in BaoCaoListView.Items)
+                            {
+                                ws.Cells[i, 1] = item.SubItems[0].Text;
+                                ws.Cells[i, 2] = item.SubItems[1].Text;
+                                ws.Cells[i, 3] = item.SubItems[2].Text;
+                                ws.Cells[i, 4] = item.SubItems[3].Text;
+                                ws.Cells[i, 5] = item.SubItems[4].Text;
+                                i++;
+                            }
+
+                            wb.SaveAs(sfd.FileName, XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, true, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
+                            app.Quit();
+                            ThongBaoForm.GetInstance().Inform("Xuất file thành công");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ThongBaoForm.GetInstance().LogError($"Xảy ra lỗi trong quá trình xuất file: {ex.Message}");
+                }
+            }
+            else
+            {
+                ThongBaoForm.GetInstance().LogError("Vui lòng chọn xem bảng điểm mong muốn trước khi xuất file");
+            }
+        }
+
+        private void TongKetXuatButton_Click(object sender, EventArgs e)
+        {
+            if (TongKetListView.Items.Count > 0)
+            {
+                try
+                {
+                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook| *.xls", ValidateNames = true })
+                    {
+                        if (sfd.ShowDialog() == DialogResult.OK)
+                        {
+                            Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                            Workbook wb = app.Workbooks.Add(XlSheetType.xlWorksheet);
+                            Worksheet ws = (Worksheet)app.ActiveSheet;
+                            app.Visible = false;
+                            ws.Cells[2, 1] = "Loại tổng kết:";
+                            ws.Cells[2, 2] = BangDiem.loaiTongKet;
+                            ws.Cells[2, 4] = "Môn học:";
+                            ws.Cells[2, 5] = BangDiem.tenMonTongKet;
+                            ws.Cells[3, 1] = "Học kì:";
+                            ws.Cells[3, 2] = BangDiem.hocKiTongKet;
+                            ws.Cells[3, 4] = "Năm học:";
+                            ws.Cells[3, 5] = BangDiem.namTongKet.ToString() + " - " + (BangDiem.namTongKet + 1).ToString();
+                            ws.Cells[5, 1] = "STT";
+                            ws.Cells[5, 2] = "Lớp";
+                            ws.Cells[5, 3] = "Sĩ số";
+                            ws.Cells[5, 4] = "Số lượng đạt";
+                            ws.Cells[5, 5] = "Tỉ lệ";
+
+                            int i = 6;
+                            foreach (ListViewItem item in TongKetListView.Items)
+                            {
+                                ws.Cells[i, 1] = item.SubItems[0].Text;
+                                ws.Cells[i, 2] = item.SubItems[1].Text;
+                                ws.Cells[i, 3] = item.SubItems[2].Text;
+                                ws.Cells[i, 4] = item.SubItems[3].Text;
+                                ws.Cells[i, 5] = item.SubItems[4].Text;
+                                i++;
+                            }
+
+                            wb.SaveAs(sfd.FileName, XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, true, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
+                            app.Quit();
+                            ThongBaoForm.GetInstance().Inform("Xuất file thành công");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ThongBaoForm.GetInstance().LogError($"Xảy ra lỗi trong quá trình xuất file: {ex.Message}");
+                }
+            }
+            else
+            {
+                ThongBaoForm.GetInstance().LogError("Vui lòng chọn xem bảng tổng kết mong muốn trước khi xuất file");
+            }
+        }
+
+
     }
 
 }

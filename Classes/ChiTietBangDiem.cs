@@ -13,9 +13,9 @@ namespace QuanLyHocSinh_Nhom15
         private static ChiTietBangDiem _instance;
         public string idBangDiem;
         public string idHocSinh;
-        public float Diem15p;
-        public float Diem1Tiet;
-        public float DiemTB;
+        public decimal Diem15p;
+        public decimal Diem1Tiet;
+        public decimal DiemTB;
 
         public static ChiTietBangDiem GetInstance()
         {
@@ -44,8 +44,9 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message);
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message);
             }
+            db.Close();
         }
 
         public void SuaDiem(string idbangdiem, string idhocsinh, decimal diem15p, decimal diem1t, decimal diemTB)
@@ -70,8 +71,9 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message);
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message);
             }
+            db.Close();
         }
 
         public void XoaDiem(string idbangdiem,string idhocsinh)
@@ -91,8 +93,9 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message);
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message);
             }
+            db.Close();
         }
 
         public decimal TinhDiemTBHocKy(string idhocsinh,decimal namhoc,string hocky)
@@ -120,6 +123,7 @@ namespace QuanLyHocSinh_Nhom15
                 return 0;
             }
             diemtb = diemtb / i;
+            db.Close();
             return diemtb;
 
 

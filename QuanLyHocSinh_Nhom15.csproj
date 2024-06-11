@@ -75,11 +75,11 @@
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\ChiTietBangDiem.cs" />
-    <Compile Include="Forms\Error.cs">
+    <Compile Include="Forms\ThongBaoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Error.Designer.cs">
-      <DependentUpon>Error.cs</DependentUpon>
+    <Compile Include="Forms\ThongBaoForm.Designer.cs">
+      <DependentUpon>ThongBaoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\GiaoVien.cs" />
     <Compile Include="Forms\GiaoVienForm.cs">
@@ -135,8 +135,8 @@
     <EmbeddedResource Include="Forms\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Error.resx">
-      <DependentUpon>Error.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ThongBaoForm.resx">
+      <DependentUpon>ThongBaoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GiaoVienForm.resx">
       <DependentUpon>GiaoVienForm.cs</DependentUpon>
@@ -225,7 +225,39 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\AppIcon.ico" />
+    <Content Include="Resources\ExcelExportIcon.png" />
+    <Content Include="Resources\SettingIcon.png" />
+    <Content Include="Resources\SuccessIcon.png" />
     <None Include="Resources\CursorIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

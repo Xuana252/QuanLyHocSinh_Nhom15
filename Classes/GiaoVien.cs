@@ -18,6 +18,15 @@ namespace QuanLyHocSinh_Nhom15
         public string idMonhoc;
         public string GioiTinh;
 
+        //Các thuộc tính dùng để chỉnh sửa
+        public string idGiaoVienSua;
+        public string hoTenSua;
+        public string ngaySinhSua;
+        public string diaChiSua;
+        public string monHocSua;
+        public string gioiTinhSua;
+
+        public bool flagSua;
         public static GiaoVien GetInstance()
         {
             if (_instance == null)
@@ -45,6 +54,7 @@ namespace QuanLyHocSinh_Nhom15
                 id = db.reader.GetString(0);
             }
             db.reader.Close();
+            db.Close();
             return id;
         }
         //Hàm thêm giáo viên 
@@ -76,9 +86,9 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Xảy ra lỗi trong quá trình thêm giáo viên mới:\n"+ex.Message);
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi trong quá trình thêm giáo viên mới:\n"+ex.Message);
             }
-
+            db.Close();
         }
         //Hàm lấy danh sách giáo viên
         public List<ListViewItem> LayDanhSach()
@@ -117,8 +127,42 @@ namespace QuanLyHocSinh_Nhom15
 
             }
             db.reader.Close();
+            db.Close();
             return itemList;
         }
 
+        //Hàm cập nhật thông tin giáo viên
+        public void ChinhSuaGiaoVien(string idGiaoVien, string hoTen, string ngaySinh, string diaChi, string monHoc, string gioiTinh)
+        {
+            SQLConnect db = SQLConnect.GetInstance();
+            db.Open();
+            db.sqlCmd.CommandType = CommandType.Text;
+
+            db.sqlCmd.CommandText = "SET DATEFORMAT DMY; " +
+                       "DECLARE @idMonHoc CHAR(2);" +
+                       "SELECT @idMonHoc = idMonHoc FROM MONHOC WHERE TenMonHoc = @monHoc;" +
+                       "UPDATE GIAOVIEN SET idMonHoc = @monHoc, HoTen = @hoTen, NgaySinh = @ngaySinh, DiaChi = @diaChi, GioiTinh = @gioiTinh WHERE idGiaoVien=@idGiaoVien";
+
+
+            db.sqlCmd.Parameters.AddWithValue("@monHoc", monHoc);
+            db.sqlCmd.Parameters.AddWithValue("@idGiaoVien", idGiaoVien);
+            db.sqlCmd.Parameters.AddWithValue("@hoTen", hoTen);
+            db.sqlCmd.Parameters.AddWithValue("@ngaySinh", ngaySinh);
+            db.sqlCmd.Parameters.AddWithValue("@diaChi", diaChi);
+            db.sqlCmd.Parameters.AddWithValue("@gioiTinh", gioiTinh);
+
+
+            db.sqlCmd.Connection = db.sqlCon;
+
+            try
+            {
+                db.sqlCmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi trong quá trình thêm giáo viên mới:\n" + ex.Message);
+            }
+            db.Close();
+        }
     }
 }

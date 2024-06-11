@@ -23,6 +23,14 @@ namespace QuanLyHocSinh_Nhom15
         public string vaiTro;
         public string gioiTinh;
         public string diaChi;
+
+        //các thuộc tính dùng để chỉnh sửa
+        public string tenTaiKhoanSua;
+        public string matKhauSua;
+        public string vaiTroSua;
+
+        public bool flagSua=false;
+
         public static TaiKhoan GetInstance()
         {
             if(_instance == null )
@@ -67,6 +75,7 @@ namespace QuanLyHocSinh_Nhom15
 
             }
             db.reader.Close();
+            db.Close();
             return itemList;
         }
 
@@ -97,12 +106,13 @@ namespace QuanLyHocSinh_Nhom15
             try
             {
                 db.sqlCmd.ExecuteNonQuery();
+                ThongBaoForm.GetInstance().Inform("Đăng kí tài khoản thành công");
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Xảy ra lỗi khi tạo tài khoản:\n"+ex.Message);
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi khi tạo tài khoản:\n"+ex.Message);
             }
-
+            db.Close() ;
         }
 
         //Hàm kiểm tra tài khoản tồn tài trong hệ thống
@@ -126,13 +136,16 @@ namespace QuanLyHocSinh_Nhom15
             {
                 //cập nhật thông tin tài khoản dựa vào kết quả trả về
                 db.reader.Close();
+                db.Close();
                 return true;
             }
             else//nếu thất bại
             {
                 db.reader.Close();
+                db.Close();
                 return false;
             }
+           
         }
 
         //Hàm kiểm tra đăng nhập
@@ -169,14 +182,48 @@ namespace QuanLyHocSinh_Nhom15
                 user.gioiTinh = db.reader.GetString(10);
                 user.diaChi = db.reader.GetString(11);
                 db.reader.Close();
+                db.Close();
                 return true;
             }
             else//nếu thất bại
             {
                 db.reader.Close();
+                db.Close();
                 return false;
             }
         }
 
+        //Hàm chỉnh sửa thông tin tài khoản
+        public void ChinhSuaTaiKhoan(string idGiaoVien,string tenTaiKhoan,string matKhau,string vaiTro)
+        {
+            SQLConnect db = SQLConnect.GetInstance();
+            db.Open();
+            db.sqlCmd.CommandType = CommandType.Text;
+
+
+            db.sqlCmd.CommandText = "DECLARE @idVaiTro CHAR(2), @idTaiKhoan CHAR(5);" +
+                       "SELECT @idVaiTro = idVaiTro FROM VAITRO WHERE TenVaiTro = @vaiTro;" +
+                       "UPDATE TAIKHOAN SET TenTaiKhoan = @tenTaiKhoan,MatKhau = @password, idVaiTro = @idVaiTro WHERE idGiaoVien = @idGiaoVien";
+
+
+            db.sqlCmd.Parameters.AddWithValue("@idGiaoVien", idGiaoVien);
+            db.sqlCmd.Parameters.AddWithValue("@vaiTro", vaiTro);
+            db.sqlCmd.Parameters.AddWithValue("@password", matKhau);
+            db.sqlCmd.Parameters.AddWithValue("@tenTaiKhoan", tenTaiKhoan);
+
+
+            db.sqlCmd.Connection = db.sqlCon;
+
+            try
+            {
+                db.sqlCmd.ExecuteNonQuery();
+                ThongBaoForm.GetInstance().Inform("Chỉnh sửa tài khoản thành công");
+            }
+            catch (Exception ex)
+            {
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi khi tạo tài khoản:\n" + ex.Message);
+            }
+            db.Close();
+        }
     }
 }

@@ -26,63 +26,43 @@ namespace QuanLyHocSinh_Nhom15
         }
 
 
-
-
-
-        private void MonHocForm_Shown(object sender, EventArgs e)
+        private void MonHocForm_VisibleChanged(object sender, EventArgs e)
         {
-            SQLConnect db = SQLConnect.GetInstance();
-            db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
-            db.sqlCmd.CommandText = "SELECT * FROM MONHOC WHERE idMonHoc <> 'NO'";
-
-            db.sqlCmd.Connection = db.sqlCon;
-
-            db.reader = db.sqlCmd.ExecuteReader();
-
             MonListView1.Items.Clear();
-
-            while (db.reader.Read())
+            foreach (ListViewItem item in MonHoc.GetInstance().LayDanhSach())
             {
-                string idMonHoc = db.reader.GetString(0);
-                string tenMonHoc = db.reader.GetString(1);
+                ListViewItem monHoc = new ListViewItem((MonListView1.Items.Count+1).ToString());
+                monHoc.SubItems.Add(item.Text);
+                monHoc.SubItems.Add(item.SubItems[1].Text);
 
-                if (idMonHoc == "00")
-                    continue;
-                ListViewItem item = new ListViewItem();
-                item.Text = (MonListView1.Items.Count + 1).ToString();
-                item.SubItems.Add(idMonHoc);
-                item.SubItems.Add(tenMonHoc);
-
-                MonListView1.Items.Add(item);
+                MonListView1.Items.Add(monHoc);
             }
-            db.reader.Close();
         }
-       
+
 
         private void ThemSuaMonButton_Click(object sender, EventArgs e)
         {
             if (IDMonTextBox.Text == "" || TenMonTextBox.Text == "")
             {
-                Error.GetInstance().Show("Vui lòng nhập đầy đủ thông tin");
+                ThongBaoForm.GetInstance().LogError("Vui lòng nhập đầy đủ thông tin");
                 return;
             }    
             if(MonListView1.SelectedItems.Count > 0)
             {
                 MonHoc.GetInstance().SuaMonHoc(IDMonTextBox.Text,TenMonTextBox.Text);
-                MonHocForm_Shown(sender,e);
+                MonHocForm_VisibleChanged(sender,e);
             }
             else
             {
                 MonHoc.GetInstance().ThemMonHoc(IDMonTextBox.Text, TenMonTextBox.Text);
-                MonHocForm_Shown(sender, e);
+                MonHocForm_VisibleChanged(sender, e);
             }
         }
 
         private void XoaMonButton_Click(object sender, EventArgs e)
         {
             MonHoc.GetInstance().XoaMonHoc(MonListView1.SelectedItems);
-            MonHocForm_Shown(sender, e);
+            MonHocForm_VisibleChanged(sender, e);
         }
 
         private void MonListView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
@@ -134,6 +114,8 @@ namespace QuanLyHocSinh_Nhom15
             }
 
         }
+
+
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------
     }

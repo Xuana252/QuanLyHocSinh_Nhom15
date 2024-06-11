@@ -81,11 +81,12 @@ namespace QuanLyHocSinh_Nhom15
             this.TabTongKet = new MetroFramework.Controls.MetroTabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.TongKetNamHoc = new System.Windows.Forms.NumericUpDown();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TongKetMonHocKiGroupBox = new System.Windows.Forms.GroupBox();
             this.HocKi2RadioButton = new System.Windows.Forms.RadioButton();
             this.HocKi1RadioButton = new System.Windows.Forms.RadioButton();
             this.TongKetMonHocCaHocKiGroupBox = new System.Windows.Forms.GroupBox();
             this.CaHocKiRadioButton = new System.Windows.Forms.RadioButton();
+            this.MonHocRadioButton = new System.Windows.Forms.RadioButton();
             this.TongKetXem = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.TongKetDiemDatNumericBox = new System.Windows.Forms.NumericUpDown();
@@ -184,7 +185,10 @@ namespace QuanLyHocSinh_Nhom15
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.MonHocRadioButton = new System.Windows.Forms.RadioButton();
+            this.BaoCaoMonXuatButton = new System.Windows.Forms.Button();
+            this.TongKetXuatButton = new System.Windows.Forms.Button();
+            this.DanhSachLopXuatButton = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.AppTabControl.SuspendLayout();
@@ -198,7 +202,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TabTongKet.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TongKetNamHoc)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.TongKetMonHocKiGroupBox.SuspendLayout();
             this.TongKetMonHocCaHocKiGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TongKetDiemDatNumericBox)).BeginInit();
             this.panel4.SuspendLayout();
@@ -221,6 +225,7 @@ namespace QuanLyHocSinh_Nhom15
             this.metroPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroPanel2.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -329,7 +334,7 @@ namespace QuanLyHocSinh_Nhom15
             this.AppTabControl.Location = new System.Drawing.Point(1, 48);
             this.AppTabControl.Multiline = true;
             this.AppTabControl.Name = "AppTabControl";
-            this.AppTabControl.SelectedIndex = 2;
+            this.AppTabControl.SelectedIndex = 5;
             this.AppTabControl.Size = new System.Drawing.Size(1079, 606);
             this.AppTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AppTabControl.Style = MetroFramework.MetroColorStyle.Teal;
@@ -342,11 +347,7 @@ namespace QuanLyHocSinh_Nhom15
             // 
             // TabTraCuu
             // 
-            this.TabTraCuu.Controls.Add(this.metroLabel6);
-            this.TabTraCuu.Controls.Add(this.TraCuuNamHoc);
-            this.TabTraCuu.Controls.Add(this.TraCuuTimKiemButton);
-            this.TabTraCuu.Controls.Add(this.TraCuuTextBox);
-            this.TabTraCuu.Controls.Add(this.metroLabel7);
+            this.TabTraCuu.Controls.Add(this.panel11);
             this.TabTraCuu.Controls.Add(this.TraCuuListView);
             this.TabTraCuu.Controls.Add(this.panel5);
             this.TabTraCuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -365,17 +366,19 @@ namespace QuanLyHocSinh_Nhom15
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
+            this.metroLabel6.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.Location = new System.Drawing.Point(441, 85);
+            this.metroLabel6.Location = new System.Drawing.Point(430, 20);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(88, 25);
             this.metroLabel6.TabIndex = 16;
             this.metroLabel6.Text = "Năm học:";
+            this.metroLabel6.UseCustomBackColor = true;
             // 
             // TraCuuNamHoc
             // 
-            this.TraCuuNamHoc.Location = new System.Drawing.Point(546, 85);
+            this.TraCuuNamHoc.Location = new System.Drawing.Point(535, 20);
             this.TraCuuNamHoc.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -402,7 +405,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TraCuuTimKiemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TraCuuTimKiemButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TraCuuTimKiemButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.search;
-            this.TraCuuTimKiemButton.Location = new System.Drawing.Point(788, 80);
+            this.TraCuuTimKiemButton.Location = new System.Drawing.Point(777, 15);
             this.TraCuuTimKiemButton.Name = "TraCuuTimKiemButton";
             this.TraCuuTimKiemButton.Size = new System.Drawing.Size(132, 35);
             this.TraCuuTimKiemButton.TabIndex = 14;
@@ -427,7 +430,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TraCuuTextBox.CustomButton.UseSelectable = true;
             this.TraCuuTextBox.CustomButton.Visible = false;
             this.TraCuuTextBox.Lines = new string[0];
-            this.TraCuuTextBox.Location = new System.Drawing.Point(132, 87);
+            this.TraCuuTextBox.Location = new System.Drawing.Point(121, 22);
             this.TraCuuTextBox.MaxLength = 32767;
             this.TraCuuTextBox.Name = "TraCuuTextBox";
             this.TraCuuTextBox.PasswordChar = '\0';
@@ -445,13 +448,15 @@ namespace QuanLyHocSinh_Nhom15
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
+            this.metroLabel7.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel7.Location = new System.Drawing.Point(57, 85);
+            this.metroLabel7.Location = new System.Drawing.Point(46, 20);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(66, 25);
             this.metroLabel7.TabIndex = 10;
             this.metroLabel7.Text = "Họ tên";
+            this.metroLabel7.UseCustomBackColor = true;
             // 
             // TraCuuListView
             // 
@@ -847,6 +852,7 @@ namespace QuanLyHocSinh_Nhom15
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Teal;
+            this.panel3.Controls.Add(this.BaoCaoMonXuatButton);
             this.panel3.Controls.Add(this.QuanLyMonHocButton);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(3, 3);
@@ -863,9 +869,9 @@ namespace QuanLyHocSinh_Nhom15
             this.QuanLyMonHocButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.QuanLyMonHocButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuanLyMonHocButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.DatabaseIcon;
-            this.QuanLyMonHocButton.Location = new System.Drawing.Point(845, 12);
+            this.QuanLyMonHocButton.Location = new System.Drawing.Point(714, 12);
             this.QuanLyMonHocButton.Name = "QuanLyMonHocButton";
-            this.QuanLyMonHocButton.Size = new System.Drawing.Size(202, 33);
+            this.QuanLyMonHocButton.Size = new System.Drawing.Size(160, 33);
             this.QuanLyMonHocButton.TabIndex = 25;
             this.QuanLyMonHocButton.Text = "Quản lí môn học";
             this.QuanLyMonHocButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -911,7 +917,7 @@ namespace QuanLyHocSinh_Nhom15
             this.panel7.BackColor = System.Drawing.Color.LightCyan;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.TongKetNamHoc);
-            this.panel7.Controls.Add(this.groupBox2);
+            this.panel7.Controls.Add(this.TongKetMonHocKiGroupBox);
             this.panel7.Controls.Add(this.TongKetMonHocCaHocKiGroupBox);
             this.panel7.Controls.Add(this.TongKetXem);
             this.panel7.Controls.Add(this.label15);
@@ -950,19 +956,19 @@ namespace QuanLyHocSinh_Nhom15
             0,
             0});
             // 
-            // groupBox2
+            // TongKetMonHocKiGroupBox
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.HocKi2RadioButton);
-            this.groupBox2.Controls.Add(this.HocKi1RadioButton);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.Teal;
-            this.groupBox2.Location = new System.Drawing.Point(8, 91);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 85);
-            this.groupBox2.TabIndex = 30;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Học kì:";
+            this.TongKetMonHocKiGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.TongKetMonHocKiGroupBox.Controls.Add(this.HocKi2RadioButton);
+            this.TongKetMonHocKiGroupBox.Controls.Add(this.HocKi1RadioButton);
+            this.TongKetMonHocKiGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TongKetMonHocKiGroupBox.ForeColor = System.Drawing.Color.Teal;
+            this.TongKetMonHocKiGroupBox.Location = new System.Drawing.Point(8, 91);
+            this.TongKetMonHocKiGroupBox.Name = "TongKetMonHocKiGroupBox";
+            this.TongKetMonHocKiGroupBox.Size = new System.Drawing.Size(200, 85);
+            this.TongKetMonHocKiGroupBox.TabIndex = 30;
+            this.TongKetMonHocKiGroupBox.TabStop = false;
+            this.TongKetMonHocKiGroupBox.Text = "Học kì:";
             // 
             // HocKi2RadioButton
             // 
@@ -1010,8 +1016,24 @@ namespace QuanLyHocSinh_Nhom15
             this.CaHocKiRadioButton.Name = "CaHocKiRadioButton";
             this.CaHocKiRadioButton.Size = new System.Drawing.Size(89, 20);
             this.CaHocKiRadioButton.TabIndex = 1;
+            this.CaHocKiRadioButton.Tag = "";
             this.CaHocKiRadioButton.Text = "Cả học kì";
             this.CaHocKiRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // MonHocRadioButton
+            // 
+            this.MonHocRadioButton.AutoSize = true;
+            this.MonHocRadioButton.Checked = true;
+            this.MonHocRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MonHocRadioButton.Location = new System.Drawing.Point(10, 26);
+            this.MonHocRadioButton.Name = "MonHocRadioButton";
+            this.MonHocRadioButton.Size = new System.Drawing.Size(83, 20);
+            this.MonHocRadioButton.TabIndex = 0;
+            this.MonHocRadioButton.TabStop = true;
+            this.MonHocRadioButton.Tag = "";
+            this.MonHocRadioButton.Text = "Môn học";
+            this.MonHocRadioButton.UseVisualStyleBackColor = true;
+            this.MonHocRadioButton.CheckedChanged += new System.EventHandler(this.MonHocRadioButton_CheckedChanged);
             // 
             // TongKetXem
             // 
@@ -1045,6 +1067,7 @@ namespace QuanLyHocSinh_Nhom15
             // TongKetDiemDatNumericBox
             // 
             this.TongKetDiemDatNumericBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TongKetDiemDatNumericBox.DecimalPlaces = 2;
             this.TongKetDiemDatNumericBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TongKetDiemDatNumericBox.ForeColor = System.Drawing.SystemColors.MenuText;
             this.TongKetDiemDatNumericBox.Location = new System.Drawing.Point(51, 466);
@@ -1061,6 +1084,7 @@ namespace QuanLyHocSinh_Nhom15
             0,
             0,
             0});
+            this.TongKetDiemDatNumericBox.ValueChanged += new System.EventHandler(this.TongKetDiemDatNumericBox_ValueChanged);
             // 
             // metroLabel14
             // 
@@ -1160,6 +1184,7 @@ namespace QuanLyHocSinh_Nhom15
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.Teal;
+            this.panel4.Controls.Add(this.TongKetXuatButton);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
@@ -1886,11 +1911,12 @@ namespace QuanLyHocSinh_Nhom15
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.Teal;
+            this.panel6.Controls.Add(this.DanhSachLopXuatButton);
             this.panel6.Controls.Add(this.DanhSachLopQuanLiButton);
             this.panel6.Controls.Add(this.label5);
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1071, 55);
+            this.panel6.Size = new System.Drawing.Size(1066, 55);
             this.panel6.TabIndex = 10;
             // 
             // DanhSachLopQuanLiButton
@@ -1902,7 +1928,7 @@ namespace QuanLyHocSinh_Nhom15
             this.DanhSachLopQuanLiButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DanhSachLopQuanLiButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DanhSachLopQuanLiButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.DatabaseIcon;
-            this.DanhSachLopQuanLiButton.Location = new System.Drawing.Point(904, 12);
+            this.DanhSachLopQuanLiButton.Location = new System.Drawing.Point(733, 12);
             this.DanhSachLopQuanLiButton.Name = "DanhSachLopQuanLiButton";
             this.DanhSachLopQuanLiButton.Size = new System.Drawing.Size(150, 33);
             this.DanhSachLopQuanLiButton.TabIndex = 27;
@@ -2339,19 +2365,78 @@ namespace QuanLyHocSinh_Nhom15
             this.label1.Size = new System.Drawing.Size(191, 24);
             this.label1.TabIndex = 0;
             // 
-            // MonHocRadioButton
+            // BaoCaoMonXuatButton
             // 
-            this.MonHocRadioButton.AutoSize = true;
-            this.MonHocRadioButton.Checked = true;
-            this.MonHocRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MonHocRadioButton.Location = new System.Drawing.Point(10, 26);
-            this.MonHocRadioButton.Name = "MonHocRadioButton";
-            this.MonHocRadioButton.Size = new System.Drawing.Size(83, 20);
-            this.MonHocRadioButton.TabIndex = 0;
-            this.MonHocRadioButton.TabStop = true;
-            this.MonHocRadioButton.Text = "Môn học";
-            this.MonHocRadioButton.UseVisualStyleBackColor = true;
-            this.MonHocRadioButton.CheckedChanged += new System.EventHandler(this.MonHocRadioButton_CheckedChanged);
+            this.BaoCaoMonXuatButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BaoCaoMonXuatButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BaoCaoMonXuatButton.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.BaoCaoMonXuatButton.FlatAppearance.BorderSize = 0;
+            this.BaoCaoMonXuatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BaoCaoMonXuatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BaoCaoMonXuatButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ExcelExportIcon;
+            this.BaoCaoMonXuatButton.Location = new System.Drawing.Point(892, 12);
+            this.BaoCaoMonXuatButton.Name = "BaoCaoMonXuatButton";
+            this.BaoCaoMonXuatButton.Size = new System.Drawing.Size(158, 33);
+            this.BaoCaoMonXuatButton.TabIndex = 26;
+            this.BaoCaoMonXuatButton.Text = "Xuất file Excel";
+            this.BaoCaoMonXuatButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BaoCaoMonXuatButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BaoCaoMonXuatButton.UseVisualStyleBackColor = false;
+            this.BaoCaoMonXuatButton.Click += new System.EventHandler(this.BaoCaoMonXuatButton_Click);
+            // 
+            // TongKetXuatButton
+            // 
+            this.TongKetXuatButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TongKetXuatButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TongKetXuatButton.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.TongKetXuatButton.FlatAppearance.BorderSize = 0;
+            this.TongKetXuatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TongKetXuatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TongKetXuatButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ExcelExportIcon;
+            this.TongKetXuatButton.Location = new System.Drawing.Point(887, 12);
+            this.TongKetXuatButton.Name = "TongKetXuatButton";
+            this.TongKetXuatButton.Size = new System.Drawing.Size(158, 33);
+            this.TongKetXuatButton.TabIndex = 27;
+            this.TongKetXuatButton.Text = "Xuất file Excel";
+            this.TongKetXuatButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TongKetXuatButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.TongKetXuatButton.UseVisualStyleBackColor = false;
+            this.TongKetXuatButton.Click += new System.EventHandler(this.TongKetXuatButton_Click);
+            // 
+            // DanhSachLopXuatButton
+            // 
+            this.DanhSachLopXuatButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DanhSachLopXuatButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DanhSachLopXuatButton.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.DanhSachLopXuatButton.FlatAppearance.BorderSize = 0;
+            this.DanhSachLopXuatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DanhSachLopXuatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhSachLopXuatButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ExcelExportIcon;
+            this.DanhSachLopXuatButton.Location = new System.Drawing.Point(889, 12);
+            this.DanhSachLopXuatButton.Name = "DanhSachLopXuatButton";
+            this.DanhSachLopXuatButton.Size = new System.Drawing.Size(158, 33);
+            this.DanhSachLopXuatButton.TabIndex = 28;
+            this.DanhSachLopXuatButton.Text = "Xuất file Excel";
+            this.DanhSachLopXuatButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DanhSachLopXuatButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.DanhSachLopXuatButton.UseVisualStyleBackColor = false;
+            // 
+            // panel11
+            // 
+            this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel11.BackColor = System.Drawing.Color.LightCyan;
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.metroLabel6);
+            this.panel11.Controls.Add(this.TraCuuNamHoc);
+            this.panel11.Controls.Add(this.TraCuuTimKiemButton);
+            this.panel11.Controls.Add(this.TraCuuTextBox);
+            this.panel11.Controls.Add(this.metroLabel7);
+            this.panel11.ForeColor = System.Drawing.Color.Teal;
+            this.panel11.Location = new System.Drawing.Point(3, 65);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(1066, 59);
+            this.panel11.TabIndex = 17;
             // 
             // App
             // 
@@ -2377,7 +2462,6 @@ namespace QuanLyHocSinh_Nhom15
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.AppTabControl.ResumeLayout(false);
             this.TabTraCuu.ResumeLayout(false);
-            this.TabTraCuu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TraCuuNamHoc)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -2391,8 +2475,8 @@ namespace QuanLyHocSinh_Nhom15
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TongKetNamHoc)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.TongKetMonHocKiGroupBox.ResumeLayout(false);
+            this.TongKetMonHocKiGroupBox.PerformLayout();
             this.TongKetMonHocCaHocKiGroupBox.ResumeLayout(false);
             this.TongKetMonHocCaHocKiGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TongKetDiemDatNumericBox)).EndInit();
@@ -2424,6 +2508,8 @@ namespace QuanLyHocSinh_Nhom15
             this.metroPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroPanel2.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2562,7 +2648,7 @@ namespace QuanLyHocSinh_Nhom15
         private System.Windows.Forms.GroupBox TongKetMonHocCaHocKiGroupBox;
         private System.Windows.Forms.RadioButton CaHocKiRadioButton;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox TongKetMonHocKiGroupBox;
         private System.Windows.Forms.RadioButton HocKi2RadioButton;
         private System.Windows.Forms.RadioButton HocKi1RadioButton;
         private System.Windows.Forms.Panel panel8;
@@ -2583,6 +2669,10 @@ namespace QuanLyHocSinh_Nhom15
         private SplitContainer splitContainer1;
         private NumericUpDown TongKetNamHoc;
         private RadioButton MonHocRadioButton;
+        private Button BaoCaoMonXuatButton;
+        private Button TongKetXuatButton;
+        private Button DanhSachLopXuatButton;
+        private Panel panel11;
     }
 }
 

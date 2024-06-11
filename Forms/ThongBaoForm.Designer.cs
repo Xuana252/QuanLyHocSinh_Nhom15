@@ -1,6 +1,6 @@
 ﻿namespace QuanLyHocSinh_Nhom15
 {
-    partial class Error
+    partial class ThongBaoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.ErrorOKButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.ErrorLabel = new System.Windows.Forms.Label();
+            this.FormLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ErrorOKButton
@@ -62,20 +62,20 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "text will change depends on bugs ";
             // 
-            // ErrorLabel
+            // FormLabel
             // 
-            this.ErrorLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ErrorLabel.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.ErrorIcon;
-            this.ErrorLabel.Location = new System.Drawing.Point(81, 8);
-            this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(134, 40);
-            this.ErrorLabel.TabIndex = 1;
-            this.ErrorLabel.Text = "!!!      !!!";
-            this.ErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FormLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.FormLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.FormLabel.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.SuccessIcon;
+            this.FormLabel.Location = new System.Drawing.Point(81, 8);
+            this.FormLabel.Name = "FormLabel";
+            this.FormLabel.Size = new System.Drawing.Size(134, 40);
+            this.FormLabel.TabIndex = 1;
+            this.FormLabel.Text = "!!!      !!!";
+            this.FormLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Error
+            // ThongBaoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -83,11 +83,11 @@
             this.ClientSize = new System.Drawing.Size(291, 196);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ErrorLabel);
+            this.Controls.Add(this.FormLabel);
             this.Controls.Add(this.ErrorOKButton);
             this.DisplayHeader = false;
             this.Movable = false;
-            this.Name = "Error";
+            this.Name = "ThongBaoForm";
             this.Padding = new System.Windows.Forms.Padding(20, 30, 20, 20);
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
@@ -103,7 +103,7 @@
         #endregion
 
         private System.Windows.Forms.Button ErrorOKButton;
-        private System.Windows.Forms.Label ErrorLabel;
+        private System.Windows.Forms.Label FormLabel;
         private System.Windows.Forms.Label label1;
     }
 }

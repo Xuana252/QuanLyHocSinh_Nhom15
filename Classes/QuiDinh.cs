@@ -42,8 +42,9 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Xảy ra lỗi trong quá trình thay đổi dữ liệu" + ex.Message);
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi trong quá trình thay đổi dữ liệu" + ex.Message);
             }
+            db.Close();
         }
         
         //Hàm thay đổi tuổi tối thiểu
@@ -65,8 +66,9 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Xảy ra lỗi trong quá trình thay đổi dữ liệu" + ex.Message);
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi trong quá trình thay đổi dữ liệu" + ex.Message);
             }
+            db.Close();
         }
 
         //Hàm thay đổi tuổi tối đa
@@ -88,14 +90,33 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Xảy ra lỗi trong quá trình thay đổi dữ liệu" + ex.Message);
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi trong quá trình thay đổi dữ liệu" + ex.Message);
             }
+            db.Close();
         }
 
         //Hàm thay đổi điểm qua môn
         public void ThayDoiDiemQuaMon(decimal DiemQuaMon)
         {
+            SQLConnect db = SQLConnect.GetInstance();
+            db.Open();
+            db.sqlCmd.CommandType = CommandType.Text;
 
+            db.sqlCmd.CommandText = "UPDATE QUIDINH SET DiemQuaMon = @DiemQuaMon;";
+
+            db.sqlCmd.Parameters.AddWithValue("@DiemQuaMon", DiemQuaMon);
+
+            db.sqlCmd.Connection = db.sqlCon;
+
+            try
+            {
+                db.sqlCmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi trong quá trình thay đổi dữ liệu" + ex.Message);
+            }
+            db.Close();
         }
 
         //Hàm Load tuổi qui định
@@ -118,9 +139,10 @@ namespace QuanLyHocSinh_Nhom15
             }
             else
             {
-                Error.GetInstance().Show("Xảy ra lỗi trong quá trình lấy dữ liệu tuổi qui định từ hệ thống\n");
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi trong quá trình lấy dữ liệu tuổi qui định từ hệ thống\n");
             }
             db.reader.Close();
+            db.Close();
         }
 
         //Hàm Load sỉ số tối đa
@@ -142,9 +164,10 @@ namespace QuanLyHocSinh_Nhom15
             }
             else
             {
-                Error.GetInstance().Show("Xảy ra lỗi trong quá trình lấy dữ liệu sỉ số tối đa từ hệ thống\n");
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi trong quá trình lấy dữ liệu sỉ số tối đa từ hệ thống\n");
             }
             db.reader.Close();
+            db.Close();
         }
 
         //Hàm load điểm qua môn 
@@ -166,9 +189,10 @@ namespace QuanLyHocSinh_Nhom15
             }
             else
             {
-                Error.GetInstance().Show("Xảy ra lỗi trong quá trình lấy dữ liệu tuổi qui định từ hệ thống\n");
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi trong quá trình lấy dữ liệu điểm qua môn qui định từ hệ thống\n");
             }
             db.reader.Close();
+            db.Close();
         }
 
     }

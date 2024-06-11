@@ -32,12 +32,14 @@
             this.STTMon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IDMon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TenMon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ThemSuaMonButton = new System.Windows.Forms.Button();
-            this.XoaMonButton = new System.Windows.Forms.Button();
             this.IDMonTextBox = new MetroFramework.Controls.MetroTextBox();
             this.TenMonTextBox = new MetroFramework.Controls.MetroTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.ThemSuaMonButton = new System.Windows.Forms.Button();
+            this.XoaMonButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MonListView1
@@ -52,7 +54,7 @@
             this.MonListView1.FullRowSelect = true;
             this.MonListView1.GridLines = true;
             this.MonListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.MonListView1.Location = new System.Drawing.Point(23, 63);
+            this.MonListView1.Location = new System.Drawing.Point(11, 63);
             this.MonListView1.Name = "MonListView1";
             this.MonListView1.OwnerDraw = true;
             this.MonListView1.Size = new System.Drawing.Size(215, 375);
@@ -82,36 +84,6 @@
             this.TenMon.Text = "Tên môn";
             this.TenMon.Width = 92;
             // 
-            // ThemSuaMonButton
-            // 
-            this.ThemSuaMonButton.BackColor = System.Drawing.Color.Teal;
-            this.ThemSuaMonButton.FlatAppearance.BorderSize = 0;
-            this.ThemSuaMonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ThemSuaMonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThemSuaMonButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.ThemSuaMonButton.Location = new System.Drawing.Point(264, 224);
-            this.ThemSuaMonButton.Name = "ThemSuaMonButton";
-            this.ThemSuaMonButton.Size = new System.Drawing.Size(94, 32);
-            this.ThemSuaMonButton.TabIndex = 3;
-            this.ThemSuaMonButton.Text = "Thêm/Sửa";
-            this.ThemSuaMonButton.UseVisualStyleBackColor = false;
-            this.ThemSuaMonButton.Click += new System.EventHandler(this.ThemSuaMonButton_Click);
-            // 
-            // XoaMonButton
-            // 
-            this.XoaMonButton.BackColor = System.Drawing.Color.Teal;
-            this.XoaMonButton.FlatAppearance.BorderSize = 0;
-            this.XoaMonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.XoaMonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.XoaMonButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.XoaMonButton.Location = new System.Drawing.Point(264, 282);
-            this.XoaMonButton.Name = "XoaMonButton";
-            this.XoaMonButton.Size = new System.Drawing.Size(94, 32);
-            this.XoaMonButton.TabIndex = 4;
-            this.XoaMonButton.Text = "Xóa";
-            this.XoaMonButton.UseVisualStyleBackColor = false;
-            this.XoaMonButton.Click += new System.EventHandler(this.XoaMonButton_Click);
-            // 
             // IDMonTextBox
             // 
             // 
@@ -127,7 +99,7 @@
             this.IDMonTextBox.CustomButton.UseSelectable = true;
             this.IDMonTextBox.CustomButton.Visible = false;
             this.IDMonTextBox.Lines = new string[0];
-            this.IDMonTextBox.Location = new System.Drawing.Point(264, 105);
+            this.IDMonTextBox.Location = new System.Drawing.Point(16, 17);
             this.IDMonTextBox.MaxLength = 32767;
             this.IDMonTextBox.Name = "IDMonTextBox";
             this.IDMonTextBox.PasswordChar = '\0';
@@ -137,7 +109,7 @@
             this.IDMonTextBox.SelectionLength = 0;
             this.IDMonTextBox.SelectionStart = 0;
             this.IDMonTextBox.ShortcutsEnabled = true;
-            this.IDMonTextBox.Size = new System.Drawing.Size(94, 23);
+            this.IDMonTextBox.Size = new System.Drawing.Size(107, 23);
             this.IDMonTextBox.TabIndex = 5;
             this.IDMonTextBox.UseSelectable = true;
             this.IDMonTextBox.WaterMark = "ID";
@@ -159,7 +131,7 @@
             this.TenMonTextBox.CustomButton.UseSelectable = true;
             this.TenMonTextBox.CustomButton.Visible = false;
             this.TenMonTextBox.Lines = new string[0];
-            this.TenMonTextBox.Location = new System.Drawing.Point(264, 159);
+            this.TenMonTextBox.Location = new System.Drawing.Point(16, 61);
             this.TenMonTextBox.MaxLength = 32767;
             this.TenMonTextBox.Name = "TenMonTextBox";
             this.TenMonTextBox.PasswordChar = '\0';
@@ -169,7 +141,7 @@
             this.TenMonTextBox.SelectionLength = 0;
             this.TenMonTextBox.SelectionStart = 0;
             this.TenMonTextBox.ShortcutsEnabled = true;
-            this.TenMonTextBox.Size = new System.Drawing.Size(94, 23);
+            this.TenMonTextBox.Size = new System.Drawing.Size(107, 23);
             this.TenMonTextBox.TabIndex = 6;
             this.TenMonTextBox.UseSelectable = true;
             this.TenMonTextBox.WaterMark = "Tên môn";
@@ -202,6 +174,53 @@
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // ThemSuaMonButton
+            // 
+            this.ThemSuaMonButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ThemSuaMonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ThemSuaMonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThemSuaMonButton.ForeColor = System.Drawing.Color.Teal;
+            this.ThemSuaMonButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.AddIcon;
+            this.ThemSuaMonButton.Location = new System.Drawing.Point(3, 112);
+            this.ThemSuaMonButton.Name = "ThemSuaMonButton";
+            this.ThemSuaMonButton.Size = new System.Drawing.Size(133, 35);
+            this.ThemSuaMonButton.TabIndex = 13;
+            this.ThemSuaMonButton.Text = "Thêm/Sửa";
+            this.ThemSuaMonButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ThemSuaMonButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ThemSuaMonButton.UseVisualStyleBackColor = false;
+            this.ThemSuaMonButton.Click += new System.EventHandler(this.ThemSuaMonButton_Click);
+            // 
+            // XoaMonButton
+            // 
+            this.XoaMonButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.XoaMonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.XoaMonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.XoaMonButton.ForeColor = System.Drawing.Color.Teal;
+            this.XoaMonButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.DeleteIcon;
+            this.XoaMonButton.Location = new System.Drawing.Point(3, 164);
+            this.XoaMonButton.Name = "XoaMonButton";
+            this.XoaMonButton.Size = new System.Drawing.Size(133, 35);
+            this.XoaMonButton.TabIndex = 14;
+            this.XoaMonButton.Text = "Xóa lớp";
+            this.XoaMonButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.XoaMonButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.XoaMonButton.UseVisualStyleBackColor = false;
+            this.XoaMonButton.Click += new System.EventHandler(this.XoaMonButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.MintCream;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.IDMonTextBox);
+            this.panel1.Controls.Add(this.XoaMonButton);
+            this.panel1.Controls.Add(this.TenMonTextBox);
+            this.panel1.Controls.Add(this.ThemSuaMonButton);
+            this.panel1.Location = new System.Drawing.Point(241, 63);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(141, 375);
+            this.panel1.TabIndex = 15;
+            // 
             // MonHocForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,12 +228,9 @@
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(391, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.TenMonTextBox);
-            this.Controls.Add(this.IDMonTextBox);
-            this.Controls.Add(this.XoaMonButton);
-            this.Controls.Add(this.ThemSuaMonButton);
             this.Controls.Add(this.MonListView1);
             this.DisplayHeader = false;
             this.MaximizeBox = false;
@@ -227,7 +243,8 @@
             this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "MonHocForm";
-            this.Shown += new System.EventHandler(this.MonHocForm_Shown);
+            this.VisibleChanged += new System.EventHandler(this.MonHocForm_VisibleChanged);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,11 +256,12 @@
         private System.Windows.Forms.ColumnHeader STTMon;
         private System.Windows.Forms.ColumnHeader IDMon;
         private System.Windows.Forms.ColumnHeader TenMon;
-        private System.Windows.Forms.Button ThemSuaMonButton;
-        private System.Windows.Forms.Button XoaMonButton;
         private MetroFramework.Controls.MetroTextBox IDMonTextBox;
         private MetroFramework.Controls.MetroTextBox TenMonTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.Button ThemSuaMonButton;
+        private System.Windows.Forms.Button XoaMonButton;
+        private System.Windows.Forms.Panel panel1;
     }
 }

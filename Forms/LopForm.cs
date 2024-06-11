@@ -45,7 +45,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             else
             {
-                Error.GetInstance().Show("Vui lòng điền đầy đủ thông tin.");
+                ThongBaoForm.GetInstance().LogError("Vui lòng điền đầy đủ thông tin.");
             }
             LoadForm();
         }

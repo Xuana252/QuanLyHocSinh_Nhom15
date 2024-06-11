@@ -12,13 +12,22 @@ namespace QuanLyHocSinh_Nhom15
 {
     sealed class BangDiem
     {
+        //các thuộc tính chung
         private static BangDiem _instance;
         public string idBangDiem;
         public string idLop;
+        public string tenLop;
         public string idMonHoc;
+        public string tenMonHoc;
         public int HocKy;
         public int NamHoc;
-        
+
+        //các thuộc tính phù hợp cho tab Tổng kết
+        public string loaiTongKet;
+        public string hocKiTongKet;
+        public decimal namTongKet;
+        public string tenMonTongKet;
+
 
         public static BangDiem GetInstance()
         {
@@ -51,15 +60,14 @@ namespace QuanLyHocSinh_Nhom15
             db.sqlCmd.Connection = db.sqlCon;
 
             db.reader = db.sqlCmd.ExecuteReader();
-
             int stt = 1;
             while (db.reader.Read())
             {
-                string id=db.reader.GetString(0);
+                string id = db.reader.GetString(0);
                 string hoten = db.reader.GetString(1);
-                decimal diem15p = !db.reader.IsDBNull(2) ? db.reader.GetDecimal(2) : 0 ;
-                decimal diem1t = !db.reader.IsDBNull(3) ? db.reader.GetDecimal(3) : 0 ;
-                decimal diemtb = !db.reader.IsDBNull(4) ? db.reader.GetDecimal(4) : 0 ;
+                decimal diem15p = !db.reader.IsDBNull(2) ? db.reader.GetDecimal(2) : 0;
+                decimal diem1t = !db.reader.IsDBNull(3) ? db.reader.GetDecimal(3) : 0;
+                decimal diemtb = !db.reader.IsDBNull(4) ? db.reader.GetDecimal(4) : 0;
 
 
                 ListViewItem item = new ListViewItem();
@@ -69,11 +77,12 @@ namespace QuanLyHocSinh_Nhom15
                 item.SubItems.Add(diem1t.ToString());
                 item.SubItems.Add(diemtb.ToString());
                 item.SubItems.Add(id);
-                
+
                 itemList.Add(item);
                 stt++;
             }
             db.reader.Close();
+            db.Close();
             return itemList;
         }
 
@@ -98,12 +107,13 @@ namespace QuanLyHocSinh_Nhom15
             try
             {
                 db.sqlCmd.ExecuteNonQuery();
+                ThongBaoForm.GetInstance().Inform("Xóa bảng điểm thành công");
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message);
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message);
             }
-            
+            db.Close();
         }
 
         public void ThemBangDiem(string tenlop, string tenmon, string hocky, decimal namhoc)
@@ -133,8 +143,9 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Bảng điểm đã tồn tại");
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message);
             }
+            db.Close();
         }
 
         public string getIdBangDiem(string tenlop, string tenmon, string hocky, decimal namhoc)
@@ -164,6 +175,7 @@ namespace QuanLyHocSinh_Nhom15
                 id=db.reader.GetString(0);
             }
             db.reader.Close();
+            db.Close();
             return id;
         }
 

@@ -44,9 +44,9 @@
             this.ExitButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.KhoiGroupBox = new System.Windows.Forms.GroupBox();
+            this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
             this.NuRadioButton = new MetroFramework.Controls.MetroRadioButton();
             this.NamRadioButton = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.DanhSachLopHocNumericUpDown1)).BeginInit();
             this.panel1.SuspendLayout();
             this.KhoiGroupBox.SuspendLayout();
@@ -267,6 +267,22 @@
             this.KhoiGroupBox.TabStop = false;
             this.KhoiGroupBox.Text = "Khối:";
             // 
+            // metroRadioButton1
+            // 
+            this.metroRadioButton1.BackColor = System.Drawing.Color.Transparent;
+            this.metroRadioButton1.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
+            this.metroRadioButton1.Location = new System.Drawing.Point(6, 71);
+            this.metroRadioButton1.Name = "metroRadioButton1";
+            this.metroRadioButton1.Size = new System.Drawing.Size(71, 30);
+            this.metroRadioButton1.Style = MetroFramework.MetroColorStyle.Teal;
+            this.metroRadioButton1.TabIndex = 18;
+            this.metroRadioButton1.Tag = "";
+            this.metroRadioButton1.Text = "12";
+            this.metroRadioButton1.UseCustomBackColor = true;
+            this.metroRadioButton1.UseCustomForeColor = true;
+            this.metroRadioButton1.UseSelectable = true;
+            this.metroRadioButton1.UseStyleColors = true;
+            // 
             // NuRadioButton
             // 
             this.NuRadioButton.BackColor = System.Drawing.Color.Transparent;
@@ -300,22 +316,6 @@
             this.NamRadioButton.UseCustomForeColor = true;
             this.NamRadioButton.UseSelectable = true;
             this.NamRadioButton.UseStyleColors = true;
-            // 
-            // metroRadioButton1
-            // 
-            this.metroRadioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.metroRadioButton1.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
-            this.metroRadioButton1.Location = new System.Drawing.Point(6, 71);
-            this.metroRadioButton1.Name = "metroRadioButton1";
-            this.metroRadioButton1.Size = new System.Drawing.Size(71, 30);
-            this.metroRadioButton1.Style = MetroFramework.MetroColorStyle.Teal;
-            this.metroRadioButton1.TabIndex = 18;
-            this.metroRadioButton1.Tag = "";
-            this.metroRadioButton1.Text = "12";
-            this.metroRadioButton1.UseCustomBackColor = true;
-            this.metroRadioButton1.UseCustomForeColor = true;
-            this.metroRadioButton1.UseSelectable = true;
-            this.metroRadioButton1.UseStyleColors = true;
             // 
             // LopForm
             // 

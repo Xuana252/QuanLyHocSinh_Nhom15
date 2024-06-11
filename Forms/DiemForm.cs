@@ -32,6 +32,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             Hide();
             flagSua = false;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,6 +50,24 @@ namespace QuanLyHocSinh_Nhom15
                 this.Hide();
             }
             flagSua = false;
+        }
+
+        private void DiemForm_VisibleChanged(object sender, EventArgs e)
+        {
+            if (flagSua)
+            {
+                numericUpDown1.Value = chiTietBangDiem.Diem15p;
+                numericUpDown2.Value = chiTietBangDiem.Diem1Tiet;
+                numericUpDown3.Value = chiTietBangDiem.DiemTB;
+            }
+            else
+            {
+                numericUpDown1.Value = 0;
+                numericUpDown2.Value = 0;
+                numericUpDown3.Value = 0;
+            }
+
+
         }
     }
 }

@@ -92,7 +92,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.DecimalPlaces = 1;
+            this.numericUpDown1.DecimalPlaces = 2;
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown1.ForeColor = System.Drawing.Color.DarkGray;
             this.numericUpDown1.Increment = new decimal(new int[] {
@@ -107,7 +107,7 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.DecimalPlaces = 1;
+            this.numericUpDown2.DecimalPlaces = 2;
             this.numericUpDown2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown2.ForeColor = System.Drawing.Color.DarkGray;
             this.numericUpDown2.Increment = new decimal(new int[] {
@@ -122,7 +122,7 @@
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.DecimalPlaces = 1;
+            this.numericUpDown3.DecimalPlaces = 2;
             this.numericUpDown3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown3.ForeColor = System.Drawing.Color.DarkGray;
             this.numericUpDown3.Increment = new decimal(new int[] {
@@ -177,6 +177,7 @@
             this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "GradesForm";
+            this.VisibleChanged += new System.EventHandler(this.DiemForm_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();

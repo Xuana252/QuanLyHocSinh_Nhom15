@@ -53,9 +53,14 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex) 
             {
-                Error.GetInstance().Show(ex.Message);
+                ThongBaoForm.GetInstance().LogError(ex.Message);
             }
             
+        }
+        //Hàm đóng kết nối
+        public void Close()
+        {
+            sqlCon.Close();
         }
     }
 }

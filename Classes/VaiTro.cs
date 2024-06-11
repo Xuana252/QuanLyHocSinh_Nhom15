@@ -51,6 +51,7 @@ namespace QuanLyHocSinh_Nhom15
 
             }
             db.reader.Close();
+            db.Close();
             return itemList;
         }
     }

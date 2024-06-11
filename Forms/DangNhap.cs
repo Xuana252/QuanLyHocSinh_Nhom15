@@ -38,10 +38,11 @@ namespace QuanLyHocSinh_Nhom15
             else
             {
                 //nếu thất bại thì báo lỗi và làm trống form
-                Error.GetInstance().Show("thông tin tên tài khoản hoặc mật khẩu không đúng");
+                ThongBaoForm.GetInstance().LogError("thông tin tên tài khoản hoặc mật khẩu không đúng");
                 UserNameTextBox.Text = string.Empty;
                 PasswordTextBox.Text = string.Empty;
             }
+
         }
 
 

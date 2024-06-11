@@ -143,6 +143,16 @@ namespace QuanLyHocSinh_Nhom15.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ExcelExportIcon {
+            get {
+                object obj = ResourceManager.GetObject("ExcelExportIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ExitIcon {
             get {
                 object obj = ResourceManager.GetObject("ExitIcon", resourceCulture);
@@ -233,6 +243,16 @@ namespace QuanLyHocSinh_Nhom15.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SettingIcon {
+            get {
+                object obj = ResourceManager.GetObject("SettingIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SignOutIcon {
             get {
                 object obj = ResourceManager.GetObject("SignOutIcon", resourceCulture);
@@ -246,6 +266,16 @@ namespace QuanLyHocSinh_Nhom15.Properties {
         internal static System.Drawing.Bitmap SignUpIcon {
             get {
                 object obj = ResourceManager.GetObject("SignUpIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SuccessIcon {
+            get {
+                object obj = ResourceManager.GetObject("SuccessIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

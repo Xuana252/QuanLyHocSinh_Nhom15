@@ -33,7 +33,7 @@ namespace QuanLyHocSinh_Nhom15
             db.Open();
             db.sqlCmd.CommandType = CommandType.Text;
 
-            db.sqlCmd.CommandText = "SELECT * FROM MONHOC WHERE idMonHoc <> 'NO'";
+            db.sqlCmd.CommandText = "SELECT * FROM MONHOC WHERE idMonHoc <> '00'";
 
 
             db.sqlCmd.Connection = db.sqlCon;
@@ -54,6 +54,7 @@ namespace QuanLyHocSinh_Nhom15
 
             }
             db.reader.Close();
+            db.Close();
             return itemList;
         }
 
@@ -78,8 +79,9 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message.Substring(ex.Message.IndexOf('\n')));
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message.Substring(ex.Message.IndexOf('\n')));
             }
+            db.Close();
         }
 
         //Hàm sửa môn học
@@ -104,9 +106,9 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message);
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message);
             }
-
+            db.Close();
         }
 
         //Hàm xóa môn học
@@ -135,9 +137,10 @@ namespace QuanLyHocSinh_Nhom15
                 }
                 catch (Exception ex)
                 {
-                    Error.GetInstance().Show("Xảy ra lỗi:\n" + ex.Message);
+                    ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message);
                 }
             }
+            db.Close();
         }
     }
 }
