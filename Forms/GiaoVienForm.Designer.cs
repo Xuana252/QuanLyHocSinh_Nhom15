@@ -41,7 +41,7 @@
             this.IDMonHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NgaySinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DiaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TaiKhoanQuanLiTaiKhoanButton = new System.Windows.Forms.Button();
+            this.ChinhSuaiTaiKhoanButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -151,23 +151,23 @@
             this.DiaChi.Text = "Địa chỉ";
             this.DiaChi.Width = 200;
             // 
-            // TaiKhoanQuanLiTaiKhoanButton
+            // ChinhSuaiTaiKhoanButton
             // 
-            this.TaiKhoanQuanLiTaiKhoanButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TaiKhoanQuanLiTaiKhoanButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TaiKhoanQuanLiTaiKhoanButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TaiKhoanQuanLiTaiKhoanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TaiKhoanQuanLiTaiKhoanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TaiKhoanQuanLiTaiKhoanButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.SettingIcon;
-            this.TaiKhoanQuanLiTaiKhoanButton.Location = new System.Drawing.Point(331, 17);
-            this.TaiKhoanQuanLiTaiKhoanButton.Name = "TaiKhoanQuanLiTaiKhoanButton";
-            this.TaiKhoanQuanLiTaiKhoanButton.Size = new System.Drawing.Size(199, 33);
-            this.TaiKhoanQuanLiTaiKhoanButton.TabIndex = 34;
-            this.TaiKhoanQuanLiTaiKhoanButton.Text = "Chỉnh sửa thông tin";
-            this.TaiKhoanQuanLiTaiKhoanButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.TaiKhoanQuanLiTaiKhoanButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.TaiKhoanQuanLiTaiKhoanButton.UseVisualStyleBackColor = false;
-            this.TaiKhoanQuanLiTaiKhoanButton.Click += new System.EventHandler(this.TaiKhoanQuanLiTaiKhoanButton_Click);
+            this.ChinhSuaiTaiKhoanButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ChinhSuaiTaiKhoanButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ChinhSuaiTaiKhoanButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ChinhSuaiTaiKhoanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChinhSuaiTaiKhoanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChinhSuaiTaiKhoanButton.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.SettingIcon;
+            this.ChinhSuaiTaiKhoanButton.Location = new System.Drawing.Point(331, 17);
+            this.ChinhSuaiTaiKhoanButton.Name = "ChinhSuaiTaiKhoanButton";
+            this.ChinhSuaiTaiKhoanButton.Size = new System.Drawing.Size(199, 33);
+            this.ChinhSuaiTaiKhoanButton.TabIndex = 34;
+            this.ChinhSuaiTaiKhoanButton.Text = "Chỉnh sửa thông tin";
+            this.ChinhSuaiTaiKhoanButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ChinhSuaiTaiKhoanButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ChinhSuaiTaiKhoanButton.UseVisualStyleBackColor = false;
+            this.ChinhSuaiTaiKhoanButton.Click += new System.EventHandler(this.TaiKhoanQuanLiTaiKhoanButton_Click);
             // 
             // GiaoVienForm
             // 
@@ -176,7 +176,7 @@
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1002, 527);
             this.ControlBox = false;
-            this.Controls.Add(this.TaiKhoanQuanLiTaiKhoanButton);
+            this.Controls.Add(this.ChinhSuaiTaiKhoanButton);
             this.Controls.Add(this.metroListView1);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label1);
@@ -212,6 +212,6 @@
         private System.Windows.Forms.ColumnHeader NgaySinh;
         private System.Windows.Forms.ColumnHeader DiaChi;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.Button TaiKhoanQuanLiTaiKhoanButton;
+        private System.Windows.Forms.Button ChinhSuaiTaiKhoanButton;
     }
 }
