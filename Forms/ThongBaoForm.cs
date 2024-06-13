@@ -21,22 +21,24 @@ namespace QuanLyHocSinh_Nhom15
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Hide();
+            Close();
         }
         public void LogError(String text)
         {
-            Visible = true;
             FormLabel.ForeColor = Color.FromArgb(192, 0, 0);
             FormLabel.Image=Properties.Resources.ErrorIcon;
             label1.Text = text;
+            if (!Visible)
+                ShowDialog();
         }
 
         public void Inform(String text)
         {
-            Visible = true;
             FormLabel.ForeColor = Color.FromArgb(0, 192, 0);
             FormLabel.Image = Properties.Resources.SuccessIcon;
             label1.Text=text;
+            if (!Visible)
+                ShowDialog();
         }
 
         public static ThongBaoForm GetInstance()

@@ -27,7 +27,7 @@ namespace QuanLyHocSinh_Nhom15
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Hide();
+            Close();
         }
 
         //Sự kiện xảy ra khi bấm nút thêm sửa

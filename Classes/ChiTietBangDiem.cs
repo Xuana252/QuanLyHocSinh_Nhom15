@@ -28,7 +28,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
             db.sqlCmd.CommandText = "INSERT INTO CHITIETBANGDIEM values(@idbangdiem,@idhocsinh,@diem15p,@diem1t,@diemtb)";
 
             db.sqlCmd.Parameters.AddWithValue("@idbangdiem", idbangdiem);
@@ -36,7 +36,7 @@ namespace QuanLyHocSinh_Nhom15
             db.sqlCmd.Parameters.AddWithValue("@diem15p", diem15p);
             db.sqlCmd.Parameters.AddWithValue("@diem1t", diem1t);
             db.sqlCmd.Parameters.AddWithValue("@diemtb", diemTB);
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -53,7 +53,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
             db.sqlCmd.CommandText = "update CHITIETBANGDIEM set diem15p = @diem15p, Diem1Tiet = @diem1t, DiemTB = @diemtb " +
                                     "where idbangdiem = @idbangdiem and idhocsinh = @idhocsinh";
 
@@ -63,7 +63,7 @@ namespace QuanLyHocSinh_Nhom15
             db.sqlCmd.Parameters.AddWithValue("@diem1t", diem1t);
             db.sqlCmd.Parameters.AddWithValue("@diemtb", diemTB);
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -80,7 +80,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db=SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
             db.sqlCmd.CommandText = "delete from CHITIETBANGDIEM where idbangdiem=@idbangdiem and idhocsinh=@idhocsinh";
 
             db.sqlCmd.Parameters.AddWithValue("@idbangdiem", idbangdiem);
@@ -104,13 +104,13 @@ namespace QuanLyHocSinh_Nhom15
             int i = 0;
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
             db.sqlCmd.CommandText = "select diemtb from CHITIETBANGDIEM, BANGDIEM where CHITIETBANGDIEM.idbangdiem = BANGDIEM.idbangdiem and hocky = @hocky and namhoc = @namhoc and idhocsinh=@idhocsinh ";
             db.sqlCmd.Parameters.AddWithValue("@idhocsinh", idhocsinh);
             db.sqlCmd.Parameters.AddWithValue("@namhoc", namhoc);
             db.sqlCmd.Parameters.AddWithValue("@hocky", hocky);
 
-            db.sqlCmd.Connection = db.sqlCon;
+
             db.reader = db.sqlCmd.ExecuteReader();
             while (db.reader.Read())
             {

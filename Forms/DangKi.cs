@@ -25,8 +25,9 @@ namespace QuanLyHocSinh_Nhom15
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Hide();
-            TaiKhoan.GetInstance().flagSua= false;
+            TaiKhoan.GetInstance().flagSua = false;
+            Close();
+            
         }
 
 
@@ -68,15 +69,15 @@ namespace QuanLyHocSinh_Nhom15
                     {
                         GiaoVien.GetInstance().ThemGiaoVien(idGiaoVien, hoTen, ngaySinh, diaChi, monHoc, gioiTinh);
                         TaiKhoan.GetInstance().DangKiTaiKhoan(idGiaoVien, tenTaiKhoan, matKhau, vaiTro);
-                        
                     }
                     else
                     {
                         GiaoVien.GetInstance().ChinhSuaGiaoVien(idGiaoVien, hoTen, ngaySinh, diaChi, monHoc, gioiTinh);
                         TaiKhoan.GetInstance().ChinhSuaTaiKhoan(idGiaoVien, tenTaiKhoan, matKhau, vaiTro);
+                        TaiKhoan.GetInstance().flagSua = false;
                         giaoVien.GiaoVienForm_VisibleChanged(sender, e);
                     }
-                    this.Hide();
+                    this.Close();
                 }
                 else
                     ThongBaoForm.GetInstance().LogError("Tên tài khoản-mật khẩu đã tồn tại trong hệ thống vui lòng chọn tên tài khoản hoặc mật khẩu khác");
@@ -109,10 +110,12 @@ namespace QuanLyHocSinh_Nhom15
                     DangKiButton.Text = "Đăng kí";
                     //Cập nhật ID giáo viên trong form
                     GiaoVien.GetInstance().idGiaoVien = GiaoVien.GetInstance().LayIdDangKi();
+                    DangKiIDTextBox.Text = GiaoVien.GetInstance().idGiaoVien;
                     //Chọn môn học, vai trò, ngày sinh, giới tính mặc định cho tài khoản giáo viên
                     DangKiMonHocComboBox.SelectedIndex = 0;
                     DangKiVaiTroComboBox.SelectedIndex = 1;
                     DangKiNgaySinhDateTime1.Value = new DateTime(2000, 01, 01);
+
                 }
                 else
                 {
@@ -125,9 +128,9 @@ namespace QuanLyHocSinh_Nhom15
                     DangKiDiaChiTextBox.Text = GiaoVien.GetInstance().diaChiSua;
                     DangKiMonHocComboBox.Text = GiaoVien.GetInstance().monHocSua;
                     GioiTinhGroupBox.Controls.OfType<MetroRadioButton>().First(r => r.Tag != null && r.Tag.ToString() == GiaoVien.GetInstance().gioiTinhSua).Checked = true;
-
+                    DangKiIDTextBox.Text = GiaoVien.GetInstance().idGiaoVienSua;
                 }
-                DangKiIDTextBox.Text = GiaoVien.GetInstance().idGiaoVienSua;
+               
                 
                
                
@@ -155,5 +158,6 @@ namespace QuanLyHocSinh_Nhom15
             }
             return true;
         }
+
     }
 }

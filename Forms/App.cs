@@ -166,7 +166,10 @@ namespace QuanLyHocSinh_Nhom15
 
         //Sự kiện khi App load lần đầu
         private void App_Load(object sender, EventArgs e)
-        { 
+        {
+            //Cập nhật kích thước cửa sổ người dùng
+            this.Width = (int)(Screen.PrimaryScreen.WorkingArea.Width * 0.8);
+            this.Height = (int)(Screen.PrimaryScreen.WorkingArea.Height * 0.8);
             //Cập nhật các thông số ban đầu của app
             AppTabControl.SelectedIndex = 0;
             UserIDLabel.Text = user.idGiaoVien;
@@ -300,7 +303,6 @@ namespace QuanLyHocSinh_Nhom15
         }
 
         //Hàm load Tab Danh sách lớp
-
         public void LoadTabDanhSachLop(string idLop,string hoTenTimKiem)
         {
             List<ListViewItem> DanhSachHocSinh = HocSinh.LayDanhSach();
@@ -475,7 +477,7 @@ namespace QuanLyHocSinh_Nhom15
         //TAB BÁO CÁO MÔN: Sư kiện khi bấm nút quản lí môn học
         private void QuanLyMonHocButton_Click(object sender, EventArgs e)
         {
-            monHocForm.Show();
+            monHocForm.ShowDialog();
         }
        
         //TAB TIẾP NHẬN: Sự kiện khi bấm nút thêm sửa học sinh
@@ -495,7 +497,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             else
                 HocSinh.flagSua = false;
-            studentForm.Show();
+            studentForm.ShowDialog();
             TiepNhanListView.SelectedItems.Clear();
         }
 
@@ -514,7 +516,7 @@ namespace QuanLyHocSinh_Nhom15
                     chiTietBangDiem.Diem1Tiet = decimal.Parse(BaoCaoListView.SelectedItems[0].SubItems[3].Text);
                     chiTietBangDiem.DiemTB = decimal.Parse(BaoCaoListView.SelectedItems[0].SubItems[4].Text);
                 }    
-                diemForm.Show();
+                diemForm.ShowDialog();
                 BaoCaoListView.SelectedItems.Clear();
             }
             else
@@ -527,13 +529,13 @@ namespace QuanLyHocSinh_Nhom15
         //TAB DANH SÁCH LỚP: Sự kiện khi bấm nút quản lí danh sách lớp
         private void DanhSachLopQuanLiButton_Click(object sender, EventArgs e)
         {
-            lopForm.Show();
+            lopForm.ShowDialog();
         }
 
         //TAB TÀI KHOẢN: Sự kiện khi bấm nút đăng kí
         private void SignUpButton_Click(object sender, EventArgs e)
         {
-            dangKiForm.Show();
+            dangKiForm.ShowDialog();
         }
 
         //TAB TÀI KHOẢN: Sự kiện khi bấm nút đăng xuất
@@ -545,7 +547,7 @@ namespace QuanLyHocSinh_Nhom15
         //TAB TÀI KHOẢN: Sự kiện khi bấm nút quản lí danh sách tài khoản
         private void QuanLiTaiKhoanButton_Click(object sender, EventArgs e)
         {
-            giaoVienForm.Show();
+            giaoVienForm.ShowDialog();
         }
 
         //TAB BÁO CÁO MÔN: Sự kiện khi bấm nút Xem bảng điểm
@@ -731,7 +733,7 @@ namespace QuanLyHocSinh_Nhom15
                 int i = 1;
                 SQLConnect db = SQLConnect.GetInstance();
                 db.Open();
-                db.sqlCmd.CommandType = CommandType.Text;
+                
 
                 db.sqlCmd.CommandText = "declare @idmon char(2), @diemquamon decimal(4,2); " +
                     "SELECT @idmon = idMonHoc FROM MONHOC WHERE TenMonHoc = @tenmon; " +
@@ -745,7 +747,7 @@ namespace QuanLyHocSinh_Nhom15
                 db.sqlCmd.Parameters.AddWithValue("@namhoc", TongKetNamHoc.Value);
                 db.sqlCmd.Parameters.AddWithValue("@hocky", TongKetMonHocKiGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text);
 
-                db.sqlCmd.Connection = db.sqlCon;
+    
 
                 db.reader = db.sqlCmd.ExecuteReader();
                 if(db.reader.HasRows)
@@ -780,8 +782,8 @@ namespace QuanLyHocSinh_Nhom15
             {
                 int i = 1;
                 SQLConnect db = SQLConnect.GetInstance();
-                db.Open();
-                db.sqlCmd.CommandType = CommandType.Text;
+                 db.Open();
+                
 
                 db.sqlCmd.CommandText = @"WITH DiemTBHocSinh AS (
                                         SELECT 
@@ -821,7 +823,7 @@ namespace QuanLyHocSinh_Nhom15
                 db.sqlCmd.Parameters.AddWithValue("@namhoc", TongKetNamHoc.Value);
                 db.sqlCmd.Parameters.AddWithValue("@hocky", TongKetMonHocKiGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text);
 
-                db.sqlCmd.Connection = db.sqlCon;
+    
 
                 db.reader = db.sqlCmd.ExecuteReader();
 
@@ -865,6 +867,7 @@ namespace QuanLyHocSinh_Nhom15
                 {
                     using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook| *.xls", ValidateNames = true })
                     {
+                        sfd.FileName = "Bao_cao_lop_"+ BangDiem.tenLop.Trim()+"_Mon_"+ BangDiem.tenMonHoc + "_Nam_hoc_"+ BangDiem.NamHoc.ToString() + " - " + (BangDiem.NamHoc + 1).ToString() + "_Hoc_ki_" + BangDiem.HocKy.ToString();
                         if (sfd.ShowDialog() == DialogResult.OK)
                         {
                             Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
@@ -921,6 +924,7 @@ namespace QuanLyHocSinh_Nhom15
                 {
                     using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook| *.xls", ValidateNames = true })
                     {
+                        sfd.FileName = "Tong_ket_" + BangDiem.loaiTongKet + "_Nam_" + BangDiem.namTongKet.ToString() + " - " + (BangDiem.namTongKet + 1).ToString() + "_Hoc ki_" + BangDiem.hocKiTongKet + "_Mon_" + BangDiem.tenMonTongKet;
                         if (sfd.ShowDialog() == DialogResult.OK)
                         {
                             Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
@@ -972,12 +976,13 @@ namespace QuanLyHocSinh_Nhom15
         //TAB DANH SÁCH LỚP: Sự kiện khi bấm nút xuất file excel
         private void DanhSachLopXuatButton_Click(object sender, EventArgs e)
         {
-            if (BaoCaoListView.Items.Count > 0)
+            if (DanhSachLopListView1.Items.Count > 0)
             {
                 try
                 {
                     using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook| *.xls", ValidateNames = true })
                     {
+                        sfd.FileName = "danh_sach_lop_" + LopHoc.GetInstance().TenLop.Trim();
                         if (sfd.ShowDialog() == DialogResult.OK)
                         {
                             Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
@@ -985,7 +990,7 @@ namespace QuanLyHocSinh_Nhom15
                             Worksheet ws = (Worksheet)app.ActiveSheet;
                             app.Visible = false;
                             ws.Cells[2, 1] = "Lớp:";
-                            ws.Cells[2, 2] = BangDiem.tenLop;
+                            ws.Cells[2, 2] = LopHoc.GetInstance().TenLop;
 
                             ws.Cells[5, 1] = "STT";
                             ws.Cells[5, 2] = "Họ tên";
@@ -994,7 +999,7 @@ namespace QuanLyHocSinh_Nhom15
                             ws.Cells[5, 5] = "Địa chỉ";
 
                             int i = 6;
-                            foreach (ListViewItem item in BaoCaoListView.Items)
+                            foreach (ListViewItem item in DanhSachLopListView1.Items)
                             {
                                 ws.Cells[i, 1] = item.SubItems[0].Text;
                                 ws.Cells[i, 2] = item.SubItems[1].Text;

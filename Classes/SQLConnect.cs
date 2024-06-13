@@ -50,12 +50,27 @@ namespace QuanLyHocSinh_Nhom15
                 }
 
                 sqlCmd = new SqlCommand();
+                sqlCmd.Connection = sqlCon;
+                sqlCmd.CommandType = CommandType.Text;
             }
-            catch (Exception ex) 
+            catch (SqlException sqlEx)
             {
-                ThongBaoForm.GetInstance().LogError(ex.Message);
+                // Handle SqlException specifically
+                ThongBaoForm.GetInstance().LogError("Lỗi không thể kết nối tới cơ sở dữ liệu. Vui lòng liên hệ ban quản lý hoặc kiểm tra kết nối trên máy tính của bạn.");
             }
-            
+            catch(Exception ex) 
+            {
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi: "+ ex.Message);
+            }
+            finally
+            {
+                if (sqlCmd == null)
+                {
+                    sqlCon?.Close();
+                    Environment.Exit(1);
+                }
+            }
+
         }
         //Hàm đóng kết nối
         public void Close()

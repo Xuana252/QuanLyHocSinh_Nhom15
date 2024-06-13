@@ -334,7 +334,7 @@ namespace QuanLyHocSinh_Nhom15
             this.AppTabControl.Location = new System.Drawing.Point(1, 48);
             this.AppTabControl.Multiline = true;
             this.AppTabControl.Name = "AppTabControl";
-            this.AppTabControl.SelectedIndex = 4;
+            this.AppTabControl.SelectedIndex = 3;
             this.AppTabControl.Size = new System.Drawing.Size(1079, 606);
             this.AppTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AppTabControl.Style = MetroFramework.MetroColorStyle.Teal;
@@ -1425,7 +1425,7 @@ namespace QuanLyHocSinh_Nhom15
             this.TiepNhanThemSuaHocSinh.Name = "TiepNhanThemSuaHocSinh";
             this.TiepNhanThemSuaHocSinh.Size = new System.Drawing.Size(172, 37);
             this.TiepNhanThemSuaHocSinh.TabIndex = 26;
-            this.TiepNhanThemSuaHocSinh.Text = "Thêm học sinh";
+            this.TiepNhanThemSuaHocSinh.Text = "Thêm/ Sửa";
             this.TiepNhanThemSuaHocSinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TiepNhanThemSuaHocSinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.TiepNhanThemSuaHocSinh.UseVisualStyleBackColor = false;

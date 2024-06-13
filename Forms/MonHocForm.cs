@@ -22,7 +22,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             IDMonTextBox.Clear();
             TenMonTextBox.Clear();
-            Hide();
+            Close();
         }
 
 

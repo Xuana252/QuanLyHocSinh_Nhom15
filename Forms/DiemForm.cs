@@ -30,7 +30,7 @@ namespace QuanLyHocSinh_Nhom15
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Hide();
+            Close();
             flagSua = false;
             
         }
@@ -41,13 +41,13 @@ namespace QuanLyHocSinh_Nhom15
             {
                 chiTietBangDiem.SuaDiem(idbangdiem, idhocsinh, numericUpDown1.Value, numericUpDown2.Value, numericUpDown3.Value);
                 mainApp.LoadTabBaoCaoMon();
-                this.Hide();
+                this.Close();
             }
             else
             {
                 chiTietBangDiem.ThemDiem(idbangdiem, idhocsinh, numericUpDown1.Value, numericUpDown2.Value, numericUpDown3.Value);
                 mainApp.LoadTabBaoCaoMon();
-                this.Hide();
+                this.Close();
             }
             flagSua = false;
         }

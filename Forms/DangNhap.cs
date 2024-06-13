@@ -33,7 +33,7 @@ namespace QuanLyHocSinh_Nhom15
                 //nếu đăng nhập thành công thì gọi cửa sổ app
                 App app = new App();
                 this.Hide();
-                app.Show();
+                app.ShowDialog();
             }
             else
             {

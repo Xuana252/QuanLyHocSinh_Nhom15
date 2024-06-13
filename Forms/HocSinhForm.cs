@@ -25,7 +25,7 @@ namespace QuanLyHocSinh_Nhom15
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Hide();
+            Close();
         }
 
         //Sự kiện xảy ra khi bấm nút ok để thêm
@@ -49,7 +49,7 @@ namespace QuanLyHocSinh_Nhom15
                     hocSinh.ThemHocSinh(hoTen, gioiTinh, diaChi, ngaySinh, email);
 
                 mainApp.LoadTabTiepNhan("");
-                this.Hide();
+                this.Close();
                 
 
             }

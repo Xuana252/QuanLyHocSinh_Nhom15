@@ -41,11 +41,11 @@ namespace QuanLyHocSinh_Nhom15
             string id = "";
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "SELECT  RIGHT('00000' + CAST(ISNULL((SELECT MAX(CAST(RIGHT(idGiaoVien, 5) AS INT)) + 1 FROM GIAOVIEN), 1) AS VARCHAR(5)), 5) AS result;";
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             db.reader = db.sqlCmd.ExecuteReader();
 
@@ -62,7 +62,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "SET DATEFORMAT DMY; " +
                        "DECLARE @idMonHoc CHAR(2);" +
@@ -78,7 +78,7 @@ namespace QuanLyHocSinh_Nhom15
             db.sqlCmd.Parameters.AddWithValue("@gioiTinh", gioiTinh);
 
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -96,12 +96,12 @@ namespace QuanLyHocSinh_Nhom15
             List<ListViewItem> itemList = new List<ListViewItem>();
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "SELECT idGiaoVien,HoTen,CONVERT(VARCHAR(10),NgaySinh,103),DiaChi,idMonHoc,GioiTinh FROM GIAOVIEN";
 
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             db.reader = db.sqlCmd.ExecuteReader();
 
@@ -136,12 +136,12 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "SET DATEFORMAT DMY; " +
                        "DECLARE @idMonHoc CHAR(2);" +
                        "SELECT @idMonHoc = idMonHoc FROM MONHOC WHERE TenMonHoc = @monHoc;" +
-                       "UPDATE GIAOVIEN SET idMonHoc = @monHoc, HoTen = @hoTen, NgaySinh = @ngaySinh, DiaChi = @diaChi, GioiTinh = @gioiTinh WHERE idGiaoVien=@idGiaoVien";
+                       "UPDATE GIAOVIEN SET idMonHoc = @idMonHoc, HoTen = @hoTen, NgaySinh = @ngaySinh, DiaChi = @diaChi, GioiTinh = @gioiTinh WHERE idGiaoVien=@idGiaoVien";
 
 
             db.sqlCmd.Parameters.AddWithValue("@monHoc", monHoc);
@@ -152,7 +152,7 @@ namespace QuanLyHocSinh_Nhom15
             db.sqlCmd.Parameters.AddWithValue("@gioiTinh", gioiTinh);
 
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -160,7 +160,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi trong quá trình thêm giáo viên mới:\n" + ex.Message);
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi trong quá trình sửa thông tin giáo viên:\n" + ex.Message);
             }
             db.Close();
         }

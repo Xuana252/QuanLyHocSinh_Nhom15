@@ -24,7 +24,7 @@ namespace QuanLyHocSinh_Nhom15
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Hide();
+            Close();
         }
 
 
@@ -189,7 +189,7 @@ namespace QuanLyHocSinh_Nhom15
                 GiaoVien.GetInstance().monHocSua = metroListView1.SelectedItems[0].SubItems[7].Text;
                 GiaoVien.GetInstance().gioiTinhSua = metroListView1.SelectedItems[0].SubItems[6].Text;
 
-                DangKi.Show();
+                DangKi.ShowDialog();
             }
             else
             {

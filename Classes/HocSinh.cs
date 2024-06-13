@@ -34,7 +34,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
 
             db.sqlCmd.CommandText = "SET DATEFORMAT DMY;" +
@@ -51,7 +51,7 @@ namespace QuanLyHocSinh_Nhom15
 
 
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -69,7 +69,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
 
             db.sqlCmd.CommandText = "SET DATEFORMAT DMY;" +
@@ -85,7 +85,7 @@ namespace QuanLyHocSinh_Nhom15
 
 
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -105,7 +105,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             SqlParameter idHocSinhParam = new SqlParameter("@idHocSinh", SqlDbType.Char, 7);
             SqlParameter idLopParam = new SqlParameter("@idLop", SqlDbType.Char, 3);
@@ -122,7 +122,7 @@ namespace QuanLyHocSinh_Nhom15
 
                 db.sqlCmd.CommandText = "UPDATE HOCSINH SET idLop = @idLop WHERE idHocSinh=@idHocSinh";
 
-                db.sqlCmd.Connection = db.sqlCon;
+    
 
                 try
                 {
@@ -142,7 +142,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             SqlParameter idHocSinhParam = new SqlParameter("@idHocSinh", SqlDbType.Char, 7);
 
@@ -156,7 +156,7 @@ namespace QuanLyHocSinh_Nhom15
 
                 db.sqlCmd.CommandText = "UPDATE HOCSINH SET idLop = null WHERE idHocSinh=@idHocSinh";
 
-                db.sqlCmd.Connection = db.sqlCon;
+    
 
                 try
                 {
@@ -175,7 +175,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             SqlParameter idHocSinhParam = new SqlParameter("@idHocSinh", SqlDbType.Char, 7);
 
@@ -188,7 +188,7 @@ namespace QuanLyHocSinh_Nhom15
 
                 db.sqlCmd.CommandText = "DELETE FROM HOCSINH WHERE idHocSinh=@idHocSinh";
 
-                db.sqlCmd.Connection = db.sqlCon;
+    
 
                 try
                 {
@@ -208,11 +208,11 @@ namespace QuanLyHocSinh_Nhom15
             List<ListViewItem> itemList = new List<ListViewItem>();
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "SELECT idHocSinh,HoTen,idLop,GioiTinh,Email,DiaChi,CONVERT(VARCHAR(10),NgaySinh,103) FROM HOCSINH";
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             db.reader = db.sqlCmd.ExecuteReader();
 
@@ -249,7 +249,7 @@ namespace QuanLyHocSinh_Nhom15
             SQLConnect db = SQLConnect.GetInstance();
 
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
             db.sqlCmd.CommandText = @"
                            WITH TraCuuResult AS (
                     SELECT 
@@ -292,7 +292,7 @@ namespace QuanLyHocSinh_Nhom15
 
             db.sqlCmd.Parameters.AddWithValue("@hoten", hoten);
             db.sqlCmd.Parameters.AddWithValue("@namhoc", namhoc);
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             using (db.reader = db.sqlCmd.ExecuteReader())
             {

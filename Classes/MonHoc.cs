@@ -31,12 +31,12 @@ namespace QuanLyHocSinh_Nhom15
             List<ListViewItem> itemList = new List<ListViewItem>();
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "SELECT * FROM MONHOC WHERE idMonHoc <> '00'";
 
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             db.reader = db.sqlCmd.ExecuteReader();
 
@@ -63,7 +63,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
 
             db.sqlCmd.CommandText = "insert into MONHOC values(@idmon, @tenmon)";
@@ -71,7 +71,7 @@ namespace QuanLyHocSinh_Nhom15
             db.sqlCmd.Parameters.AddWithValue("@idmon", id);
             db.sqlCmd.Parameters.AddWithValue("@tenmon", tenmon);
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -89,7 +89,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
 
             db.sqlCmd.CommandText = "update MONHOC set idMonHoc=@idmonhoc, TenMonHoc=@tenmon";
@@ -98,7 +98,7 @@ namespace QuanLyHocSinh_Nhom15
             db.sqlCmd.Parameters.AddWithValue("@tenmon", tenmon);
 
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -116,7 +116,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             SqlParameter idMonHocParam = new SqlParameter("@idMonHoc", SqlDbType.Char, 2);
 
@@ -129,7 +129,7 @@ namespace QuanLyHocSinh_Nhom15
 
                 db.sqlCmd.CommandText = "DELETE FROM MONHOC WHERE idMonHoc=@idMonHoc";
 
-                db.sqlCmd.Connection = db.sqlCon;
+    
 
                 try
                 {

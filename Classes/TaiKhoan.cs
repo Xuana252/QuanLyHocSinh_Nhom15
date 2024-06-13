@@ -46,12 +46,12 @@ namespace QuanLyHocSinh_Nhom15
             List<ListViewItem> itemList = new List<ListViewItem>();
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "SELECT * FROM TAIKHOAN";
 
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             db.reader = db.sqlCmd.ExecuteReader();
 
@@ -84,7 +84,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
 
             db.sqlCmd.CommandText = "DECLARE @idVaiTro CHAR(2), @idTaiKhoan CHAR(5);" +
@@ -101,7 +101,7 @@ namespace QuanLyHocSinh_Nhom15
             db.sqlCmd.Parameters.AddWithValue("@tenTaiKhoan", tenTaiKhoan);
 
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -121,14 +121,14 @@ namespace QuanLyHocSinh_Nhom15
             //Kiểm tra thông tin đăng nhập trên database
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "SELECT idTaiKhoan,TAIKHOAN.idGiaoVien,TenTaiKhoan,MatKhau,VAITRO.idVaiTro,HoTen,CONVERT(VARCHAR(10),NgaySinh,103),MONHOC.idMonHoc,TenMonHoc,TenVaiTro FROM TAIKHOAN JOIN GIAOVIEN ON TAIKHOAN.idGiaoVien = GIAOVIEN.idGiaoVien JOIN MONHOC ON MONHOC.idMonHoc= GIAOVIEN.idMonHoc JOIN VAITRO ON VAITRO.idVaiTro = TAIKHOAN.idVaiTro  WHERE TenTaiKhoan=@tenTaiKhoan AND MatKhau=@matKhau";
 
             db.sqlCmd.Parameters.AddWithValue("@tenTaiKhoan", tenTaiKhoan);
             db.sqlCmd.Parameters.AddWithValue("@matKhau", matKhau);
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             db.reader = db.sqlCmd.ExecuteReader();
 
@@ -154,14 +154,14 @@ namespace QuanLyHocSinh_Nhom15
             //Kiểm tra thông tin đăng nhập trên database
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "SELECT idTaiKhoan,TAIKHOAN.idGiaoVien,TenTaiKhoan,MatKhau,VAITRO.idVaiTro,HoTen,CONVERT(VARCHAR(10),NgaySinh,103),MONHOC.idMonHoc,TenMonHoc,TenVaiTro,GioiTinh,DiaChi FROM TAIKHOAN JOIN GIAOVIEN ON TAIKHOAN.idGiaoVien = GIAOVIEN.idGiaoVien JOIN MONHOC ON MONHOC.idMonHoc= GIAOVIEN.idMonHoc JOIN VAITRO ON VAITRO.idVaiTro = TAIKHOAN.idVaiTro  WHERE TenTaiKhoan=@tenTaiKhoan AND MatKhau=@matKhau";
 
             db.sqlCmd.Parameters.AddWithValue("@tenTaiKhoan", tenTaiKhoan);
             db.sqlCmd.Parameters.AddWithValue("@matKhau", matKhau);
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             db.reader = db.sqlCmd.ExecuteReader();
 
@@ -198,7 +198,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
 
             db.sqlCmd.CommandText = "DECLARE @idVaiTro CHAR(2), @idTaiKhoan CHAR(5);" +
@@ -212,7 +212,7 @@ namespace QuanLyHocSinh_Nhom15
             db.sqlCmd.Parameters.AddWithValue("@tenTaiKhoan", tenTaiKhoan);
 
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {

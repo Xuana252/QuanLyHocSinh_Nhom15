@@ -28,13 +28,13 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "UPDATE QUIDINH SET SiSoToiDa = @SiSoToiDa;";
 
             db.sqlCmd.Parameters.AddWithValue("@SiSoToiDa", SiSo);
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -52,13 +52,13 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "UPDATE QUIDINH SET TuoiToiThieu = @TuoiToiThieu;";
 
             db.sqlCmd.Parameters.AddWithValue("@TuoiToiThieu", TuoiToiThieu);
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -76,13 +76,13 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "UPDATE QUIDINH SET TuoiToiDa = @TuoiToiDa;";
 
             db.sqlCmd.Parameters.AddWithValue("@TuoiToiDa", TuoiToiDa);
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -100,13 +100,13 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "UPDATE QUIDINH SET DiemQuaMon = @DiemQuaMon;";
 
             db.sqlCmd.Parameters.AddWithValue("@DiemQuaMon", DiemQuaMon);
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -124,11 +124,11 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "SELECT TuoiToiThieu, TuoiToiDa FROM QUIDINH";
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             db.reader = db.sqlCmd.ExecuteReader();
 
@@ -150,11 +150,11 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "SELECT SiSoToiDa FROM QUIDINH";
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             db.reader = db.sqlCmd.ExecuteReader();
 
@@ -175,11 +175,11 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "SELECT DiemQuaMon FROM QUIDINH";
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             db.reader = db.sqlCmd.ExecuteReader();
 

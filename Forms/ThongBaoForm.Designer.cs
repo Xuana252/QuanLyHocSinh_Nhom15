@@ -42,9 +42,9 @@
             this.ErrorOKButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ErrorOKButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ErrorOKButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ErrorOKButton.Location = new System.Drawing.Point(20, 146);
+            this.ErrorOKButton.Location = new System.Drawing.Point(20, 250);
             this.ErrorOKButton.Name = "ErrorOKButton";
-            this.ErrorOKButton.Size = new System.Drawing.Size(251, 30);
+            this.ErrorOKButton.Size = new System.Drawing.Size(360, 30);
             this.ErrorOKButton.TabIndex = 0;
             this.ErrorOKButton.TabStop = false;
             this.ErrorOKButton.Text = "OK";
@@ -57,7 +57,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(23, 48);
-            this.label1.MaximumSize = new System.Drawing.Size(247, 93);
+            this.label1.MaximumSize = new System.Drawing.Size(360, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(228, 18);
             this.label1.TabIndex = 2;
@@ -69,7 +69,7 @@
             this.FormLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.FormLabel.Image = global::QuanLyHocSinh_Nhom15.Properties.Resources.SuccessIcon;
-            this.FormLabel.Location = new System.Drawing.Point(81, 8);
+            this.FormLabel.Location = new System.Drawing.Point(136, 8);
             this.FormLabel.Name = "FormLabel";
             this.FormLabel.Size = new System.Drawing.Size(134, 40);
             this.FormLabel.TabIndex = 1;
@@ -81,7 +81,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(291, 196);
+            this.ClientSize = new System.Drawing.Size(400, 300);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FormLabel);

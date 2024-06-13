@@ -41,7 +41,7 @@ namespace QuanLyHocSinh_Nhom15
             List<ListViewItem> itemList = new List<ListViewItem>();
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "DECLARE @idmonhoc CHAR(2), @idlop CHAR(3); " +
                             "SELECT @idmonhoc = idMonHoc FROM MONHOC WHERE TenMonHoc = @tenmon; " +
@@ -57,7 +57,7 @@ namespace QuanLyHocSinh_Nhom15
             db.sqlCmd.Parameters.AddWithValue("@hocky", hocky);
             db.sqlCmd.Parameters.AddWithValue("@namhoc", namhoc);
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             db.reader = db.sqlCmd.ExecuteReader();
             int stt = 1;
@@ -90,7 +90,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "declare @idmonhoc char(2), @idlop char(3)" +
                                     "select @idmonhoc = idMonHoc from MONHOC where TenMonHoc = @tenmon;" +
@@ -102,7 +102,7 @@ namespace QuanLyHocSinh_Nhom15
             db.sqlCmd.Parameters.AddWithValue("@hocky", hocky);
             db.sqlCmd.Parameters.AddWithValue("@namhoc", namhoc);
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -121,7 +121,7 @@ namespace QuanLyHocSinh_Nhom15
             
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
            
             db.sqlCmd.CommandText = "declare @idbangdiem char(5) ,@idmonhoc char(2), @idlop char(3)" +
@@ -135,7 +135,7 @@ namespace QuanLyHocSinh_Nhom15
             db.sqlCmd.Parameters.AddWithValue("@hocky", hocky);
             db.sqlCmd.Parameters.AddWithValue("@namhoc", namhoc);
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -153,7 +153,7 @@ namespace QuanLyHocSinh_Nhom15
             string id="" ;
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "declare @idmonhoc char(2), @idlop char(3);" +
                                 "select @idmonhoc = idMonHoc from MONHOC where TenMonHoc = @tenmon;" +

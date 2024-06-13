@@ -30,7 +30,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText ="DECLARE @idLop CHAR(3);"+
                 "SELECT @idLop= @khoiLop+RIGHT('00'+CAST(ISNULL((SELECT MAX(CAST(RIGHT(idLop,2) AS INT))+1 FROM LOPHOC WHERE  idLop LIKE @khoiLop + '%'),1)AS VARCHAR(2)),2);" +
@@ -42,7 +42,7 @@ namespace QuanLyHocSinh_Nhom15
             db.sqlCmd.Parameters.AddWithValue("@khoiLop", khoiLop.Substring(1,1));
 
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             { 
@@ -60,7 +60,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "UPDATE LOPHOC SET tenLop=@tenLop,idGiaoVien=@idGiaoVien WHERE idLop=@idLop;";
 
@@ -70,7 +70,7 @@ namespace QuanLyHocSinh_Nhom15
             db.sqlCmd.Parameters.AddWithValue("@idGiaoVien", idGVCN);
 
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             try
             {
@@ -89,7 +89,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             SqlParameter idLopParam = new SqlParameter("@idLop", SqlDbType.Char,3);
 
@@ -101,7 +101,7 @@ namespace QuanLyHocSinh_Nhom15
 
                 db.sqlCmd.CommandText = "DELETE FROM LOPHOC WHERE idLop=@idLop";
 
-                db.sqlCmd.Connection = db.sqlCon;
+    
 
                 try
                 {
@@ -137,12 +137,12 @@ namespace QuanLyHocSinh_Nhom15
             List<ListViewItem> itemList = new List<ListViewItem>();
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
-            db.sqlCmd.CommandType = CommandType.Text;
+            
 
             db.sqlCmd.CommandText = "SELECT * FROM LOPHOC";
 
 
-            db.sqlCmd.Connection = db.sqlCon;
+
 
             db.reader = db.sqlCmd.ExecuteReader();
 
