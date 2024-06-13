@@ -204,7 +204,7 @@
             this.XoaMonButton.Name = "XoaMonButton";
             this.XoaMonButton.Size = new System.Drawing.Size(133, 35);
             this.XoaMonButton.TabIndex = 14;
-            this.XoaMonButton.Text = "Xóa lớp";
+            this.XoaMonButton.Text = "Xóa môn";
             this.XoaMonButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.XoaMonButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.XoaMonButton.UseVisualStyleBackColor = false;
