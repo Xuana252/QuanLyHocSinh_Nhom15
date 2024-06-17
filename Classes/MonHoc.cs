@@ -79,7 +79,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message);
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message + "\nDAM BAO MA MON KHONG BI TRUNG KHOP");
             }
             db.Close();
         }
