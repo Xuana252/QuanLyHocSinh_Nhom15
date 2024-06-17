@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace QuanLyHocSinh_Nhom15
 {
-    sealed class LopHoc
+     public sealed class LopHoc
     {
         private static LopHoc _instance;
         public string idLop="";
@@ -85,7 +85,7 @@ namespace QuanLyHocSinh_Nhom15
         }
 
         //Hàm xóa lớp
-        public void XoaLop(ListView.SelectedListViewItemCollection items)
+        public void XoaLop(List<ListViewItem> items)
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
@@ -116,14 +116,14 @@ namespace QuanLyHocSinh_Nhom15
         }
 
         //Hàm thêm học sinh vào danh sách lớp
-        public void ThemHocSinhVaoLop(ListView.SelectedListViewItemCollection items)
+        public void ThemHocSinhVaoLop(List<ListViewItem> items)
         {
             HocSinh.GetInstance().ThemHocSinhVaoLop(items, idLop);
         }
 
         //Hàm xóa học sinh khỏi danh sách lớp
 
-        public void XoaHocSinhKhoiLop(ListView.SelectedListViewItemCollection items)
+        public void XoaHocSinhKhoiLop(List<ListViewItem> items)
         {
             HocSinh.GetInstance().XoaHocSinhKhoiLop(items);
         }

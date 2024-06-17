@@ -9,13 +9,13 @@ using System.Data;
 
 namespace QuanLyHocSinh_Nhom15
 {
-    sealed class SQLConnect
+    public sealed class SQLConnect
     {
         //Singleton
         private static SQLConnect _instance;
 
         //Chuỗi kết nối
-        string strCon = @"Data Source=studentmanagement.c3kuwokswvvn.ap-southeast-2.rds.amazonaws.com,1433;Initial Catalog=StudentManagement;User ID=admin;Password=12345678;Encrypt=False;TrustServerCertificate=True";
+        public string strCon = @"Data Source=studentmanagement.c3kuwokswvvn.ap-southeast-2.rds.amazonaws.com,1433;Initial Catalog=StudentManagement;User ID=admin;Password=12345678;Encrypt=False;TrustServerCertificate=True";
         
         //Đối tượng kết nối
         public SqlConnection sqlCon = null; 
@@ -75,7 +75,12 @@ namespace QuanLyHocSinh_Nhom15
         //Hàm đóng kết nối
         public void Close()
         {
-            sqlCon.Close();
+            if (sqlCon != null && sqlCon.State != ConnectionState.Closed)
+            {
+                sqlCon.Close();
+                sqlCon.Dispose(); // Dispose SqlConnection to release resources
+                sqlCon = null;
+            }
         }
     }
 }

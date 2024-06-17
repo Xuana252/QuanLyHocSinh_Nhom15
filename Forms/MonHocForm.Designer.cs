@@ -100,10 +100,10 @@
             this.IDMonTextBox.CustomButton.Visible = false;
             this.IDMonTextBox.Lines = new string[0];
             this.IDMonTextBox.Location = new System.Drawing.Point(16, 17);
-            this.IDMonTextBox.MaxLength = 32767;
+            this.IDMonTextBox.MaxLength = 2;
             this.IDMonTextBox.Name = "IDMonTextBox";
             this.IDMonTextBox.PasswordChar = '\0';
-            this.IDMonTextBox.PromptText = "ID";
+            this.IDMonTextBox.PromptText = "Mã môn (2 kí tự)";
             this.IDMonTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.IDMonTextBox.SelectedText = "";
             this.IDMonTextBox.SelectionLength = 0;
@@ -112,7 +112,7 @@
             this.IDMonTextBox.Size = new System.Drawing.Size(107, 23);
             this.IDMonTextBox.TabIndex = 5;
             this.IDMonTextBox.UseSelectable = true;
-            this.IDMonTextBox.WaterMark = "ID";
+            this.IDMonTextBox.WaterMark = "Mã môn (2 kí tự)";
             this.IDMonTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.IDMonTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 

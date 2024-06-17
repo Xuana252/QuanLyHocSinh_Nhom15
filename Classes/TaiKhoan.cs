@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace QuanLyHocSinh_Nhom15
 {
-    sealed class TaiKhoan
+     public sealed class TaiKhoan
     {
         private static TaiKhoan _instance;
         public string idTaiKhoan;

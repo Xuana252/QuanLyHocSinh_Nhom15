@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QuanLyHocSinh_Nhom15
 {
-    sealed class HocSinh
+     public sealed class HocSinh
     {
         private static HocSinh _instance;
         public string idHocSinh;
@@ -59,7 +59,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message.Substring(ex.Message.IndexOf('\n')));
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message);
             }
             db.Close();
         }
@@ -93,7 +93,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n"+ex.Message.Substring(ex.Message.IndexOf('\n')));
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n"+ex.Message);
             }
 
             flagSua = false;
@@ -101,7 +101,7 @@ namespace QuanLyHocSinh_Nhom15
         }
 
         //Hàm thêm học sinh vào danh sách lớp
-        public void ThemHocSinhVaoLop(ListView.SelectedListViewItemCollection items, string idLop)
+        public void ThemHocSinhVaoLop(List<ListViewItem> items, string idLop)
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
@@ -130,7 +130,7 @@ namespace QuanLyHocSinh_Nhom15
                 }
                 catch (Exception ex)
                 {
-                    ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message.Substring(ex.Message.IndexOf('\n')));
+                    ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message);
                 }
             }
             db.Close();
@@ -138,7 +138,7 @@ namespace QuanLyHocSinh_Nhom15
 
         //Hàm xóa học sinh khỏi lớp
 
-        public void XoaHocSinhKhoiLop(ListView.SelectedListViewItemCollection items)
+        public void XoaHocSinhKhoiLop(List<ListViewItem> items)
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
@@ -164,14 +164,14 @@ namespace QuanLyHocSinh_Nhom15
                 }
                 catch (Exception ex)
                 {
-                    ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message.Substring(ex.Message.IndexOf('\n')));
+                    ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message);
                 }
             }
             db.Close();
         }
 
         //Hàm xóa học sinh
-        public void XoaHocSinh(ListView.SelectedListViewItemCollection items)
+        public void XoaHocSinh(List<ListViewItem> items)
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();
@@ -196,7 +196,7 @@ namespace QuanLyHocSinh_Nhom15
                 }
                 catch (Exception ex)
                 {
-                    ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message.Substring(ex.Message.IndexOf('\n')));
+                    ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message);
                 }
             }
             db.Close();

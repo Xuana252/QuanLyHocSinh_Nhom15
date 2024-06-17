@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyHocSinh_Nhom15
 {
-    sealed class QuiDinh
+     public sealed class QuiDinh
     {
         private static QuiDinh _instance;
 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QuanLyHocSinh_Nhom15
 {
-    sealed class BangDiem
+     public sealed class BangDiem
     {
         //các thuộc tính chung
         private static BangDiem _instance;

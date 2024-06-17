@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QuanLyHocSinh_Nhom15
 {
-    sealed class MonHoc
+     public sealed class MonHoc
     {
         private static MonHoc _instance;
         public string idMonHoc;
@@ -79,7 +79,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             catch (Exception ex)
             {
-                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message.Substring(ex.Message.IndexOf('\n')));
+                ThongBaoForm.GetInstance().LogError("Xảy ra lỗi:\n" + ex.Message);
             }
             db.Close();
         }
@@ -92,7 +92,7 @@ namespace QuanLyHocSinh_Nhom15
             
 
 
-            db.sqlCmd.CommandText = "update MONHOC set idMonHoc=@idmonhoc, TenMonHoc=@tenmon";
+            db.sqlCmd.CommandText = "update MONHOC set TenMonHoc=@tenmon where idMonHoc=@idmon";
             
             db.sqlCmd.Parameters.AddWithValue("@idmon", id);
             db.sqlCmd.Parameters.AddWithValue("@tenmon", tenmon);
@@ -112,7 +112,7 @@ namespace QuanLyHocSinh_Nhom15
         }
 
         //Hàm xóa môn học
-        public void XoaMonHoc(ListView.SelectedListViewItemCollection items)
+        public void XoaMonHoc(List<ListViewItem> items)
         {
             SQLConnect db = SQLConnect.GetInstance();
             db.Open();

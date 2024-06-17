@@ -61,7 +61,13 @@ namespace QuanLyHocSinh_Nhom15
 
         private void XoaMonButton_Click(object sender, EventArgs e)
         {
-            MonHoc.GetInstance().XoaMonHoc(MonListView1.SelectedItems);
+            List < ListViewItem > list = new List < ListViewItem>();
+            foreach (ListViewItem item in MonListView1.SelectedItems)
+            {
+                list.Add(item);
+               
+            }
+            MonHoc.GetInstance().XoaMonHoc(list);
             MonHocForm_VisibleChanged(sender, e);
         }
 
@@ -69,12 +75,13 @@ namespace QuanLyHocSinh_Nhom15
         {
             if (MonListView1.SelectedItems.Count > 0)
             {
+                IDMonTextBox.ReadOnly = true;
                 IDMonTextBox.Text = MonListView1.SelectedItems[0].SubItems[1].Text;
                 TenMonTextBox.Text = MonListView1.SelectedItems[0].SubItems[2].Text;
             }
             else
             {
-                
+                IDMonTextBox.ReadOnly= false;
                 IDMonTextBox.Text = string.Empty;
                 TenMonTextBox.Text = string.Empty;
             }

@@ -133,10 +133,10 @@
             this.DanhSachLopHocTenLopTextBox.CustomButton.Visible = false;
             this.DanhSachLopHocTenLopTextBox.Lines = new string[0];
             this.DanhSachLopHocTenLopTextBox.Location = new System.Drawing.Point(26, 28);
-            this.DanhSachLopHocTenLopTextBox.MaxLength = 32767;
+            this.DanhSachLopHocTenLopTextBox.MaxLength = 4;
             this.DanhSachLopHocTenLopTextBox.Name = "DanhSachLopHocTenLopTextBox";
             this.DanhSachLopHocTenLopTextBox.PasswordChar = '\0';
-            this.DanhSachLopHocTenLopTextBox.PromptText = "Tên lớp";
+            this.DanhSachLopHocTenLopTextBox.PromptText = "Tên lớp (4 kí tự)";
             this.DanhSachLopHocTenLopTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.DanhSachLopHocTenLopTextBox.SelectedText = "";
             this.DanhSachLopHocTenLopTextBox.SelectionLength = 0;
@@ -145,7 +145,7 @@
             this.DanhSachLopHocTenLopTextBox.Size = new System.Drawing.Size(121, 23);
             this.DanhSachLopHocTenLopTextBox.TabIndex = 10;
             this.DanhSachLopHocTenLopTextBox.UseSelectable = true;
-            this.DanhSachLopHocTenLopTextBox.WaterMark = "Tên lớp";
+            this.DanhSachLopHocTenLopTextBox.WaterMark = "Tên lớp (4 kí tự)";
             this.DanhSachLopHocTenLopTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.DanhSachLopHocTenLopTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 

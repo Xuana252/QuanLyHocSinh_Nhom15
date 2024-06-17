@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace QuanLyHocSinh_Nhom15
 {
-    sealed class VaiTro
+     public sealed class VaiTro
     {
         private static VaiTro _instance;
 

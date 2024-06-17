@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
@@ -34,6 +35,11 @@ namespace QuanLyHocSinh_Nhom15
             if(!DienDayDu())
             {
                 ThongBaoForm.GetInstance().LogError("Vui lòng nhập đầy đủ thông tin");
+            }
+            else if(!Regex.IsMatch(HocSinhEmailTextBox.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+            {
+                ThongBaoForm.GetInstance().LogError("Địa chỉ Email không hợp lệ");
+                HocSinhEmailTextBox.Text = null;
             }
             else 
             {

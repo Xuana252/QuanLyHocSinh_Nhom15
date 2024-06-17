@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace QuanLyHocSinh_Nhom15
 {
-    sealed class ChiTietBangDiem
+     public sealed class ChiTietBangDiem
     {
         private static ChiTietBangDiem _instance;
         public string idBangDiem;

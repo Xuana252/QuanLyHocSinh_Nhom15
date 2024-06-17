@@ -50,6 +50,11 @@ namespace QuanLyHocSinh_Nhom15
                 DangKiPasswordTextBox1.Clear();
                 DangKiPasswordTextBox2.Clear();
             }
+            else if(DateTime.Now.Year - DangKiNgaySinhDateTime1.Value.Year<22)//Kiểm tra độ tuổi giáo viên ít nhất là 22
+            {
+                ThongBaoForm.GetInstance().LogError("Đảm bảo tuổi của giáo viên phải lớn hơn 22");
+                DangKiNgaySinhDateTime1.Value = DateTime.Now;
+            }
             else
             {
 
@@ -74,9 +79,10 @@ namespace QuanLyHocSinh_Nhom15
                     {
                         GiaoVien.GetInstance().ChinhSuaGiaoVien(idGiaoVien, hoTen, ngaySinh, diaChi, monHoc, gioiTinh);
                         TaiKhoan.GetInstance().ChinhSuaTaiKhoan(idGiaoVien, tenTaiKhoan, matKhau, vaiTro);
-                        TaiKhoan.GetInstance().flagSua = false;
+                        
                         giaoVien.GiaoVienForm_VisibleChanged(sender, e);
                     }
+                    TaiKhoan.GetInstance().flagSua = false;
                     this.Close();
                 }
                 else
@@ -105,7 +111,8 @@ namespace QuanLyHocSinh_Nhom15
                 {
                     DangKiVaiTroComboBox.Items.Add(vaiTro.SubItems[1].Text);
                 }
-                if (TaiKhoan.GetInstance().flagSua==false)
+                //Cập nhật các thông tin khác tùy thuộc vào chức năng của form khi được gọi
+                if (TaiKhoan.GetInstance().flagSua==false)//Đăng kí mới
                 {
                     DangKiButton.Text = "Đăng kí";
                     //Cập nhật ID giáo viên trong form
@@ -117,7 +124,7 @@ namespace QuanLyHocSinh_Nhom15
                     DangKiNgaySinhDateTime1.Value = new DateTime(2000, 01, 01);
 
                 }
-                else
+                else//Chỉnh sửa
                 {
                     DangKiButton.Text = "Sửa";
                     DangKiUsernameTextBox.Text = TaiKhoan.GetInstance().tenTaiKhoanSua;

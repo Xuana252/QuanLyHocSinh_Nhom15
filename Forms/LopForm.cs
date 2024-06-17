@@ -55,7 +55,12 @@ namespace QuanLyHocSinh_Nhom15
         //Sự kiện xảy ra khi bấm nút xóa lớp
         private void DanhSachLopHocXoalopButton_Click(object sender, EventArgs e)
         {
-            lopHoc.XoaLop(DanhSachLopHocListView.SelectedItems);
+            List<ListViewItem> list = new List<ListViewItem>();
+            foreach(ListViewItem item in DanhSachLopHocListView.SelectedItems)
+            {
+                list.Add(item);
+            }
+            lopHoc.XoaLop(list);
             LoadForm();
         }
 

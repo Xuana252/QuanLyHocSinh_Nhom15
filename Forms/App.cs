@@ -614,8 +614,12 @@ namespace QuanLyHocSinh_Nhom15
         //TAB TIẾP NHẬN: Sự kiện khi bấm nút xóa học sinh
         private void TiepNhanXoaHocSinhButton_Click(object sender, EventArgs e)
         {
-
-            HocSinh.XoaHocSinh(TiepNhanListView.SelectedItems);
+            List<ListViewItem> list = new List<ListViewItem>();
+            foreach(ListViewItem item in TiepNhanListView.SelectedItems)
+            {
+                list.Add(item);
+            }
+            HocSinh.XoaHocSinh(list);
             LoadTabTiepNhan("");
 
         }
@@ -699,7 +703,12 @@ namespace QuanLyHocSinh_Nhom15
                 ThongBaoForm.GetInstance().LogError("Vui lòng xem lớp trước khi thêm học sinh");
             else
             {
-                LopHoc.ThemHocSinhVaoLop(DanhSachLopListView2.SelectedItems);
+                List<ListViewItem> list = new List<ListViewItem>();
+                foreach(ListViewItem item in DanhSachLopListView2.SelectedItems)
+                {
+                    list.Add(item);
+                }
+                LopHoc.ThemHocSinhVaoLop(list);
                 LoadTabDanhSachLop(LopHoc.idLop, "");
             }
             Cursor.Current = Cursors.Default;
@@ -713,7 +722,12 @@ namespace QuanLyHocSinh_Nhom15
                 ThongBaoForm.GetInstance().LogError("Vui lòng xem lớp trước khi thêm học sinh");
             else
             {
-                LopHoc.XoaHocSinhKhoiLop(DanhSachLopListView1.SelectedItems);
+                List<ListViewItem> list = new List<ListViewItem>();
+                foreach (ListViewItem item in DanhSachLopListView1.SelectedItems)
+                {
+                    list.Add(item);
+                }
+                LopHoc.XoaHocSinhKhoiLop(list);
                 LoadTabDanhSachLop(LopHoc.idLop, "");
             }
             Cursor.Current = Cursors.Default;
