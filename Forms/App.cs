@@ -267,7 +267,7 @@ namespace QuanLyHocSinh_Nhom15
             //Load danh sách học sinh tiếp nhận dựa trên thanh tìm kiếm nếu trống thì lấy toàn bộ danh sách
 
             TiepNhanListView.Items.Clear();
-            foreach (ListViewItem hocSinh in HocSinh.LayDanhSach().OrderBy(item => item.SubItems[1].Text).ToList())
+            foreach (ListViewItem hocSinh in HocSinh.LayDanhSach().OrderBy(item => item.SubItems[1].Text.Split(' ').Last()).ToList())
             {
                 if (hocSinh.SubItems[2].Text=="NULL")
                 {
@@ -305,7 +305,7 @@ namespace QuanLyHocSinh_Nhom15
         //Hàm load Tab Danh sách lớp
         public void LoadTabDanhSachLop(string idLop,string hoTenTimKiem)
         {
-            List<ListViewItem> DanhSachHocSinh = HocSinh.LayDanhSach().OrderBy(item => item.SubItems[1].Text).ToList();
+            List<ListViewItem> DanhSachHocSinh = HocSinh.LayDanhSach().OrderBy(item => item.SubItems[1].Text.Split(' ').Last()).ToList();
             //Load danh sách lớp học vào combobox lớp học
             DanhSachLopTenLopComboBox.Items.Clear();
             foreach(ListViewItem item in LopHoc.LayDanhSach())
@@ -396,7 +396,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             BaoCaoMonHocComboBox.Text = tempTenMon;
             BaoCaoListView.Items.Clear();
-            foreach(ListViewItem item in BangDiem.LayDanhSach(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value).OrderBy(item => item.SubItems[1].Text).ToList())
+            foreach(ListViewItem item in BangDiem.LayDanhSach(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value).OrderBy(item => item.SubItems[1].Text.Split(' ').Last()).ToList())
             {
                 BaoCaoListView.Items.Add(item);
             }    
