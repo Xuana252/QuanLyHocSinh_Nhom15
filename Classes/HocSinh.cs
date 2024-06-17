@@ -210,7 +210,7 @@ namespace QuanLyHocSinh_Nhom15
             db.Open();
             
 
-            db.sqlCmd.CommandText = "SELECT idHocSinh,HoTen,idLop,GioiTinh,Email,DiaChi,CONVERT(VARCHAR(10),NgaySinh,103) FROM HOCSINH";
+            db.sqlCmd.CommandText = "SELECT idHocSinh,HoTen,idLop,GioiTinh,Email,DiaChi,CONVERT(VARCHAR(10),NgaySinh,103) FROM HOCSINH ";
 
 
 
