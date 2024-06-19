@@ -130,7 +130,6 @@ namespace QuanLyHocSinh_Nhom15
             db.Close();
             return itemList;
         }
-
         //Hàm cập nhật thông tin giáo viên
         public void ChinhSuaGiaoVien(string idGiaoVien, string hoTen, string ngaySinh, string diaChi, string monHoc, string gioiTinh)
         {

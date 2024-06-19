@@ -51,6 +51,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             InitializeComponent();
         }
+
         //Sự kiện khi kích thước cửa sổ thay đổi
         private void App_SizeChanged(object sender, EventArgs e)
         {

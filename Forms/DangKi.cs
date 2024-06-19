@@ -30,7 +30,7 @@ namespace QuanLyHocSinh_Nhom15
             
         }
 
-
+        //Sự kện xảy ra khi bấm nút đăng kí
         private void DangKiButton_Click(object sender, EventArgs e)
         {
             //Kiểm tra xem có trường nào bị bỏ trống không

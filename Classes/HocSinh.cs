@@ -320,8 +320,5 @@ namespace QuanLyHocSinh_Nhom15
             return itemList;
         }
 
-            
-        
-
     }
 }

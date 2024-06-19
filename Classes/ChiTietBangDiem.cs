@@ -23,7 +23,7 @@ namespace QuanLyHocSinh_Nhom15
                 _instance = new ChiTietBangDiem();
             return _instance;
         }
-
+        //Hàm thêm điểm vào bảng điểm tương ứng
         public void ThemDiem(string idbangdiem,string idhocsinh,decimal diem15p,decimal diem1t, decimal diemTB)
         {
             SQLConnect db = SQLConnect.GetInstance();
@@ -48,7 +48,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             db.Close();
         }
-
+        //Hàm sửa điểm 
         public void SuaDiem(string idbangdiem, string idhocsinh, decimal diem15p, decimal diem1t, decimal diemTB)
         {
             SQLConnect db = SQLConnect.GetInstance();
@@ -75,7 +75,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             db.Close();
         }
-
+        //Hàm Xóa điểm khỏi bảng điểm
         public void XoaDiem(string idbangdiem,string idhocsinh)
         {
             SQLConnect db=SQLConnect.GetInstance();
@@ -97,7 +97,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             db.Close();
         }
-
+        //Hàm tính điểm trung bình học kỳ cho học sinh tương ứng
         public decimal TinhDiemTBHocKy(string idhocsinh,decimal namhoc,string hocky)
         {
             decimal diemtb = 0;

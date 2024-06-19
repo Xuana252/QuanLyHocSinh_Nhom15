@@ -35,7 +35,7 @@ namespace QuanLyHocSinh_Nhom15
                 _instance = new BangDiem();
             return _instance;
         }
-
+        //Hàm lấy danh sách học sinh có tên trong bảng điểm tương ứng
         public List<ListViewItem> LayDanhSach(string tenlop, string tenmon,string hocky, decimal namhoc)
         {
             List<ListViewItem> itemList = new List<ListViewItem>();
@@ -85,7 +85,7 @@ namespace QuanLyHocSinh_Nhom15
             db.Close();
             return itemList;
         }
-
+        //Hàm Xóa bảng điểm
         public void XoaBangDiem(string tenlop, string tenmon, string hocky, decimal namhoc)
         {
             SQLConnect db = SQLConnect.GetInstance();
@@ -115,7 +115,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             db.Close();
         }
-
+        //Hàm Thêm bảng điểm
         public void ThemBangDiem(string tenlop, string tenmon, string hocky, decimal namhoc)
         {
             
@@ -147,7 +147,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             db.Close();
         }
-
+        //Hàm lấy ID bảng điểm
         public string getIdBangDiem(string tenlop, string tenmon, string hocky, decimal namhoc)
         {
             string id="" ;
