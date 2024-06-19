@@ -50,8 +50,6 @@ namespace QuanLyHocSinh_Nhom15
             LoadForm();
         }
 
-      
-
         //Sự kiện xảy ra khi bấm nút xóa lớp
         private void DanhSachLopHocXoalopButton_Click(object sender, EventArgs e)
         {
@@ -64,7 +62,6 @@ namespace QuanLyHocSinh_Nhom15
             LoadForm();
         }
 
-
         //Sự kiện xảy ra khi form xuất hiện hoặc biến mất
         private void LopForm_VisibleChanged(object sender, EventArgs e)
         {
@@ -76,7 +73,6 @@ namespace QuanLyHocSinh_Nhom15
         }
 
         //hàm load form 
-
         void LoadForm()
         {
             //Load sỉ số tối đa từ hệ thống và gán giá trị tương ứng

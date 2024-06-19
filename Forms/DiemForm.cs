@@ -27,14 +27,14 @@ namespace QuanLyHocSinh_Nhom15
         }
 
 
-
+        //Sự kiện xảy ra khi bấm nút thoát
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Close();
             flagSua = false;
             
         }
-
+        //Sự kiện xảy ra khi bấm nút ok
         private void button1_Click(object sender, EventArgs e)
         {
             if(flagSua)
@@ -51,7 +51,7 @@ namespace QuanLyHocSinh_Nhom15
             }
             flagSua = false;
         }
-
+        //Sự kiên xảy ra khi Form xuất hiện
         private void DiemForm_VisibleChanged(object sender, EventArgs e)
         {
             if (flagSua)

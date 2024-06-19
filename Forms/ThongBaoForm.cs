@@ -18,11 +18,13 @@ namespace QuanLyHocSinh_Nhom15
             _instsance = this;
             InitializeComponent();
         }
-
+        
+        //Sự khiện xảy ra khi bấm nút ok
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
         }
+        //Hàm báo lỗi
         public void LogError(String text)
         {
             FormLabel.ForeColor = Color.FromArgb(192, 0, 0);
@@ -31,7 +33,7 @@ namespace QuanLyHocSinh_Nhom15
             if (!Visible)
                 ShowDialog();
         }
-
+        //Hàm báo thành công
         public void Inform(String text)
         {
             FormLabel.ForeColor = Color.FromArgb(0, 192, 0);

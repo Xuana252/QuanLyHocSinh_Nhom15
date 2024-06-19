@@ -25,7 +25,7 @@ namespace QuanLyHocSinh_Nhom15
             Close();
         }
 
-
+        //Sự kiện xảy ra khi form xuất hiện
         private void MonHocForm_VisibleChanged(object sender, EventArgs e)
         {
             MonListView1.Items.Clear();
@@ -39,7 +39,7 @@ namespace QuanLyHocSinh_Nhom15
             }
         }
 
-
+        //Sự kiện xảy ra khi bấm nút thêm sửa môn 
         private void ThemSuaMonButton_Click(object sender, EventArgs e)
         {
             if (IDMonTextBox.Text == "" || TenMonTextBox.Text == "")
@@ -58,7 +58,7 @@ namespace QuanLyHocSinh_Nhom15
                 MonHocForm_VisibleChanged(sender, e);
             }
         }
-
+        //Sự kiện xảy ra khi bấm nút xóa môn
         private void XoaMonButton_Click(object sender, EventArgs e)
         {
             List < ListViewItem > list = new List < ListViewItem>();
@@ -72,7 +72,7 @@ namespace QuanLyHocSinh_Nhom15
             TenMonTextBox.Clear();
             MonHocForm_VisibleChanged(sender, e);
         }
-
+        //Sự kiên xảy ra khi thay đổi môn chọn
         private void MonListView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             if (MonListView1.SelectedItems.Count > 0)
