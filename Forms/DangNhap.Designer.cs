@@ -84,7 +84,7 @@
             this.UserNameTextBox.MaxLength = 32767;
             this.UserNameTextBox.Name = "UserNameTextBox";
             this.UserNameTextBox.PasswordChar = '\0';
-            this.UserNameTextBox.PromptText = "User name";
+            this.UserNameTextBox.PromptText = "Tên tài khoản";
             this.UserNameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.UserNameTextBox.SelectedText = "";
             this.UserNameTextBox.SelectionLength = 0;
@@ -94,7 +94,7 @@
             this.UserNameTextBox.Style = MetroFramework.MetroColorStyle.Teal;
             this.UserNameTextBox.TabIndex = 0;
             this.UserNameTextBox.UseSelectable = true;
-            this.UserNameTextBox.WaterMark = "User name";
+            this.UserNameTextBox.WaterMark = "Tên tài khoản";
             this.UserNameTextBox.WaterMarkColor = System.Drawing.Color.Silver;
             this.UserNameTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -118,7 +118,7 @@
             this.PasswordTextBox.MaxLength = 32767;
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '●';
-            this.PasswordTextBox.PromptText = "Password";
+            this.PasswordTextBox.PromptText = "Mật khẩu";
             this.PasswordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.PasswordTextBox.SelectedText = "";
             this.PasswordTextBox.SelectionLength = 0;
@@ -129,7 +129,7 @@
             this.PasswordTextBox.TabIndex = 1;
             this.PasswordTextBox.UseSelectable = true;
             this.PasswordTextBox.UseSystemPasswordChar = true;
-            this.PasswordTextBox.WaterMark = "Password";
+            this.PasswordTextBox.WaterMark = "Mật khẩu";
             this.PasswordTextBox.WaterMarkColor = System.Drawing.Color.Silver;
             this.PasswordTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
