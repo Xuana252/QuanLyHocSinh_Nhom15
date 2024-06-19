@@ -68,6 +68,8 @@ namespace QuanLyHocSinh_Nhom15
                
             }
             MonHoc.GetInstance().XoaMonHoc(list);
+            IDMonTextBox.Clear();
+            TenMonTextBox.Clear();
             MonHocForm_VisibleChanged(sender, e);
         }
 

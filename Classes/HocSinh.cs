@@ -22,6 +22,7 @@ namespace QuanLyHocSinh_Nhom15
         public string NgaySinh;
 
         public bool flagSua = false;//Biến cờ hiệu dùng để xác định nút Thêm Sửa thực hiện chức năng gì
+
         public static HocSinh GetInstance()
         {
             if (_instance == null)

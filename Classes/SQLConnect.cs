@@ -15,8 +15,8 @@ namespace QuanLyHocSinh_Nhom15
         private static SQLConnect _instance;
 
         //Chuỗi kết nối
-        public string strCon = @"Data Source=studentmanagement.c3kuwokswvvn.ap-southeast-2.rds.amazonaws.com,1433;Initial Catalog=StudentManagement;User ID=admin;Password=12345678;Encrypt=False;TrustServerCertificate=True";/*@"Data Source=TAOCOMPUTER\SQLEXPRESS;Initial Catalog=StudentManagement;Integrated Security=True;Encrypt=False";*/
-
+        public string strCon = @"Data Source=studentmanagement.c3kuwokswvvn.ap-southeast-2.rds.amazonaws.com,1433;Initial Catalog=StudentManagement;User ID=admin;Password=12345678;Encrypt=False;TrustServerCertificate=True";/*@"Data Source=TAOCOMPUTER\SQLEXPRESS;Initial Catalog=StudentManagement;Integrated Security=True;Encrypt=False";
+*/
         //Đối tượng kết nối
         public SqlConnection sqlCon = null; 
         

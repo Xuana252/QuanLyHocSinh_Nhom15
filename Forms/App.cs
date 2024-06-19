@@ -454,8 +454,11 @@ namespace QuanLyHocSinh_Nhom15
         //Sự kiện liên quan đến resize Splitter cho tab Danh sách lớp
         private void splitContainer1_Resize(object sender, EventArgs e)
         {
-            splitContainer1.SplitterWidth = metroPanel1.Width;
-            splitContainer1.SplitterDistance = (splitContainer1.Width - metroPanel1.Width) / 2 + 1;
+            if (WindowState != FormWindowState.Minimized)
+            {
+                splitContainer1.SplitterWidth = metroPanel1.Width;
+                splitContainer1.SplitterDistance = (splitContainer1.Width - metroPanel1.Width) / 2 + 1;
+            }
         }
 
         //Sự kiện khi chọn combobox tên lớp
@@ -557,7 +560,7 @@ namespace QuanLyHocSinh_Nhom15
             BaoCaoListView.Items.Clear();
             BangDiem.tenLop = BaoCaoLopComboBox.Text;
             BangDiem.tenMonHoc = BaoCaoMonHocComboBox.Text;
-            BangDiem.HocKy = int.Parse(BaoCaoHocKiComboBox.Text);
+            BangDiem.HocKy = int.Parse(BaoCaoHocKiComboBox.Text == ""?"1": BaoCaoHocKiComboBox.Text);
             BangDiem.NamHoc = (int)BaoCaoNamHocNumericUpDown.Value;
             foreach (ListViewItem item in BangDiem.LayDanhSach(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value))
             {
@@ -593,12 +596,14 @@ namespace QuanLyHocSinh_Nhom15
             if (BaoCaoListView.SelectedItems.Count > 0)
             {
                 string idbangdiem = BangDiem.getIdBangDiem(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value);
-                foreach(ListViewItem item in BaoCaoListView.SelectedItems)
+                foreach (ListViewItem item in BaoCaoListView.SelectedItems)
                 {
                     chiTietBangDiem.XoaDiem(idbangdiem, item.SubItems[5].Text);
-                }    
+                }
                 this.LoadTabBaoCaoMon();
             }
+            else
+                ThongBaoForm.GetInstance().LogError("Vui lòng chọn học sinh cần xóa điểm");
 
         }
 
@@ -614,12 +619,17 @@ namespace QuanLyHocSinh_Nhom15
         //TAB TIẾP NHẬN: Sự kiện khi bấm nút xóa học sinh
         private void TiepNhanXoaHocSinhButton_Click(object sender, EventArgs e)
         {
-            List<ListViewItem> list = new List<ListViewItem>();
-            foreach(ListViewItem item in TiepNhanListView.SelectedItems)
+            if (TiepNhanListView.SelectedItems.Count > 0)
             {
-                list.Add(item);
+                List<ListViewItem> list = new List<ListViewItem>();
+                foreach (ListViewItem item in TiepNhanListView.SelectedItems)
+                {
+                    list.Add(item);
+                }
+                HocSinh.XoaHocSinh(list);
             }
-            HocSinh.XoaHocSinh(list);
+            else
+                ThongBaoForm.GetInstance().LogError("Vui lòng chọn học sinh muốn xóa");
             LoadTabTiepNhan("");
 
         }
@@ -677,7 +687,7 @@ namespace QuanLyHocSinh_Nhom15
 
             DanhSachLopListView1.Items.Clear();
             //Lấy danh sách học sinh dựa vào idLop từ tên lớp đã chọn
-            foreach (ListViewItem hocSinh in HocSinh.LayDanhSach())
+            foreach (ListViewItem hocSinh in HocSinh.LayDanhSach().OrderBy(item => item.SubItems[1].Text.Split(' ').Last()).ToList())
             {
                 if (hocSinh.SubItems[2].Text == LopHoc.idLop)
                 {
@@ -703,12 +713,17 @@ namespace QuanLyHocSinh_Nhom15
                 ThongBaoForm.GetInstance().LogError("Vui lòng xem lớp trước khi thêm học sinh");
             else
             {
-                List<ListViewItem> list = new List<ListViewItem>();
-                foreach(ListViewItem item in DanhSachLopListView2.SelectedItems)
+                if (DanhSachLopListView2.SelectedItems.Count > 0)
                 {
-                    list.Add(item);
+                    List<ListViewItem> list = new List<ListViewItem>();
+                    foreach (ListViewItem item in DanhSachLopListView2.SelectedItems)
+                    {
+                        list.Add(item);
+                    }
+                    LopHoc.ThemHocSinhVaoLop(list);
                 }
-                LopHoc.ThemHocSinhVaoLop(list);
+                else
+                    ThongBaoForm.GetInstance().LogError("Vui lòng chọn học sinh muốn thêm vào lớp");
                 LoadTabDanhSachLop(LopHoc.idLop, "");
             }
             Cursor.Current = Cursors.Default;
@@ -719,15 +734,20 @@ namespace QuanLyHocSinh_Nhom15
         {
             Cursor.Current = Cursors.WaitCursor;
             if (LopHoc.idLop.Length == 0)
-                ThongBaoForm.GetInstance().LogError("Vui lòng xem lớp trước khi thêm học sinh");
+                ThongBaoForm.GetInstance().LogError("Vui lòng xem lớp trước khi xóa học sinh");
             else
             {
-                List<ListViewItem> list = new List<ListViewItem>();
-                foreach (ListViewItem item in DanhSachLopListView1.SelectedItems)
+                if (DanhSachLopListView1.SelectedItems.Count > 0)
                 {
-                    list.Add(item);
+                    List<ListViewItem> list = new List<ListViewItem>();
+                    foreach (ListViewItem item in DanhSachLopListView1.SelectedItems)
+                    {
+                        list.Add(item);
+                    }
+                    LopHoc.XoaHocSinhKhoiLop(list);
                 }
-                LopHoc.XoaHocSinhKhoiLop(list);
+                else
+                    ThongBaoForm.GetInstance().LogError("Vui lòng chọn học sinh muốn xóa khỏi lớp");
                 LoadTabDanhSachLop(LopHoc.idLop, "");
             }
             Cursor.Current = Cursors.Default;

@@ -33,7 +33,7 @@ namespace QuanLyHocSinh_Nhom15
         //Sự kiện xảy ra khi bấm nút thêm sửa
         private void DanhSachLopHocThemSuaLopButton_Click(object sender, EventArgs e)
         {
-            if(DienDayDu())
+            if(DienDayDu() && DanhSachLopHocGVCNComboBox.SelectedIndex !=-1)
             {
                 string tenLop = DanhSachLopHocTenLopTextBox.Text.Trim();
                 string idGVCN = DanhSachLopHocGVCNComboBox.Text;
@@ -157,7 +157,7 @@ namespace QuanLyHocSinh_Nhom15
         {
             foreach (Control control in this.Controls)
             {
-                if ( control.Text.Length == 0&&(control is MetroComboBox||control is MetroTextBox) )
+                if ( control.Text.Length == 0 &&(control is MetroComboBox||control is MetroTextBox) )
                     return false;
             }
             return true;

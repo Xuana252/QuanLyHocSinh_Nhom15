@@ -122,14 +122,10 @@ namespace QuanLyHocSinh_Nhom15
         }
 
         //Hàm xóa học sinh khỏi danh sách lớp
-
         public void XoaHocSinhKhoiLop(List<ListViewItem> items)
         {
             HocSinh.GetInstance().XoaHocSinhKhoiLop(items);
         }
-
-
-
 
         //Hàm lấy danh sách lớp
         public List<ListViewItem> LayDanhSach()
