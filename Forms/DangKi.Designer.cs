@@ -177,7 +177,7 @@
             this.DangKiUsernameTextBox.MaxLength = 32767;
             this.DangKiUsernameTextBox.Name = "DangKiUsernameTextBox";
             this.DangKiUsernameTextBox.PasswordChar = '\0';
-            this.DangKiUsernameTextBox.PromptText = "Username";
+            this.DangKiUsernameTextBox.PromptText = "Tên tài khoản";
             this.DangKiUsernameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.DangKiUsernameTextBox.SelectedText = "";
             this.DangKiUsernameTextBox.SelectionLength = 0;
@@ -186,7 +186,7 @@
             this.DangKiUsernameTextBox.Size = new System.Drawing.Size(180, 23);
             this.DangKiUsernameTextBox.TabIndex = 10;
             this.DangKiUsernameTextBox.UseSelectable = true;
-            this.DangKiUsernameTextBox.WaterMark = "Username";
+            this.DangKiUsernameTextBox.WaterMark = "Tên tài khoản";
             this.DangKiUsernameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.DangKiUsernameTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -209,7 +209,7 @@
             this.DangKiPasswordTextBox1.MaxLength = 32767;
             this.DangKiPasswordTextBox1.Name = "DangKiPasswordTextBox1";
             this.DangKiPasswordTextBox1.PasswordChar = '●';
-            this.DangKiPasswordTextBox1.PromptText = "password";
+            this.DangKiPasswordTextBox1.PromptText = "Mật khẩu";
             this.DangKiPasswordTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.DangKiPasswordTextBox1.SelectedText = "";
             this.DangKiPasswordTextBox1.SelectionLength = 0;
@@ -219,7 +219,7 @@
             this.DangKiPasswordTextBox1.TabIndex = 11;
             this.DangKiPasswordTextBox1.UseSelectable = true;
             this.DangKiPasswordTextBox1.UseSystemPasswordChar = true;
-            this.DangKiPasswordTextBox1.WaterMark = "password";
+            this.DangKiPasswordTextBox1.WaterMark = "Mật khẩu";
             this.DangKiPasswordTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.DangKiPasswordTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -253,7 +253,7 @@
             this.DangKiPasswordTextBox2.MaxLength = 32767;
             this.DangKiPasswordTextBox2.Name = "DangKiPasswordTextBox2";
             this.DangKiPasswordTextBox2.PasswordChar = '●';
-            this.DangKiPasswordTextBox2.PromptText = "password";
+            this.DangKiPasswordTextBox2.PromptText = "Mật khẩu nhập lại";
             this.DangKiPasswordTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.DangKiPasswordTextBox2.SelectedText = "";
             this.DangKiPasswordTextBox2.SelectionLength = 0;
@@ -263,7 +263,7 @@
             this.DangKiPasswordTextBox2.TabIndex = 13;
             this.DangKiPasswordTextBox2.UseSelectable = true;
             this.DangKiPasswordTextBox2.UseSystemPasswordChar = true;
-            this.DangKiPasswordTextBox2.WaterMark = "password";
+            this.DangKiPasswordTextBox2.WaterMark = "Mật khẩu nhập lại";
             this.DangKiPasswordTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.DangKiPasswordTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
