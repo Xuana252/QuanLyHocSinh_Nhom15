@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyHocSinh_Nhom15", "Qua
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyHocSinh_Nhom15Tests", "..\QuanLyHocSinh_Nhom15Tests\QuanLyHocSinh_Nhom15Tests.csproj", "{5850C3F2-AC3D-41AB-B7A0-97619E2B63DB}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QuanLyHocSinhSetup", "..\QuanLyHocSinhSetup\QuanLyHocSinhSetup.vdproj", "{D48B229C-2E8E-4C18-BC65-9B32F597BE81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,7 +22,8 @@ Global
 		{5850C3F2-AC3D-41AB-B7A0-97619E2B63DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5850C3F2-AC3D-41AB-B7A0-97619E2B63DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5850C3F2-AC3D-41AB-B7A0-97619E2B63DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5850C3F2-AC3D-41AB-B7A0-97619E2B63DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D48B229C-2E8E-4C18-BC65-9B32F597BE81}.Debug|Any CPU.ActiveCfg = Debug
+		{D48B229C-2E8E-4C18-BC65-9B32F597BE81}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
