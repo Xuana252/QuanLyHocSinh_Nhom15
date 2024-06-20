@@ -399,6 +399,7 @@ namespace QuanLyHocSinh_Nhom15
             BaoCaoListView.Items.Clear();
             foreach(ListViewItem item in BangDiem.LayDanhSach(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value).OrderBy(item => item.SubItems[1].Text.Split(' ').Last()).ToList())
             {
+                item.Text = (BaoCaoListView.Items.Count + 1).ToString();
                 BaoCaoListView.Items.Add(item);
             }    
         }
@@ -563,12 +564,13 @@ namespace QuanLyHocSinh_Nhom15
             BangDiem.tenMonHoc = BaoCaoMonHocComboBox.Text;
             BangDiem.HocKy = int.Parse(BaoCaoHocKiComboBox.Text == ""?"1": BaoCaoHocKiComboBox.Text);
             BangDiem.NamHoc = (int)BaoCaoNamHocNumericUpDown.Value;
-            foreach (ListViewItem item in BangDiem.LayDanhSach(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value))
+            foreach (ListViewItem item in BangDiem.LayDanhSach(BaoCaoLopComboBox.Text, BaoCaoMonHocComboBox.Text, BaoCaoHocKiComboBox.Text, BaoCaoNamHocNumericUpDown.Value).OrderBy(item => item.SubItems[1].Text.Split(' ').Last()).ToList())
             {
+                item.Text = (BaoCaoListView.Items.Count + 1).ToString();
                 BaoCaoListView.Items.Add(item);
             }
             if(BaoCaoListView.Items.Count == 0)
-                ThongBaoForm.GetInstance().LogError("Chưa có thông tin của bảng điểm này, bạn có thể tạo bảng điểm mới");
+                ThongBaoForm.GetInstance().LogError("Lớp này chưa có học sinh hoặc bảng điểm chưa được tạo, bạn có thể tạo bảng điểm mới");
             Cursor.Current = Cursors.Default;
         }
         //TAB BÁO CÁO MÔN: Sự kiện khi bấm nút Xóa bảng điểm

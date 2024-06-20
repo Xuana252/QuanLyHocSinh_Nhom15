@@ -60,7 +60,6 @@ namespace QuanLyHocSinh_Nhom15
 
 
             db.reader = db.sqlCmd.ExecuteReader();
-            int stt = 1;
             while (db.reader.Read())
             {
                 string id = db.reader.GetString(0);
@@ -71,7 +70,7 @@ namespace QuanLyHocSinh_Nhom15
 
 
                 ListViewItem item = new ListViewItem();
-                item.Text = stt.ToString();
+                item.Text = "";
                 item.SubItems.Add(hoten);
                 item.SubItems.Add(diem15p.ToString());
                 item.SubItems.Add(diem1t.ToString());
@@ -79,7 +78,6 @@ namespace QuanLyHocSinh_Nhom15
                 item.SubItems.Add(id);
 
                 itemList.Add(item);
-                stt++;
             }
             db.reader.Close();
             db.Close();
@@ -140,6 +138,7 @@ namespace QuanLyHocSinh_Nhom15
             try
             {
                 db.sqlCmd.ExecuteNonQuery();
+                ThongBaoForm.GetInstance().Inform("Them bảng điểm mới thành công");
             }
             catch (Exception ex)
             {
